@@ -64,13 +64,13 @@ export default class Welcome extends Component {
   render() {
     
     return (
-    <ScrollView data-layer="2d3c646f-a355-4c77-8c66-bc3c97751bab" style={styles.welcome}>
-        <View data-layer="b01f3661-40dd-444c-a6f0-e54e82a5c53e" style={styles.welcome_group138}>
-            <ReactImage data-layer="952640d0-5d0c-469f-a287-f3d093781453" source={require('./assets/logoPng.png')} style={styles.welcome_group138_logoPng} />
-            <ReactImage data-layer="8137e788-5dc5-4e7c-9cda-ddaa38f7078c" source={require('./assets/asset1.png')} style={styles.welcome_group138_asset1} />
+    <ScrollView style={styles.welcome}>
+        <View style={styles.welcome_group138}>
+            <ReactImage source={require('./assets/logoPng.png')} style={styles.welcome_group138_logoPng} />
+            <ReactImage source={require('./assets/asset1.png')} style={styles.welcome_group138_asset1} />
         </View>
-        <Text data-layer="d0305535-0816-437a-9779-396e63b69fa5" style={styles.welcome_giiPhapTTrcChNgi}>GIẢI PHÁP ĐẶT TRƯỚC CHỖ NGỒI</Text>
-        <ReactImage data-layer="4f9fb513-16d3-4f3a-b3ca-4766d6327029" source={require('./assets/coffeebeansandcoffeecupbackgroundConverted.png')} style={styles.welcome_coffeebeansandcoffeecupbackgroundConverted} />
+        <Text style={styles.welcome_giiPhapTTrcChNgi}>GIẢI PHÁP ĐẶT TRƯỚC CHỖ NGỒI</Text>
+        <ReactImage  source={require('./assets/coffeebeansandcoffeecupbackgroundConverted.png')} style={styles.welcome_coffeebeansandcoffeecupbackgroundConverted} />
     </ScrollView>
     );
   }
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     "width": 268,
     "height": 191,
     "left": "50%",
-    "top": 295
+    "top": 150
   },
   "welcome_group138_logoPng": {
     "opacity": 1,
@@ -139,18 +139,10 @@ const styles = StyleSheet.create({
   "welcome_group138_asset1": {
     "opacity": 1,
     "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
     "width": 118,
     "height": 38,
     "left": 134,
-    "top": 121
+    "top": 120
   },
   "welcome_giiPhapTTrcChNgi": {
     "opacity": 1,
@@ -162,34 +154,17 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 189,
     "height": 15,
     "left": 102,
-    "top": 471
+    "top": 320
   },
   "welcome_coffeebeansandcoffeecupbackgroundConverted": {
     "opacity": 1,
     "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
     "width": "auto",
     "height": 236,
-    "left": 0,
-    "right": 0,
+    "top":430,
     "bottom": 0
   }
 });
