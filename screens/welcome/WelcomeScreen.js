@@ -20,14 +20,6 @@ const WelcomeScreen = () => {
 }
 export default WelcomeScreen;
 
-Welcome.propTypes = {
-
-}
-
-Welcome.defaultProps = {
-
-}
-
 
 const styles = StyleSheet.create({
   "welcome": {

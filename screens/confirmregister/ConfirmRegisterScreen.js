@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
-import {StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight} from 'react-native';
+import {StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableOpacity} from 'react-native';
 import {Image as ReactImage} from 'react-native';
 import Svg, {Defs, Pattern} from 'react-native-svg';
 import {Path as SvgPath} from 'react-native-svg';
@@ -10,18 +10,22 @@ import {Image as SvgImage} from 'react-native-svg';
 
 
 
-const ConfirmRegisterScreen = () => {
+const ConfirmRegisterScreen = ({navigation}) => {
+
+  const onPressBack=()=>{
+    navigation.goBack();
+  }
 
     return (
     <ScrollView style={styles.confirmregister}>
-        <View style={styles.confirmregister_group134}>
+        <TouchableOpacity style={styles.confirmregister_group134} onPress={onPressBack}>
             <View style={styles.confirmregister_group134_group133}>
                 <View style={styles.confirmregister_group134_group133_component6}>
                     <Svg style={styles.confirmregister_group134_group133_component6_path10} preserveAspectRatio="none" viewBox="0 0 16 16" fill="rgba(83, 71, 65, 1)"><SvgPath d="M 8 0 L 6.545454978942871 1.454545497894287 L 12.05194854736328 6.961039066314697 L 0 6.961039066314697 L 0 9.038961410522461 L 12.05194854736328 9.038961410522461 L 6.545454978942871 14.54545497894287 L 8 16 L 16 8 L 8 0 Z"  /></Svg>
                 </View>
             </View>
             <Text style={styles.confirmregister_group134_quayLi}>Quay lại </Text>
-        </View>
+        </TouchableOpacity>
         <View style={styles.confirmregister_group1}>
             <View style={styles.confirmregister_group1_group117}>
                 <ReactImage source={require('./assets/logoPng.png')} style={styles.confirmregister_group1_group117_logoPng} />
@@ -55,15 +59,6 @@ const ConfirmRegisterScreen = () => {
     );
 }
 export default ConfirmRegisterScreen;
-
-Confirmregister.propTypes = {
-
-}
-
-Confirmregister.defaultProps = {
-
-}
-
 
 const styles = StyleSheet.create({
   "confirmregister": {
