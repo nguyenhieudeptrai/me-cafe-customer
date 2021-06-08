@@ -7,250 +7,192 @@ import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
 
-export default class Voucher extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
-
-  handlePress(target, owner) {
-    if (this.props.onPress) {
-      let name;
-      let id;
-      let index = -1;
-      if (target.search("::") > -1) {
-        const varCount = target.split("::").length;
-        if (varCount === 2) {
-          name = target.split("::")[0];
-          id = target.split("::")[1];
-        } else if (varCount === 3) {
-          name = target.split("::")[0];
-          index = parseInt(target.split("::")[1]);
-          id = target.split("::")[2];
-        }
-      } else {
-        name = target;
-      }
-      this.props.onPress({ type: 'button', name: name, index: index, id: id, owner: owner });
-    }
-  }
-
-  handleChangeTextinput(name, value) {
-    let id;
-    let index = -1;
-    if (name.search('::') > -1) {
-      const varCount = name.split("::").length;
-      if (varCount === 2) {
-        name = name.split("::")[0];
-        id = name.split("::")[1];
-      } else if (varCount === 3) {
-        name = name.split("::")[0];
-        index = name.split("::")[1];
-        id = name.split("::")[2];
-      }
-    } else {
-      name = name;
-    }
-    let state = this.state;
-    state[name.split('::').join('')] = value;
-    this.setState(state, () => {
-      if (this.props.onChange) {
-        this.props.onChange({ type: 'textinput', name: name, value: value, index: index, id: id });
-      }
-    });
-  }
-
-  render() {
-
-    return (
-      <View style={styles.voucher}>
-        <Svg style={styles.voucher_ellipse2} preserveAspectRatio="none" viewBox="0 0 302 253" fill="transparent"><SvgPath d="M 151 0 C 234.3949890136719 0 302 56.63597869873047 302 126.5 C 302 196.364013671875 234.3949890136719 253 151 253 C 67.60500335693359 253 0 196.364013671875 0 126.5 C 0 56.63597869873047 67.60500335693359 0 151 0 Z" /></Svg>
-        <Svg style={styles.voucher_line5} preserveAspectRatio="none" viewBox="-0.00146484375 -0.5 341.0029296875 2" fill="transparent"><SvgPath d="M 0 1 L 341 0" /></Svg>
-        <Text style={styles.voucher_uAiDanhChoBn}>Ưu đãi dành cho bạn</Text>
-        <View style={styles.voucher_group38}>
-          <View style={styles.voucher_group38_navigationBar}>
-            <Svg style={styles.voucher_group38_navigationBar_path647} preserveAspectRatio="none" viewBox="0 0 393 75.1141357421875" fill="rgba(240, 211, 122, 1)"><SvgPath d="M 0 0 L 393 0 L 393 75.1141357421875 L 0 75.1141357421875 L 0 0 Z" /></Svg>
-            <View style={styles.voucher_group38_navigationBar_component4}>
-              <Svg style={styles.voucher_group38_navigationBar_component4_path10} preserveAspectRatio="none" viewBox="0 0 16 16" fill="rgba(83, 71, 65, 1)"><SvgPath d="M 8 0 L 6.545454978942871 1.454545497894287 L 12.05194854736328 6.961039066314697 L 0 6.961039066314697 L 0 9.038961410522461 L 12.05194854736328 9.038961410522461 L 6.545454978942871 14.54545497894287 L 8 16 L 16 8 L 8 0 Z" /></Svg>
-            </View>
-            <Text style={styles.voucher_group38_navigationBar_thThanhVienUAi}>THẺ THÀNH VIÊN/ ƯU ĐÃI</Text>
+const VoucherScreen = () => {
+  return (
+    <View style={styles.voucher}>
+      <Svg style={styles.voucher_ellipse2} preserveAspectRatio="none" viewBox="0 0 302 253" fill="transparent"><SvgPath d="M 151 0 C 234.3949890136719 0 302 56.63597869873047 302 126.5 C 302 196.364013671875 234.3949890136719 253 151 253 C 67.60500335693359 253 0 196.364013671875 0 126.5 C 0 56.63597869873047 67.60500335693359 0 151 0 Z" /></Svg>
+      <Svg style={styles.voucher_line5} preserveAspectRatio="none" viewBox="-0.00146484375 -0.5 341.0029296875 2" fill="transparent"><SvgPath d="M 0 1 L 341 0" /></Svg>
+      <Text style={styles.voucher_uAiDanhChoBn}>Ưu đãi dành cho bạn</Text>
+      <View style={styles.voucher_group38}>
+        <View style={styles.voucher_group38_navigationBar}>
+          <Svg style={styles.voucher_group38_navigationBar_path647} preserveAspectRatio="none" viewBox="0 0 393 75.1141357421875" fill="rgba(240, 211, 122, 1)"><SvgPath d="M 0 0 L 393 0 L 393 75.1141357421875 L 0 75.1141357421875 L 0 0 Z" /></Svg>
+          <View style={styles.voucher_group38_navigationBar_component4}>
+            <Svg style={styles.voucher_group38_navigationBar_component4_path10} preserveAspectRatio="none" viewBox="0 0 16 16" fill="rgba(83, 71, 65, 1)"><SvgPath d="M 8 0 L 6.545454978942871 1.454545497894287 L 12.05194854736328 6.961039066314697 L 0 6.961039066314697 L 0 9.038961410522461 L 12.05194854736328 9.038961410522461 L 6.545454978942871 14.54545497894287 L 8 16 L 16 8 L 8 0 Z" /></Svg>
           </View>
+          <Text style={styles.voucher_group38_navigationBar_thThanhVienUAi}>THẺ THÀNH VIÊN/ ƯU ĐÃI</Text>
         </View>
-        <View style={styles.voucher_rectangle1477}></View>
-        <View style={styles.voucher_rectangle1476}></View>
-        <Text style={styles.voucher_miGiaoDchTChTrenAppThanhCongBnSCTngImThngBnCoThDungImILyRtNhiuUAiHpDnimKhongCoGiaTrQuyIThanhTinMt}>Mỗi giao dịch đặt chỗ trên app thành công bạn sẽ được tặng điểm thưởng.
-        Bạn có thể dùng điểm đổi lấy rất nhiều ưu đãi hấp dẫn.
+      </View>
+      <View style={styles.voucher_rectangle1477}></View>
+      <View style={styles.voucher_rectangle1476}></View>
+      <Text style={styles.voucher_miGiaoDchTChTrenAppThanhCongBnSCTngImThngBnCoThDungImILyRtNhiuUAiHpDnimKhongCoGiaTrQuyIThanhTinMt}>Mỗi giao dịch đặt chỗ trên app thành công bạn sẽ được tặng điểm thưởng.
+      Bạn có thể dùng điểm đổi lấy rất nhiều ưu đãi hấp dẫn.
 Điểm không có giá trị quy đổi thành tiền mặt.</Text>
-        <View style={styles.voucher_group118}>
-          <ReactImage source={require('./assets/logoPng.png')} style={styles.voucher_group118_logoPng} />
-          <ReactImage source={require('./assets/asset1.png')} style={styles.voucher_group118_asset1} />
+      <View style={styles.voucher_group118}>
+        <ReactImage source={require('./assets/logoPng.png')} style={styles.voucher_group118_logoPng} />
+        <ReactImage source={require('./assets/asset1.png')} style={styles.voucher_group118_asset1} />
+      </View>
+      <View style={styles.voucher_nguynVnA}><Text style={{ "marginTop": -5, "color": "rgba(255, 255, 255, 1)", "fontSize": 20, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 22 }}>NGUYỄN VĂN A</Text></View>
+      <Text style={styles.voucher_x30Im}>30 điểm</Text>
+      <View style={styles.voucher_group119}>
+        <View style={styles.voucher_group119_scroll}>
+          <View style={styles.voucher_group119_scroll_rectangle555}></View>
+          <View style={styles.voucher_group119_scroll_rectangle556}></View>
+          <Svg style={styles.voucher_group119_scroll_ellipse155} preserveAspectRatio="none" viewBox="0 0 2 2" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 1 0 C 1.552284717559814 0 2 0.4477152824401855 2 1 C 2 1.552284717559814 1.552284717559814 2 1 2 C 0.4477152824401855 2 0 1.552284717559814 0 1 C 0 0.4477152824401855 0.4477152824401855 0 1 0 Z" /></Svg>
+          <Svg style={styles.voucher_group119_scroll_ellipse236} preserveAspectRatio="none" viewBox="0 0 2 2" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 1 0 C 1.552284717559814 0 2 0.4477152824401855 2 1 C 2 1.552284717559814 1.552284717559814 2 1 2 C 0.4477152824401855 2 0 1.552284717559814 0 1 C 0 0.4477152824401855 0.4477152824401855 0 1 0 Z" /></Svg>
         </View>
-        <View style={styles.voucher_nguynVnA}><Text style={{ "marginTop": -5, "color": "rgba(255, 255, 255, 1)", "fontSize": 20, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 22 }}>NGUYỄN VĂN A</Text></View>
-        <Text style={styles.voucher_x30Im}>30 điểm</Text>
-        <View style={styles.voucher_group119}>
-          <View style={styles.voucher_group119_scroll}>
-            <View style={styles.voucher_group119_scroll_rectangle555}></View>
-            <View style={styles.voucher_group119_scroll_rectangle556}></View>
-            <Svg style={styles.voucher_group119_scroll_ellipse155} preserveAspectRatio="none" viewBox="0 0 2 2" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 1 0 C 1.552284717559814 0 2 0.4477152824401855 2 1 C 2 1.552284717559814 1.552284717559814 2 1 2 C 0.4477152824401855 2 0 1.552284717559814 0 1 C 0 0.4477152824401855 0.4477152824401855 0 1 0 Z" /></Svg>
-            <Svg style={styles.voucher_group119_scroll_ellipse236} preserveAspectRatio="none" viewBox="0 0 2 2" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 1 0 C 1.552284717559814 0 2 0.4477152824401855 2 1 C 2 1.552284717559814 1.552284717559814 2 1 2 C 0.4477152824401855 2 0 1.552284717559814 0 1 C 0 0.4477152824401855 0.4477152824401855 0 1 0 Z" /></Svg>
-          </View>
-          <Text style={styles.voucher_group119_ng}>Đồng</Text>
-          <Text style={styles.voucher_group119_kimCng}>Kim cương</Text>
-          <Text style={styles.voucher_group119_vang}>Vàng</Text>
-          <ReactImage source={require('./assets/bean.png')} style={styles.voucher_group119_bean} />
-        </View>
-        <View style={styles.voucher_hngNg}><Text style={{ "marginTop": -1, "color": "rgba(255, 255, 255, 1)", "fontSize": 12, "fontWeight": "400", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 13.200000000000001 }}>Hạng Đồng</Text></View>
-        <View style={styles.voucher_group121}>
-          <View style={styles.voucher_group121_rectangle1478}></View>
-          <View style={styles.voucher_group121_rectangle1479}></View>
-          <Svg style={styles.voucher_group121_ellipse237} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse238} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse239} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse240} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse241} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse242} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse243} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse244} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse245} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse246} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse247} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse248} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse249} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse250} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse251} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse252} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse253} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse254} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-        </View>
-        <View style={styles.voucher_group143}>
-          <View style={styles.voucher_group143_group126}>
-            <View style={styles.voucher_group143_group126_group87b6e89e62}>
-              <View style={styles.voucher_group143_group126_group87b6e89e62_group86f20f57fc}>
-                <View style={styles.voucher_group143_group126_group87b6e89e62_group86f20f57fc_rectangle32a5676426}></View>
-                <View style={styles.voucher_group143_group126_group87b6e89e62_group86f20f57fc_group120}>
-                  <View style={styles.voucher_group143_group126_group87b6e89e62_group86f20f57fc_group120_group144}>
-                    <Text style={styles.voucher_group143_group126_group87b6e89e62_group86f20f57fc_group120_group144_uAi20ToanMenu}>Ưu đãi 20% toàn menu</Text>
-                    <Text style={styles.voucher_group143_group126_group87b6e89e62_group86f20f57fc_group120_group144_htHn30072021d22f9f3b}>Hết hạn: 30/07/2021</Text>
-                    <Text style={styles.voucher_group143_group126_group87b6e89e62_group86f20f57fc_group120_group144_aChBiCoffeeNgTrungSnQ07}>Địa chỉ: Bụi Coffee, Đường Trung Sơn, Q.07</Text>
-                  </View>
+        <Text style={styles.voucher_group119_ng}>Đồng</Text>
+        <Text style={styles.voucher_group119_kimCng}>Kim cương</Text>
+        <Text style={styles.voucher_group119_vang}>Vàng</Text>
+        <ReactImage source={require('./assets/bean.png')} style={styles.voucher_group119_bean} />
+      </View>
+      <View style={styles.voucher_hngNg}><Text style={{ "marginTop": -1, "color": "rgba(255, 255, 255, 1)", "fontSize": 12, "fontWeight": "400", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 13.200000000000001 }}>Hạng Đồng</Text></View>
+      <View style={styles.voucher_group121}>
+        <View style={styles.voucher_group121_rectangle1478}></View>
+        <View style={styles.voucher_group121_rectangle1479}></View>
+        <Svg style={styles.voucher_group121_ellipse237} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse238} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse239} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse240} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse241} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse242} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse243} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse244} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse245} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse246} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse247} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse248} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse249} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse250} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse251} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse252} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse253} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+        <Svg style={styles.voucher_group121_ellipse254} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+      </View>
+      <View style={styles.voucher_group143}>
+        <View style={styles.voucher_group143_group126}>
+          <View style={styles.voucher_group143_group126_group87b6e89e62}>
+            <View style={styles.voucher_group143_group126_group87b6e89e62_group86f20f57fc}>
+              <View style={styles.voucher_group143_group126_group87b6e89e62_group86f20f57fc_rectangle32a5676426}></View>
+              <View style={styles.voucher_group143_group126_group87b6e89e62_group86f20f57fc_group120}>
+                <View style={styles.voucher_group143_group126_group87b6e89e62_group86f20f57fc_group120_group144}>
+                  <Text style={styles.voucher_group143_group126_group87b6e89e62_group86f20f57fc_group120_group144_uAi20ToanMenu}>Ưu đãi 20% toàn menu</Text>
+                  <Text style={styles.voucher_group143_group126_group87b6e89e62_group86f20f57fc_group120_group144_htHn30072021d22f9f3b}>Hết hạn: 30/07/2021</Text>
+                  <Text style={styles.voucher_group143_group126_group87b6e89e62_group86f20f57fc_group120_group144_aChBiCoffeeNgTrungSnQ07}>Địa chỉ: Bụi Coffee, Đường Trung Sơn, Q.07</Text>
                 </View>
               </View>
             </View>
-            <View style={styles.voucher_group143_group126_group12559072dc7}>
-              <View style={styles.voucher_group143_group126_group12559072dc7_rectangle1480660e865b}></View>
-              <View style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f}>
-                <View style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f_group123d585ed59}>
-                  <View style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f_group123d585ed59_group122eaf91980}>
-                    <View style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f_group123d585ed59_group122eaf91980_rectangle148179fbdb4a}></View>
-                    <View style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f_group123d585ed59_group122eaf91980_rectangle148292244152}></View>
-                    <View style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f_group123d585ed59_group122eaf91980_rectangle148361bd58bd}></View>
-                  </View>
-                  <Text style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f_group123d585ed59_delivery}>Delivery</Text>
+          </View>
+          <View style={styles.voucher_group143_group126_group12559072dc7}>
+            <View style={styles.voucher_group143_group126_group12559072dc7_rectangle1480660e865b}></View>
+            <View style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f}>
+              <View style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f_group123d585ed59}>
+                <View style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f_group123d585ed59_group122eaf91980}>
+                  <View style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f_group123d585ed59_group122eaf91980_rectangle148179fbdb4a}></View>
+                  <View style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f_group123d585ed59_group122eaf91980_rectangle148292244152}></View>
+                  <View style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f_group123d585ed59_group122eaf91980_rectangle148361bd58bd}></View>
                 </View>
-                <Text style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f_x20}>20%</Text>
+                <Text style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f_group123d585ed59_delivery}>Delivery</Text>
               </View>
+              <Text style={styles.voucher_group143_group126_group12559072dc7_group1248e272b4f_x20}>20%</Text>
             </View>
           </View>
-          <View style={styles.voucher_group143_group130}>
-            <View style={styles.voucher_group143_group130_group147}>
-              <View style={styles.voucher_group143_group130_group147_group127}>
-                <View style={styles.voucher_group143_group130_group147_group127_group8794872b57}>
-                  <View style={styles.voucher_group143_group130_group147_group127_group8794872b57_group863f6262a2}>
-                    <View style={styles.voucher_group143_group130_group147_group127_group8794872b57_group863f6262a2_rectangle32775e448d}></View>
-                  </View>
+        </View>
+        <View style={styles.voucher_group143_group130}>
+          <View style={styles.voucher_group143_group130_group147}>
+            <View style={styles.voucher_group143_group130_group147_group127}>
+              <View style={styles.voucher_group143_group130_group147_group127_group8794872b57}>
+                <View style={styles.voucher_group143_group130_group147_group127_group8794872b57_group863f6262a2}>
+                  <View style={styles.voucher_group143_group130_group147_group127_group8794872b57_group863f6262a2_rectangle32775e448d}></View>
                 </View>
-                <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6}>
-                  <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6_rectangle14806a0ef2a7}></View>
-                  <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7}>
-                    <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7_group123558bc14e}>
-                      <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff}>
-                        <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle148165d1791b}></View>
-                        <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle1482af7a277f}></View>
-                        <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle14839c367ca7}></View>
-                      </View>
-                      <Text style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7_group123558bc14e_xUng}>Đồ uống</Text>
+              </View>
+              <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6}>
+                <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6_rectangle14806a0ef2a7}></View>
+                <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7}>
+                  <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7_group123558bc14e}>
+                    <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff}>
+                      <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle148165d1791b}></View>
+                      <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle1482af7a277f}></View>
+                      <View style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle14839c367ca7}></View>
                     </View>
-                    <Text style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7_x50k}>50K</Text>
+                    <Text style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7_group123558bc14e_xUng}>Đồ uống</Text>
                   </View>
-                </View>
-              </View>
-              <View style={styles.voucher_group143_group130_group147_group146}>
-                <Text style={styles.voucher_group143_group130_group147_group146_uAi50kToanMenu}>Ưu đãi 50K toàn menu</Text>
-                <Text style={styles.voucher_group143_group130_group147_group146_htHn30072021380a9479}>Hết hạn: 30/07/2021</Text>
-                <Text style={styles.voucher_group143_group130_group147_group146_aChFarmersGardenNgVnBiQthC}>Địa chỉ: Farmer's Garden, Đặng Văn Bi, Q.Thủ Đức</Text>
-              </View>
-            </View>
-          </View>
-          <View style={styles.voucher_group143_group150}>
-            <View style={styles.voucher_group143_group150_group132}>
-              <View style={styles.voucher_group143_group150_group132_group128}>
-                <View style={styles.voucher_group143_group150_group132_group128_group87}>
-                  <View style={styles.voucher_group143_group150_group132_group128_group87_group86}>
-                    <View style={styles.voucher_group143_group150_group132_group128_group87_group86_rectangle32}></View>
-                  </View>
-                </View>
-                <View style={styles.voucher_group143_group150_group132_group128_group125}>
-                  <View style={styles.voucher_group143_group150_group132_group128_group125_rectangle1480}></View>
-                  <View style={styles.voucher_group143_group150_group132_group128_group125_group124}>
-                    <View style={styles.voucher_group143_group150_group132_group128_group125_group124_group123}>
-                      <View style={styles.voucher_group143_group150_group132_group128_group125_group124_group123_group122}>
-                        <View style={styles.voucher_group143_group150_group132_group128_group125_group124_group123_group122_rectangle1481}></View>
-                        <View style={styles.voucher_group143_group150_group132_group128_group125_group124_group123_group122_rectangle1482}></View>
-                        <View style={styles.voucher_group143_group150_group132_group128_group125_group124_group123_group122_rectangle1483}></View>
-                      </View>
-                      <Text style={styles.voucher_group143_group150_group132_group128_group125_group124_group123_combo}>Combo</Text>
-                    </View>
-                    <Svg style={styles.voucher_group143_group150_group132_group128_group125_group124_ellipse255} preserveAspectRatio="none" viewBox="0 0 58 17" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 29 0 C 45.01625823974609 0 58 3.805579662322998 58 8.5 C 58 13.19441986083984 45.01625823974609 17 29 17 C 12.98374366760254 17 0 13.19441986083984 0 8.5 C 0 3.805579662322998 12.98374366760254 0 29 0 Z" /></Svg>
-                    <ReactImage source={require('./assets/coffeeMockup.png')} style={styles.voucher_group143_group150_group132_group128_group125_group124_coffeeMockup} />
-                    <Text style={styles.voucher_group143_group150_group132_group128_group125_group124_x1Ly}>1 Ly</Text>
-                  </View>
+                  <Text style={styles.voucher_group143_group130_group147_group127_group125906bcef6_group124378320a7_x50k}>50K</Text>
                 </View>
               </View>
             </View>
-            <View style={styles.voucher_group143_group150_group149}>
-              <Text style={styles.voucher_group143_group150_group149_uAi1LyCaPheSa}>Ưu đãi 1 Ly Cà phê sữa</Text>
-              <Text style={styles.voucher_group143_group150_group149_htHn30072021}>Hết hạn: 30/07/2021</Text>
-              <Text style={styles.voucher_group143_group150_group149_aChOngBuCoffeeLeVnVitQ9}>Địa chỉ: Ông Bầu Coffee, Lê Văn Việt, Q.9</Text>
+            <View style={styles.voucher_group143_group130_group147_group146}>
+              <Text style={styles.voucher_group143_group130_group147_group146_uAi50kToanMenu}>Ưu đãi 50K toàn menu</Text>
+              <Text style={styles.voucher_group143_group130_group147_group146_htHn30072021380a9479}>Hết hạn: 30/07/2021</Text>
+              <Text style={styles.voucher_group143_group130_group147_group146_aChFarmersGardenNgVnBiQthC}>Địa chỉ: Farmer's Garden, Đặng Văn Bi, Q.Thủ Đức</Text>
             </View>
           </View>
         </View>
-        <View style={styles.voucher_menu}>
-          <View style={styles.voucher_menu_group57}>
-            <Svg style={styles.voucher_menu_group57_path5} preserveAspectRatio="none" viewBox="0 0 393 79" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 16 0 L 377 0 C 385.8365478515625 0 393 7.160732746124268 393 15.99394512176514 L 393 78.73075103759766 L 0 79 L 0 15.99394512176514 C 0 7.160732746124268 7.163443565368652 0 16 0 Z" /></Svg>
-          </View>
-          <View style={styles.voucher_menu_group6}>
-            <View style={styles.voucher_menu_group6_group14}>
-              <ReactImage source={require('./assets/tabHome.png')} style={styles.voucher_menu_group6_group14_tabHome} />
-              <Text style={styles.voucher_menu_group6_group14_trangCh}>Trang chủ</Text>
+        <View style={styles.voucher_group143_group150}>
+          <View style={styles.voucher_group143_group150_group132}>
+            <View style={styles.voucher_group143_group150_group132_group128}>
+              <View style={styles.voucher_group143_group150_group132_group128_group87}>
+                <View style={styles.voucher_group143_group150_group132_group128_group87_group86}>
+                  <View style={styles.voucher_group143_group150_group132_group128_group87_group86_rectangle32}></View>
+                </View>
+              </View>
+              <View style={styles.voucher_group143_group150_group132_group128_group125}>
+                <View style={styles.voucher_group143_group150_group132_group128_group125_rectangle1480}></View>
+                <View style={styles.voucher_group143_group150_group132_group128_group125_group124}>
+                  <View style={styles.voucher_group143_group150_group132_group128_group125_group124_group123}>
+                    <View style={styles.voucher_group143_group150_group132_group128_group125_group124_group123_group122}>
+                      <View style={styles.voucher_group143_group150_group132_group128_group125_group124_group123_group122_rectangle1481}></View>
+                      <View style={styles.voucher_group143_group150_group132_group128_group125_group124_group123_group122_rectangle1482}></View>
+                      <View style={styles.voucher_group143_group150_group132_group128_group125_group124_group123_group122_rectangle1483}></View>
+                    </View>
+                    <Text style={styles.voucher_group143_group150_group132_group128_group125_group124_group123_combo}>Combo</Text>
+                  </View>
+                  <Svg style={styles.voucher_group143_group150_group132_group128_group125_group124_ellipse255} preserveAspectRatio="none" viewBox="0 0 58 17" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 29 0 C 45.01625823974609 0 58 3.805579662322998 58 8.5 C 58 13.19441986083984 45.01625823974609 17 29 17 C 12.98374366760254 17 0 13.19441986083984 0 8.5 C 0 3.805579662322998 12.98374366760254 0 29 0 Z" /></Svg>
+                  <ReactImage source={require('./assets/coffeeMockup.png')} style={styles.voucher_group143_group150_group132_group128_group125_group124_coffeeMockup} />
+                  <Text style={styles.voucher_group143_group150_group132_group128_group125_group124_x1Ly}>1 Ly</Text>
+                </View>
+              </View>
             </View>
           </View>
-          <View style={styles.voucher_menu_group7}>
-            <View style={styles.voucher_menu_group7_group13}>
-              <ReactImage source={require('./assets/boking.png')} style={styles.voucher_menu_group7_group13_boking} />
-              <Text style={styles.voucher_menu_group7_group13_tCh}>Đặt chỗ</Text>
-            </View>
-          </View>
-          <View style={styles.voucher_menu_group8}>
-            <View style={styles.voucher_menu_group8_group12}>
-              <ReactImage source={require('./assets/tab3.png')} style={styles.voucher_menu_group8_group12_tab3} />
-              <Text style={styles.voucher_menu_group8_group12_tichIm}>Tích điểm</Text>
-            </View>
-          </View>
-          <View style={styles.voucher_menu_group9}>
-            <View style={styles.voucher_menu_group9_group11}>
-              <ReactImage source={require('./assets/setting2.png')} style={styles.voucher_menu_group9_group11_setting2} />
-              <Text style={styles.voucher_menu_group9_group11_caiT}>Cài đặt</Text>
-            </View>
+          <View style={styles.voucher_group143_group150_group149}>
+            <Text style={styles.voucher_group143_group150_group149_uAi1LyCaPheSa}>Ưu đãi 1 Ly Cà phê sữa</Text>
+            <Text style={styles.voucher_group143_group150_group149_htHn30072021}>Hết hạn: 30/07/2021</Text>
+            <Text style={styles.voucher_group143_group150_group149_aChOngBuCoffeeLeVnVitQ9}>Địa chỉ: Ông Bầu Coffee, Lê Văn Việt, Q.9</Text>
           </View>
         </View>
       </View>
-    );
-  }
+      <View style={styles.voucher_menu}>
+        <View style={styles.voucher_menu_group57}>
+          <Svg style={styles.voucher_menu_group57_path5} preserveAspectRatio="none" viewBox="0 0 393 79" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 16 0 L 377 0 C 385.8365478515625 0 393 7.160732746124268 393 15.99394512176514 L 393 78.73075103759766 L 0 79 L 0 15.99394512176514 C 0 7.160732746124268 7.163443565368652 0 16 0 Z" /></Svg>
+        </View>
+        <View style={styles.voucher_menu_group6}>
+          <View style={styles.voucher_menu_group6_group14}>
+            <ReactImage source={require('./assets/tabHome.png')} style={styles.voucher_menu_group6_group14_tabHome} />
+            <Text style={styles.voucher_menu_group6_group14_trangCh}>Trang chủ</Text>
+          </View>
+        </View>
+        <View style={styles.voucher_menu_group7}>
+          <View style={styles.voucher_menu_group7_group13}>
+            <ReactImage source={require('./assets/boking.png')} style={styles.voucher_menu_group7_group13_boking} />
+            <Text style={styles.voucher_menu_group7_group13_tCh}>Đặt chỗ</Text>
+          </View>
+        </View>
+        <View style={styles.voucher_menu_group8}>
+          <View style={styles.voucher_menu_group8_group12}>
+            <ReactImage source={require('./assets/tab3.png')} style={styles.voucher_menu_group8_group12_tab3} />
+            <Text style={styles.voucher_menu_group8_group12_tichIm}>Tích điểm</Text>
+          </View>
+        </View>
+        <View style={styles.voucher_menu_group9}>
+          <View style={styles.voucher_menu_group9_group11}>
+            <ReactImage source={require('./assets/setting2.png')} style={styles.voucher_menu_group9_group11_setting2} />
+            <Text style={styles.voucher_menu_group9_group11_caiT}>Cài đặt</Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  );
 }
+export default VoucherScreen;
 
 Voucher.propTypes = {
 
