@@ -7,7 +7,7 @@ import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
 
-const Commentshop = () => {
+const CommentShopScreen = () => {
 
   return (
     <ScrollView style={styles.commentshop}>
@@ -66,11 +66,13 @@ const Commentshop = () => {
 
 }
 
-Commentshop.propTypes = {
+export default CommentShopScreen;
+
+CommentShopScreen.propTypes = {
 
 }
 
-Commentshop.defaultProps = {
+CommentShopScreen.defaultProps = {
 
 }
 
