@@ -16,7 +16,7 @@ const LoginScreen = ({ navigation }) => {
     navigation.navigate("Register")
   }
   return (
-    <ScrollView style={styles.login}>
+    <View style={styles.login}>
       <View style={styles.login_group1}>
         <View style={styles.login_group1_group117}>
           <ReactImage source={require('./assets/logoPng.png')} style={styles.login_group1_group117_logoPng} />
@@ -39,14 +39,14 @@ const LoginScreen = ({ navigation }) => {
       <TouchableOpacity onPress={onPressLogin} style={styles.login_continue}>
         <Svg style={styles.login_continue_path643} preserveAspectRatio="none" viewBox="0 0 327 48" fill="rgba(212, 174, 57, 1)"><SvgPath d="M 4 0 L 323 0 C 325.2091369628906 0 327 1.790860891342163 327 4 L 327 44 C 327 46.20914077758789 325.2091369628906 48 323 48 L 4 48 C 1.790860891342163 48 0 46.20914077758789 0 44 L 0 4 C 0 1.790860891342163 1.790860891342163 0 4 0 Z" /></Svg>
         <View style={styles.login_continue_ngNhp}>
-          <Text style={{ "marginTop": -1.5, "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "900", "fontStyle": "bold", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>
+          <Text style={{ "marginTop": -1.5, "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "900", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>
             ĐĂNG NHẬP
             </Text>
         </View>
       </TouchableOpacity>
       <TouchableOpacity onPress={onPressRegister} style={styles.login_register}>
         <Text style={styles.login_ngKTaiKhon}>Đăng ký tài khoản</Text>
-      </TouchableOpacity> 
+      </TouchableOpacity>
       <View style={styles.login_hoc}>
         <Text style={{ "marginTop": -1.5, "color": "rgba(51, 51, 51, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>Hoặc</Text>
       </View>
@@ -65,18 +65,13 @@ const LoginScreen = ({ navigation }) => {
         </View>
       </View>
       <Text style={styles.login_quenMtKhu}>Quên mật khẩu</Text>
-    </ScrollView>
+    </View>
   );
 }
 
 export default LoginScreen; const styles = StyleSheet.create({
   "login": {
-    "position": "relative",
-    "backgroundColor": "rgba(255, 255, 255, 1)",
-    "width": 393,
-    "height": 851,
-    "left": 0,
-    "top": 0
+    flex: 1,
   },
   "login_group1": {
     "position": "absolute",
@@ -174,7 +169,6 @@ export default LoginScreen; const styles = StyleSheet.create({
     "height": 19,
     "left": 36,
     "top": 0,
-    border: 0,
   },
   "login_password_lock": {
     "position": "absolute", "width": 16,

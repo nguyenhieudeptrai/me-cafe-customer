@@ -40,7 +40,8 @@ const RegisterScreen = ({navigation}) => {
             <Svg style={styles.register_group137_group136_continue_path643} preserveAspectRatio="none" viewBox="-1.5 -1.5 330 51" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 4 0 L 323 0 C 325.2091369628906 0 327 1.790860891342163 327 4 L 327 44 C 327 46.20914077758789 325.2091369628906 48 323 48 L 4 48 C 1.790860891342163 48 0 46.20914077758789 0 44 L 0 4 C 0 1.790860891342163 1.790860891342163 0 4 0 Z" /></Svg>
           </View>
           <View style={styles.register_group137_group136_group156}>
-            <View style={styles.register_group137_group136_group156_x84}><Text style={{ "marginTop": -1.5, "color": "rgba(0, 0, 0, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>+84</Text></View>
+            <View style={styles.register_group137_group136_group156_x84}>
+              <Text style={{ "marginTop": -1.5, "color": "rgba(0, 0, 0, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>+84</Text></View>
             <View style={styles.register_group137_group136_group156_nhpSInThoi}>
               <TextInput style={{ "marginTop": -1.5, "fontSize": 15, "fontWeight": "bold", "fontStyle": "normal", "fontFamily": "Roboto",  "lineHeight": 16.5 }} placeholder="Nhập số điện thoại..." />
             </View>
@@ -102,8 +103,6 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 189,
-    "height": 15,
     "left": 39,
     "top": 176
   },
@@ -136,20 +135,19 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "center",
     "lineHeight": 16.5,
-    "width": 67,
-    "height": 18,
     "left": 31,
     "top": 11
   },
   "register_group134": {
     "width": "100%",
-    "height": 16,
+    "height": 20,
     marginTop: 40,
-    marginLeft: 15,
+    marginLeft: 40,
     alignSelf: "center",
   },
   "register_group134_group133": {
-    "position": "absolute", "width": 16,
+    "position": "absolute", 
+    "width": 16,
     "height": 16,
     "left": 0,
     "top": 0
@@ -171,14 +169,12 @@ const styles = StyleSheet.create({
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 13,
+    "fontSize": 14,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 49,
-    "height": 15,
-    "left": 29,
+    "left": 35,
     "top": 1
   },
   "register_group137": {
@@ -223,8 +219,6 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "center",
     "lineHeight": 16.5,
-    "width": 26,
-    "height": 18,
     "left": 30,
     "top": 7
   },
@@ -238,10 +232,8 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "center",
     "lineHeight": 16.5,
-    "width": "80%",
-    "height": 18,
     "left": 77,
-    "top": 7
+    "top": 0
   },
   "register_group137_group136_group156_vnLogo": {
     "position": "absolute",

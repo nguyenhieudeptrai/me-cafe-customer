@@ -10,7 +10,7 @@ import { Image as SvgImage } from 'react-native-svg';
 const data = [
   {
     title: "title",
-    description: "descrr.....",
+    description: "descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v ",
     endDate: "ngay het han",
     head: "50k",
     type: "delivery",
@@ -21,7 +21,7 @@ const data = [
     endDate: "ngay het han",
     head: "50k",
     type: "delivery",
-  }, 
+  },
 ];
 
 const nameUser = "Nguyễn Hiếu Đẹp Trai";
@@ -33,38 +33,37 @@ const VoucherTab = () => {
         <Text style={styles.header_title}>THẺ THÀNH VIÊN / ƯU ĐÃI</Text>
       </View>
       <View style={styles.voucher_progress}>
-        <View style={styles.voucher_rectangle1477}></View>
         <View style={styles.voucher_rectangle1476}></View>
         <View style={styles.voucher_group118}>
           <ReactImage source={require('../assets/logoPng.png')} style={styles.voucher_group118_logoPng} />
           <ReactImage source={require('../assets/asset1.png')} style={styles.voucher_group118_asset1} />
         </View>
         <View style={styles.voucher_user_name}>
-          <Text style={{ "marginTop": -5, "color": "rgba(255, 255, 255, 1)", "fontSize": 20, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 22 }}>
+          <Text style={{ "color": "rgba(255, 255, 255, 1)", "fontSize": 25, "fontWeight": "700", "fontFamily": "Roboto", }}>
             {nameUser}
           </Text>
         </View>
+        <View style={styles.voucher_user_rank}>
+          <Text style={{ "color": "rgba(255, 255, 255, 1)", "fontSize": 16, "fontWeight": "400", "fontFamily": "Roboto", }}>
+            Hạng Đồng
+            </Text>
+        </View>
         <Text style={styles.voucher_x30Im}>30 điểm</Text>
-        <Text style={styles.voucher_progress_title}>Mỗi giao dịch đặt chỗ trên app thành công bạn sẽ được tặng điểm thưởng.
-        Bạn có thể dùng điểm đổi lấy rất nhiều ưu đãi hấp dẫn.
-Điểm không có giá trị quy đổi thành tiền mặt.</Text>
         <View style={styles.voucher_group119}>
           <View style={styles.voucher_group119_scroll}>
             <View style={styles.voucher_group119_scroll_rectangle555}></View>
             <View style={styles.voucher_group119_scroll_rectangle556}></View>
             <Svg style={styles.voucher_group119_scroll_ellipse155} preserveAspectRatio="none" viewBox="0 0 2 2" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 1 0 C 1.552284717559814 0 2 0.4477152824401855 2 1 C 2 1.552284717559814 1.552284717559814 2 1 2 C 0.4477152824401855 2 0 1.552284717559814 0 1 C 0 0.4477152824401855 0.4477152824401855 0 1 0 Z" /></Svg>
             <Svg style={styles.voucher_group119_scroll_ellipse236} preserveAspectRatio="none" viewBox="0 0 2 2" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 1 0 C 1.552284717559814 0 2 0.4477152824401855 2 1 C 2 1.552284717559814 1.552284717559814 2 1 2 C 0.4477152824401855 2 0 1.552284717559814 0 1 C 0 0.4477152824401855 0.4477152824401855 0 1 0 Z" /></Svg>
+            <ReactImage source={require('../assets/bean.png')} style={styles.voucher_group119_bean} />
           </View>
           <Text style={styles.voucher_group119_ng}>Đồng</Text>
           <Text style={styles.voucher_group119_kimCng}>Kim cương</Text>
           <Text style={styles.voucher_group119_vang}>Vàng</Text>
-          <ReactImage source={require('../assets/bean.png')} style={styles.voucher_group119_bean} />
         </View>
-        <View style={styles.voucher_user_rank}>
-          <Text style={{ "marginTop": -1, "color": "rgba(255, 255, 255, 1)", "fontSize": 12, "fontWeight": "400", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 13.200000000000001 }}>
-            Hạng Đồng
-            </Text>
-        </View>
+        <Text style={styles.voucher_progress_title}>Mỗi giao dịch đặt chỗ trên app thành công bạn sẽ được tặng điểm thưởng.
+        Bạn có thể dùng điểm đổi lấy rất nhiều ưu đãi hấp dẫn.
+Điểm không có giá trị quy đổi thành tiền mặt.</Text>
         <View style={styles.voucher_group121}>
           <View style={styles.voucher_group121_rectangle1478}></View>
           <View style={styles.voucher_group121_rectangle1479}></View>
@@ -90,33 +89,25 @@ const VoucherTab = () => {
       </View>
       <Text style={styles.voucher_uAiDanhChoBn}>Ưu đãi dành cho bạn</Text>
 
-      <FlatList style={styles.voucher_list} data={data} renderItem={({ item, index }) => (
+      <FlatList style={{width:"90%",flex:1}} data={data} renderItem={({ item, index }) => (
         <View key={index} style={styles.voucher_list_item}>
-          <View style={styles.voucher_list_item_group127}>
-            <View style={styles.voucher_list_item_group127_group8794872b57}>
-              <View style={styles.voucher_list_item_group127_group8794872b57_group863f6262a2}>
-                <View style={styles.voucher_list_item_group127_group8794872b57_group863f6262a2_rectangle32775e448d}></View>
-              </View>
-            </View>
-            <View style={styles.voucher_list_item_group127_group125906bcef6}>
-              <View style={styles.voucher_list_item_group127_group125906bcef6_rectangle14806a0ef2a7}></View>
-              <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7}>
-                <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e}>
-                  <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff}>
-                    <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle148165d1791b}></View>
-                    <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle1482af7a277f}></View>
-                    <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle14839c367ca7}></View>
-                  </View>
-                  <Text style={styles.voucher_list_item_info_type}>{item.type}</Text>
+          <View style={styles.voucher_list_item_group127_group125906bcef6_rectangle14806a0ef2a7}>
+            <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7}>
+              <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e}>
+                <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff}>
+                  <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle148165d1791b}></View>
+                  <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle1482af7a277f}></View>
+                  <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle14839c367ca7}></View>
                 </View>
-                <Text style={styles.voucher_list_item_info_head}>{item.head}</Text>
+                <Text style={styles.voucher_list_item_info_type}>{item.type}</Text>
               </View>
+              <Text style={styles.voucher_list_item_info_head}>{item.head}</Text>
             </View>
           </View>
           <View style={styles.voucher_list_item_info}>
             <Text style={styles.voucher_list_item_info_title}>{item.title}</Text>
-            <Text style={styles.voucher_list_item_info_end_date}>Hết hạn: {item.endDate}</Text>
             <Text style={styles.voucher_list_item_info_description}>{item.description}</Text>
+            <Text style={styles.voucher_list_item_info_end_date}>Hết hạn: {item.endDate}</Text>
           </View>
         </View>
       )} />
@@ -133,10 +124,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   "voucher_progress": {
-    "width": 298,
-    "height": 246,
+    "width": "80%",
     marginTop: 12,
-    marginBottom: 10
+    marginBottom: 10,
+    paddingBottom: 10,
+    "backgroundColor": "rgba(255, 255, 255, 1)",
+    "borderRadius": 20,
+    "shadowColor": "rgb(0,  0,  0)",
+    "shadowOpacity": 0.1607843137254902,
+    "shadowOffset": {
+      "width": 0,
+      "height": 3
+    },
+    "shadowRadius": 6,
   },
   "voucher_line5": {
     "position": "absolute",
@@ -151,6 +151,7 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
+    marginBottom:10
   },
   "header": {
     "width": "100%",
@@ -175,25 +176,6 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "top": 37
   },
-  "voucher_rectangle1477": {
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 1)",
-    "borderTopLeftRadius": 20,
-    "borderTopRightRadius": 20,
-    "borderBottomLeftRadius": 20,
-    "borderBottomRightRadius": 20,
-    "shadowColor": "rgb(0,  0,  0)",
-    "shadowOpacity": 0.1607843137254902,
-    "shadowOffset": {
-      "width": 0,
-      "height": 3
-    },
-    "shadowRadius": 6,
-    "width": 298,
-    "height": 246,
-    "top": 0,
-    alignSelf: "center",
-  },
   "voucher_rectangle1476": {
     "position": "absolute",
     "backgroundColor": "rgba(212, 174, 57, 1)",
@@ -201,32 +183,25 @@ const styles = StyleSheet.create({
     "borderTopRightRadius": 0,
     "borderBottomLeftRadius": 20,
     "borderBottomRightRadius": 20,
-    "width": 298,
-    "height": 110,
+    "width": "100%",
+    "height": 140,
     "top": 18,
     alignSelf: "center",
   },
   "voucher_progress_title": {
-    "opacity": 0.7,
-    "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(16, 2, 2, 1)",
-    "fontSize": 9,
+    "fontSize": 14,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "lineHeight": 10,
-    "width": 261,
-    "height": 72,
-    "top": 185,
     alignSelf: "center",
+    width: "90%"
   },
   "voucher_group118": {
-    "position": "absolute",
     "width": 95,
     "height": 67,
-    "top": 0,
     alignSelf: "center",
   },
   "voucher_group118_logoPng": {
@@ -244,47 +219,30 @@ const styles = StyleSheet.create({
     "top": 43
   },
   "voucher_user_name": {
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 255, 255, 1)",
-    "fontSize": 20,
+    "fontSize": 30,
     "fontWeight": "700",
-    "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "center",
-    "lineHeight": 22,
-    "width": 298,
-    "height": 22,
-    "top": 68,
     alignSelf: "center",
   },
   "voucher_x30Im": {
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 255, 255, 1)",
-    "fontSize": 10,
+    "fontSize": 15,
     "fontWeight": "400",
-    "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "center",
-    "lineHeight": 10,
-    "width": 296,
-    "height": 22,
-    "top": 108,
-  },
-  "voucher_group119": {
-    "position": "absolute",
-    "width": 291,
-    "height": 27,
-    "top": 141,
     alignSelf: "center",
   },
+  "voucher_group119": {
+    "width": 291,
+    "height": 50,
+    alignSelf: "center",
+    marginTop: 25
+  },
+
   "voucher_group119_scroll": {
-    "position": "absolute",
     "width": 276,
     "height": 4,
-    "left": 10,
-    "top": 5
+    alignSelf: "center",
   },
   "voucher_group119_scroll_rectangle555": {
     "position": "absolute",
@@ -292,7 +250,7 @@ const styles = StyleSheet.create({
     "width": 276,
     "height": 4,
     "left": 0,
-    "top": 0
+    "top": 5
   },
   "voucher_group119_scroll_rectangle556": {
     "position": "absolute",
@@ -300,91 +258,74 @@ const styles = StyleSheet.create({
     "width": 49,
     "height": 4,
     "left": 0,
-    "top": 0
+    "top": 5
   },
   "voucher_group119_scroll_ellipse155": {
     "position": "absolute",
     "width": 2,
     "height": 2,
     "left": 273,
-    "top": 1
+    "top": 6
   },
   "voucher_group119_scroll_ellipse236": {
     "position": "absolute",
     "width": 2,
     "height": 2,
     "left": 1,
-    "top": 1
+    "top": 6
   },
   "voucher_group119_ng": {
     "opacity": 0.7,
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(16, 2, 2, 1)",
-    "fontSize": 9,
+    "fontSize": 14,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "lineHeight": 10,
-    "width": 41,
-    "height": 13,
     "left": 0,
-    "top": 15.5
+    "top": 17
   },
   "voucher_group119_kimCng": {
     "opacity": 0.7,
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(16, 2, 2, 1)",
-    "fontSize": 9,
+    "fontSize": 14,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "lineHeight": 10,
-    "width": 53,
-    "height": 13,
     "left": 238,
-    "top": 15.5
+    "top": 20
   },
   "voucher_group119_vang": {
     "opacity": 0.7,
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(16, 2, 2, 1)",
-    "fontSize": 9,
+    "fontSize": 14,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "lineHeight": 10,
-    "width": 41,
-    "height": 13,
-    "left": 119,
-    "top": 15.5
+    "left": 100,
+    "top": 20
   },
   "voucher_group119_bean": {
     "position": "absolute",
     "width": 14,
     "height": 14,
-    "left": 51,
+    "left": 45,
     "top": 0
   },
   "voucher_user_rank": {
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 255, 255, 1)",
-    "fontSize": 12,
+    "fontSize": 16,
     "fontWeight": "400",
-    "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "center",
-    "lineHeight": 13.2,
-    "width": 296,
-    "height": 22,
-    "top": 92,
-    alignSelf:"center",
+    alignSelf: "center",
   },
   "voucher_group121": {
     "position": "absolute",
@@ -541,68 +482,22 @@ const styles = StyleSheet.create({
   },
   "voucher_list": {
     flex: 1,
+    width: "100%",
   },
 
   "voucher_list_item": {
-    "width": 340,
-    "height": 110,
-    alignItems: "center",
-    justifyContent: "center",
+    "width": "100%",
+    flexDirection: "row",
+    backgroundColor: "#FFF",
+    borderRadius: 10,
+    padding: 10,
+    marginBottom: 10
   },
-  "voucher_list_item_group127": {
-    "position": "absolute",
-    "width": 324,
-    "height": 97,
-    "left": 0,
-    "top": 0
-  },
-  "voucher_list_item_group127_group8794872b57": {
-    "position": "absolute",
-    "width": 324,
-    "height": 97,
-    "left": 0,
-    "top": 0
-  },
-  "voucher_list_item_group127_group8794872b57_group863f6262a2": {
-    "position": "absolute",
-    "width": 324,
-    "height": 97,
-    "left": 0,
-    "top": 0
-  },
-  "voucher_list_item_group127_group8794872b57_group863f6262a2_rectangle32775e448d": {
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 1)",
-    "borderTopLeftRadius": 7,
-    "borderTopRightRadius": 7,
-    "borderBottomLeftRadius": 7,
-    "borderBottomRightRadius": 7,
-    "shadowColor": "rgb(0,  0,  0)",
-    "shadowOpacity": 0.2,
-    "shadowOffset": {
-      "width": 0,
-      "height": 3
-    },
-    "shadowRadius": 5,
-    "width": 324,
-    "height": 97,
-    "left": 0,
-    "top": 0
-  },
-  "voucher_list_item_group127_group125906bcef6": {
-    "position": "absolute",
-    "width": 80,
-    "height": 79,
-    "left": 12,
-    "top": 10
-  },
+
   "voucher_list_item_group127_group125906bcef6_rectangle14806a0ef2a7": {
-    "position": "absolute",
     "backgroundColor": "rgba(248, 226, 161, 1)",
     "width": 80,
     "height": 79,
-    "left": 0,
-    "top": 0
   },
   "voucher_list_item_group127_group125906bcef6_group124378320a7": {
     "position": "absolute",
@@ -623,7 +518,7 @@ const styles = StyleSheet.create({
     "width": 75,
     "height": 15,
     "left": 0,
-    "top": 0
+    "top": 4
   },
   "voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle148165d1791b": {
     "position": "absolute",
@@ -661,7 +556,7 @@ const styles = StyleSheet.create({
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 255, 255, 1)",
-    "fontSize": 9,
+    "fontSize": 14,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
@@ -673,57 +568,43 @@ const styles = StyleSheet.create({
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 170, 0, 1)",
-    "fontSize": 33,
+    "fontSize": 35,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
     "left": 6,
-    "top": 22
+    "top": 15
   },
   "voucher_list_item_info": {
-    "position": "absolute",
-    "width": 210,
-    "height": 58,
-    "left": 104,
-    "top": 20
+    marginLeft: 15,
+    flex: 1
   },
   "voucher_list_item_info_title": {
-    "opacity": 0.75,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(16, 0, 0, 1)",
-    "fontSize": 18,
+    "fontSize": 20,
     "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "left": 0,
-    "top": 0
+    "fontFamily": "Roboto"
   },
   "voucher_list_item_info_end_date": {
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(16, 0, 0, 1)",
-    "fontSize": 8,
+    "fontSize": 12,
     "fontWeight": "300",
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "textAlign": "left",
     "left": 0,
-    "top": 45
+    "top": 60
   },
   "voucher_list_item_info_description": {
-    "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(16, 0, 0, 1)",
-    "fontSize": 8,
+    "fontSize": 12,
     "fontWeight": "300",
     "fontStyle": "italic",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "height": 13,
-    "left": 0,
-    "top": 28
+    width: "100%",
   },
 });

@@ -19,6 +19,7 @@ const Tab = createBottomTabNavigator();
 const HomeScreen = () => {
 
   return (
+    <View style={{backgroundColor:"rgba(220, 220, 220, 1)",flex:1}}>
     <Tab.Navigator initialRouteName="Trang chủ" tabBar={(props) => {
       const { state, descriptors, navigation } = props;
       return (
@@ -86,9 +87,9 @@ const HomeScreen = () => {
         options={{
           img: require('./assets/setting2.png')
         }}
-        component={(props) => <></>} />
+        children={(props) => <></>} />
     </Tab.Navigator>
-
+    </View>
   );
 }
 
@@ -103,10 +104,11 @@ const styles = StyleSheet.create({
     "borderTopLeftRadius": 30,
     "borderTopRightRadius": 30,
     "width": "100%",
-    "height": 79,
+    "height": 80,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
+    paddingTop:10
   },
   "menu_group57": {
     "position": "absolute",
