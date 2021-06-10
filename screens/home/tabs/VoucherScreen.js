@@ -9,18 +9,39 @@ import { Image as SvgImage } from 'react-native-svg';
 
 const data = [
   {
-    title: "title",
-    description: "descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v ",
-    endDate: "ngay het han",
-    head: "50k",
-    type: "delivery",
+    title: "Ưu đãi 20%",
+    description: "Bụi cf,Đường trung sơn , Q7 ",
+    endDate: "29/12/2022",
+    head: "20%",
+    type: "đồ uống",
   },
   {
-    title: "title",
-    description: "descrr.....",
-    endDate: "ngay het han",
-    head: "50k",
-    type: "delivery",
+    title: "Giảm giá 10k ",
+    description: "Đẩu cf, Đường Xuân Diệu, Q2",
+    endDate: "29/12/2022",
+    head: "10k",
+    type: "ưu đãi",
+  },
+  {
+    title: "Giảm giá 3k",
+    description: "Milo cf, Đường Xuân Hồng, Q2",
+    endDate: "29/12/2022",
+    head: "3k",
+    type: "ưu đãi",
+  },
+  {
+    title: "Miễn phí 1 ly nước",
+    description: "Miễn phí cho bàn 6 người.\nTại quán ABC, Đường Xuân diện, Q2",
+    endDate: "29/12/2022",
+    head: "1Ly",
+    type: "miễn phí",
+  },
+  {
+    title: "Ưu đãi 15% toàn menu",
+    description: "AH coffee, Đường Xuân diện, Q2",
+    endDate: "28/12/2022",
+    head: "15%",
+    type: "Ưu đãi",
   },
 ];
 
@@ -89,7 +110,7 @@ const VoucherTab = () => {
       </View>
       <Text style={styles.voucher_uAiDanhChoBn}>Ưu đãi dành cho bạn</Text>
 
-      <FlatList style={{width:"90%",flex:1}} data={data} renderItem={({ item, index }) => (
+      <FlatList style={{ width: "90%", flex: 1 }} data={data} renderItem={({ item, index }) => (
         <View key={index} style={styles.voucher_list_item}>
           <View style={styles.voucher_list_item_group127_group125906bcef6_rectangle14806a0ef2a7}>
             <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7}>
@@ -151,7 +172,7 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    marginBottom:10
+    marginBottom: 10
   },
   "header": {
     "width": "100%",
@@ -561,8 +582,8 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "left": 14,
-    "top": 1
+    "top": 1,
+    alignSelf: "center"
   },
   "voucher_list_item_info_head": {
     "position": "absolute",
@@ -573,8 +594,8 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "left": 6,
-    "top": 15
+    "top": 15,
+    alignSelf: "center"
   },
   "voucher_list_item_info": {
     marginLeft: 15,

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, LogBox } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from "./screens/home/HomeScreen";
- import DetailShopScreen from "./screens/detail_shop/DetailShopScreen";
+import DetailShopScreen from "./screens/detail_shop/DetailShopScreen";
 import WelcomeScreen from "./screens/welcome/WelcomeScreen";
 import LoginScreen from "./screens/login/LoginScreen";
 import RegisterScreen from "./screens/register/RegisterScreen";
@@ -12,6 +12,7 @@ import ConfirmRegisterScreen from "./screens/confirmregister/ConfirmRegisterScre
 
 const Stack = createStackNavigator();
 
+LogBox.ignoreAllLogs();
 export default function App() {
   return (
     <NavigationContainer>
