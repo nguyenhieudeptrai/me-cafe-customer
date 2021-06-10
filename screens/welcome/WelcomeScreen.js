@@ -9,11 +9,11 @@ const WelcomeScreen = () => {
     return (
     <ScrollView style={styles.welcome}>
         <View style={styles.welcome_group138}>
-            <ReactImage source={require('./assets/logoPng.png')} style={styles.welcome_group138_logoPng} />
-            <ReactImage source={require('./assets/asset1.png')} style={styles.welcome_group138_asset1} />
+            <ReactImage source={require('../../assets/logoPng.png')} style={styles.welcome_group138_logoPng} />
+            <ReactImage source={require('../../assets/asset1.png')} style={styles.welcome_group138_asset1} />
         </View>
         <Text style={styles.welcome_giiPhapTTrcChNgi}>GIẢI PHÁP ĐẶT TRƯỚC CHỖ NGỒI</Text>
-        <ReactImage  source={require('./assets/coffeebeansandcoffeecupbackgroundConverted.png')} style={styles.welcome_coffeebeansandcoffeecupbackgroundConverted} />
+        <ReactImage  source={require('../../assets/coffeebeansandcoffeecupbackgroundConverted.png')} style={styles.welcome_coffeebeansandcoffeecupbackgroundConverted} />
     </ScrollView>
     );
 

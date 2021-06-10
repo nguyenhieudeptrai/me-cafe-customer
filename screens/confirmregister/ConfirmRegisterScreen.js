@@ -31,8 +31,8 @@ const ConfirmRegisterScreen = ({ navigation }) => {
       </TouchableOpacity>
       <View style={styles.confirmregister_group1}>
         <View style={styles.confirmregister_group1_group117}>
-          <ReactImage source={require('./assets/logoPng.png')} style={styles.confirmregister_group1_group117_logoPng} />
-          <ReactImage source={require('./assets/asset1.png')} style={styles.confirmregister_group1_group117_asset1} />
+          <ReactImage source={require('../../assets/logoPng.png')} style={styles.confirmregister_group1_group117_logoPng} />
+          <ReactImage source={require('../../assets/asset1.png')} style={styles.confirmregister_group1_group117_asset1} />
         </View>
         <Text style={styles.confirmregister_group1_giiPhapTTrcChNgi}>GIẢI PHÁP ĐẶT TRƯỚC CHỖ NGỒI</Text>
       </View>

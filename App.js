@@ -12,7 +12,7 @@ import ConfirmRegisterScreen from "./screens/confirmregister/ConfirmRegisterScre
 
 const Stack = createStackNavigator();
 
-LogBox.ignoreAllLogs();
+// LogBox.ignoreAllLogs();
 export default function App() {
   return (
     <NavigationContainer>

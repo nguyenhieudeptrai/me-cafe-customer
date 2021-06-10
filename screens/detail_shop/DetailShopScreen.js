@@ -70,9 +70,9 @@ const DetailShopScreen = ({ navigation }) => {
 
         <View style={styles.main_group19}>
           <ScrollView horizontal={true}>
-            <ReactImage source={require('./assets/x2.png')} style={styles.main_group19_x2} />
-            <ReactImage source={require('./assets/x2.png')} style={styles.main_group19_x2} />
-            <ReactImage source={require('./assets/x2.png')} style={styles.main_group19_x2} />
+            <ReactImage source={require('../../assets/x2.png')} style={styles.main_group19_x2} />
+            <ReactImage source={require('../../assets/x2.png')} style={styles.main_group19_x2} />
+            <ReactImage source={require('../../assets/x2.png')} style={styles.main_group19_x2} />
           </ScrollView>
           <View style={styles.main_group19_group36}>
             <Svg style={styles.main_group19_group36_path157} preserveAspectRatio="none" viewBox="0 0 12 11.399993896484375" fill="rgba(255, 220, 156, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>

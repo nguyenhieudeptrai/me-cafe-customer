@@ -17,13 +17,13 @@ const CommentShopPopUp = ({close}) => {
         </TouchableOpacity>
         <Text style={styles.commentshop_anhGiaTxt_anhGiaKhachHang}>ĐÁNH GIÁ KHÁCH HÀNG</Text>
       </View>
-      <ReactImage source={require('./assets/x2.png')} style={styles.commentshop_x3} />
+      <ReactImage source={require('../../assets/x2.png')} style={styles.commentshop_x3} />
       <View style={styles.commentshop_group45}>
         <View style={styles.commentshop_group45_messagec41c5359}>
           <Svg style={styles.commentshop_group45_messagec41c5359_path1127b8c95f5} preserveAspectRatio="none" viewBox="0 -2 261.189697265625 32.46502685546875" fill="rgba(254, 205, 151, 1)"><SvgPath d="M 9.584942817687988 30.46502685546875 L 261.189697265625 30.46502685546875 L 261.189697265625 -2 L 9.584942817687988 -2 L 9.584942817687988 9.594653129577637 L 0 14.23251247406006 L 9.584942817687988 18.8703727722168 L 9.584942817687988 30.46502685546875 Z" /></Svg>
           <Text style={styles.commentshop_group45_messagec41c5359_ngDngTinLiKhiCBookTrcChKhiIOng}>Ứng dụng tiện lợi khi được book trước chỗ khi đi đông</Text>
         </View>
-        <ReactImage source={require('./assets/rectangle1472.png')} style={styles.commentshop_group46_rectangle1472} />
+        <ReactImage source={require('../../assets/rectangle1472.png')} style={styles.commentshop_group46_rectangle1472} />
         <View style={styles.commentshop_group45_group36}>
           <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
           <Svg style={styles.commentshop_group45_group36_path15845c728c9} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
@@ -37,7 +37,7 @@ const CommentShopPopUp = ({close}) => {
           <Svg style={styles.commentshop_group46_message_path112} preserveAspectRatio="none" viewBox="0 -2 261.189697265625 31.12445068359375" fill="rgba(254, 205, 151, 1)"><SvgPath d="M 9.584942817687988 29.12445068359375 L 261.189697265625 29.12445068359375 L 261.189697265625 -2 L 9.584942817687988 -2 L 9.584942817687988 9.115875244140625 L 0 13.56222534179688 L 9.584942817687988 18.00857543945313 L 9.584942817687988 29.12445068359375 Z" /></Svg>
           <Text style={styles.commentshop_group46_message_quanPNhanVienNhitTinh}>Quán đẹp, nhân viên nhiệt tình</Text>
         </View>
-        <ReactImage source={require('./assets/rectangle1472.png')} style={styles.commentshop_group46_rectangle1472} />
+        <ReactImage source={require('../../assets/rectangle1472.png')} style={styles.commentshop_group46_rectangle1472} />
         <View style={styles.commentshop_group46_group44}>
           <Svg style={styles.commentshop_group46_group44_path157} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
           <Svg style={styles.commentshop_group46_group44_path158} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>

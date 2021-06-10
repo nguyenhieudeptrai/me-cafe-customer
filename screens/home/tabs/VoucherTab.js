@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component,useState } from 'react';
 import PropTypes from "prop-types";
-import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { Image as ReactImage } from 'react-native';
 import Svg, { Defs, Pattern } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
+import QRCodeVoucherPopUp from "./voucher-pop-up/QRCodeVoucherPopUp";
+import { Overlay } from 'react-native-magnus';
 
 const data = [
   {
@@ -48,6 +50,9 @@ const data = [
 const nameUser = "Nguyễn Hiếu Đẹp Trai";
 
 const VoucherTab = () => {
+
+  const [viewQrCode, setViewQrCode]=useState(false);
+
   return (
     <View style={styles.voucher}>
       <View style={styles.header}>
@@ -56,8 +61,8 @@ const VoucherTab = () => {
       <View style={styles.voucher_progress}>
         <View style={styles.voucher_rectangle1476}></View>
         <View style={styles.voucher_group118}>
-          <ReactImage source={require('../assets/logoPng.png')} style={styles.voucher_group118_logoPng} />
-          <ReactImage source={require('../assets/asset1.png')} style={styles.voucher_group118_asset1} />
+          <ReactImage source={require('../../../assets/logoPng.png')} style={styles.voucher_group118_logoPng} />
+          <ReactImage source={require('../../../assets/asset1.png')} style={styles.voucher_group118_asset1} />
         </View>
         <View style={styles.voucher_user_name}>
           <Text style={{ "color": "rgba(255, 255, 255, 1)", "fontSize": 25, "fontWeight": "700", "fontFamily": "Roboto", }}>
@@ -76,7 +81,7 @@ const VoucherTab = () => {
             <View style={styles.voucher_group119_scroll_rectangle556}></View>
             <Svg style={styles.voucher_group119_scroll_ellipse155} preserveAspectRatio="none" viewBox="0 0 2 2" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 1 0 C 1.552284717559814 0 2 0.4477152824401855 2 1 C 2 1.552284717559814 1.552284717559814 2 1 2 C 0.4477152824401855 2 0 1.552284717559814 0 1 C 0 0.4477152824401855 0.4477152824401855 0 1 0 Z" /></Svg>
             <Svg style={styles.voucher_group119_scroll_ellipse236} preserveAspectRatio="none" viewBox="0 0 2 2" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 1 0 C 1.552284717559814 0 2 0.4477152824401855 2 1 C 2 1.552284717559814 1.552284717559814 2 1 2 C 0.4477152824401855 2 0 1.552284717559814 0 1 C 0 0.4477152824401855 0.4477152824401855 0 1 0 Z" /></Svg>
-            <ReactImage source={require('../assets/bean.png')} style={styles.voucher_group119_bean} />
+            <ReactImage source={require('../../../assets/bean.png')} style={styles.voucher_group119_bean} />
           </View>
           <Text style={styles.voucher_group119_ng}>Đồng</Text>
           <Text style={styles.voucher_group119_kimCng}>Kim cương</Text>
@@ -111,7 +116,7 @@ const VoucherTab = () => {
       <Text style={styles.voucher_uAiDanhChoBn}>Ưu đãi dành cho bạn</Text>
 
       <FlatList style={{ width: "90%", flex: 1 }} data={data} renderItem={({ item, index }) => (
-        <View key={index} style={styles.voucher_list_item}>
+        <TouchableOpacity key={index} onPress={()=>setViewQrCode(true)} style={styles.voucher_list_item}>
           <View style={styles.voucher_list_item_group127_group125906bcef6_rectangle14806a0ef2a7}>
             <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7}>
               <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e}>
@@ -130,8 +135,11 @@ const VoucherTab = () => {
             <Text style={styles.voucher_list_item_info_description}>{item.description}</Text>
             <Text style={styles.voucher_list_item_info_end_date}>Hết hạn: {item.endDate}</Text>
           </View>
-        </View>
+        </TouchableOpacity>
       )} />
+      <Overlay visible={viewQrCode} p="xl">
+        <QRCodeVoucherPopUp close={()=>setViewQrCode(false)}/>
+      </Overlay>
     </View>
   );
 }
