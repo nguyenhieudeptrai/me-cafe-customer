@@ -31,7 +31,7 @@ const LoginScreen = ({ navigation }) => {
       </View>
       <View style={styles.login_password}>
         <View style={styles.login_password_rectangle116}></View>
-        <TextInput style={styles.login_password_x6e3b5542} placeholder="psassassa"></TextInput>
+        <TextInput style={styles.login_password_x6e3b5542} placeholder="*******"></TextInput>
         <View style={styles.login_password_lock}>
           <Svg style={styles.login_password_lock_path49} preserveAspectRatio="none" viewBox="0 0 14 16" fill="rgba(83, 71, 65, 1)"><SvgPath d="M 7 8 C 8.100000381469727 8 9 8.899999618530273 9 10 C 9 11.10000038146973 8.100000381469727 12 7 12 C 5.899999618530273 12 5 11.10000038146973 5 10 C 5 8.899999618530273 5.900000095367432 8 7 8 Z M 7 2 C 5.900000095367432 2 5 2.900000095367432 5 4 L 9 4 C 9 2.900000095367432 8.100000381469727 2 7 2 Z M 12 16 L 2 16 C 0.8999999761581421 16 0 15.10000038146973 0 14 L 0 6 C 0 4.900000095367432 0.8999999761581421 4 2 4 L 3 4 C 3 1.799999952316284 4.800000190734863 0 7 0 C 9.199999809265137 0 11 1.799999952316284 11 4 L 12 4 C 13.10000038146973 4 14 4.900000095367432 14 6 L 14 14 C 14 15.10000038146973 13.10000038146973 16 12 16 Z" /></Svg>
         </View>
@@ -78,7 +78,7 @@ export default LoginScreen; const styles = StyleSheet.create({
     "width": 268,
     "height": 191,
     alignSelf: "center",
-    "top": 0
+    "top": 30
   },
   "login_group1_group117": {
     "position": "absolute", "width": 268,
@@ -98,7 +98,7 @@ export default LoginScreen; const styles = StyleSheet.create({
     "width": 118,
     "height": 38,
     "left": 134,
-    "top": 121
+    "top": 131
   },
   "login_group1_giiPhapTTrcChNgi": {
     "position": "absolute", "color": "rgba(83, 71, 65, 1)",
@@ -107,16 +107,16 @@ export default LoginScreen; const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 189,
+    "width": 210,
     "height": 15,
     "left": 39,
-    "top": 176
+    "top": 180
   },
   "login_continue": {
     "position": "absolute", "width": 327,
-    "height": 48,
+    "height": 50,
     alignSelf: "center",
-    "top": 420
+    "top": 440
   },
   "login_continue_path643": {
     "position": "absolute",
@@ -136,20 +136,20 @@ export default LoginScreen; const styles = StyleSheet.create({
     "opacity": 100,
     "position": "absolute",
     "color": "rgba(255, 255, 255, 1)",
-    "fontSize": 15,
+    "fontSize": 17,
     "fontWeight": "900",
     "lineHeight": 16.5,
-    "width": 90,
+    "width": 100,
     "height": 18,
-    "left": 119,
-    "top": 19
+    "left": 113 ,
+    "top": 20
   },
   "login_password": {
     "position": "absolute",
     "width": 327,
     "height": 36,
     alignSelf: "center",
-    "top": 340
+    "top": 370
   },
   "login_password_rectangle116": {
     "position": "absolute",
@@ -157,7 +157,7 @@ export default LoginScreen; const styles = StyleSheet.create({
     "width": 327,
     "height": 1,
     "left": 0,
-    "top": 35
+    "top": 38
   },
   "login_password_x6e3b5542": {
     "position": "absolute",
@@ -187,7 +187,7 @@ export default LoginScreen; const styles = StyleSheet.create({
     "position": "absolute", "width": 327,
     "height": 34,
     alignSelf: "center",
-    "top": 270
+    "top": 310
   },
   "login_name_rectangle114": {
     "position": "absolute",
@@ -223,15 +223,15 @@ export default LoginScreen; const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 90,
+    "width": 110,
     "height": 29,
     alignSelf: "center",
-    "top": 630
+    "top": 770  
   },
   "login_register": {
     "position": "absolute",
     alignSelf: "center",
-    "top": 490
+    "top": 500
   },
   "login_ngKTaiKhon": {
     "color": "rgba(112, 112, 112, 1)",
@@ -301,6 +301,6 @@ export default LoginScreen; const styles = StyleSheet.create({
     "textAlign": "center",
     "lineHeight": 16.5,
     alignSelf: "center",
-    "top": 530
+    "top": 535
   }
 });

@@ -9,18 +9,39 @@ import { Image as SvgImage } from 'react-native-svg';
 
 const data = [
   {
-    title: "title",
-    description: "descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v descrr. ....v ",
-    endDate: "ngay het han",
-    head: "50k",
-    type: "delivery",
+    title: "Ưu đãi 20% toàn menu",
+    description: "Bụi coffee,Đường trung sơn , Q7 ",
+    endDate: "29/12/2022",
+    head: "20%",
+    type: "Ưu đãi",
   },
   {
-    title: "title",
-    description: "descrr.....",
-    endDate: "ngay het han",
+    title: "Ưu đãi 20k toàn menu ",
+    description: "Đẩu coffee, Đường Xuân Diệu, Q2",
+    endDate: "29/12/2022",
+    head: "20k",
+    type: "Ưu đãi",
+  },
+  {
+    title: "Ưu đãi 30k toàn menu",
+    description: "Milo coffee, Đường Xuân Hồng, Q2",
+    endDate: "29/12/2022",
+    head: "30k",
+    type: "Ưu đãi",
+  },
+  {
+    title: "Ưu đãi 15% toàn menu",
+    description: "AH coffee, Đường Xuân diện, Q2",
+    endDate: "28/12/2022",
+    head: "15%",
+    type: "Ưu đãi",
+  },
+  {
+    title: "Ưu đãi 1 Ly cà phê sữa",
+    description: "Đẩu coffee, Đường Xuân Bắc, Q2",
+    endDate: "29/11/2022",
     head: "50k",
-    type: "delivery",
+    type: "Combo",
   },
 ];
 
