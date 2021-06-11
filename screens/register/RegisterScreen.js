@@ -28,8 +28,8 @@ const RegisterScreen = ({navigation}) => {
       </TouchableOpacity>
       <View style={styles.register_group1}>
         <View style={styles.register_group1_group117}>
-          <ReactImage source={require('./assets/logoPng.png')} style={styles.register_group1_group117_logoPng} />
-          <ReactImage source={require('./assets/asset1.png')} style={styles.register_group1_group117_asset1} />
+          <ReactImage source={require('../../assets/logoPng.png')} style={styles.register_group1_group117_logoPng} />
+          <ReactImage source={require('../../assets/asset1.png')} style={styles.register_group1_group117_asset1} />
         </View>
         <Text style={styles.register_group1_giiPhapTTrcChNgi}>GIẢI PHÁP ĐẶT TRƯỚC CHỖ NGỒI</Text>
       </View>
@@ -45,7 +45,7 @@ const RegisterScreen = ({navigation}) => {
             <View style={styles.register_group137_group136_group156_nhpSInThoi}>
               <TextInput style={{ "marginTop": -1.5, "fontSize": 15, "fontWeight": "bold", "fontStyle": "normal", "fontFamily": "Roboto",  "lineHeight": 16.5 }} placeholder="Nhập số điện thoại..." />
             </View>
-            <Svg style={styles.register_group137_group136_group156_vnLogo} preserveAspectRatio="none" viewBox="0 0 26 26" fill="rgba(255, 255, 255, 0)"><Defs><Pattern id="img-vnLogo" patternContentUnits="userSpaceOnUse" width="100%" height="100%"><SvgImage xlinkHref={require('./assets/vnLogo.png')} x="0" y="0" width="26.00px" height="26.00px" /></Pattern></Defs><SvgPath d="M 13 0 C 20.17970085144043 0 26 5.820298671722412 26 13 C 26 20.17970085144043 20.17970085144043 26 13 26 C 5.820298671722412 26 0 20.17970085144043 0 13 C 0 5.820298671722412 5.820298671722412 0 13 0 Z" fill="url(#img-vnLogo)" /></Svg>
+            <Svg style={styles.register_group137_group136_group156_vnLogo} preserveAspectRatio="none" viewBox="0 0 26 26" fill="rgba(255, 255, 255, 0)"><Defs><Pattern id="img-vnLogo" patternContentUnits="userSpaceOnUse" width="100%" height="100%"><SvgImage xlinkHref={require('../../assets/vnLogo.png')} x="0" y="0" width="26.00px" height="26.00px" /></Pattern></Defs><SvgPath d="M 13 0 C 20.17970085144043 0 26 5.820298671722412 26 13 C 26 20.17970085144043 20.17970085144043 26 13 26 C 5.820298671722412 26 0 20.17970085144043 0 13 C 0 5.820298671722412 5.820298671722412 0 13 0 Z" fill="url(#img-vnLogo)" /></Svg>
           </View>
         </View>
       </View>
@@ -57,7 +57,7 @@ const RegisterScreen = ({navigation}) => {
         </View>
       </TouchableOpacity>
 
-      <ReactImage source={require('./assets/coffeebeansandcoffeecupbackgroundConverted.png')} style={styles.register_coffeebeansandcoffeecupbackgroundConverted} />
+      <ReactImage source={require('../../assets/coffeebeansandcoffeecupbackgroundConverted.png')} style={styles.register_coffeebeansandcoffeecupbackgroundConverted} />
     </View>
   );
 }

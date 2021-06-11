@@ -14,7 +14,7 @@ const ConfirmBookingScreen = () => {
         <View style={styles.confirmbooking_group153}>
             <View style={styles.confirmbooking_group153_rectangle1470}></View>
             <Text style={styles.confirmbooking_group153_xacNhn1a247893}>XÁC NHẬN</Text>
-            <ReactImage source={require('./assets/x3.png')} style={styles.confirmbooking_group153_x3} />
+            <ReactImage source={require('../../assets/x3.png')} style={styles.confirmbooking_group153_x3} />
             <View style={styles.confirmbooking_group153_pagination}>
                 <Svg style={styles.confirmbooking_group153_pagination_ellipse8} preserveAspectRatio="none" viewBox="0 0 6 6" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 3 0 C 4.656854152679443 0 6 1.343145847320557 6 3 C 6 4.656854152679443 4.656854152679443 6 3 6 C 1.343145847320557 6 0 4.656854152679443 0 3 C 0 1.343145847320557 1.343145847320557 0 3 0 Z"  /></Svg>
                 <Svg style={styles.confirmbooking_group153_pagination_ellipse9} preserveAspectRatio="none" viewBox="0 0 6 6" fill="rgba(198, 198, 201, 1)"><SvgPath d="M 3 0 C 4.656854152679443 0 6 1.343145847320557 6 3 C 6 4.656854152679443 4.656854152679443 6 3 6 C 1.343145847320557 6 0 4.656854152679443 0 3 C 0 1.343145847320557 1.343145847320557 0 3 0 Z"  /></Svg>

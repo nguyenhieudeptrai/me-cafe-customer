@@ -15,46 +15,46 @@ const data = [
     id: "Ollin Premium",
     name: "Ollin Premium",
     address: "16 Quốc Hương, Quận 2",
-    img: require("../assets/i4.png"),
+    img: require("../../../assets/i4.png"),
     distance: "500m",
   },
   {
     id: "The Feine Cafe",
     name: "The Feine Cafe",
     address: "33 Đường số 4, KDC Trung Sơn, Quận 7",
-    img: require('../assets/i5.png'),
+    img: require('../../../assets/i5.png'),
     distance: "1.1km",
   },
   {
     id: "Quán của Thời Thanh Xuân",
     name: "The Feine Cafe",
     address: "43 Đồng Khởi, Quận 1",
-    img: require('../assets/i6.png'),
+    img: require('../../../assets/i6.png'),
     distance: "1.3km",
   },
   {
     id: "Cafe Cú trên cây Garden",
     name: "Cafe Cú trên cây Garden",
     address: "262 Ung Văn Khiêm, Quận Bình Thạnh",
-    img: require('../assets/i7.png'),
+    img: require('../../../assets/i7.png'),
     distance: "1.7km",
   },
   {
     id: "Farmers’ Garden",
     name: "Farmers’ Garden",
     address: "Lầu 2, 486 Nguyễn Thị Thập, Quận 7",
-    img: require('../assets/i8.png'),
+    img: require('../../../assets/i8.png'),
     distance: "2km",
   },
 ]
 const dataTop = [
   {
     name: "September Cafe",
-    image: require("../assets/i1.png"),
+    image: require("../../../assets/i1.png"),
   },
   {
     name: "September Cafe",
-    image: require("../assets/i2.png"),
+    image: require("../../../assets/i2.png"),
   },
 ]
 const HomeTab = ({ navigation }) => {
@@ -71,8 +71,8 @@ const HomeTab = ({ navigation }) => {
 
       <View style={styles.header}>
         <View style={styles.header_logo}>
-          <ReactImage source={require('../assets/logoPng.png')} style={styles.header_logo_logoPng} />
-          <ReactImage source={require('../assets/asset1.png')} style={styles.header_logo_asset1} />
+          <ReactImage source={require('../../../assets/logoPng.png')} style={styles.header_logo_logoPng} />
+          <ReactImage source={require('../../../assets/asset1.png')} style={styles.header_logo_asset1} />
         </View>
         <View style={styles.header_search}>
           <TextInput style={{ flex: 1 }} placeholder="Tìm kiếm quán Cafe...." />
@@ -105,19 +105,19 @@ const HomeTab = ({ navigation }) => {
               <Text style={styles.topYeuThich_group103_group102_group17_septemberCafe}>{item.name}</Text>
               <View style={styles.topYeuThich_group103_group102_group17_group42}>
                 <View style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497}>
-                  <ReactImage source={require('../assets/star55a2af98.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                  <ReactImage source={require('../../../assets/star55a2af98.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
                 </View>
                 <View style={styles.topYeuThich_group103_group102_group17_group42_group3850e2cc78}>
-                  <ReactImage source={require('../assets/star2e40c2f1.png')} style={styles.topYeuThich_group103_group102_group17_group42_group3850e2cc78_star2e40c2f1} />
+                  <ReactImage source={require('../../../assets/star2e40c2f1.png')} style={styles.topYeuThich_group103_group102_group17_group42_group3850e2cc78_star2e40c2f1} />
                 </View>
                 <View style={styles.topYeuThich_group103_group102_group17_group42_group391f531ae3}>
-                  <ReactImage source={require('../assets/starbef87d39.png')} style={styles.topYeuThich_group103_group102_group17_group42_group391f531ae3_starbef87d39} />
+                  <ReactImage source={require('../../../assets/starbef87d39.png')} style={styles.topYeuThich_group103_group102_group17_group42_group391f531ae3_starbef87d39} />
                 </View>
                 <View style={styles.topYeuThich_group103_group102_group17_group42_group41ea5fbe0b}>
-                  <ReactImage source={require('../assets/halfStar22d835025.png')} style={styles.topYeuThich_group103_group102_group17_group42_group41ea5fbe0b_halfStar22d835025} />
+                  <ReactImage source={require('../../../assets/halfStar22d835025.png')} style={styles.topYeuThich_group103_group102_group17_group42_group41ea5fbe0b_halfStar22d835025} />
                 </View>
                 <View style={styles.topYeuThich_group103_group102_group17_group42_group1138d5db7c6}>
-                  <ReactImage source={require('../assets/star0159e37c.png')} style={styles.topYeuThich_group103_group102_group17_group42_group1138d5db7c6_star0159e37c} />
+                  <ReactImage source={require('../../../assets/star0159e37c.png')} style={styles.topYeuThich_group103_group102_group17_group42_group1138d5db7c6_star0159e37c} />
                 </View>
               </View>
             </TouchableOpacity>

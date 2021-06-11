@@ -11,7 +11,7 @@ import { Rect as SvgRect } from 'react-native-svg';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeTab from "./tabs/HomeTab";
 import BookingTab from "./tabs/BookingTab";
-import VoucherScreen from "./tabs/VoucherScreen";
+import VoucherScreen from "./tabs/VoucherTab";
 
 const Tab = createBottomTabNavigator();
 
@@ -41,7 +41,8 @@ const HomeScreen = () => {
               }
             };
             return (
-              <TouchableOpacity
+              <TouchableOpacity 
+                key={index}
                 accessibilityRole="button"
                 accessibilityStates={isFocused ? ['selected'] : []}
                 accessibilityLabel={options.tabBarAccessibilityLabel}
@@ -67,25 +68,25 @@ const HomeScreen = () => {
       <Tab.Screen
         name="Trang chủ"
         options={{
-          img: require('./assets/tabHome.png')
+          img: require('../../assets/tabHome.png')
         }}
         component={HomeTab} />
       <Tab.Screen
         name="Đặt chỗ"
         options={{
-          img: require('./assets/booking.png')
+          img: require('../../assets/booking.png')
         }}
         component={BookingTab} />
       <Tab.Screen
         name="Tích điểm"
         options={{
-          img: require('./assets/tab3.png')
+          img: require('../../assets/tab3.png')
         }}
         component={VoucherScreen} />
       <Tab.Screen
         name="Cài đặt"
         options={{
-          img: require('./assets/setting2.png')
+          img: require('../../assets/setting2.png')
         }}
         children={(props) => <></>} />
     </Tab.Navigator>

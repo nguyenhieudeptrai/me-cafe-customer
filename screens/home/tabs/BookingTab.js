@@ -9,7 +9,7 @@ import { Image as SvgImage } from 'react-native-svg';
 
 const data = [
   {
-    image: require('../assets/picture.png'),
+    image: require('../../../assets/picture.png'),
     name: "GIA ROOM COFFEE",
     date: "21/12/2021",
     fromTime: "07:00",
