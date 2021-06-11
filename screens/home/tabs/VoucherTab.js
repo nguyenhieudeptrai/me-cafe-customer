@@ -327,7 +327,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "left": 238,
+    "left": 220,
     "top": 20
   },
   "voucher_group119_vang": {
@@ -340,7 +340,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "left": 100,
+    "left": 125,
     "top": 20
   },
   "voucher_group119_bean": {
