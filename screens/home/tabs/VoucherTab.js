@@ -11,7 +11,6 @@ import { Overlay } from 'react-native-magnus';
 
 const data = [
   {
-<<<<<<< HEAD:screens/home/tabs/VoucherScreen.js
     title: "Ưu đãi 20% toàn menu",
     description: "Bụi coffee,Đường trung sơn , Q7 ",
     endDate: "29/12/2022",
@@ -45,41 +44,7 @@ const data = [
     endDate: "29/11/2022",
     head: "50k",
     type: "Combo",
-=======
-    title: "Ưu đãi 20%",
-    description: "Bụi cf,Đường trung sơn , Q7 ",
-    endDate: "29/12/2022",
-    head: "20%",
-    type: "đồ uống",
-  },
-  {
-    title: "Giảm giá 10k ",
-    description: "Đẩu cf, Đường Xuân Diệu, Q2",
-    endDate: "29/12/2022",
-    head: "10k",
-    type: "ưu đãi",
-  },
-  {
-    title: "Giảm giá 3k",
-    description: "Milo cf, Đường Xuân Hồng, Q2",
-    endDate: "29/12/2022",
-    head: "3k",
-    type: "ưu đãi",
-  },
-  {
-    title: "Miễn phí 1 ly nước",
-    description: "Miễn phí cho bàn 6 người.\nTại quán ABC, Đường Xuân diện, Q2",
-    endDate: "29/12/2022",
-    head: "1Ly",
-    type: "miễn phí",
-  },
-  {
-    title: "Ưu đãi 15% toàn menu",
-    description: "AH coffee, Đường Xuân diện, Q2",
-    endDate: "28/12/2022",
-    head: "15%",
-    type: "Ưu đãi",
->>>>>>> 2ae6cf5743893818d1989d10a3ec91ed32cca1b5:screens/home/tabs/VoucherTab.js
+
   },
 ];
 
