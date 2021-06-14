@@ -89,10 +89,13 @@ const HomeTab = ({ navigation }) => {
             <SvgCircle cx="25.5" cy="7.5" r="8" fill="#950303" />
 
           </Svg>
-
+        </View>
+        <View style={styles.Hotdeal}>
+              <ReactImage source={require('../../../assets/ComponentTMP_0-image.jpg')} style={styles.HotDeal_Picture} />
         </View>
       </View>
       <View style={styles.topYeuThich}>
+    
         <Text style={styles.topYeuThich_group103_topYeuThichNht}>TOP Yêu thích nhất</Text>
         <FlatList
           style={styles.topYeuThich_group103}
@@ -156,6 +159,7 @@ const styles = StyleSheet.create({
   "quanGnBnb2eef024": {
     flex: 1,
     "width": "90%",
+    "top":160
   },
   "quanGnBnb2eef024_quanGnBn": {
     "backgroundColor": "rgba(255, 255, 255, 0)",
@@ -245,6 +249,7 @@ const styles = StyleSheet.create({
   "topYeuThich": {
     "width": "90%",
     marginBottom: 10,
+    "top":160
   },
   "topYeuThich_group103": {
     width: "100%",
@@ -312,12 +317,31 @@ const styles = StyleSheet.create({
     "left": 93,
     "top": 62
   },
+
+  "Hotdeal": {
+    "position": "absolute",
+    "width": 100,
+    "height": 70,
+    "top":100,
+    "left":20
+  },
+
+  "HotDeal_Picture": {
+    "position": "absolute",
+    "borderTopLeftRadius": 4,
+    "borderTopRightRadius": 4,
+    "borderBottomLeftRadius": 4,
+    "borderBottomRightRadius": 4,
+    "width": 340,
+    "height": 150,
+
+  },
+
   "topYeuThich_group103_group102_group17_group42_group370f51e497": {
     "position": "absolute",
 
     "width": 12,
     "height": 13,
-
 
   },
   "topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98": {
