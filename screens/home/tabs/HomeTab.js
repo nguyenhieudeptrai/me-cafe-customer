@@ -175,7 +175,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   "quanGnBnb2eef024_group23": {
-
     "width": "100%",
     "height": 79,
     "position": "relative",
@@ -231,28 +230,27 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "right": 10,
-    "top": 11
+    "top": 16
   },
   "quanGnBnb2eef024_group23_group105_bstoryCafe": {
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
-    "fontSize": 14,
+    "fontSize": 18,
     "fontWeight": "700",
     "fontStyle": "normal",
-    "fontFamily": "Roboto",
-
-    "height": 17,
+    "fontFamily": "Roboto Medium",
+    "height": 20,
     "left": 103,
     "top": 11
   },
   "topYeuThich": {
     "width": "90%",
-    marginBottom: 10,
+    "marginBottom": 10,
     "top":160
   },
   "topYeuThich_group103": {
-    width: "100%",
+    "width": "100%",
   },
   "topYeuThich_group103_topYeuThichNht": {
     "backgroundColor": "rgba(255, 255, 255, 0)",
@@ -261,20 +259,19 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-
     "width": "100%",
-    paddingBottom: 5,
-    marginBottom: 10,
-    borderBottomWidth: 1,
+    "paddingBottom": 5,
+    "marginBottom": 10,
+    "borderBottomWidth": 1,
   },
   "topYeuThich_group103_group102_group17": {
 
     "width": 211,
     "height": 98,
-    backgroundColor: "#FFF",
-    borderRadius: 5,
-    margin: 5,
-    marginBottom: 10,
+    "backgroundColor": "#FFF",
+    "borderRadius": 5,
+    "margin": 5,
+    "marginBottom": 10,
     "shadowColor": "rgb(0,  0,  0)",
     "shadowOpacity": 0.1607843137254902,
     "shadowOffset": {
@@ -442,10 +439,10 @@ const styles = StyleSheet.create({
     "backgroundColor": "rgba(241, 211, 126, 1)",
     "width": "100%",
     "height": 90,
-    marginBottom: 10,
-    paddingTop: 40,
-    flexDirection: "row",
-    alignItems: "center",
+    "marginBottom": 10,
+    "paddingTop": 40,
+    "flexDirection": "row",
+    "alignItems": "center",
     "shadowColor": "rgb(0,  0,  0)",
     "shadowOpacity": 0.1607843137254902,
     "shadowOffset": {
@@ -488,16 +485,16 @@ const styles = StyleSheet.create({
     "borderWidth": 1,
     "borderRadius": 5,
     "height": 30,
-    paddingLeft: 5,
-    paddingRight: 5,
-    marginLeft: 5,
-    marginRight: 5,
-    fontSize: 14,
-    fontWeight: "300",
-    fontStyle: "normal",
-    fontFamily: "Roboto",
-    flexDirection: "row",
-    alignItems: "center",
-    flex: 1,
+    "paddingLeft": 5,
+    "paddingRight": 5,
+    "marginLeft": 5,
+    "marginRight": 5,
+    "fontSize": 14,
+    "fontWeight": "300",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "flexDirection": "row",
+    "alignItems": "center",
+    "flex": 1,
   },
 });

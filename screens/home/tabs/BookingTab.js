@@ -32,7 +32,6 @@ const BookingTab = () => {
         <Picker style={styles.booking_select_box}>
           <Picker.Item label="Sắp tới" value="comming" />
         </Picker>
-
       </View>
 
       <FlatList
@@ -41,7 +40,6 @@ const BookingTab = () => {
         renderItem={({ item, index }) => (
           <View key={index} style={styles.booking_item}>
             <ReactImage source={item.image} style={styles.booking_item_image} />
-
             <View style={styles.booking_item_right}>
               <Text style={styles.booking_item_status}>{item.status}</Text>
               <Text style={styles.booking_item_name}>{item.name}</Text>
@@ -90,13 +88,14 @@ const styles = StyleSheet.create({
     marginLeft: 7
   },
   "booking_item_date": {
-
     "color": "rgba(28, 5, 5, 1)",
     "fontSize": 12,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
+    "marginBottom":3,
+
   },
   "booking_item_quantity": {
     "color": "rgba(28, 5, 5, 1)",
@@ -105,7 +104,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    marginBottom:3,
+    "marginBottom":3,
   },
   "booking_item_time": {
     "fontSize": 12,
@@ -113,6 +112,8 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
+    "marginBottom":3,
+
   },
   "booking_item_image": {
     "borderTopLeftRadius": 10,
@@ -124,24 +125,26 @@ const styles = StyleSheet.create({
   },
   "booking_item_name": {
     "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 15,
+    "fontSize": 20,
     "fontWeight": "700",
     "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    marginBottom:3,
+    "fontFamily": "Roboto Medium",
+    "marginTop":1,
+    "marginBottom":3
   },
   "booking_quaTrinhTN": {
     "color": "rgba(112, 112, 112, 1)",
     "fontSize": 15,
     "fontWeight": "400",
     "fontFamily": "Roboto",
-    flex: 1,
+    "flex": 1,
+    "marginTop":6
   },
   "header": {
-    width: "100%",
+    "width": "100%",
     "height": 70,
-    alignItems: "center",
-    backgroundColor: "rgba(240, 211, 122, 1)",
+    "alignItems": "center",
+    "backgroundColor": "rgba(240, 211, 122, 1)",
     "shadowColor": "rgb(0,  0,  0)",
     "shadowOpacity": 0.1607843137254902,
     "shadowOffset": {
@@ -162,17 +165,17 @@ const styles = StyleSheet.create({
   },
 
   "booking_select": {
-    width: "90%",
-    flexDirection: "row",
-    borderBottomWidth: 1,
-    paddingTop: 10,
-    paddingBottom: 10,
-    borderColor: "#707070",
+    "width": "90%",
+    "flexDirection": "row",
+    "borderBottomWidth": 1,
+    "paddingTop": 10,
+    "paddingBottom": 10,
+    "borderColor": "#707070",
   },
   "booking_select_box": {
     "backgroundColor": "rgba(199, 195, 195, 1)",
     "borderRadius": 2,
-    borderWidth: 0,
+    "borderWidth": 0,
     "width": "30%",
     "height": 23,
     "color": "rgba(83, 71, 65, 1)",
