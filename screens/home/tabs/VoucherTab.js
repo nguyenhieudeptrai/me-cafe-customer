@@ -592,7 +592,7 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "top": 1,
-    alignSelf: "center"
+    "alignSelf": "center"
   },
   "voucher_list_item_info_head": {
     "position": "absolute",
@@ -604,11 +604,11 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "top": 15,
-    alignSelf: "center"
+    "alignSelf": "center"
   },
   "voucher_list_item_info": {
-    marginLeft: 15,
-    flex: 1
+    "marginLeft": 15,
+    "flex": 1
   },
   "voucher_list_item_info_title": {
     "color": "rgba(16, 0, 0, 1)",
