@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     "fontSize": 20,
     "fontWeight": "700",
     "fontStyle": "normal",
-    "fontFamily": "Roboto Medium",
+    "fontFamily": "Roboto",
     "marginTop":1,
     "marginBottom":3
   },

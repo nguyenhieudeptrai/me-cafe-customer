@@ -616,7 +616,7 @@ const styles = StyleSheet.create({
     "fontSize": 20,
     "fontWeight": "400",
     "fontStyle": "normal",
-    "fontFamily": "Roboto Medium"
+    "fontFamily": "Roboto"
   },
   "voucher_list_item_info_end_date": {
     "position": "absolute",
