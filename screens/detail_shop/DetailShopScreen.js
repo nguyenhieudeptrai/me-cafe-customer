@@ -67,7 +67,6 @@ const DetailShopScreen = ({ navigation }) => {
       </View>
       <ScrollView>
         <Text style={styles.main_group19_group112_thongTinQuanBnChn}>Thông tin quán bạn chọn</Text>
-
         <View style={styles.main_group19}>
           <ScrollView horizontal={true}>
             <ReactImage source={require('../../assets/x2.png')} style={styles.main_group19_x2} />
@@ -375,7 +374,7 @@ export default DetailShopScreen; const styles = StyleSheet.create({
     "top": 0
   },
   "main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866": {
-
+    "transform":[{rotate:'180deg'}],
     "position": "absolute",
     "width": 10,
     "height": 10,
@@ -470,7 +469,7 @@ export default DetailShopScreen; const styles = StyleSheet.create({
     "top": 0
   },
   "main_tCh3c0aa05f_group15_group6_group41f437081_upArrowSmall718025b7": {
-
+    "transform":[{rotate:'180deg'}],
     "position": "absolute",
     "width": 10,
     "height": 10,
@@ -637,7 +636,7 @@ export default DetailShopScreen; const styles = StyleSheet.create({
     "top": 0
   },
   "main_tCh3c0aa05f_group15_group8_group3_upArrowSmall5e30bcb4": {
-
+    "transform":[{rotate:'180deg'}],
     "position": "absolute",
     "width": 10,
     "height": 10,
@@ -732,7 +731,7 @@ export default DetailShopScreen; const styles = StyleSheet.create({
     "top": 0
   },
   "main_tCh3c0aa05f_group15_group9_group4_upArrowSmall": {
-
+    "transform":[{rotate:'180deg'}],
     "position": "absolute",
     "width": 10,
     "height": 10,
@@ -1219,10 +1218,10 @@ export default DetailShopScreen; const styles = StyleSheet.create({
   "main_group19_group112_thongTinQuanBnChn": {
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
-    "fontSize": 13,
+    "fontSize": 15,
     "fontWeight": "700",
-    "fontFamily": "Roboto",
-    margin: 10,
+    "fontFamily": "Roboto Medium",
+    "margin": 10,
   },
   "main_group19_group112_path8": {
 
@@ -1271,20 +1270,17 @@ export default DetailShopScreen; const styles = StyleSheet.create({
     alignSelf: "center"
   },
   "main_group19_continue_path643": {
-
     "position": "absolute", "width": 129,
     "height": 31,
     "left": 0,
     "top": 0
   },
   "main_group19_continue_tChf4c11d26": {
-
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 255, 255, 1)",
     "fontSize": 15,
     "fontWeight": "700",
-
     "fontFamily": "Roboto",
     "textAlign": "center",
     "left": 34,
@@ -1326,7 +1322,7 @@ export default DetailShopScreen; const styles = StyleSheet.create({
     "top": 40
   },
   "main_group38_navigationBar_component1_path10": {
-
+    "transform":[{rotate:'180deg'}],
     "position": "absolute", "width": 16,
     "height": 16,
     "left": 0,

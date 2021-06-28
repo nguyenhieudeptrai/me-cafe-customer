@@ -11,28 +11,28 @@ import { Overlay } from 'react-native-magnus';
 
 const data = [
   {
-    title: "Ưu đãi 20% toàn menu",
+    title: "Ưu đãi 20% toàn Menu",
     description: "Bụi coffee,Đường trung sơn , Q7 ",
     endDate: "29/12/2022",
     head: "20%",
     type: "Ưu đãi",
   },
   {
-    title: "Ưu đãi 20k toàn menu ",
+    title: "Ưu đãi 20k toàn Menu ",
     description: "Đẩu coffee, Đường Xuân Diệu, Q2",
     endDate: "29/12/2022",
     head: "20k",
     type: "Ưu đãi",
   },
   {
-    title: "Ưu đãi 30k toàn menu",
+    title: "Ưu đãi 30k toàn Menu",
     description: "Milo coffee, Đường Xuân Hồng, Q2",
     endDate: "29/12/2022",
     head: "30k",
     type: "Ưu đãi",
   },
   {
-    title: "Ưu đãi 15% toàn menu",
+    title: "Ưu đãi 15% toàn Menu",
     description: "AH coffee, Đường Xuân diện, Q2",
     endDate: "28/12/2022",
     head: "15%",
@@ -226,20 +226,21 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    alignSelf: "center",
-    width: "90%"
+    "alignSelf": "center",
+    "width": "90%"
   },
   "voucher_group118": {
     "width": 95,
     "height": 67,
-    alignSelf: "center",
+    "alignSelf": 'center',
+    "marginTop":10
   },
   "voucher_group118_logoPng": {
     "position": "absolute",
     "width": 95,
     "height": 67,
     "top": 0,
-    alignSelf: "center",
+    "alignSelf": "center",
   },
   "voucher_group118_asset1": {
     "position": "absolute",
@@ -253,26 +254,26 @@ const styles = StyleSheet.create({
     "fontSize": 30,
     "fontWeight": "700",
     "fontFamily": "Roboto",
-    alignSelf: "center",
+    "alignSelf": "center",
   },
   "voucher_x30Im": {
     "color": "rgba(255, 255, 255, 1)",
     "fontSize": 15,
     "fontWeight": "400",
     "fontFamily": "Roboto",
-    alignSelf: "center",
+    "alignSelf": "center",
   },
   "voucher_group119": {
     "width": 291,
     "height": 50,
-    alignSelf: "center",
-    marginTop: 25
+    "alignSelf": "center",
+    "marginTop": 25
   },
 
   "voucher_group119_scroll": {
     "width": 276,
     "height": 4,
-    alignSelf: "center",
+    "alignSelf": "center",
   },
   "voucher_group119_scroll_rectangle555": {
     "position": "absolute",
@@ -355,14 +356,14 @@ const styles = StyleSheet.create({
     "fontSize": 16,
     "fontWeight": "400",
     "fontFamily": "Roboto",
-    alignSelf: "center",
+    "alignSelf": "center",
   },
   "voucher_group121": {
     "position": "absolute",
     "width": 7,
     "height": 98,
     "top": 320,
-    alignSelf: "center",
+    "alignSelf": "center",
   },
   "voucher_group121_rectangle1478": {
     "position": "absolute",
@@ -511,17 +512,17 @@ const styles = StyleSheet.create({
     "top": 91
   },
   "voucher_list": {
-    flex: 1,
-    width: "100%",
+    "flex": 1,
+    "width": "100%",
   },
 
   "voucher_list_item": {
     "width": "100%",
-    flexDirection: "row",
-    backgroundColor: "#FFF",
-    borderRadius: 10,
-    padding: 10,
-    marginBottom: 10
+    "flexDirection": "row",
+    "backgroundColor": "#FFF",
+    "borderRadius": 10,
+    "padding": 10,
+    "marginBottom": 10
   },
 
   "voucher_list_item_group127_group125906bcef6_rectangle14806a0ef2a7": {
@@ -591,8 +592,8 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "top": 1,
-    alignSelf: "center"
+    "top": 4,
+    "alignSelf": "center"
   },
   "voucher_list_item_info_head": {
     "position": "absolute",
@@ -604,17 +605,18 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "top": 15,
-    alignSelf: "center"
+    "alignSelf": "center"
   },
   "voucher_list_item_info": {
-    marginLeft: 15,
-    flex: 1
+    "marginLeft": 15,
+    "flex": 1
   },
   "voucher_list_item_info_title": {
-    "color": "rgba(16, 0, 0, 1)",
+    "color": "rgba(83, 71, 65, 1)",
     "fontSize": 20,
     "fontWeight": "400",
-    "fontFamily": "Roboto"
+    "fontStyle": "normal",
+    "fontFamily": "Roboto Medium"
   },
   "voucher_list_item_info_end_date": {
     "position": "absolute",
@@ -635,6 +637,6 @@ const styles = StyleSheet.create({
     "fontWeight": "300",
     "fontStyle": "italic",
     "fontFamily": "Roboto",
-    width: "100%",
+    "width": "100%",
   },
 });

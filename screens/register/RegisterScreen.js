@@ -160,6 +160,7 @@ const styles = StyleSheet.create({
   },
   "register_group134_group133_component6_path10": {
     "position": "absolute",
+    "transform":[{rotate:'180deg'}],
     "width": 16,
     "height": 16,
     "left": 0,
