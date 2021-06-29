@@ -17,7 +17,7 @@ const data = [
     address: "16 Quốc Hương, Quận 2",
     img: require("../../../assets/i4.png"),
     distance: "500m",
-    rate: "4.3",
+    rate: "4.8",
     bookingNum: 40,
   },
   {
@@ -35,7 +35,7 @@ const data = [
     address: "43 Đồng Khởi, Quận 1",
     img: require('../../../assets/i6.png'),
     distance: "1.3km",
-    rate: "4/5",
+    rate: "3.8",
     bookingNum: 90,
   },
   {
@@ -44,7 +44,7 @@ const data = [
     address: "262 Ung Văn Khiêm, Quận Bình Thạnh",
     img: require('../../../assets/i7.png'),
     distance: "1.7km",
-    rate: "4/5",
+    rate: "4.0",
     bookingNum: 90,
   },
   {
@@ -53,7 +53,7 @@ const data = [
     address: "Lầu 2, 486 Nguyễn Thị Thập, Quận 7",
     img: require('../../../assets/i8.png'),
     distance: "2km",
-    rate: "4/5",
+    rate: "4.3",
     bookingNum: 90,
   },
 ]
@@ -61,12 +61,12 @@ const dataTop = [
   {
     name: "September Cafe",
     image: require("../../../assets/i1.png"),
-    rate: "4.7",
+    rate: "3.5",
   },
   {
     name: "September Cafe",
     image: require("../../../assets/i2.png"),
-    rate: "4.7",
+    rate: "3.0",
   },
 ]
 const HomeTab = ({ navigation }) => {
