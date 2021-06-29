@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
   },
 
   "quanGnBnb2eef024": {
-    flex: 1,
+    "flex": 1,
     "width": "90%",
     "top":160
   },
