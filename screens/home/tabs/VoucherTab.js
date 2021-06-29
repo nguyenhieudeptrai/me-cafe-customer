@@ -592,7 +592,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "top": 4,
+    "top": 1,
     "alignSelf": "center"
   },
   "voucher_list_item_info_head": {
