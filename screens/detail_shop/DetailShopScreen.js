@@ -1057,7 +1057,7 @@ export default DetailShopScreen; const styles = StyleSheet.create({
 
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
-    "fontSize": 13,
+    "fontSize": 15,
     "fontWeight": "700",
     "fontFamily": "Roboto",
     margin: 10,
