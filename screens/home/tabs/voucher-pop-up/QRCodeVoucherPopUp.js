@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
   "qrcodevoucher_group116_group115_component5_path10": {
     "opacity": 1,
     "position": "absolute",
+    "transform":[{rotate:'180deg'}],
     "width": 17,
     "height": 17,
     "left": 0,
