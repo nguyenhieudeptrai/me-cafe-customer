@@ -1220,7 +1220,7 @@ export default DetailShopScreen; const styles = StyleSheet.create({
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "700",
-    "fontFamily": "Roboto Medium",
+    "fontFamily": "Roboto",
     "margin": 10,
   },
   "main_group19_group112_path8": {

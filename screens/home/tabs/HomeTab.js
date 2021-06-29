@@ -17,6 +17,8 @@ const data = [
     address: "16 Quốc Hương, Quận 2",
     img: require("../../../assets/i4.png"),
     distance: "500m",
+    rate: "4.3",
+    bookingNum: 40,
   },
   {
     id: "The Feine Cafe",
@@ -24,6 +26,8 @@ const data = [
     address: "33 Đường số 4, KDC Trung Sơn, Quận 7",
     img: require('../../../assets/i5.png'),
     distance: "1.1km",
+    rate: "4.5",
+    bookingNum: 90,
   },
   {
     id: "Quán của Thời Thanh Xuân",
@@ -31,6 +35,8 @@ const data = [
     address: "43 Đồng Khởi, Quận 1",
     img: require('../../../assets/i6.png'),
     distance: "1.3km",
+    rate: "4/5",
+    bookingNum: 90,
   },
   {
     id: "Cafe Cú trên cây Garden",
@@ -38,6 +44,8 @@ const data = [
     address: "262 Ung Văn Khiêm, Quận Bình Thạnh",
     img: require('../../../assets/i7.png'),
     distance: "1.7km",
+    rate: "4/5",
+    bookingNum: 90,
   },
   {
     id: "Farmers’ Garden",
@@ -45,16 +53,20 @@ const data = [
     address: "Lầu 2, 486 Nguyễn Thị Thập, Quận 7",
     img: require('../../../assets/i8.png'),
     distance: "2km",
+    rate: "4/5",
+    bookingNum: 90,
   },
 ]
 const dataTop = [
   {
     name: "September Cafe",
     image: require("../../../assets/i1.png"),
+    rate: "4.7",
   },
   {
     name: "September Cafe",
     image: require("../../../assets/i2.png"),
+    rate: "4.7",
   },
 ]
 const HomeTab = ({ navigation }) => {
@@ -90,12 +102,12 @@ const HomeTab = ({ navigation }) => {
 
           </Svg>
         </View>
-        <View style={styles.Hotdeal}>
-              <ReactImage source={require('../../../assets/ComponentTMP_0-image.jpg')} style={styles.HotDeal_Picture} />
-        </View>
+      </View>
+      <View style={styles.Hotdeal}>
+        <ReactImage source={require('../../../assets/ComponentTMP_0-image.jpg')} style={styles.HotDeal_Picture} />
       </View>
       <View style={styles.topYeuThich}>
-    
+
         <Text style={styles.topYeuThich_group103_topYeuThichNht}>TOP Yêu thích nhất</Text>
         <FlatList
           style={styles.topYeuThich_group103}
@@ -107,20 +119,13 @@ const HomeTab = ({ navigation }) => {
               <ReactImage source={item.image} style={styles.topYeuThich_group103_group102_group17_i1} />
               <Text style={styles.topYeuThich_group103_group102_group17_septemberCafe}>{item.name}</Text>
               <View style={styles.topYeuThich_group103_group102_group17_group42}>
-                <View style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497}>
-                  <ReactImage source={require('../../../assets/star55a2af98.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                </View>
-                <View style={styles.topYeuThich_group103_group102_group17_group42_group3850e2cc78}>
-                  <ReactImage source={require('../../../assets/star2e40c2f1.png')} style={styles.topYeuThich_group103_group102_group17_group42_group3850e2cc78_star2e40c2f1} />
-                </View>
-                <View style={styles.topYeuThich_group103_group102_group17_group42_group391f531ae3}>
-                  <ReactImage source={require('../../../assets/starbef87d39.png')} style={styles.topYeuThich_group103_group102_group17_group42_group391f531ae3_starbef87d39} />
-                </View>
-                <View style={styles.topYeuThich_group103_group102_group17_group42_group41ea5fbe0b}>
-                  <ReactImage source={require('../../../assets/halfStar22d835025.png')} style={styles.topYeuThich_group103_group102_group17_group42_group41ea5fbe0b_halfStar22d835025} />
-                </View>
-                <View style={styles.topYeuThich_group103_group102_group17_group42_group1138d5db7c6}>
-                  <ReactImage source={require('../../../assets/star0159e37c.png')} style={styles.topYeuThich_group103_group102_group17_group42_group1138d5db7c6_star0159e37c} />
+               <View style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497}>
+                  <ReactImage source={require('../../../assets/star.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                  <ReactImage source={require('../../../assets/star.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                  <ReactImage source={require('../../../assets/star.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                  <ReactImage source={require('../../../assets/halfStar2.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                  <ReactImage source={require('../../../assets/none-star.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                 <Text>{item.rate}</Text>
                 </View>
               </View>
             </TouchableOpacity>
@@ -130,13 +135,21 @@ const HomeTab = ({ navigation }) => {
       <View style={styles.quanGnBnb2eef024}>
         <Text style={styles.quanGnBnb2eef024_quanGnBn}>Quán gần bạn</Text>
 
-        <FlatList data={data} renderItem={({ item, index }) => (
+        <FlatList data={data} style={{ flex: 1 }} renderItem={({ item, index }) => (
           <TouchableOpacity key={index} onPress={onItemPress} style={styles.quanGnBnb2eef024_group23}>
             <View style={styles.quanGnBnb2eef024_group23_group105}>
-              <ReactImage source={item.img} style={styles.quanGnBnb2eef024_group23_group105_i4} />
-              <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
-              <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
               <Text style={styles.quanGnBnb2eef024_group23_group105_x700m}>{item.distance}</Text>
+              <ReactImage source={item.img} style={styles.quanGnBnb2eef024_group23_group105_i4} />
+              <View style={{ flex: 1 }}>
+                <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
+                <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
+
+                <View style={{ flexDirection: "row" }}>
+                  <Text style={{ textAlign: "left", flex: 1 }}>{item.rate} <ReactImage source={require('../../../assets/star.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                  </Text>
+                  <Text style={{}}>Đã có {item.bookingNum} lần đặt chỗ</Text>
+                </View>
+              </View>
             </View>
           </TouchableOpacity>
         )} />
@@ -159,7 +172,6 @@ const styles = StyleSheet.create({
   "quanGnBnb2eef024": {
     "flex": 1,
     "width": "90%",
-    "top":160
   },
   "quanGnBnb2eef024_quanGnBn": {
     "backgroundColor": "rgba(255, 255, 255, 0)",
@@ -183,10 +195,7 @@ const styles = StyleSheet.create({
   "quanGnBnb2eef024_group23_group105": {
     "position": "relative",
     "backgroundColor": "rgba(255, 255, 255, 1)",
-    "borderTopLeftRadius": 4,
-    "borderTopRightRadius": 4,
-    "borderBottomLeftRadius": 4,
-    "borderBottomRightRadius": 4,
+    "borderRadius": 4,
     "shadowColor": "rgb(0,  0,  0)",
     "shadowOpacity": 0.1607843137254902,
     "shadowOffset": {
@@ -195,31 +204,21 @@ const styles = StyleSheet.create({
     },
     "shadowRadius": 6,
     "width": "100%",
-    "height": 79,
+    flexDirection: "row",
+    padding: 10
   },
   "quanGnBnb2eef024_group23_group105_i4": {
-    "position": "absolute",
-    "borderTopLeftRadius": 4,
-    "borderTopRightRadius": 4,
-    "borderBottomLeftRadius": 4,
-    "borderBottomRightRadius": 4,
+    "borderRadius": 4,
     "width": 83,
     "height": 63,
-    "left": 7,
-    "top": 8
+    marginRight: 10
   },
   "quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3": {
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(194, 151, 106, 0.9803921568627451)",
     "fontSize": 13,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-
-    "height": 15,
-    "left": 102,
-    "top": 47
   },
   "quanGnBnb2eef024_group23_group105_x700m": {
     "position": "absolute",
@@ -233,21 +232,15 @@ const styles = StyleSheet.create({
     "top": 16
   },
   "quanGnBnb2eef024_group23_group105_bstoryCafe": {
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 18,
     "fontWeight": "700",
     "fontStyle": "normal",
-    "fontFamily": "Roboto Medium",
-    "height": 20,
-    "left": 103,
-    "top": 11
+    "fontFamily": "Roboto",
   },
   "topYeuThich": {
     "width": "90%",
     "marginBottom": 10,
-    "top":160
   },
   "topYeuThich_group103": {
     "width": "100%",
@@ -316,15 +309,12 @@ const styles = StyleSheet.create({
   },
 
   "Hotdeal": {
-    "position": "absolute",
-    "width": 100,
-    "height": 70,
-    "top":100,
-    "left":20
+    "width": "100%",
+    paddingLeft: 30,
+    marginBottom: 10
   },
 
   "HotDeal_Picture": {
-    "position": "absolute",
     "borderTopLeftRadius": 4,
     "borderTopRightRadius": 4,
     "borderBottomLeftRadius": 4,
@@ -335,22 +325,12 @@ const styles = StyleSheet.create({
   },
 
   "topYeuThich_group103_group102_group17_group42_group370f51e497": {
-    "position": "absolute",
-
-    "width": 12,
-    "height": 13,
-
+    justifyContent:"center",
+    flexDirection: "row"
   },
   "topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98": {
-    "position": "absolute",
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
     "width": 12,
     "height": 13,
-
-
   },
   "topYeuThich_group103_group102_group17_group42_group3850e2cc78": {
     "position": "absolute",
