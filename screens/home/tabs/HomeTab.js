@@ -66,6 +66,16 @@ const dataTop = [
   },
   {
     name: "September Cafe",
+    image: require("../../../assets/i4.png"),
+    rate: "3.0",
+  },
+  {
+    name: "September Cafe",
+    image: require("../../../assets/i3.png"),
+    rate: "3.0",
+  },
+  {
+    name: "September Cafe",
     image: require("../../../assets/i2.png"),
     rate: "3.0",
   },
@@ -170,17 +180,21 @@ const HomeTab = ({ navigation }) => {
                 </TouchableOpacity>
               </View>
             </View>
-            <TouchableOpacity style={styles.filter_bg} onPress={()=>setOpenFilter(false)}/>
+            <TouchableOpacity style={styles.filter_bg} onPress={() => setOpenFilter(false)} />
 
           </View>}
         <ScrollView contentContainerStyle={{ alignItems: "center" }}>
 
           {!isFilter ? <>
-            <View style={styles.Hotdeal}>
+            <ScrollView style={styles.Hotdeal} horizontal={true}>
               <ReactImage source={require('../../../assets/ComponentTMP_0-image.jpg')} style={styles.HotDeal_Picture} />
-            </View>
+              <ReactImage source={require('../../../assets/ComponentTMP_0-image.jpg')} style={styles.HotDeal_Picture} />
+              <ReactImage source={require('../../../assets/ComponentTMP_0-image.jpg')} style={styles.HotDeal_Picture} />
+              <ReactImage source={require('../../../assets/ComponentTMP_0-image.jpg')} style={styles.HotDeal_Picture} />
+              <ReactImage source={require('../../../assets/ComponentTMP_0-image.jpg')} style={styles.HotDeal_Picture} />
+            </ScrollView>
             <View style={styles.hotShop}>
-              <Text style={styles.hotShop_group103_hotShopNht}>TOP Yêu thích nhất</Text>
+              <Text style={styles.hotShop_group103_hotShopNht}>TOP 5 Yêu thích nhất</Text>
               <FlatList
                 style={styles.hotShop_group103}
                 data={dataTop}
@@ -189,15 +203,27 @@ const HomeTab = ({ navigation }) => {
                   <TouchableOpacity onPress={onItemPress} key={index} style={styles.hotShop_group103_group102_group17}>
 
                     <ReactImage source={item.image} style={styles.hotShop_group103_group102_group17_i1} />
-                    <Text style={styles.hotShop_group103_group102_group17_septemberCafe}>{item.name}</Text>
-                    <View style={styles.hotShop_group103_group102_group17_group42}>
-                      <View style={styles.hotShop_group103_group102_group17_group42_group370f51e497}>
-                        <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                        <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                        <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                        <ReactImage source={require('../../../assets/halfStar2.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                        <ReactImage source={require('../../../assets/none-star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                        <Text style={{ marginLeft: 7 }}>{item.rate}</Text>
+                    <View>
+                      <Text style={styles.hotShop_group103_group102_group17_septemberCafe}>{item.name}</Text>
+                        <View style={styles.hotShop_group103_group102_group17_group42_group370f51e497}>
+                          <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                          <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                          <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                          <ReactImage source={require('../../../assets/halfStar2.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                          <ReactImage source={require('../../../assets/none-star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                          <Text style={{ marginLeft: 7 }}>{item.rate}</Text>
+                        </View>
+                      <View style={{ flexDirection: "row" }}>
+                        <View style={{ marginLeft: 5, flexDirection: "row" }}>
+                          <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
+                          <View style={{ alignItems: "center" }}>
+                            <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
+                            <Text style={{ fontSize: 11 }}>10 người</Text>
+                          </View>
+                          <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
+                          <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, }} />
+
+                        </View>
                       </View>
                     </View>
                   </TouchableOpacity>
@@ -401,9 +427,6 @@ const styles = StyleSheet.create({
     "borderBottomWidth": 1,
   },
   "hotShop_group103_group102_group17": {
-
-    "width": 211,
-    "height": 98,
     "backgroundColor": "#FFF",
     "borderRadius": 5,
     "margin": 5,
@@ -415,61 +438,39 @@ const styles = StyleSheet.create({
       "height": 3
     },
     "shadowRadius": 6,
+    flexDirection:"row",
+    padding:10,
   },
   "hotShop_group103_group102_group17_i1": {
-    "position": "absolute",
-    "borderTopLeftRadius": 8,
-    "borderTopRightRadius": 8,
-    "borderBottomLeftRadius": 8,
-    "borderBottomRightRadius": 8,
     "width": 79,
     "height": 80,
-    "left": 5,
-    "top": 9
+    marginRight:10,
   },
   "hotShop_group103_group102_group17_septemberCafe": {
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 14,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-
-    "width": 102,
-    "height": 17,
     "left": 93,
     "top": 41
-  },
-  "hotShop_group103_group102_group17_group42": {
-    "opacity": 0.6000000238418579,
-    "position": "absolute",
-
-    "width": 75,
-    "height": 13,
-    "left": 93,
-    "top": 62
   },
 
   "Hotdeal": {
     "width": "100%",
-    paddingLeft: 30,
+    paddingLeft: 10,
     marginBottom: 10,
     marginTop: 10
   },
 
   "HotDeal_Picture": {
-    "borderTopLeftRadius": 4,
-    "borderTopRightRadius": 4,
-    "borderBottomLeftRadius": 4,
-    "borderBottomRightRadius": 4,
+    "borderRadius": 4,
     "width": 340,
     "height": 150,
-
+    marginRight:10
   },
 
   "hotShop_group103_group102_group17_group42_group370f51e497": {
-    justifyContent: "center",
     flexDirection: "row",
     alignItems: "center"
   },
