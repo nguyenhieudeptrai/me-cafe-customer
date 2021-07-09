@@ -89,14 +89,27 @@ const checkboxData = [
 const HomeTab = ({ navigation }) => {
   const [isFilter, hasFilter] = useState(false);
   const [openFilter, setOpenFilter] = useState(false);
+  const [dataFilter, setDataFilter] = useState([]);
 
 
   const onItemPress = () => {
     navigation.navigate('DetailShop')
   }
-  const onFilter = () => {
+  const onFilter = (item, checked) => {
+    let index = dataFilter.indexOf(item);
+    let newArr = dataFilter;
+    console.log("find:", index, checked, item)
+    if (index > -1) {
+      dataFilter.splice(index, 1);
+    }
+    if (checked) {
+      dataFilter.push(item);
+    }
+    console.log("new arr",dataFilter,newArr)
+    setDataFilter(dataFilter);
     hasFilter(true);
   }
+
 
 
   const onRemoveFilter = () => {
@@ -129,19 +142,17 @@ const HomeTab = ({ navigation }) => {
         </View>
         {isFilter &&
           <View style={{ flexDirection: "row", width: "100%", paddingHorizontal: 10 }}>
-            <View style={{ borderRadius: 30, borderColor: "#000", padding: 5, borderWidth: 1, marginRight: 5 }}>
-              <Text style={{ fontSize: 12 }}>Có phòng họp</Text>
-            </View>
-            <View style={{ borderRadius: 30, borderColor: "#000", padding: 5, borderWidth: 1, marginRight: 5 }}>
-              <Text style={{ fontSize: 12 }}>Có phòng họp</Text>
-            </View>
-            <View style={{ borderRadius: 30, borderColor: "#000", padding: 5, borderWidth: 1, marginRight: 5 }}>
-              <Text style={{ fontSize: 12 }}>Có phòng họp</Text>
-            </View>
+            {dataFilter.map((item, index) => {
+              return (
+                <View key={index} style={{ borderRadius: 30, borderColor: "#000", padding: 5, borderWidth: 1, marginRight: 5 }}>
+                  <Text style={{ fontSize: 12 }}>{item.name}</Text>
+                </View>
+              )
+            })}
           </View>
         }
       </View>
-      <View style={{ flex: 1, alignItems: "center", }}>
+      <View style={{ flex: 1 }}>
         {openFilter
           &&
           <View style={styles.filter}>
@@ -149,7 +160,7 @@ const HomeTab = ({ navigation }) => {
             <Checkbox.Group>
               {checkboxData.map(item => (
                 <View>
-                  <Checkbox onChecked={onFilter} activeColor="544741" value={item.value} style={styles.filter_item} suffix={<Text style={styles.filter_label}>{item.name}</Text>} />
+                  <Checkbox onChecked={(check) => onFilter(item, check)} activeColor="#544741" value={item.value} style={styles.filter_item} suffix={<Text style={styles.filter_label}>{item.name}</Text>} />
                 </View>
               ))}
             </Checkbox.Group>
@@ -160,128 +171,133 @@ const HomeTab = ({ navigation }) => {
             </View>
           </View>
         }
-        {!isFilter ? <>
-          <View style={styles.Hotdeal}>
-            <ReactImage source={require('../../../assets/ComponentTMP_0-image.jpg')} style={styles.HotDeal_Picture} />
-          </View>
-          <View style={styles.topYeuThich}>
+        <ScrollView contentContainerStyle={{ alignItems: "center" }}>
 
-            <Text style={styles.topYeuThich_group103_topYeuThichNht}>TOP Yêu thích nhất</Text>
-            <FlatList
-              style={styles.topYeuThich_group103}
-              data={dataTop}
-              horizontal={true}
-              renderItem={({ item, index }) => (
-                <TouchableOpacity onPress={onItemPress} key={index} style={styles.topYeuThich_group103_group102_group17}>
+          {!isFilter ? <>
+            <View style={styles.Hotdeal}>
+              <ReactImage source={require('../../../assets/ComponentTMP_0-image.jpg')} style={styles.HotDeal_Picture} />
+            </View>
+            <View style={styles.hotShop}>
+              <Text style={styles.hotShop_group103_hotShopNht}>TOP Yêu thích nhất</Text>
+              <FlatList
+                style={styles.hotShop_group103}
+                data={dataTop}
+                horizontal={true}
+                renderItem={({ item, index }) => (
+                  <TouchableOpacity onPress={onItemPress} key={index} style={styles.hotShop_group103_group102_group17}>
 
-                  <ReactImage source={item.image} style={styles.topYeuThich_group103_group102_group17_i1} />
-                  <Text style={styles.topYeuThich_group103_group102_group17_septemberCafe}>{item.name}</Text>
-                  <View style={styles.topYeuThich_group103_group102_group17_group42}>
-                    <View style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497}>
-                      <ReactImage source={require('../../../assets/star.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                      <ReactImage source={require('../../../assets/star.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                      <ReactImage source={require('../../../assets/star.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                      <ReactImage source={require('../../../assets/halfStar2.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                      <ReactImage source={require('../../../assets/none-star.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                      <Text style={{ marginLeft: 7 }}>{item.rate}</Text>
+                    <ReactImage source={item.image} style={styles.hotShop_group103_group102_group17_i1} />
+                    <Text style={styles.hotShop_group103_group102_group17_septemberCafe}>{item.name}</Text>
+                    <View style={styles.hotShop_group103_group102_group17_group42}>
+                      <View style={styles.hotShop_group103_group102_group17_group42_group370f51e497}>
+                        <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                        <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                        <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                        <ReactImage source={require('../../../assets/halfStar2.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                        <ReactImage source={require('../../../assets/none-star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                        <Text style={{ marginLeft: 7 }}>{item.rate}</Text>
+                      </View>
+                    </View>
+                  </TouchableOpacity>
+                )} />
+              <Svg style={styles.hotShop_path8} preserveAspectRatio="none" viewBox="-1.5 -1.5 327.1445007324219 3" fill="transparent"><SvgPath d="M 0 0 C 0 0 168.9582214355469 0 249.9569244384766 0 C 330.9556274414063 0 323.9947814941406 0 323.9947814941406 0" /></Svg>
+            </View>
+            <View style={styles.quanGnBnb2eef024}>
+              <Text style={styles.quanGnBnb2eef024_quanGnBn}>Quán gần bạn</Text>
+
+              <FlatList data={data} style={{ flex: 1 }} renderItem={({ item, index }) => (
+                <TouchableOpacity key={index} onPress={onItemPress} style={styles.quanGnBnb2eef024_group23}>
+                  <View style={styles.quanGnBnb2eef024_group23_group105}>
+                    <Text style={styles.quanGnBnb2eef024_group23_group105_x700m}>{item.distance}</Text>
+
+                    <View style={styles.quanGnBnb2eef024_item_left}>
+                      <ReactImage source={item.img} style={styles.quanGnBnb2eef024_group23_group105_i4} />
+                      <Text style={{ marginTop: 7 }}>{item.rate} <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                      </Text>
+                    </View>
+
+                    <View style={{ flex: 1 }}>
+                      <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
+                      <View style={{ flexDirection: "row", alignItems: "center" }}>
+                        <ReactImage source={require('../../../assets/location.png')} style={styles.item_location} />
+                        <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
+                      </View>
+                      <View style={{ flexDirection: "row", alignItems: "center" }}>
+                        <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_location} />
+                        <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá: 30K/Giờ</Text>
+
+                      </View>
+                      <View style={{ flexDirection: "row" }}>
+                        <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
+                        <View style={{ marginLeft: 5, flexDirection: "row" }}>
+                          <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
+                          <View style={{ alignItems: "center" }}>
+                            <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
+                            <Text style={{ fontSize: 11 }}>10 người</Text>
+                          </View>
+                          <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
+                          <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, }} />
+
+                        </View>
+                      </View>
+                      <View style={{ flexDirection: "row" }}>
+                        <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
+                      </View>
                     </View>
                   </View>
                 </TouchableOpacity>
               )} />
-            <Svg style={styles.topYeuThich_path8} preserveAspectRatio="none" viewBox="-1.5 -1.5 327.1445007324219 3" fill="transparent"><SvgPath d="M 0 0 C 0 0 168.9582214355469 0 249.9569244384766 0 C 330.9556274414063 0 323.9947814941406 0 323.9947814941406 0" /></Svg>
-          </View>
-          <View style={styles.quanGnBnb2eef024}>
-            <Text style={styles.quanGnBnb2eef024_quanGnBn}>Quán gần bạn</Text>
 
-            <FlatList data={data} style={{ flex: 1 }} renderItem={({ item, index }) => (
-              <TouchableOpacity key={index} onPress={onItemPress} style={styles.quanGnBnb2eef024_group23}>
-                <View style={styles.quanGnBnb2eef024_group23_group105}>
-                  <Text style={styles.quanGnBnb2eef024_group23_group105_x700m}>{item.distance}</Text>
 
-                  <View style={styles.quanGnBnb2eef024_item_left}>
-                    <ReactImage source={item.img} style={styles.quanGnBnb2eef024_group23_group105_i4} />
-                    <Text style={{ marginTop: 7 }}>{item.rate} <ReactImage source={require('../../../assets/star.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                    </Text>
-                  </View>
+            </View>
+          </> :
+            <View style={styles.quanGnBnb2eef024}>
+              <FlatList data={data} style={{ flex: 1 }} renderItem={({ item, index }) => (
+                <TouchableOpacity key={index} onPress={onItemPress} style={styles.quanGnBnb2eef024_group23}>
+                  <View style={styles.quanGnBnb2eef024_group23_group105}>
+                    <Text style={styles.quanGnBnb2eef024_group23_group105_x700m}>{item.distance}</Text>
 
-                  <View style={{ flex: 1 }}>
-                    <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
-                    <View style={{ flexDirection: "row", alignItems: "center" }}>
-                      <ReactImage source={require('../../../assets/location.png')} style={styles.item_location} />
-                      <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
+                    <View style={styles.quanGnBnb2eef024_item_left}>
+                      <ReactImage source={item.img} style={styles.quanGnBnb2eef024_group23_group105_i4} />
+                      <Text style={{ marginTop: 7 }}>{item.rate} <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                      </Text>
                     </View>
-                    <View style={{ flexDirection: "row", alignItems: "center" }}>
-                      <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_location} />
-                      <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá: 30K/Giờ</Text>
 
-                    </View>
-                    <View style={{ flexDirection: "row" }}>
-                      <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
-                      <View style={{ marginLeft: 5, flexDirection: "row" }}>
-                        <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
-                        <View style={{ alignItems: "center" }}>
-                          <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
-                          <Text style={{ fontSize: 11 }}>10 người</Text>
+                    <View style={{ flex: 1 }}>
+                      <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
+                      <View style={{ flexDirection: "row", alignItems: "center" }}>
+                        <ReactImage source={require('../../../assets/location.png')} style={styles.item_location} />
+                        <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
+                      </View>
+                      <View style={{ flexDirection: "row", alignItems: "center" }}>
+                        <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_location} />
+                        <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá: 30K/Giờ</Text>
+
+                      </View>
+                      <View style={{ flexDirection: "row" }}>
+                        <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
+                        <View style={{ marginLeft: 5, flexDirection: "row" }}>
+                          <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
+                          <View style={{ alignItems: "center" }}>
+                            <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
+                            <Text style={{ fontSize: 11 }}>10 người</Text>
+                          </View>
+                          <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
+                          <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, }} />
+
                         </View>
-                        <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
-                        <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, }} />
-
+                      </View>
+                      <View style={{ flexDirection: "row" }}>
+                        <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
                       </View>
                     </View>
-                    <View style={{ flexDirection: "row" }}>
-                      <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
-                    </View>
                   </View>
-                </View>
-              </TouchableOpacity>
-            )} />
+                </TouchableOpacity>
 
+              )} />
+            </View>}
 
-          </View>
-        </> :
-          <FlatList data={data} style={{ flex: 1 }} renderItem={({ item, index }) => (
-            <TouchableOpacity key={index} onPress={onItemPress} style={styles.quanGnBnb2eef024_group23}>
-              <View style={styles.quanGnBnb2eef024_group23_group105}>
-                <Text style={styles.quanGnBnb2eef024_group23_group105_x700m}>{item.distance}</Text>
-
-                <View style={styles.quanGnBnb2eef024_item_left}>
-                  <ReactImage source={item.img} style={styles.quanGnBnb2eef024_group23_group105_i4} />
-                  <Text style={{ marginTop: 7 }}>{item.rate} <ReactImage source={require('../../../assets/star.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                  </Text>
-                </View>
-
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
-                  <View style={{ flexDirection: "row", alignItems: "center" }}>
-                    <ReactImage source={require('../../../assets/location.png')} style={styles.item_location} />
-                    <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
-                  </View>
-                  <View style={{ flexDirection: "row", alignItems: "center" }}>
-                    <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_location} />
-                    <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá: 30K/Giờ</Text>
-
-                  </View>
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
-                    <View style={{ marginLeft: 5, flexDirection: "row" }}>
-                      <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
-                      <View style={{ alignItems: "center" }}>
-                        <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
-                        <Text style={{ fontSize: 11 }}>10 người</Text>
-                      </View>
-                      <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
-                      <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, }} />
-
-                    </View>
-                  </View>
-                  <View style={{ flexDirection: "row" }}>
-                    <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
-                  </View>
-                </View>
-              </View>
-            </TouchableOpacity>
-          )} />}
-
+        </ScrollView>
       </View>
     </View >
   );
@@ -363,14 +379,14 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
   },
-  "topYeuThich": {
+  "hotShop": {
     "width": "90%",
     "marginBottom": 10,
   },
-  "topYeuThich_group103": {
+  "hotShop_group103": {
     "width": "100%",
   },
-  "topYeuThich_group103_topYeuThichNht": {
+  "hotShop_group103_hotShopNht": {
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
@@ -382,7 +398,7 @@ const styles = StyleSheet.create({
     "marginBottom": 10,
     "borderBottomWidth": 1,
   },
-  "topYeuThich_group103_group102_group17": {
+  "hotShop_group103_group102_group17": {
 
     "width": 211,
     "height": 98,
@@ -398,7 +414,7 @@ const styles = StyleSheet.create({
     },
     "shadowRadius": 6,
   },
-  "topYeuThich_group103_group102_group17_i1": {
+  "hotShop_group103_group102_group17_i1": {
     "position": "absolute",
     "borderTopLeftRadius": 8,
     "borderTopRightRadius": 8,
@@ -409,7 +425,7 @@ const styles = StyleSheet.create({
     "left": 5,
     "top": 9
   },
-  "topYeuThich_group103_group102_group17_septemberCafe": {
+  "hotShop_group103_group102_group17_septemberCafe": {
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
@@ -423,7 +439,7 @@ const styles = StyleSheet.create({
     "left": 93,
     "top": 41
   },
-  "topYeuThich_group103_group102_group17_group42": {
+  "hotShop_group103_group102_group17_group42": {
     "opacity": 0.6000000238418579,
     "position": "absolute",
 
@@ -449,16 +465,16 @@ const styles = StyleSheet.create({
 
   },
 
-  "topYeuThich_group103_group102_group17_group42_group370f51e497": {
+  "hotShop_group103_group102_group17_group42_group370f51e497": {
     justifyContent: "center",
     flexDirection: "row",
     alignItems: "center"
   },
-  "topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98": {
+  "hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98": {
     "width": 12,
     "height": 13,
   },
-  "topYeuThich_group103_group102_group17_group42_group3850e2cc78": {
+  "hotShop_group103_group102_group17_group42_group3850e2cc78": {
     "position": "absolute",
 
     "width": 12,
@@ -466,7 +482,7 @@ const styles = StyleSheet.create({
     "left": 16,
 
   },
-  "topYeuThich_group103_group102_group17_group42_group3850e2cc78_star2e40c2f1": {
+  "hotShop_group103_group102_group17_group42_group3850e2cc78_star2e40c2f1": {
     "position": "absolute",
     "borderTopLeftRadius": 0,
     "borderTopRightRadius": 0,
@@ -477,7 +493,7 @@ const styles = StyleSheet.create({
 
 
   },
-  "topYeuThich_group103_group102_group17_group42_group391f531ae3": {
+  "hotShop_group103_group102_group17_group42_group391f531ae3": {
     "position": "absolute",
 
     "width": 13,
@@ -485,7 +501,7 @@ const styles = StyleSheet.create({
     "left": 31,
 
   },
-  "topYeuThich_group103_group102_group17_group42_group391f531ae3_starbef87d39": {
+  "hotShop_group103_group102_group17_group42_group391f531ae3_starbef87d39": {
     "position": "absolute",
     "borderTopLeftRadius": 0,
     "borderTopRightRadius": 0,
@@ -496,7 +512,7 @@ const styles = StyleSheet.create({
 
 
   },
-  "topYeuThich_group103_group102_group17_group42_group41ea5fbe0b": {
+  "hotShop_group103_group102_group17_group42_group41ea5fbe0b": {
     "position": "absolute",
 
     "width": 13,
@@ -504,7 +520,7 @@ const styles = StyleSheet.create({
     "left": 62,
 
   },
-  "topYeuThich_group103_group102_group17_group42_group41ea5fbe0b_halfStar22d835025": {
+  "hotShop_group103_group102_group17_group42_group41ea5fbe0b_halfStar22d835025": {
     "position": "absolute",
     "borderTopLeftRadius": 0,
     "borderTopRightRadius": 0,
@@ -515,7 +531,7 @@ const styles = StyleSheet.create({
 
 
   },
-  "topYeuThich_group103_group102_group17_group42_group1138d5db7c6": {
+  "hotShop_group103_group102_group17_group42_group1138d5db7c6": {
     "position": "absolute",
 
     "width": 12,
@@ -523,7 +539,7 @@ const styles = StyleSheet.create({
     "left": 47,
 
   },
-  "topYeuThich_group103_group102_group17_group42_group1138d5db7c6_star0159e37c": {
+  "hotShop_group103_group102_group17_group42_group1138d5db7c6_star0159e37c": {
     "position": "absolute",
     "borderTopLeftRadius": 0,
     "borderTopRightRadius": 0,
@@ -534,7 +550,7 @@ const styles = StyleSheet.create({
 
 
   },
-  "topYeuThich_path8": {
+  "hotShop_path8": {
     "position": "absolute",
     "width": 328.14,
     "height": 4,
