@@ -105,7 +105,7 @@ const HomeTab = ({ navigation }) => {
     if (checked) {
       dataFilter.push(item);
     }
-    console.log("new arr",dataFilter,newArr)
+    console.log("new arr", dataFilter, newArr)
     setDataFilter(dataFilter);
     hasFilter(true);
   }
@@ -154,23 +154,25 @@ const HomeTab = ({ navigation }) => {
       </View>
       <View style={{ flex: 1 }}>
         {openFilter
-          &&
-          <View style={styles.filter}>
-            <View><Text style={styles.filter_title}>Loại quán</Text></View>
-            <Checkbox.Group>
-              {checkboxData.map(item => (
-                <View>
-                  <Checkbox onChecked={(check) => onFilter(item, check)} activeColor="#544741" value={item.value} style={styles.filter_item} suffix={<Text style={styles.filter_label}>{item.name}</Text>} />
-                </View>
-              ))}
-            </Checkbox.Group>
-            <View style={{ width: "100%" }}>
-              <TouchableOpacity onPress={onRemoveFilter} style={{ alignSelf: "flex-end", backgroundColor: "#FF0", padding: 5 }}>
-                <Text>Bỏ lọc</Text>
-              </TouchableOpacity>
+          && <View style={styles.filter}>
+            <View style={{ padding: 10, backgroundColor: "#FFF" }}>
+              <View><Text style={styles.filter_title}>Loại quán</Text></View>
+              <Checkbox.Group>
+                {checkboxData.map(item => (
+                  <View>
+                    <Checkbox onChecked={(check) => onFilter(item, check)} activeColor="#544741" value={item.value} style={styles.filter_item} suffix={<Text style={styles.filter_label}>{item.name}</Text>} />
+                  </View>
+                ))}
+              </Checkbox.Group>
+              <View style={{ width: "100%" }}>
+                <TouchableOpacity onPress={onRemoveFilter} style={{ alignSelf: "flex-end", backgroundColor: "#FF0", padding: 5 }}>
+                  <Text>Bỏ lọc</Text>
+                </TouchableOpacity>
+              </View>
             </View>
-          </View>
-        }
+            <TouchableOpacity style={styles.filter_bg} onPress={()=>setOpenFilter(false)}/>
+
+          </View>}
         <ScrollView contentContainerStyle={{ alignItems: "center" }}>
 
           {!isFilter ? <>
@@ -314,9 +316,9 @@ const styles = StyleSheet.create({
   "quanGnBnb2eef024": {
     "flex": 1,
     "width": "90%",
+    marginTop: 10
   },
   "quanGnBnb2eef024_quanGnBn": {
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "700",
@@ -452,7 +454,8 @@ const styles = StyleSheet.create({
   "Hotdeal": {
     "width": "100%",
     paddingLeft: 30,
-    marginBottom: 10
+    marginBottom: 10,
+    marginTop: 10
   },
 
   "HotDeal_Picture": {
@@ -560,7 +563,6 @@ const styles = StyleSheet.create({
   "header": {
     "backgroundColor": "rgba(241, 211, 126, 1)",
     "width": "100%",
-    "marginBottom": 10,
     "paddingTop": 40,
     paddingBottom: 10,
     "shadowColor": "rgb(0,  0,  0)",
@@ -629,11 +631,14 @@ const styles = StyleSheet.create({
   },
   filter: {
     position: "absolute",
-    backgroundColor: "#FFF",
     width: "100%",
+    height: "100%",
     top: 0,
-    zIndex: 1,
-    padding: 10
+    zIndex: 1
+  },
+  filter_bg: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    flex: 1,
   },
   filter_title: {
     "fontSize": 14,
