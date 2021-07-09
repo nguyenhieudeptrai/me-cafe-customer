@@ -20,6 +20,11 @@ const data = [
     distance: "500m",
     rate: "4.8",
     bookingNum: 48,
+    utilities: true,
+    room: { price: 30, persons: 15 },
+    ac: true,
+    wifi: true,
+    projecter:true,
   },
   {
     id: "The Feine Cafe",
@@ -29,6 +34,11 @@ const data = [
     distance: "1.1km",
     rate: "4.5",
     bookingNum: 76,
+    utilities: true,
+    room: undefined,
+    ac: false,
+    wifi: true,
+    projecter:false,
   },
   {
     id: "Quán của Thời Thanh Xuân",
@@ -38,6 +48,11 @@ const data = [
     distance: "1.3km",
     rate: "3.8",
     bookingNum: 35,
+    utilities: true,
+    room: undefined,
+    ac: true,
+    wifi: true,
+    projecter:true,
   },
   {
     id: "Cafe Cú trên cây Garden",
@@ -47,6 +62,11 @@ const data = [
     distance: "1.7km",
     rate: "4.0",
     bookingNum: 5,
+    utilities: true,
+    room: { price: 40, persons: 10 },
+    ac: true,
+    wifi: true,
+    projecter:true,
   },
   {
     id: "Farmers’ Garden",
@@ -56,6 +76,11 @@ const data = [
     distance: "2km",
     rate: "4.3",
     bookingNum: 12,
+    utilities: true,
+    room: { price: 40, persons: 15 },
+    ac: true,
+    wifi: true,
+    projecter:true,
   },
 ]
 const dataTop = [
@@ -205,14 +230,14 @@ const HomeTab = ({ navigation }) => {
                     <ReactImage source={item.image} style={styles.hotShop_group103_group102_group17_i1} />
                     <View>
                       <Text style={styles.hotShop_group103_group102_group17_septemberCafe}>{item.name}</Text>
-                        <View style={styles.hotShop_group103_group102_group17_group42_group370f51e497}>
-                          <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                          <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                          <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                          <ReactImage source={require('../../../assets/halfStar2.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                          <ReactImage source={require('../../../assets/none-star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                          <Text style={{ marginLeft: 7 }}>{item.rate}</Text>
-                        </View>
+                      <View style={styles.hotShop_group103_group102_group17_group42_group370f51e497}>
+                        <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                        <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                        <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                        <ReactImage source={require('../../../assets/halfStar2.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                        <ReactImage source={require('../../../assets/none-star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                        <Text style={{ marginLeft: 7 }}>{item.rate}</Text>
+                      </View>
                       <View style={{ flexDirection: "row" }}>
                         <View style={{ marginLeft: 5, flexDirection: "row" }}>
                           <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
@@ -247,28 +272,40 @@ const HomeTab = ({ navigation }) => {
                     <View style={{ flex: 1 }}>
                       <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
                       <View style={{ flexDirection: "row", alignItems: "center" }}>
-                        <ReactImage source={require('../../../assets/location.png')} style={styles.item_location} />
+                        <ReactImage source={require('../../../assets/location.png')} style={styles.item_icon_label} />
                         <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
                       </View>
-                      <View style={{ flexDirection: "row", alignItems: "center" }}>
-                        <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_location} />
-                        <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá: 30K/Giờ</Text>
+                      {item.room != undefined &&
+                        <View style={{ flexDirection: "row", alignItems: "center" }}>
+                          <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_icon_label} />
 
-                      </View>
-                      <View style={{ flexDirection: "row" }}>
-                        <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
-                        <View style={{ marginLeft: 5, flexDirection: "row" }}>
-                          <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
-                          <View style={{ alignItems: "center" }}>
-                            <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
-                            <Text style={{ fontSize: 11 }}>10 người</Text>
+                          <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá phòng họp: {item.room.price}K/Giờ</Text>
+
+                        </View>}
+                      {item.utilities &&
+                        <View style={{ flexDirection: "row" }}>
+                          <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
+                          <View style={{ marginLeft: 5, flexDirection: "row" }}>
+                            {item.wifi &&
+                              <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, marginRight:5}} />
+                            }
+                            {item.room != undefined &&
+                              <View style={{ alignItems: "center", marginRight:5 }}>
+                                <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
+                                <Text style={{ fontSize: 11 }}>{item.room.persons} người</Text>
+                              </View>
+                            }
+                            {item.projecter &&
+                              <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, marginRight:5 }} />
+                            }
+                            {item.ac &&
+                              <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, marginRight:5 }} />
+                            }
+
                           </View>
-                          <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
-                          <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, }} />
-
                         </View>
-                      </View>
-                      <View style={{ flexDirection: "row" }}>
+                      }
+                      <View style={{ position:"absolute",bottom:0,right:0,flexDirection: "row" }}>
                         <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
                       </View>
                     </View>
@@ -294,28 +331,41 @@ const HomeTab = ({ navigation }) => {
                     <View style={{ flex: 1 }}>
                       <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
                       <View style={{ flexDirection: "row", alignItems: "center" }}>
-                        <ReactImage source={require('../../../assets/location.png')} style={styles.item_location} />
+                        <ReactImage source={require('../../../assets/location.png')} style={styles.item_icon_label} />
                         <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
                       </View>
-                      <View style={{ flexDirection: "row", alignItems: "center" }}>
-                        <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_location} />
-                        <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá: 30K/Giờ</Text>
+                      {item.room != undefined &&
+                        <View style={{ flexDirection: "row", alignItems: "center" }}>
+                          <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_icon_label} />
 
-                      </View>
-                      <View style={{ flexDirection: "row" }}>
-                        <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
-                        <View style={{ marginLeft: 5, flexDirection: "row" }}>
-                          <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
-                          <View style={{ alignItems: "center" }}>
-                            <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
-                            <Text style={{ fontSize: 11 }}>10 người</Text>
+                          <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá phòng họp: {item.room.price}K/Giờ</Text>
+
+                        </View>}
+                      {item.utilities &&
+                        <View style={{ flexDirection: "row" }}>
+                          <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
+                          <View style={{ marginLeft: 5, flexDirection: "row" }}>
+                            {item.wifi &&
+                              <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, marginRight:5}} />
+                            }
+                            {item.room != undefined &&
+                              <View style={{ alignItems: "center", marginRight:5 }}>
+                                <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
+                                <Text style={{ fontSize: 11 }}>{item.room.persons} người</Text>
+                              </View>
+                            }
+                            {item.projecter &&
+                              <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, marginRight:5 }} />
+                            }
+                            {item.ac &&
+                              <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, marginRight:5 }} />
+                            }
+
                           </View>
-                          <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
-                          <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, }} />
-
                         </View>
-                      </View>
-                      <View style={{ flexDirection: "row" }}>
+                      }
+
+                      <View style={{ position:"absolute",bottom:0,right:0,flexDirection: "row" }}>
                         <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
                       </View>
                     </View>
@@ -438,13 +488,13 @@ const styles = StyleSheet.create({
       "height": 3
     },
     "shadowRadius": 6,
-    flexDirection:"row",
-    padding:10,
+    flexDirection: "row",
+    padding: 10,
   },
   "hotShop_group103_group102_group17_i1": {
     "width": 79,
     "height": 80,
-    marginRight:10,
+    marginRight: 10,
   },
   "hotShop_group103_group102_group17_septemberCafe": {
     "color": "rgba(84, 71, 65, 1)",
@@ -467,7 +517,7 @@ const styles = StyleSheet.create({
     "borderRadius": 4,
     "width": 340,
     "height": 150,
-    marginRight:10
+    marginRight: 10
   },
 
   "hotShop_group103_group102_group17_group42_group370f51e497": {
@@ -661,7 +711,8 @@ const styles = StyleSheet.create({
     "width": 83,
     "height": 100,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    marginBottom:10
   },
   quanGnBnb2eef024_item_left_numstar: {
 
@@ -669,7 +720,7 @@ const styles = StyleSheet.create({
   quanGnBnb2eef024_item_left_star2918bd71: {
 
   },
-  item_location: {
+  item_icon_label: {
     "width": 8.24,
     "height": 13.19,
     marginRight: 4,
