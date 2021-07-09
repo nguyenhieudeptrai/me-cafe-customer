@@ -100,16 +100,15 @@ const HomeTab = ({ navigation }) => {
     let newArr = dataFilter;
     console.log("find:", index, checked, item)
     if (index > -1) {
-      dataFilter.splice(index, 1);
+      newArr.splice(index, 1);
     }
     if (checked) {
-      dataFilter.push(item);
+      newArr.push(item);
     }
     console.log("new arr", dataFilter, newArr)
-    setDataFilter(dataFilter);
+    setDataFilter([...newArr]);
     hasFilter(true);
   }
-
 
 
   const onRemoveFilter = () => {
@@ -143,6 +142,7 @@ const HomeTab = ({ navigation }) => {
         {isFilter &&
           <View style={{ flexDirection: "row", width: "100%", paddingHorizontal: 10 }}>
             {dataFilter.map((item, index) => {
+              console.log(index);
               return (
                 <View key={index} style={{ borderRadius: 30, borderColor: "#000", padding: 5, borderWidth: 1, marginRight: 5 }}>
                   <Text style={{ fontSize: 12 }}>{item.name}</Text>
