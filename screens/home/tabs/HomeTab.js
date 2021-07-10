@@ -148,6 +148,7 @@ const HomeTab = ({ navigation }) => {
   }
 
   return (
+
     <View style={styles.home}>
       <View style={styles.header}>
         <View style={styles.header_group_up}>
@@ -180,8 +181,7 @@ const HomeTab = ({ navigation }) => {
         }
       </View>
       <View style={{ flex: 1 }}>
-        {openFilter
-          &&
+        {openFilter &&
           <View style={styles.filter}>
             <View><Text style={styles.filter_title}>Loại quán</Text></View>
             <Checkbox.Group>
@@ -197,7 +197,9 @@ const HomeTab = ({ navigation }) => {
               </TouchableOpacity>
             </View>
             <TouchableOpacity style={styles.filter_bg} onPress={() => setOpenFilter(false)} />
-          </View>}
+
+          </View>
+        }
         <ScrollView contentContainerStyle={{ alignItems: "center" }}>
 
           {!isFilter ? <>
@@ -293,449 +295,442 @@ const HomeTab = ({ navigation }) => {
                             }
 
                           </View>
-                          <View style={{ flexDirection: "row", "left": 10 }}>
+                        </View>
+                      }
+                      <View style={{ position: "absolute", bottom: 0, right: 0, flexDirection: "row" }}>
+                        <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
+                      </View>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              )} />
+            </View>
+          </> :
+            <View style={styles.quanGnBnb2eef024}>
+              <FlatList data={data} style={{ flex: 1 }} renderItem={({ item, index }) => (
+                <TouchableOpacity key={index} onPress={onItemPress} style={styles.quanGnBnb2eef024_group23}>
+                  <View style={styles.quanGnBnb2eef024_group23_group105}>
+                    <Text style={styles.quanGnBnb2eef024_group23_group105_x700m}>{item.distance}</Text>
+
+                    <View style={styles.quanGnBnb2eef024_item_left}>
+                      <ReactImage source={item.img} style={styles.quanGnBnb2eef024_group23_group105_i4} />
+                      <Text style={{ marginTop: 7 }}>{item.rate} <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
+                      </Text>
+                    </View>
+
+                    <View style={{ flex: 1, }}>
+                      <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
+                      <View style={{ flexDirection: "row", alignItems: "center" }}>
+                        <ReactImage source={require('../../../assets/location.png')} style={styles.item_icon_label} />
+                        <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
+                      </View>
+                      {item.room != undefined &&
+                        <View style={{ flexDirection: "row", alignItems: "center" }}>
+                          <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_icon_label} />
+
+                          <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá phòng họp: {item.room.price}K/Giờ</Text>
+
+                        </View>}
+                      {item.utilities &&
+                        <View style={{ flexDirection: "row" }}>
+                          <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
+                          <View style={{ marginLeft: 5, flexDirection: "row" }}>
+                            {item.wifi &&
+                              <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, marginRight: 5 }} />
+                            }
+                            {item.room != undefined &&
+                              <View style={{ alignItems: "center", marginRight: 5 }}>
+                                <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
+                                <Text style={{ fontSize: 11 }}>{item.room.persons} người</Text>
+                              </View>
+                            }
+                            {item.projecter &&
+                              <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, marginRight: 5 }} />
+                            }
+                            {item.ac &&
+                              <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, marginRight: 5 }} />
+                            }
+
+                          </View>
+                          <View style={{ flexDirection: "row" }}>
                             <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
-                            <View style={{ marginLeft: 5, flexDirection: "row" }}>
+                            <View style={{ marginLeft: 5, flexDirection: "row", }}>
                               <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
                               <View style={{ alignItems: "center" }}>
                                 <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
                                 <Text style={{ fontSize: 11 }}>10 người</Text>
                               </View>
+                              <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
+                              <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 20 }} />
+
                             </View>
+                          </View>
+                        </View>
                       }
-                            <View style={{ position: "absolute", bottom: 0, right: 0, flexDirection: "row" }}>
-                              <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
-                            </View>
-                          </View>
-                        </View>
-                </TouchableOpacity>
-              )} />
 
-
-                  </View>
-          </> :
-              <View style={styles.quanGnBnb2eef024}>
-                <FlatList data={data} style={{ flex: 1 }} renderItem={({ item, index }) => (
-                  <TouchableOpacity key={index} onPress={onItemPress} style={styles.quanGnBnb2eef024_group23}>
-                    <View style={styles.quanGnBnb2eef024_group23_group105}>
-                      <Text style={styles.quanGnBnb2eef024_group23_group105_x700m}>{item.distance}</Text>
-
-                      <View style={styles.quanGnBnb2eef024_item_left}>
-                        <ReactImage source={item.img} style={styles.quanGnBnb2eef024_group23_group105_i4} />
-                        <Text style={{ marginTop: 7 }}>{item.rate} <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                        </Text>
+                      <View style={{ position: "absolute", bottom: 0, right: 0, flexDirection: "row" }}>
+                        <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
                       </View>
+                    </View>
+                  </View>
+                </TouchableOpacity>
 
-                      <View style={{ flex: 1, }}>
-                        <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
-                        <View style={{ flexDirection: "row", alignItems: "center" }}>
-                          <ReactImage source={require('../../../assets/location.png')} style={styles.item_icon_label} />
-                          <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
-                        </View>
-                        {item.room != undefined &&
-                          <View style={{ flexDirection: "row", alignItems: "center" }}>
-                            <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_icon_label} />
-
-                            <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá phòng họp: {item.room.price}K/Giờ</Text>
-
-                          </View>}
-                        {item.utilities &&
-                          <View style={{ flexDirection: "row" }}>
-                            <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
-                            <View style={{ marginLeft: 5, flexDirection: "row" }}>
-                              {item.wifi &&
-                                <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, marginRight: 5 }} />
-                              }
-                              {item.room != undefined &&
-                                <View style={{ alignItems: "center", marginRight: 5 }}>
-                                  <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
-                                  <Text style={{ fontSize: 11 }}>{item.room.persons} người</Text>
-                                </View>
-                              }
-                              {item.projecter &&
-                                <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, marginRight: 5 }} />
-                              }
-                              {item.ac &&
-                                <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, marginRight: 5 }} />
-                              }
-
-                            </View>
-                            <View style={{ flexDirection: "row" }}>
-                              <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
-                              <View style={{ marginLeft: 5, flexDirection: "row", }}>
-                                <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
-                                <View style={{ alignItems: "center" }}>
-                                  <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
-                                  <Text style={{ fontSize: 11 }}>10 người</Text>
-                                </View>
-                                <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
-                                <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 20 }} />
-                              </View>
-                              <View style={{ position: "absolute", bottom: 0, right: 0, flexDirection: "row" }}>
-                                <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
-                              </View>
-                            </View>
-                          </View>
-                  </TouchableOpacity>
-                )} />
-                    </View>}
+              )} />
+            </View>}
 
         </ScrollView>
       </View>
-              </View >
-              );
+    </View >
+  );
 }
-              export default HomeTab;
 
-              const styles = StyleSheet.create({
-                "home": {
-                "flex": 1,
-              "backgroundColor": "rgba(220, 220, 220, 1)",
-  },
+export default HomeTab;
 
-              "quanGnBnb2eef024": {
-                "flex": 1,
-              "width": "90%",
-              marginTop: 10
-  },
-              "quanGnBnb2eef024_quanGnBn": {
-                "color": "rgba(84, 71, 65, 1)",
-              "fontSize": 15,
-              "fontWeight": "700",
-              "fontStyle": "normal",
-              "fontFamily": "Roboto",
-
-              "width": "100%",
-              paddingBottom: 5,
-              marginBottom: 10,
-              borderBottomWidth: 1,
-  },
-              "quanGnBnb2eef024_group23": {
-                "width": "100%",
-              "position": "relative",
-              "marginBottom": 10,
-  },
-              "quanGnBnb2eef024_group23_group105": {
-                "position": "relative",
-              "backgroundColor": "rgba(255, 255, 255, 1)",
-              "borderRadius": 4,
-              "shadowColor": "rgb(0,  0,  0)",
-              "shadowOpacity": 0.1607843137254902,
-              "shadowOffset": {
-                "width": 0,
-              "height": 3
-    },
-              "shadowRadius": 6,
-              "width": "100%",
-              flexDirection: "row",
-              padding: 10
-  },
-              "quanGnBnb2eef024_group23_group105_i4": {
-                "borderRadius": 4,
-              "width": 83,
-              "height": 83,
-              marginRight: 10
-  },
-              "quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3": {
-                "color": "rgba(194, 151, 106, 0.9803921568627451)",
-              "fontSize": 13,
-              "fontWeight": "400",
-              "fontStyle": "normal",
-              "fontFamily": "Roboto",
-  },
-              "quanGnBnb2eef024_group23_group105_x700m": {
-                "position": "absolute",
-              "backgroundColor": "rgba(255, 255, 255, 0)",
-              "color": "rgba(0, 0, 0, 0.9803921568627451)",
-              "fontSize": 12,
-              "fontWeight": "400",
-              "fontStyle": "italic",
-              "fontFamily": "Roboto",
-              "right": 10,
-              "top": 16
-  },
-              "quanGnBnb2eef024_group23_group105_bstoryCafe": {
-                "color": "rgba(84, 71, 65, 1)",
-              "fontSize": 18,
-              "fontWeight": "700",
-              "fontStyle": "normal",
-              "fontFamily": "Roboto",
-  },
-              "hotShop": {
-                "width": "90%",
-              "marginBottom": 10,
-  },
-              "hotShop_group103": {
-                "width": "100%",
-  },
-              "hotShop_group103_hotShopNht": {
-                "backgroundColor": "rgba(255, 255, 255, 0)",
-              "color": "rgba(84, 71, 65, 1)",
-              "fontSize": 15,
-              "fontWeight": "700",
-              "fontStyle": "normal",
-              "fontFamily": "Roboto",
-              "width": "100%",
-              "paddingBottom": 5,
-              "marginBottom": 10,
-              "borderBottomWidth": 1,
-  },
-              "hotShop_group103_group102_group17": {
-                "backgroundColor": "#FFF",
-              "borderRadius": 5,
-              "margin": 5,
-              "marginBottom": 10,
-              "shadowColor": "rgb(0,  0,  0)",
-              "shadowOpacity": 0.1607843137254902,
-              "shadowOffset": {
-                "width": 0,
-              "height": 3
-    },
-              "shadowRadius": 6,
-              flexDirection: "row",
-              padding: 10,
-  },
-              "hotShop_group103_group102_group17_i1": {
-                "width": 79,
-              "height": 80,
-              marginRight: 10,
-  },
-              "hotShop_group103_group102_group17_septemberCafe": {
-                "color": "rgba(84, 71, 65, 1)",
-              "fontSize": 14,
-              "fontWeight": "700",
-              "fontStyle": "normal",
-              "fontFamily": "Roboto",
-              "left": 93,
-              "top": 41
+const styles = StyleSheet.create({
+  "home": {
+    "flex": 1,
+    "backgroundColor": "rgba(220, 220, 220, 1)",
   },
 
-"Hotdeal": {
-                "width": "90%",
-              "alignSelf": 'center',
-              marginBottom: 10
+  "quanGnBnb2eef024": {
+    "flex": 1,
+    "width": "90%",
+    marginTop: 10
   },
+  "quanGnBnb2eef024_quanGnBn": {
+    "color": "rgba(84, 71, 65, 1)",
+    "fontSize": 15,
+    "fontWeight": "700",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
 
-              "HotDeal_Picture": {
-                "borderRadius": 4,
-              "width": 340,
-              "height": 150,
-              marginRight: 10
-  },
-
-              "hotShop_group103_group102_group17_group42_group370f51e497": {
-                flexDirection: "row",
-              alignItems: "center"
-  },
-              "hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98": {
-                "width": 12,
-              "height": 13,
-  },
-              "hotShop_group103_group102_group17_group42_group3850e2cc78": {
-                "position": "absolute",
-
-              "width": 12,
-              "height": 13,
-              "left": 16,
-
-  },
-              "hotShop_group103_group102_group17_group42_group3850e2cc78_star2e40c2f1": {
-                "position": "absolute",
-              "borderTopLeftRadius": 0,
-              "borderTopRightRadius": 0,
-              "borderBottomLeftRadius": 0,
-              "borderBottomRightRadius": 0,
-              "width": 12,
-              "height": 13,
-
-
-  },
-              "hotShop_group103_group102_group17_group42_group391f531ae3": {
-                "position": "absolute",
-
-              "width": 13,
-              "height": 13,
-              "left": 31,
-
-  },
-              "hotShop_group103_group102_group17_group42_group391f531ae3_starbef87d39": {
-                "position": "absolute",
-              "borderTopLeftRadius": 0,
-              "borderTopRightRadius": 0,
-              "borderBottomLeftRadius": 0,
-              "borderBottomRightRadius": 0,
-              "width": 13,
-              "height": 13,
-
-
-  },
-              "hotShop_group103_group102_group17_group42_group41ea5fbe0b": {
-                "position": "absolute",
-
-              "width": 13,
-              "height": 13,
-              "left": 62,
-
-  },
-              "hotShop_group103_group102_group17_group42_group41ea5fbe0b_halfStar22d835025": {
-                "position": "absolute",
-              "borderTopLeftRadius": 0,
-              "borderTopRightRadius": 0,
-              "borderBottomLeftRadius": 0,
-              "borderBottomRightRadius": 0,
-              "width": 13,
-              "height": 13,
-
-
-  },
-              "hotShop_group103_group102_group17_group42_group1138d5db7c6": {
-                "position": "absolute",
-
-              "width": 12,
-              "height": 13,
-              "left": 47,
-
-  },
-              "hotShop_group103_group102_group17_group42_group1138d5db7c6_star0159e37c": {
-                "position": "absolute",
-              "borderTopLeftRadius": 0,
-              "borderTopRightRadius": 0,
-              "borderBottomLeftRadius": 0,
-              "borderBottomRightRadius": 0,
-              "width": 12,
-              "height": 13,
-
-
-  },
-              "hotShop_path8": {
-                "position": "absolute",
-              "width": 328.14,
-              "height": 4,
-              "left": -2,
-              "top": 14
-  },
-              "header": {
-                "backgroundColor": "rgba(241, 211, 126, 1)",
     "width": "100%",
-<<<<<<< HEAD
-            "marginBottom": 10,
-            "paddingTop": 30,
-=======
-    "paddingTop": 40,
->>>>>>> 1b2f1cb2c1e0f8b7c0f5d4d01dab9425410d5d0a
-            paddingBottom: 10,
-            "shadowColor": "rgb(0,  0,  0)",
-            "shadowOpacity": 0.1607843137254902,
-            "shadowOffset": {
-              "width": 0,
-            "height": 6
+    paddingBottom: 5,
+    marginBottom: 10,
+    borderBottomWidth: 1,
+  },
+  "quanGnBnb2eef024_group23": {
+    "width": "100%",
+    "position": "relative",
+    "marginBottom": 10,
+  },
+  "quanGnBnb2eef024_group23_group105": {
+    "position": "relative",
+    "backgroundColor": "rgba(255, 255, 255, 1)",
+    "borderRadius": 4,
+    "shadowColor": "rgb(0,  0,  0)",
+    "shadowOpacity": 0.1607843137254902,
+    "shadowOffset": {
+      "width": 0,
+      "height": 3
     },
-            "shadowRadius": 6,
+    "shadowRadius": 6,
+    "width": "100%",
+    flexDirection: "row",
+    padding: 10
   },
-            header_group_up: {
-              "flexDirection": "row",
-            "alignItems": "center",
-            "width": "100%",
+  "quanGnBnb2eef024_group23_group105_i4": {
+    "borderRadius": 4,
+    "width": 83,
+    "height": 83,
+    marginRight: 10
   },
-            "header_group101": {
-              "width": 40,
-            "height": 21,
+  "quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3": {
+    "color": "rgba(194, 151, 106, 0.9803921568627451)",
+    "fontSize": 13,
+    "fontWeight": "400",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
   },
-            "header_logo": {
-              "width": 105,
-            "height": 65,
+  "quanGnBnb2eef024_group23_group105_x700m": {
+    "position": "absolute",
+    "backgroundColor": "rgba(255, 255, 255, 0)",
+    "color": "rgba(0, 0, 0, 0.9803921568627451)",
+    "fontSize": 12,
+    "fontWeight": "400",
+    "fontStyle": "italic",
+    "fontFamily": "Roboto",
+    "right": 10,
+    "top": 16
   },
-            "header_logo_logoPng": {
-              "borderTopLeftRadius": 0,
-            "borderTopRightRadius": 0,
-            "borderBottomLeftRadius": 0,
-            "borderBottomRightRadius": 0,
-            "width": 90,
-            "height": 65,
+  "quanGnBnb2eef024_group23_group105_bstoryCafe": {
+    "color": "rgba(84, 71, 65, 1)",
+    "fontSize": 18,
+    "fontWeight": "700",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
   },
-            "header_logo_asset1": {
-              "position": "absolute",
-            "borderTopLeftRadius": 0,
-            "borderTopRightRadius": 0,
-            "borderBottomLeftRadius": 0,
-            "borderBottomRightRadius": 0,
-            "width": 50,
-            "height": 16,
-            "left": 55,
-            "top": 39
+  "hotShop": {
+    "width": "90%",
+    "marginBottom": 10,
   },
-            "header_search": {
-              "borderWidth": 1,
-            "borderColor": "rgba(177, 137, 16, 1)",
-            "borderWidth": 1,
-            "borderRadius": 5,
-            "height": 30,
-            "paddingLeft": 5,
-            "paddingRight": 5,
-            "marginLeft": 5,
-            "marginRight": 5,
-            "fontSize": 14,
-            "fontWeight": "300",
-            "fontStyle": "normal",
-            "fontFamily": "Roboto",
-            "flexDirection": "row",
-            "alignItems": "center",
-            "flex": 1,
+  "hotShop_group103": {
+    "width": "100%",
   },
-            "header_filter": {
-              "width": 23,
-            "height": 23,
-            marginLeft: 5,
-            marginRight: 5
+  "hotShop_group103_hotShopNht": {
+    "backgroundColor": "rgba(255, 255, 255, 0)",
+    "color": "rgba(84, 71, 65, 1)",
+    "fontSize": 15,
+    "fontWeight": "700",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "width": "100%",
+    "paddingBottom": 5,
+    "marginBottom": 10,
+    "borderBottomWidth": 1,
   },
-            filter: {
-              position: "absolute",
-            width: "100%",
-            height: "100%",
-            top: 0,
-            zIndex: 1
+  "hotShop_group103_group102_group17": {
+    "backgroundColor": "#FFF",
+    "borderRadius": 5,
+    "margin": 5,
+    "marginBottom": 10,
+    "shadowColor": "rgb(0,  0,  0)",
+    "shadowOpacity": 0.1607843137254902,
+    "shadowOffset": {
+      "width": 0,
+      "height": 3
+    },
+    "shadowRadius": 6,
+    flexDirection: "row",
+    padding: 10,
   },
-            filter_bg: {
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-            flex: 1,
+  "hotShop_group103_group102_group17_i1": {
+    "width": 79,
+    "height": 80,
+    marginRight: 10,
   },
-            filter_title: {
-              "fontSize": 14,
-            "fontWeight": "700",
-            "fontFamily": "Roboto",
-            "color": "rgba(84, 71, 65, 1)",
-            marginBottom: 5
+  "hotShop_group103_group102_group17_septemberCafe": {
+    "color": "rgba(84, 71, 65, 1)",
+    "fontSize": 14,
+    "fontWeight": "700",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "left": 93,
+    "top": 41
   },
-            filter_item: {
-              marginLeft: 10,
-  },
-            filter_label: {
-              "fontSize": 14,
-            "fontWeight": "400",
-            "fontFamily": "Roboto",
-            "color": "rgba(84, 71, 65, 1)",
-  },
-            quanGnBnb2eef024_item_left: {
-              "width": 83,
-            "height": 100,
-            alignItems: "center",
-            justifyContent: "center",
-            marginBottom:10
-  },
-            quanGnBnb2eef024_item_left_numstar: {
 
-            },
-            quanGnBnb2eef024_item_left_star2918bd71: {
-
-            },
-            item_icon_label: {
-              "width": 8.24,
-            "height": 13.19,
-            marginRight: 4,
+  "Hotdeal": {
+    "width": "100%",
+    paddingLeft: 10,
+    marginBottom: 10,
+    marginTop: 10
   },
-            item_price: {
-              "width": 8.96,
-            "height": 8.96,
-            marginRight: 4,
+
+  "HotDeal_Picture": {
+    "borderRadius": 4,
+    "width": 340,
+    "height": 150,
+    marginRight: 10
+  },
+
+  "hotShop_group103_group102_group17_group42_group370f51e497": {
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  "hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98": {
+    "width": 12,
+    "height": 13,
+  },
+  "hotShop_group103_group102_group17_group42_group3850e2cc78": {
+    "position": "absolute",
+
+    "width": 12,
+    "height": 13,
+    "left": 16,
+
+  },
+  "hotShop_group103_group102_group17_group42_group3850e2cc78_star2e40c2f1": {
+    "position": "absolute",
+    "borderTopLeftRadius": 0,
+    "borderTopRightRadius": 0,
+    "borderBottomLeftRadius": 0,
+    "borderBottomRightRadius": 0,
+    "width": 12,
+    "height": 13,
+
+
+  },
+  "hotShop_group103_group102_group17_group42_group391f531ae3": {
+    "position": "absolute",
+
+    "width": 13,
+    "height": 13,
+    "left": 31,
+
+  },
+  "hotShop_group103_group102_group17_group42_group391f531ae3_starbef87d39": {
+    "position": "absolute",
+    "borderTopLeftRadius": 0,
+    "borderTopRightRadius": 0,
+    "borderBottomLeftRadius": 0,
+    "borderBottomRightRadius": 0,
+    "width": 13,
+    "height": 13,
+
+
+  },
+  "hotShop_group103_group102_group17_group42_group41ea5fbe0b": {
+    "position": "absolute",
+
+    "width": 13,
+    "height": 13,
+    "left": 62,
+
+  },
+  "hotShop_group103_group102_group17_group42_group41ea5fbe0b_halfStar22d835025": {
+    "position": "absolute",
+    "borderTopLeftRadius": 0,
+    "borderTopRightRadius": 0,
+    "borderBottomLeftRadius": 0,
+    "borderBottomRightRadius": 0,
+    "width": 13,
+    "height": 13,
+
+
+  },
+  "hotShop_group103_group102_group17_group42_group1138d5db7c6": {
+    "position": "absolute",
+
+    "width": 12,
+    "height": 13,
+    "left": 47,
+
+  },
+  "hotShop_group103_group102_group17_group42_group1138d5db7c6_star0159e37c": {
+    "position": "absolute",
+    "borderTopLeftRadius": 0,
+    "borderTopRightRadius": 0,
+    "borderBottomLeftRadius": 0,
+    "borderBottomRightRadius": 0,
+    "width": 12,
+    "height": 13,
+
+
+  },
+  "hotShop_path8": {
+    "position": "absolute",
+    "width": 328.14,
+    "height": 4,
+    "left": -2,
+    "top": 14
+  },
+  "header": {
+    "backgroundColor": "rgba(241, 211, 126, 1)",
+    "width": "100%",
+    "paddingTop": 40,
+    paddingBottom: 10,
+    "shadowColor": "rgb(0,  0,  0)",
+    "shadowOpacity": 0.1607843137254902,
+    "shadowOffset": {
+      "width": 0,
+      "height": 6
+    },
+    "shadowRadius": 6,
+  },
+  header_group_up: {
+    "flexDirection": "row",
+    "alignItems": "center",
+    "width": "100%",
+  },
+  "header_group101": {
+    "width": 40,
+    "height": 21,
+  },
+  "header_logo": {
+    "width": 105,
+    "height": 65,
+  },
+  "header_logo_logoPng": {
+    "borderTopLeftRadius": 0,
+    "borderTopRightRadius": 0,
+    "borderBottomLeftRadius": 0,
+    "borderBottomRightRadius": 0,
+    "width": 90,
+    "height": 65,
+  },
+  "header_logo_asset1": {
+    "position": "absolute",
+    "borderTopLeftRadius": 0,
+    "borderTopRightRadius": 0,
+    "borderBottomLeftRadius": 0,
+    "borderBottomRightRadius": 0,
+    "width": 50,
+    "height": 16,
+    "left": 55,
+    "top": 39
+  },
+  "header_search": {
+    "borderWidth": 1,
+    "borderColor": "rgba(177, 137, 16, 1)",
+    "borderWidth": 1,
+    "borderRadius": 5,
+    "height": 30,
+    "paddingLeft": 5,
+    "paddingRight": 5,
+    "marginLeft": 5,
+    "marginRight": 5,
+    "fontSize": 14,
+    "fontWeight": "300",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "flexDirection": "row",
+    "alignItems": "center",
+    "flex": 1,
+  },
+  "header_filter": {
+    "width": 23,
+    "height": 23,
+    marginLeft: 5,
+    marginRight: 5
+  },
+  filter: {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    top: 0,
+    zIndex: 1
+  },
+  filter_bg: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    flex: 1,
+  },
+  filter_title: {
+    "fontSize": 14,
+    "fontWeight": "700",
+    "fontFamily": "Roboto",
+    "color": "rgba(84, 71, 65, 1)",
+    marginBottom: 5
+  },
+  filter_item: {
+    marginLeft: 10,
+  },
+  filter_label: {
+    "fontSize": 14,
+    "fontWeight": "400",
+    "fontFamily": "Roboto",
+    "color": "rgba(84, 71, 65, 1)",
+  },
+  quanGnBnb2eef024_item_left: {
+    "width": 83,
+    "height": 100,
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 10
+  },
+  quanGnBnb2eef024_item_left_numstar: {
+
+  },
+  quanGnBnb2eef024_item_left_star2918bd71: {
+
+  },
+  item_icon_label: {
+    "width": 8.24,
+    "height": 13.19,
+    marginRight: 4,
+  },
+  item_price: {
+    "width": 8.96,
+    "height": 8.96,
+    marginRight: 4,
   }
 });
