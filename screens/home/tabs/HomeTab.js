@@ -90,7 +90,6 @@ const dataTop = [
     rate: "3.5",
   },
   {
-<<<<<<< HEAD
     name: "The Dome Kaffe",
     image: require("../../../assets/cafe2.jpg"),
     rate: "3.0",
@@ -98,20 +97,6 @@ const dataTop = [
   {
     name: " Chanchamayo",
     image: require("../../../assets/cafe8.jpg"),
-=======
-    name: "September Cafe",
-    image: require("../../../assets/i4.png"),
-    rate: "3.0",
-  },
-  {
-    name: "September Cafe",
-    image: require("../../../assets/i3.png"),
-    rate: "3.0",
-  },
-  {
-    name: "September Cafe",
-    image: require("../../../assets/i2.png"),
->>>>>>> 1b2f1cb2c1e0f8b7c0f5d4d01dab9425410d5d0a
     rate: "3.0",
   },
 ]
@@ -197,7 +182,6 @@ const HomeTab = ({ navigation }) => {
       </View>
       <View style={{ flex: 1 }}>
         {openFilter
-<<<<<<< HEAD
           &&
           <View style={styles.filter}>
             <View><Text style={styles.filter_title}>Loại quán</Text></View>
@@ -212,23 +196,6 @@ const HomeTab = ({ navigation }) => {
               <TouchableOpacity onPress={onRemoveFilter} style={{ alignSelf: "flex-end", backgroundColor: "rgba(250, 175, 82, 1)", padding: 5 }}>
                 <Text>Bỏ lọc</Text>
               </TouchableOpacity>
-=======
-          && <View style={styles.filter}>
-            <View style={{ padding: 10, backgroundColor: "#FFF" }}>
-              <View><Text style={styles.filter_title}>Loại quán</Text></View>
-              <Checkbox.Group>
-                {checkboxData.map(item => (
-                  <View>
-                    <Checkbox onChecked={(check) => onFilter(item, check)} activeColor="#544741" value={item.value} style={styles.filter_item} suffix={<Text style={styles.filter_label}>{item.name}</Text>} />
-                  </View>
-                ))}
-              </Checkbox.Group>
-              <View style={{ width: "100%" }}>
-                <TouchableOpacity onPress={onRemoveFilter} style={{ alignSelf: "flex-end", backgroundColor: "#FF0", padding: 5 }}>
-                  <Text>Bỏ lọc</Text>
-                </TouchableOpacity>
-              </View>
->>>>>>> 1b2f1cb2c1e0f8b7c0f5d4d01dab9425410d5d0a
             </View>
             <TouchableOpacity style={styles.filter_bg} onPress={() => setOpenFilter(false)} />
 
