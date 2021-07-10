@@ -59,6 +59,7 @@ const VoucherTab = () => {
       <View style={styles.header}>
         <Text style={styles.header_title}>THẺ THÀNH VIÊN / ƯU ĐÃI</Text>
       </View>
+      <ScrollView contentContainerStyle={{alignItems:"center"}}>
       <View style={styles.voucher_progress}>
         <View style={styles.voucher_rectangle1476}></View>
         <View style={styles.voucher_group118}>
@@ -116,7 +117,7 @@ const VoucherTab = () => {
       </View>
       <Text style={styles.voucher_uAiDanhChoBn}>Ưu đãi dành cho bạn</Text>
 
-      <FlatList style={{ width: "90%", flex: 1 }} data={data} renderItem={({ item, index }) => (
+      <FlatList style={{ width: "90%" }} data={data} renderItem={({ item, index }) => (
         <TouchableOpacity key={index} onPress={()=>setViewQrCode(true)} style={styles.voucher_list_item}>
           <View style={styles.voucher_list_item_group127_group125906bcef6_rectangle14806a0ef2a7}>
             <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7}>
@@ -138,6 +139,7 @@ const VoucherTab = () => {
           </View>
         </TouchableOpacity>
       )} />
+      </ScrollView>
       <Overlay visible={viewQrCode} p="xl">
         <QRCodeVoucherPopUp close={()=>setViewQrCode(false)}/>
       </Overlay>
