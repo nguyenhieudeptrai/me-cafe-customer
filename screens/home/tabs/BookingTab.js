@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     "borderColor": "#707070",
   },
   "booking_select_box": {
-    "backgroundColor": "rgba(199, 195, 195, 1)",
+    "backgroundColor": "rgba(240, 211, 122, 1)",
     "borderRadius": 2,
     "borderWidth": 0,
     "width": "30%",

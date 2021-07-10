@@ -25,7 +25,7 @@ const data = [
     id: "The Feine Cafe",
     name: "The Feine Cafe",
     address: "33 Đường số 4, Trung Sơn, Quận 7",
-    img: require('../../../assets/i5.png'),
+    img: require('../../../assets/cafe3.jpg'),
     distance: "1.1km",
     rate: "4.5",
     bookingNum: 76,
@@ -34,7 +34,7 @@ const data = [
     id: "Quán của Thời Thanh Xuân",
     name: "The Feine Cafe",
     address: "43 Đồng Khởi, Quận 1",
-    img: require('../../../assets/i6.png'),
+    img: require('../../../assets/cafe4.jpg'),
     distance: "1.3km",
     rate: "3.8",
     bookingNum: 35,
@@ -43,7 +43,7 @@ const data = [
     id: "Cafe Cú trên cây Garden",
     name: "Cafe Cú trên cây Garden",
     address: "262 Ung Văn Khiêm, Quận Bình Thạnh",
-    img: require('../../../assets/i7.png'),
+    img: require('../../../assets/cafe5.jpg'),
     distance: "1.7km",
     rate: "4.0",
     bookingNum: 5,
@@ -52,7 +52,7 @@ const data = [
     id: "Farmers’ Garden",
     name: "Farmers’ Garden",
     address: "Lầu 2, 486 Nguyễn Thị Thập, Quận 7",
-    img: require('../../../assets/i8.png'),
+    img: require('../../../assets/cafe6.jpg'),
     distance: "2km",
     rate: "4.3",
     bookingNum: 12,
@@ -61,15 +61,21 @@ const data = [
 const dataTop = [
   {
     name: "September Cafe",
-    image: require("../../../assets/i1.png"),
+    image: require("../../../assets/cafe1.jpg"),
     rate: "3.5",
   },
   {
-    name: "September Cafe",
-    image: require("../../../assets/i2.png"),
+    name: "The Dome Kaffe",
+    image: require("../../../assets/cafe2.jpg"),
+    rate: "3.0",
+  },
+  {
+    name: " Chanchamayo",
+    image: require("../../../assets/cafe8.jpg"),
     rate: "3.0",
   },
 ]
+
 const checkboxData = [
   {
     name: "Có phòng họp",
@@ -93,7 +99,7 @@ const HomeTab = ({ navigation }) => {
 
 
   const onItemPress = () => {
-    navigation.navigate('DetailShop')
+    navigation.navigate('ShopInfo')
   }
   const onFilter = (item, checked) => {
     let index = dataFilter.indexOf(item);
@@ -120,8 +126,6 @@ const HomeTab = ({ navigation }) => {
   return (
 
     <View style={styles.home}>
-
-
       <View style={styles.header}>
         <View style={styles.header_group_up}>
           <View style={styles.header_logo}>
@@ -132,7 +136,6 @@ const HomeTab = ({ navigation }) => {
             <TextInput style={{ flex: 1 }} placeholder="Tìm kiếm quán Cafe...." />
             <Svg width="20" height="20" viewBox="0 0 15.224 15.03">
               <SvgLine x2="5" y2="5" transform="translate(10 11)" fill="none" stroke="#707070" strokeWidth="1.5" />
-
               <SvgCircle cx="6" cy="6" r="5.5" fill="none" stroke="#707070" />
             </Svg>
           </View>
@@ -165,7 +168,7 @@ const HomeTab = ({ navigation }) => {
               ))}
             </Checkbox.Group>
             <View style={{ width: "100%" }}>
-              <TouchableOpacity onPress={onRemoveFilter} style={{ alignSelf: "flex-end", backgroundColor: "#FF0", padding: 5 }}>
+              <TouchableOpacity onPress={onRemoveFilter} style={{ alignSelf: "flex-end", backgroundColor: "rgba(250, 175, 82, 1)", padding: 5 }}>
                 <Text>Bỏ lọc</Text>
               </TouchableOpacity>
             </View>
@@ -227,7 +230,7 @@ const HomeTab = ({ navigation }) => {
                         <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá: 30K/Giờ</Text>
 
                       </View>
-                      <View style={{ flexDirection: "row" }}>
+                      <View style={{ flexDirection: "row" , "left": 10}}>
                         <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
                         <View style={{ marginLeft: 5, flexDirection: "row" }}>
                           <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
@@ -263,7 +266,7 @@ const HomeTab = ({ navigation }) => {
                       </Text>
                     </View>
 
-                    <View style={{ flex: 1 }}>
+                    <View style={{ flex: 1 , }}>
                       <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
                       <View style={{ flexDirection: "row", alignItems: "center" }}>
                         <ReactImage source={require('../../../assets/location.png')} style={styles.item_location} />
@@ -276,14 +279,14 @@ const HomeTab = ({ navigation }) => {
                       </View>
                       <View style={{ flexDirection: "row" }}>
                         <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
-                        <View style={{ marginLeft: 5, flexDirection: "row" }}>
+                        <View style={{ marginLeft: 5, flexDirection: "row" , }}>
                           <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
                           <View style={{ alignItems: "center" }}>
                             <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
                             <Text style={{ fontSize: 11 }}>10 người</Text>
                           </View>
                           <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
-                          <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, }} />
+                          <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 20}} />
 
                         </View>
                       </View>
@@ -450,8 +453,8 @@ const styles = StyleSheet.create({
   },
 
   "Hotdeal": {
-    "width": "100%",
-    paddingLeft: 30,
+    "width": "90%",
+    "alignSelf": 'center',
     marginBottom: 10
   },
 
@@ -561,7 +564,7 @@ const styles = StyleSheet.create({
     "backgroundColor": "rgba(241, 211, 126, 1)",
     "width": "100%",
     "marginBottom": 10,
-    "paddingTop": 40,
+    "paddingTop": 30,
     paddingBottom: 10,
     "shadowColor": "rgb(0,  0,  0)",
     "shadowOpacity": 0.1607843137254902,
