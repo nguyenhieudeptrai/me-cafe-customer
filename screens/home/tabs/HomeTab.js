@@ -24,7 +24,7 @@ const data = [
     room: { price: 30, persons: 15 },
     ac: true,
     wifi: true,
-    projecter:true,
+    projecter: true,
   },
   {
     id: "The Feine Cafe",
@@ -38,7 +38,7 @@ const data = [
     room: undefined,
     ac: false,
     wifi: true,
-    projecter:false,
+    projecter: false,
   },
   {
     id: "Quán của Thời Thanh Xuân",
@@ -52,7 +52,7 @@ const data = [
     room: undefined,
     ac: true,
     wifi: true,
-    projecter:true,
+    projecter: true,
   },
   {
     id: "Cafe Cú trên cây Garden",
@@ -66,7 +66,7 @@ const data = [
     room: { price: 40, persons: 10 },
     ac: true,
     wifi: true,
-    projecter:true,
+    projecter: true,
   },
   {
     id: "Farmers’ Garden",
@@ -80,7 +80,7 @@ const data = [
     room: { price: 40, persons: 15 },
     ac: true,
     wifi: true,
-    projecter:true,
+    projecter: true,
   },
 ]
 const dataTop = [
@@ -181,8 +181,7 @@ const HomeTab = ({ navigation }) => {
         }
       </View>
       <View style={{ flex: 1 }}>
-        {openFilter
-          &&
+        {openFilter &&
           <View style={styles.filter}>
             <View><Text style={styles.filter_title}>Loại quán</Text></View>
             <Checkbox.Group>
@@ -199,7 +198,8 @@ const HomeTab = ({ navigation }) => {
             </View>
             <TouchableOpacity style={styles.filter_bg} onPress={() => setOpenFilter(false)} />
 
-          </View>}
+          </View>
+        }
         <ScrollView contentContainerStyle={{ alignItems: "center" }}>
 
           {!isFilter ? <>
@@ -279,44 +279,31 @@ const HomeTab = ({ navigation }) => {
                           <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
                           <View style={{ marginLeft: 5, flexDirection: "row" }}>
                             {item.wifi &&
-                              <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, marginRight:5}} />
+                              <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, marginRight: 5 }} />
                             }
                             {item.room != undefined &&
-                              <View style={{ alignItems: "center", marginRight:5 }}>
+                              <View style={{ alignItems: "center", marginRight: 5 }}>
                                 <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
                                 <Text style={{ fontSize: 11 }}>{item.room.persons} người</Text>
                               </View>
                             }
                             {item.projecter &&
-                              <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, marginRight:5 }} />
+                              <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, marginRight: 5 }} />
                             }
                             {item.ac &&
-                              <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, marginRight:5 }} />
+                              <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, marginRight: 5 }} />
                             }
 
-<<<<<<< HEAD
-                      </View>
-                      <View style={{ flexDirection: "row" , "left": 10}}>
-                        <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
-                        <View style={{ marginLeft: 5, flexDirection: "row" }}>
-                          <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
-                          <View style={{ alignItems: "center" }}>
-                            <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
-                            <Text style={{ fontSize: 11 }}>10 người</Text>
-=======
->>>>>>> 1b2f1cb2c1e0f8b7c0f5d4d01dab9425410d5d0a
                           </View>
                         </View>
                       }
-                      <View style={{ position:"absolute",bottom:0,right:0,flexDirection: "row" }}>
+                      <View style={{ position: "absolute", bottom: 0, right: 0, flexDirection: "row" }}>
                         <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
                       </View>
                     </View>
                   </View>
                 </TouchableOpacity>
               )} />
-
-
             </View>
           </> :
             <View style={styles.quanGnBnb2eef024}>
@@ -331,7 +318,7 @@ const HomeTab = ({ navigation }) => {
                       </Text>
                     </View>
 
-                    <View style={{ flex: 1 , }}>
+                    <View style={{ flex: 1, }}>
                       <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
                       <View style={{ flexDirection: "row", alignItems: "center" }}>
                         <ReactImage source={require('../../../assets/location.png')} style={styles.item_icon_label} />
@@ -349,41 +336,39 @@ const HomeTab = ({ navigation }) => {
                           <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
                           <View style={{ marginLeft: 5, flexDirection: "row" }}>
                             {item.wifi &&
-                              <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, marginRight:5}} />
+                              <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, marginRight: 5 }} />
                             }
                             {item.room != undefined &&
-                              <View style={{ alignItems: "center", marginRight:5 }}>
+                              <View style={{ alignItems: "center", marginRight: 5 }}>
                                 <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
                                 <Text style={{ fontSize: 11 }}>{item.room.persons} người</Text>
                               </View>
                             }
                             {item.projecter &&
-                              <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, marginRight:5 }} />
+                              <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, marginRight: 5 }} />
                             }
                             {item.ac &&
-                              <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, marginRight:5 }} />
+                              <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, marginRight: 5 }} />
                             }
 
-<<<<<<< HEAD
-                      </View>
-                      <View style={{ flexDirection: "row" }}>
-                        <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
-                        <View style={{ marginLeft: 5, flexDirection: "row" , }}>
-                          <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
-                          <View style={{ alignItems: "center" }}>
-                            <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
-                            <Text style={{ fontSize: 11 }}>10 người</Text>
                           </View>
-                          <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
-                          <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 20}} />
+                          <View style={{ flexDirection: "row" }}>
+                            <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
+                            <View style={{ marginLeft: 5, flexDirection: "row", }}>
+                              <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
+                              <View style={{ alignItems: "center" }}>
+                                <ReactImage source={require('../../../assets/roomicon.png')} style={{ "width": 22, "height": 17 }} />
+                                <Text style={{ fontSize: 11 }}>10 người</Text>
+                              </View>
+                              <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
+                              <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 20 }} />
 
-=======
+                            </View>
                           </View>
->>>>>>> 1b2f1cb2c1e0f8b7c0f5d4d01dab9425410d5d0a
                         </View>
                       }
 
-                      <View style={{ position:"absolute",bottom:0,right:0,flexDirection: "row" }}>
+                      <View style={{ position: "absolute", bottom: 0, right: 0, flexDirection: "row" }}>
                         <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
                       </View>
                     </View>
@@ -525,16 +510,10 @@ const styles = StyleSheet.create({
   },
 
   "Hotdeal": {
-<<<<<<< HEAD
-    "width": "90%",
-    "alignSelf": 'center',
-    marginBottom: 10
-=======
     "width": "100%",
     paddingLeft: 10,
     marginBottom: 10,
     marginTop: 10
->>>>>>> 1b2f1cb2c1e0f8b7c0f5d4d01dab9425410d5d0a
   },
 
   "HotDeal_Picture": {
@@ -638,12 +617,7 @@ const styles = StyleSheet.create({
   "header": {
     "backgroundColor": "rgba(241, 211, 126, 1)",
     "width": "100%",
-<<<<<<< HEAD
-    "marginBottom": 10,
-    "paddingTop": 30,
-=======
     "paddingTop": 40,
->>>>>>> 1b2f1cb2c1e0f8b7c0f5d4d01dab9425410d5d0a
     paddingBottom: 10,
     "shadowColor": "rgb(0,  0,  0)",
     "shadowOpacity": 0.1607843137254902,
@@ -741,7 +715,7 @@ const styles = StyleSheet.create({
     "height": 100,
     alignItems: "center",
     justifyContent: "center",
-    marginBottom:10
+    marginBottom: 10
   },
   quanGnBnb2eef024_item_left_numstar: {
 
