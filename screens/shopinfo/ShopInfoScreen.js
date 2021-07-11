@@ -114,7 +114,8 @@ const ShopInfoScreen = ({ navigation }) => {
             <Text style={styles.shopinfo_result_roombtn_banTrngTLuc0800}>Bàn trống từ lúc 08:00</Text>
           </View>
           <Text style={styles.shopinfo_result_title}>KẾT QUẢ:</Text>
-        </View></ScrollView>
+        </View>
+      </ScrollView>
     </View>
   );
 }
@@ -133,7 +134,6 @@ const styles = StyleSheet.create({
   },
   "shopinfo_group19": {
     "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
     "width": "100%",
     "height": 776.89,
@@ -733,7 +733,6 @@ const styles = StyleSheet.create({
   },
   "shopinfo_info": {
     "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
     "width": "100%",
     "height": 119.36,
@@ -748,7 +747,7 @@ const styles = StyleSheet.create({
     "fontSize": 14,
     "fontWeight": "700",
     "fontStyle": "normal",
-    "fontFamily": "Roboto Medium",
+    "fontFamily": "Roboto",
     "textAlign": "left",
     "width": 200,
     "height": 19,
@@ -1029,7 +1028,6 @@ const styles = StyleSheet.create({
   },
   "shopinfo_timeslot": {
     "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
     "width": "100%",
     "height": 84.27,
@@ -1281,7 +1279,6 @@ const styles = StyleSheet.create({
   },
   "shopinfo_result": {
     "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
     "width": "100%",
     "height": 139,
@@ -1501,7 +1498,6 @@ const styles = StyleSheet.create({
   },
   "shopinfo_tienich": {
     "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
     "marginTop": 0,
     "marginRight": 0,
