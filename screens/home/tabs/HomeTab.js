@@ -57,6 +57,22 @@ const dataTop = [
     image: require("../../../assets/i2.png"),
   },
 ]
+const dataVoucher = [
+  {
+    image: require("'../../../assets/ComponentTMP_0-image.jpg"),
+
+  },
+  {
+    image: require("'../../../assets/ComponentTMP_0-image.jpg"),
+
+
+  },
+  {
+    image: require("'../../../assets/ComponentTMP_0-image.jpg"),
+
+
+  },
+]
 const HomeTab = ({ navigation }) => {
 
 
@@ -90,12 +106,43 @@ const HomeTab = ({ navigation }) => {
 
           </Svg>
         </View>
+
+
         <View style={styles.Hotdeal}>
-              <ReactImage source={require('../../../assets/ComponentTMP_0-image.jpg')} style={styles.HotDeal_Picture} />
+        <FlatList
+    style={styles.Hotdeal}
+    horizontal={true}
+    data={dataVoucher}
+    renderItem={({item}) => 
+        <RowItem/>
+    }
+
+    ItemSeparatorComponent={() => {
+        return (
+            <View
+                style={{
+                height: "100%",
+                width: 20,
+                backgroundColor: "#CED0CE",
+
+                }}
+            />
+        );
+    }}
+
+    keyExtractor={(item, index) => index.toString()}
+/>
+
+
         </View>
+
+
+
+
+
       </View>
       <View style={styles.topYeuThich}>
-    
+
         <Text style={styles.topYeuThich_group103_topYeuThichNht}>TOP Yêu thích nhất</Text>
         <FlatList
           style={styles.topYeuThich_group103}
@@ -159,7 +206,7 @@ const styles = StyleSheet.create({
   "quanGnBnb2eef024": {
     flex: 1,
     "width": "90%",
-    "top":160
+    "top": 160
   },
   "quanGnBnb2eef024_quanGnBn": {
     "backgroundColor": "rgba(255, 255, 255, 0)",
@@ -249,7 +296,7 @@ const styles = StyleSheet.create({
   "topYeuThich": {
     "width": "90%",
     marginBottom: 10,
-    "top":160
+    "top": 160
   },
   "topYeuThich_group103": {
     width: "100%",
@@ -322,8 +369,8 @@ const styles = StyleSheet.create({
     "position": "absolute",
     "width": 100,
     "height": 70,
-    "top":100,
-    "left":20
+    "top": 100,
+    "left": 20
   },
 
   "HotDeal_Picture": {
