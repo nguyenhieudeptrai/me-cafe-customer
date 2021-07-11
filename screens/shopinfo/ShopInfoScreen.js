@@ -137,8 +137,6 @@ const styles = StyleSheet.create({
     "backgroundColor": "transparent",
     "width": "100%",
     "height": 776.89,
-    "left": 0,
-    "top": 74.11
   },
   "shopinfo_group19_picture": {
     "opacity": 1,
@@ -736,8 +734,6 @@ const styles = StyleSheet.create({
     "backgroundColor": "transparent",
     "width": "100%",
     "height": 119.36,
-    "left": 26,
-    "top": 288
   },
   "shopinfo_info_giaRoomCoffee": {
     "opacity": 1,
@@ -1031,8 +1027,6 @@ const styles = StyleSheet.create({
     "backgroundColor": "transparent",
     "width": "100%",
     "height": 84.27,
-    "left": 25.5,
-    "top": 514.45
   },
   "shopinfo_timeslot_today": {
     "opacity": 1,
@@ -1282,8 +1276,6 @@ const styles = StyleSheet.create({
     "backgroundColor": "transparent",
     "width": "100%",
     "height": 139,
-    "left": 49,
-    "top": 612
   },
   "shopinfo_result_tableempty2": {
     "opacity": 1,
@@ -1509,8 +1501,6 @@ const styles = StyleSheet.create({
     "paddingLeft": 0,
     "width": 289.5,
     "height": 68,
-    "left": 26,
-    "top": 423
   },
   "shopinfo_tienich_room": {
     "opacity": 1,
