@@ -31,7 +31,7 @@ const LoginScreen = ({ navigation }) => {
       </View>
       <View style={styles.login_password}>
         <View style={styles.login_password_rectangle116}></View>
-        <TextInput style={styles.login_password_x6e3b5542} placeholder="*******"></TextInput>
+        <TextInput style={styles.login_password_x6e3b5542} placeholder="Mật khẩu"  secureTextEntry={true}/>
         <View style={styles.login_password_lock}>
           <Svg style={styles.login_password_lock_path49} preserveAspectRatio="none" viewBox="0 0 14 16" fill="rgba(83, 71, 65, 1)"><SvgPath d="M 7 8 C 8.100000381469727 8 9 8.899999618530273 9 10 C 9 11.10000038146973 8.100000381469727 12 7 12 C 5.899999618530273 12 5 11.10000038146973 5 10 C 5 8.899999618530273 5.900000095367432 8 7 8 Z M 7 2 C 5.900000095367432 2 5 2.900000095367432 5 4 L 9 4 C 9 2.900000095367432 8.100000381469727 2 7 2 Z M 12 16 L 2 16 C 0.8999999761581421 16 0 15.10000038146973 0 14 L 0 6 C 0 4.900000095367432 0.8999999761581421 4 2 4 L 3 4 C 3 1.799999952316284 4.800000190734863 0 7 0 C 9.199999809265137 0 11 1.799999952316284 11 4 L 12 4 C 13.10000038146973 4 14 4.900000095367432 14 6 L 14 14 C 14 15.10000038146973 13.10000038146973 16 12 16 Z" /></Svg>
         </View>
