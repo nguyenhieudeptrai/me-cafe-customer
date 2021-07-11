@@ -25,6 +25,7 @@ const data = [
     ac: true,
     wifi: true,
     projecter: true,
+    status: "Đang đóng cửa"
   },
   {
     id: "The Feine Cafe",
@@ -42,7 +43,8 @@ const data = [
   },
   {
     id: "Quán của Thời Thanh Xuân",
-    name: "The Feine Cafe",
+    name: "Quán của Thời Thanh Xuân",
+    status: "Đang đóng cửa",
     address: "43 Đồng Khởi, Quận 1",
     img: require('../../../assets/cafe4.jpg'),
     distance: "1.3km",
@@ -53,6 +55,7 @@ const data = [
     ac: true,
     wifi: true,
     projecter: true,
+
   },
   {
     id: "Cafe Cú trên cây Garden",
@@ -100,26 +103,6 @@ const dataTop = [
     rate: "3.0",
   },
 ]
-<<<<<<< HEAD
-const dataVoucher = [
-  {
-    image: require("'../../../assets/ComponentTMP_0-image.jpg"),
-
-  },
-  {
-    image: require("'../../../assets/ComponentTMP_0-image.jpg"),
-
-
-  },
-  {
-    image: require("'../../../assets/ComponentTMP_0-image.jpg"),
-
-
-  },
-]
-const HomeTab = ({ navigation }) => {
-=======
->>>>>>> f9acdd8024db3735dc8af4040050cb7947670a77
 
 const checkboxData = [
   {
@@ -169,63 +152,6 @@ const HomeTab = ({ navigation }) => {
 
   return (
 
-<<<<<<< HEAD
-          </Svg>
-        </View>
-
-
-        <View style={styles.Hotdeal}>
-        <FlatList
-    style={styles.Hotdeal}
-    horizontal={true}
-    data={dataVoucher}
-    renderItem={({item}) => 
-        <RowItem/>
-    }
-
-    ItemSeparatorComponent={() => {
-        return (
-            <View
-                style={{
-                height: "100%",
-                width: 20,
-                backgroundColor: "#CED0CE",
-
-                }}
-            />
-        );
-    }}
-
-    keyExtractor={(item, index) => index.toString()}
-/>
-
-
-        </View>
-
-
-
-
-
-      </View>
-      <View style={styles.topYeuThich}>
-
-        <Text style={styles.topYeuThich_group103_topYeuThichNht}>TOP Yêu thích nhất</Text>
-        <FlatList
-          style={styles.topYeuThich_group103}
-          data={dataTop}
-          horizontal={true}
-          renderItem={({ item, index }) => (
-            <TouchableOpacity onPress={onItemPress} key={index} style={styles.topYeuThich_group103_group102_group17}>
-
-              <ReactImage source={item.image} style={styles.topYeuThich_group103_group102_group17_i1} />
-              <Text style={styles.topYeuThich_group103_group102_group17_septemberCafe}>{item.name}</Text>
-              <View style={styles.topYeuThich_group103_group102_group17_group42}>
-                <View style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497}>
-                  <ReactImage source={require('../../../assets/star55a2af98.png')} style={styles.topYeuThich_group103_group102_group17_group42_group370f51e497_star55a2af98} />
-                </View>
-                <View style={styles.topYeuThich_group103_group102_group17_group42_group3850e2cc78}>
-                  <ReactImage source={require('../../../assets/star2e40c2f1.png')} style={styles.topYeuThich_group103_group102_group17_group42_group3850e2cc78_star2e40c2f1} />
-=======
     <View style={styles.home}>
       <View style={styles.header}>
         <View style={styles.header_group_up}>
@@ -251,7 +177,6 @@ const HomeTab = ({ navigation }) => {
               return (
                 <View key={index} style={{ borderRadius: 30, borderColor: "#000", padding: 5, borderWidth: 1, marginRight: 5 }}>
                   <Text style={{ fontSize: 12 }}>{item.name}</Text>
->>>>>>> f9acdd8024db3735dc8af4040050cb7947670a77
                 </View>
               )
             })}
@@ -332,7 +257,6 @@ const HomeTab = ({ navigation }) => {
                 <TouchableOpacity key={index} onPress={onItemPress} style={styles.quanGnBnb2eef024_group23}>
                   <View style={styles.quanGnBnb2eef024_group23_group105}>
                     <Text style={styles.quanGnBnb2eef024_group23_group105_x700m}>{item.distance}</Text>
-
                     <View style={styles.quanGnBnb2eef024_item_left}>
                       <ReactImage source={item.img} style={styles.quanGnBnb2eef024_group23_group105_i4} />
                       <Text style={{ marginTop: 7 }}>{item.rate} <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
@@ -341,16 +265,15 @@ const HomeTab = ({ navigation }) => {
 
                     <View style={{ flex: 1 }}>
                       <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
-                      <View style={{ flexDirection: "row", alignItems: "center" }}>
+                      <Text style={styles.quanGnBnb2eef024_group23_group105_status}>{item.status}</Text>
+                      <View style={{ flexDirection: "row", alignItems: "center" , marginTop: 5}}>
                         <ReactImage source={require('../../../assets/location.png')} style={styles.item_icon_label} />
                         <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
                       </View>
                       {item.room != undefined &&
-                        <View style={{ flexDirection: "row", alignItems: "center" }}>
+                        <View style={{ flexDirection: "row", alignItems: "center" ,}}>
                           <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_icon_label} />
-
                           <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá phòng họp: {item.room.price}K/Giờ</Text>
-
                         </View>}
                       {item.utilities &&
                         <View style={{ flexDirection: "row" }}>
@@ -389,7 +312,6 @@ const HomeTab = ({ navigation }) => {
                 <TouchableOpacity key={index} onPress={onItemPress} style={styles.quanGnBnb2eef024_group23}>
                   <View style={styles.quanGnBnb2eef024_group23_group105}>
                     <Text style={styles.quanGnBnb2eef024_group23_group105_x700m}>{item.distance}</Text>
-
                     <View style={styles.quanGnBnb2eef024_item_left}>
                       <ReactImage source={item.img} style={styles.quanGnBnb2eef024_group23_group105_i4} />
                       <Text style={{ marginTop: 7 }}>{item.rate} <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
@@ -405,7 +327,6 @@ const HomeTab = ({ navigation }) => {
                       {item.room != undefined &&
                         <View style={{ flexDirection: "row", alignItems: "center" }}>
                           <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_icon_label} />
-
                           <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá phòng họp: {item.room.price}K/Giờ</Text>
 
                         </View>}
@@ -473,11 +394,7 @@ const styles = StyleSheet.create({
   "quanGnBnb2eef024": {
     "flex": 1,
     "width": "90%",
-<<<<<<< HEAD
-    "top": 160
-=======
     marginTop: 10
->>>>>>> f9acdd8024db3735dc8af4040050cb7947670a77
   },
   "quanGnBnb2eef024_quanGnBn": {
     "color": "rgba(84, 71, 65, 1)",
@@ -523,6 +440,16 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
+    "top": 40
+  },
+  "quanGnBnb2eef024_group23_group105_status": {
+    "color": "rgba(117, 0, 0, 1)",
+    "fontSize": 13,
+    "fontWeight": "400",
+    "fontStyle": "italic",
+    "fontFamily": "Roboto",
+    "marginTop": 0,
+    "marginLeft":5
   },
   "quanGnBnb2eef024_group23_group105_x700m": {
     "position": "absolute",
@@ -544,12 +471,7 @@ const styles = StyleSheet.create({
   },
   "hotShop": {
     "width": "90%",
-<<<<<<< HEAD
-    marginBottom: 10,
-    "top": 160
-=======
     "marginBottom": 10,
->>>>>>> f9acdd8024db3735dc8af4040050cb7947670a77
   },
   "hotShop_group103": {
     "width": "100%",
@@ -597,18 +519,10 @@ const styles = StyleSheet.create({
   },
 
   "Hotdeal": {
-<<<<<<< HEAD
-    "position": "absolute",
-    "width": 100,
-    "height": 70,
-    "top": 100,
-    "left": 20
-=======
     "width": "100%",
     paddingLeft: 10,
     marginBottom: 10,
     marginTop: 10
->>>>>>> f9acdd8024db3735dc8af4040050cb7947670a77
   },
 
   "HotDeal_Picture": {
