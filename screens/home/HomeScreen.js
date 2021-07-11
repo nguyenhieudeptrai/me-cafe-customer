@@ -12,6 +12,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeTab from "./tabs/HomeTab";
 import BookingTab from "./tabs/BookingTab";
 import VoucherScreen from "./tabs/VoucherTab";
+import SettingTab from './tabs/SettingTab';
 
 const Tab = createBottomTabNavigator();
 
@@ -88,7 +89,7 @@ const HomeScreen = () => {
         options={{
           img: require('../../assets/setting2.png')
         }}
-        children={(props) => <></>} />
+        component={SettingTab} />
     </Tab.Navigator>
     </View>
   );
