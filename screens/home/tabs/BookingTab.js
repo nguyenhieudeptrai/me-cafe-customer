@@ -80,7 +80,8 @@ const BookingTab = ({ navigation }) => {
                 }}
                 block>Hủy đặt</Button>
               <Overlay visible={overlayVisible} p="xl">
-                <Text style={{fontSize:18, fontWeight:"700", marginBottom:10}}>Bạn vui lòng chọn lý do bạn hủy</Text>
+                <Text style={{fontSize:18
+                  , fontWeight:"700", marginBottom:10}}>Bạn vui lòng chọn lý do bạn hủy</Text>
                 <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
                   {reasonData.map((item, index) => {
                     console.log(index);
