@@ -1,15 +1,22 @@
 import React, { Component, useState } from 'react';
 import PropTypes from "prop-types";
-import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight, TouchableOpacity } from 'react-native';
+
+import { Overlay } from 'react-native-magnus';
+
 import { Image as ReactImage } from 'react-native';
 import Svg, { Defs, Pattern } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
-import { Dropdown, Modal, Select } from "react-native-magnus";
+import { Dropdown, Button, Select } from "react-native-magnus";
+
+
 
 const ShopInfoScreen = ({ navigation }) => {
   const [tableSelected, setTableSelected] = useState(null);
+
+
 
   const onConfirmPress = () => {
     navigation.navigate('DetailShop')
@@ -66,9 +73,46 @@ const ShopInfoScreen = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.goBack()}><ReactImage source={require('./assets/backicon.png')} style={styles.shopinfo_header_backicon} />
         </TouchableOpacity>
       </View>
+<<<<<<< HEAD
+      <View style={styles.shopinfo_group19}>
+        <ReactImage source={require('./assets/picture.png')} style={styles.shopinfo_group19_picture} />
+        <View style={styles.shopinfo_group19_bg2}></View>
+        <TouchableOpacity onPress={onConfirmPress} style={styles.shopinfo_group19_dangkyngayBtn}>
+          <Svg style={styles.shopinfo_group19_dangkyngayBtn_path643} preserveAspectRatio="none" viewBox="0 0 155.9873046875 31" fill="rgba(212, 174, 57, 1)"><SvgPath d="M 1.908100247383118 0 L 154.0790863037109 0 C 155.1328887939453 0 155.9871826171875 1.15659761428833 155.9871826171875 2.583333253860474 L 155.9871826171875 28.41666603088379 C 155.9871826171875 29.84340286254883 155.1328887939453 31 154.0790863037109 31 L 1.908100247383118 31 C 0.8542854785919189 31 0 29.84340286254883 0 28.41666603088379 L 0 2.583333253860474 C 0 1.15659761428833 0.8542854785919189 0 1.908100247383118 0 Z" /></Svg>
+          <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}><Text style={{ "marginTop": -1.5, "color": "rgba(255, 255, 255, 1)", "fontSize": 13, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>ĐẶT CHỖ NGAY</Text></View>
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.shopinfo_info}>
+        <Text style={styles.shopinfo_info_giaRoomCoffee}>GIA ROOM COFFEE</Text>
+        <Text style={styles.shopinfo_info_x101OanThImQunPhuNhunTphcm}>10/1 Đoàn Thị Điểm, Quận Phú Nhuận, TP.HCM</Text>
+        <Text style={styles.shopinfo_info_giMCa07h0021h00Th2ChNht}>Giờ mở cửa: 07h00 - 21h00 (Thứ 2 - Chủ nhật)</Text>
+        <Text style={styles.shopinfo_info_inThoi033456789}>Điện thoại: 033456789</Text>
+        <View style={styles.shopinfo_info_menubt}>
+          <Text style={styles.shopinfo_info_menubt_menuQuan}>Menu quán</Text>
+        </View>
+        <View style={styles.shopinfo_info_reviewbtn}>
+          <Text style={styles.shopinfo_info_reviewbtn_xemAnhGia}>Xem đánh giá</Text>
+        </View>
+        <View style={styles.shopinfo_info_start}>
+          <Svg style={styles.shopinfo_info_start_path157} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(255, 220, 156, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
+          <Svg style={styles.shopinfo_info_start_path158} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(255, 220, 155, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
+          <Svg style={styles.shopinfo_info_start_path159} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(255, 220, 155, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
+          <Svg style={styles.shopinfo_info_start_path160} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(255, 220, 156, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
+          <Svg style={styles.shopinfo_info_start_path161} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(176, 177, 181, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
+          <Text style={styles.shopinfo_info_start_x45}> 4.5</Text>
+        </View>
+      </View>
+      <View style={styles.shopinfo_timeslot}>
+        <View style={styles.shopinfo_timeslot_today}>
+          <Text style={styles.shopinfo_timeslot_today_homNay}>Hôm nay</Text>
+          <ReactImage source={require('./assets/backIcon2f9ac0684.png')} style={styles.shopinfo_timeslot_today_backIcon2f9ac0684} />
+          <Text style={styles.shopinfo_timeslot_today_thiGian}>Thời gian:</Text>
+=======
       <ScrollView>
         <View style={styles.shopinfo_group19}>
           <ReactImage source={require('./assets/picture.png')} style={styles.shopinfo_group19_picture} />
+>>>>>>> 6a8bb2d4df841aa01c425275084a4941aa69dfed
         </View>
 
         <View style={styles.shopinfo_info}>
@@ -110,6 +154,11 @@ const ShopInfoScreen = ({ navigation }) => {
           </View>
           <Text style={styles.shopinfo_tienich_tinIch}>Tiện ích</Text>
         </View>
+<<<<<<< HEAD
+        <View style={styles.shopinfo_tienich_ac}>
+          <Text style={styles.shopinfo_tienich_ac_phongMayLnh} n>Phòng máy lạnh</Text>
+          <ReactImage source={require('./assets/aaaa.png')} style={styles.shopinfo_tienich_ac_aaaa} />
+=======
         <View style={styles.shopinfo_timeslot}>
           <Text style={styles.shopinfo_timeslot_khungGiTrng}>Khung giờ trống</Text>
           <View style={styles.shopinfo_timeslot_today}>
@@ -128,6 +177,17 @@ const ShopInfoScreen = ({ navigation }) => {
             onSelect={() => { setTimeSearch(getFullTime()) }}
             multiple
             data={[1]}
+            footer={(
+              <Button
+                w="90%"
+                ml="5%"
+                mb={10}
+                h={40}
+                bg='#D4AE39'
+                onPress={() => { setTimeSearch(getFullTime()); selectRef.current.close() }} >
+                  Chấp nhận
+              </Button>
+            )}
             renderItem={(item, index) => (
               <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
                 <View style={styles.main_tCh3c0aa05f_group15_group7}>
@@ -164,7 +224,6 @@ const ShopInfoScreen = ({ navigation }) => {
                   <Text style={from.getHours() < 12 ? styles.main_tCh3c0aa05f_group15_group5_am70a769fb : styles.main_tCh3c0aa05f_group15_group5_pme55ffa0b}>AM</Text>
                   <Text style={from.getHours() >= 12 ? styles.main_tCh3c0aa05f_group15_group5_am70a769fb : styles.main_tCh3c0aa05f_group15_group5_pme55ffa0b}>PM</Text>
                 </View>
-                {/* <Button title="OK" onPress={() => { setTimeSearch(getFullTime()); selectRef.current.close() }} ></Button> */}
               </View>
             )}
           >
@@ -186,6 +245,7 @@ const ShopInfoScreen = ({ navigation }) => {
             <View style={styles.shopinfo_timeslot_btnsearch_rectangle1471}></View>
             <Text style={styles.shopinfo_timeslot_btnsearch_timKim}>Tìm kiếm</Text>
           </View> */}
+>>>>>>> 6a8bb2d4df841aa01c425275084a4941aa69dfed
         </View>
         <View style={styles.shopinfo_result}>
           <Text style={styles.shopinfo_result_title}>KẾT QUẢ:</Text>
@@ -204,6 +264,13 @@ const ShopInfoScreen = ({ navigation }) => {
             <Text style={styles.shopinfo_result_roombtn_banTrngTLuc0800}>Bàn trống từ lúc 08:00</Text>
           </TouchableOpacity>
         </View>
+<<<<<<< HEAD
+        <Text style={styles.shopinfo_tienich_tinIch}>Tiện ích</Text>
+      </View>
+
+
+
+=======
 
         <TouchableOpacity onPress={onConfirmPress} style={styles.shopinfo_group19_dangkyngayBtn}>
           <Svg style={styles.shopinfo_group19_dangkyngayBtn_path643} preserveAspectRatio="none" viewBox="0 0 155.9873046875 31" fill={tableSelected == null ? "#868686" : "rgba(212, 174, 57, 1)"}>
@@ -211,6 +278,7 @@ const ShopInfoScreen = ({ navigation }) => {
           <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}><Text style={{ "marginTop": -1.5, "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>ĐẶT CHỖ NGAY</Text></View>
         </TouchableOpacity>
       </ScrollView>
+>>>>>>> 6a8bb2d4df841aa01c425275084a4941aa69dfed
     </View>
   );
 }
@@ -219,8 +287,7 @@ export default ShopInfoScreen;
 
 const styles = StyleSheet.create({
   "shopinfo": {
-    "opacity": 1,
-    "position": "relative",
+
     "backgroundColor": "rgba(255, 255, 255, 1)",
     "width": "100%",
     "height": 851,
@@ -228,11 +295,19 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "shopinfo_group19": {
+<<<<<<< HEAD
+
+=======
     "opacity": 1,
+>>>>>>> 6a8bb2d4df841aa01c425275084a4941aa69dfed
     "backgroundColor": "transparent",
     "width": "100%",
   },
   "shopinfo_group19_picture": {
+<<<<<<< HEAD
+
+=======
+>>>>>>> 6a8bb2d4df841aa01c425275084a4941aa69dfed
     "width": "100%",
     "height": 222.1,
   },
@@ -256,20 +331,11 @@ const styles = StyleSheet.create({
     "alignSelf": 'center',
   },
   "shopinfo_group19_dangkyngayBtn_path643": {
-    "opacity": 1,
-    "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
+
     "width": 155.99,
     "height": 31,
-    "left": 0,
-    "top": 0
+
   },
   "shopinfo_group19_dangkyngayBtn_tChNgay": {
     "opacity": 1,
@@ -281,35 +347,23 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "lineHeight": 16.5,
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+    "lineHeight": 13.5,
     "width": 106,
     "height": 20,
     "left": 25.71,
     "top": 9
   },
   "shopinfo_header": {
+<<<<<<< HEAD
+
+=======
+>>>>>>> 6a8bb2d4df841aa01c425275084a4941aa69dfed
     "backgroundColor": "transparent",
     "width": "100%",
   },
   "shopinfo_header_bg": {
     "opacity": 1,
     "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": "100%",
     "height": 75.11,
     "left": 0,
@@ -325,7 +379,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "width": 124,
+    "width": 170,
     "height": 20,
     "alignSelf": 'center',
     "top": 37
@@ -333,65 +387,32 @@ const styles = StyleSheet.create({
   "shopinfo_header_backicon": {
     "opacity": 1,
     "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
+
     "width": 20,
     "height": 20,
     "left": 13,
     "top": 37
   },
   "shopinfo_menu": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 393,
     "height": 79,
     "left": 0,
     "top": 772
   },
   "shopinfo_menu_group57": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 393,
     "height": 79,
     "left": 0,
     "top": 0
   },
   "shopinfo_menu_group57_path5": {
-    "opacity": 1,
-    "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "shadowColor": "rgb(0,  0,  0)",
+
+
     "shadowOpacity": 0.3411764705882353,
     "shadowOffset": {
       "width": 0,
@@ -400,38 +421,19 @@ const styles = StyleSheet.create({
     "shadowRadius": 10,
     "width": 393,
     "height": 79,
-    "left": 0,
-    "top": 0
+
   },
   "shopinfo_menu_group6": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 50,
     "height": 51,
     "left": 23,
     "top": 14
   },
   "shopinfo_menu_group6_rectangle11": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(105, 180, 255, 0.1803921568627451)",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "borderTopWidth": 1,
     "borderTopColor": "rgba(0, 0, 0, 0)",
     "borderRightWidth": 1,
@@ -450,41 +452,20 @@ const styles = StyleSheet.create({
     "top": -14
   },
   "shopinfo_menu_group6_group14": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 50,
     "height": 51,
-    "left": 0,
-    "top": 0
+
   },
   "shopinfo_menu_group6_group14_tabHome": {
-    "opacity": 1,
-    "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
+
     "width": 33,
     "height": 33,
     "left": 9,
     "top": 0
   },
   "shopinfo_menu_group6_group14_trangCh": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 0.9411764705882353)",
     "fontSize": 11,
@@ -492,48 +473,24 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 50,
     "height": 15,
     "left": 0,
     "top": 36
   },
   "shopinfo_menu_group7": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 38,
     "height": 51,
     "left": 128,
     "top": 14
   },
   "shopinfo_menu_group7_rectangle12": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "rgba(152, 235, 255, 0.2)",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "borderTopWidth": 1,
     "borderTopColor": "rgba(0, 0, 0, 0)",
     "borderRightWidth": 1,
@@ -552,41 +509,24 @@ const styles = StyleSheet.create({
     "top": -14
   },
   "shopinfo_menu_group7_group13": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 38,
     "height": 51,
     "left": 0,
     "top": 0
   },
   "shopinfo_menu_group7_group13_boking": {
-    "opacity": 1,
-    "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
+
+
     "width": 33,
     "height": 33,
     "left": 3,
     "top": 0
   },
   "shopinfo_menu_group7_group13_tCh": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 0.9411764705882353)",
     "fontSize": 11,
@@ -594,48 +534,25 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 38,
     "height": 15,
     "left": 0,
     "top": 36
   },
   "shopinfo_menu_group8": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 50,
     "height": 51,
     "left": 221,
     "top": 14
   },
   "shopinfo_menu_group8_rectangle13": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "rgba(105, 180, 255, 0.1803921568627451)",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "borderTopWidth": 1,
     "borderTopColor": "rgba(0, 0, 0, 0)",
     "borderRightWidth": 1,
@@ -654,41 +571,22 @@ const styles = StyleSheet.create({
     "top": -14
   },
   "shopinfo_menu_group8_group12": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 50,
     "height": 51,
-    "left": 0,
-    "top": 0
+
   },
   "shopinfo_menu_group8_group12_tab3": {
-    "opacity": 1,
-    "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
+
     "width": 33,
     "height": 33,
     "left": 9,
     "top": 0
   },
   "shopinfo_menu_group8_group12_tichIm": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 0.9411764705882353)",
     "fontSize": 11,
@@ -696,48 +594,23 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 50,
     "height": 15,
     "left": 0,
     "top": 36
   },
   "shopinfo_menu_group9": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 36,
     "height": 51,
     "left": 327,
     "top": 14
   },
   "shopinfo_menu_group9_rectangle14": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(152, 235, 255, 0.2)",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "borderTopWidth": 1,
     "borderTopColor": "rgba(0, 0, 0, 0)",
     "borderRightWidth": 1,
@@ -746,51 +619,23 @@ const styles = StyleSheet.create({
     "borderBottomColor": "rgba(0, 0, 0, 0)",
     "borderLeftWidth": 1,
     "borderLeftColor": "rgba(0, 0, 0, 0)",
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
     "width": 96,
     "height": 79,
     "left": -30,
     "top": -14
   },
   "shopinfo_menu_group9_group11": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 36,
     "height": 51,
-    "left": 0,
-    "top": 0
   },
   "shopinfo_menu_group9_group11_setting2": {
-    "opacity": 1,
-    "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
     "width": 33,
     "height": 33,
     "left": 2,
     "top": 0
   },
   "shopinfo_menu_group9_group11_caiT": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(84, 71, 65, 0.9411764705882353)",
     "fontSize": 11,
@@ -798,14 +643,6 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 36,
     "height": 15,
     "left": 0,
@@ -818,8 +655,7 @@ const styles = StyleSheet.create({
     "height": 119.36,
   },
   "shopinfo_info_giaRoomCoffee": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
     "fontSize": 14,
@@ -841,7 +677,7 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "width": 200,
-    "height": 11,
+    "height": 13,
     "left": 17.5,
     "top": 32
   },
@@ -855,16 +691,8 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 179,
-    "height": 11,
+    "width": 210,
+    "height": 13,
     "left": 17.5,
     "top": 54
   },
@@ -879,7 +707,7 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "width": 100,
-    "height": 11,
+    "height": 13,
     "left": 17.5,
     "top": 76
   },
@@ -905,8 +733,7 @@ const styles = StyleSheet.create({
     "top": 97.36
   },
   "shopinfo_info_menubt_rectangle1471df089f47": {
-    "opacity": 1,
-    "position": "absolute",
+
 
     "width": 88.02,
     "height": 22,
@@ -923,18 +750,9 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 50,
-    "height": 13,
-    "left": 19.01,
-    "top": 4.5
+    "width": 70,
+    "height": 15,
+    "alignSelf": 'center'
   },
   "shopinfo_info_reviewbtn": {
     "opacity": 1,
@@ -959,8 +777,7 @@ const styles = StyleSheet.create({
     "top": 97.36
   },
   "shopinfo_info_reviewbtn_rectangle1471fc49ee5c": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "rgba(255, 255, 255, 1)",
     "borderTopWidth": 1,
     "borderTopColor": "rgba(191, 151, 104, 1)",
@@ -978,8 +795,7 @@ const styles = StyleSheet.create({
     "height": 22,
   },
   "shopinfo_info_reviewbtn_xemAnhGia": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
     "fontSize": 10,
@@ -987,55 +803,30 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 65,
-    "height": 13,
-    "left": 13.51,
-    "top": 4
+    "width": 75,
+    "height": 15,
+    "alignSelf": 'center'
   },
   "shopinfo_info_start": {
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 91.31,
     "height": 13.33,
     "left": 15.69,
     "top": 102.67
   },
   "shopinfo_info_start_path157": {
-    "opacity": 1,
-    "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 12,
     "height": 11.4,
-    "left": 0,
-    "top": 0
+
   },
   "shopinfo_info_start_path158": {
     "opacity": 1,
     "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 12,
     "height": 11.4,
     "left": 14.96,
@@ -1044,14 +835,7 @@ const styles = StyleSheet.create({
   "shopinfo_info_start_path159": {
     "opacity": 1,
     "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 12,
     "height": 11.4,
     "left": 29.91,
@@ -1060,14 +844,6 @@ const styles = StyleSheet.create({
   "shopinfo_info_start_path160": {
     "opacity": 1,
     "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 12,
     "height": 11.4,
     "left": 44.87,
@@ -1076,14 +852,6 @@ const styles = StyleSheet.create({
   "shopinfo_info_start_path161": {
     "opacity": 1,
     "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 12,
     "height": 11.4,
     "left": 59.83,
@@ -1111,8 +879,7 @@ const styles = StyleSheet.create({
     "height": 84.27,
   },
   "shopinfo_timeslot_today": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "transparent",
     "width": 116.44,
     "height": 13.58,
@@ -1129,22 +896,13 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 40,
-    "height": 13,
+    "width": 60,
+    "height": 15,
     "left": 54.52,
     "top": 0
   },
   "shopinfo_timeslot_today_backIcon2f9ac0684": {
-    "opacity": 1,
-    "position": "absolute",
+
     "width": 13,
     "height": 13,
     "left": 103.44,
@@ -1162,7 +920,7 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "width": 50,
-    "height": 13,
+    "height": 15,
     "left": 0,
     "top": 0.58
   },
@@ -1170,14 +928,7 @@ const styles = StyleSheet.create({
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 104.78,
     "height": 13.61,
     "left": 165,
@@ -1193,10 +944,10 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 22,
-    "height": 13,
+    "width": 25,
+    "height": 15,
     "alignSelf": 'center',
-    "top": 0.61
+
   },
   "shopinfo_timeslot_timen_backIcon27fde8a1b": {
     "opacity": 1,
@@ -1217,7 +968,7 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "width": 50,
-    "height": 13,
+    "height": 15,
     "left": 0,
     "top": 0
   },
@@ -1225,14 +976,6 @@ const styles = StyleSheet.create({
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 127.94,
     "height": 13,
     "left": 19,
@@ -1257,14 +1000,12 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 43,
+    "width": 60,
     "height": 13,
     "left": 64.02,
     "top": 0
   },
   "shopinfo_timeslot_timet_btULuc": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
     "fontSize": 10,
@@ -1272,18 +1013,9 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 53,
-    "height": 13,
-    "left": 0,
-    "top": 0
+    "width": 70,
+    "height": 15,
+
   },
   "shopinfo_timeslot_khungGiTrng": {
     "opacity": 1,
@@ -1295,24 +1027,15 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 93,
-    "height": 18,
-    "left": 0,
-    "top": 0
+    "width": 110,
+    "height": 20,
+
   },
   "shopinfo_timeslot_btnsearch": {
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "width": 64.4,
+    "width": 68.4,
     "height": 22,
     "right": 50,
     "top": 62.27
@@ -1321,21 +1044,13 @@ const styles = StyleSheet.create({
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "rgba(191, 151, 104, 1)",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "borderTopLeftRadius": 11,
     "borderTopRightRadius": 11,
     "borderBottomLeftRadius": 11,
     "borderBottomRightRadius": 11,
-    "width": 64.4,
+    "width": 68.4,
     "height": 22,
-    "left": 0,
+    "alignSelf": 'center',
     "top": 0
   },
   "shopinfo_timeslot_btnsearch_timKim": {
@@ -1348,10 +1063,10 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 42,
-    "height": 13,
-    "alignSelf": 'center',
-    "top": 5
+    "width": 60,
+    "height": 15,
+    "left": 15,
+    "top": 4
   },
   "shopinfo_result": {
     "opacity": 1,
@@ -1429,7 +1144,7 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "width": 120,
-    "height": 13,
+    "height": 15,
     "left": 106.5,
     "top": 22.14
   },
@@ -1450,16 +1165,14 @@ const styles = StyleSheet.create({
     "top": 9.5
   },
   "shopinfo_result_roombtn": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "transparent",
     "width": 288,
     "height": 53,
     "top": 86,
   },
   "shopinfo_result_roombtn_rectangle1492": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "rgba(255, 255, 255, 1)",
     "borderTopWidth": 1,
     "borderTopColor": "rgba(191, 151, 104, 1)",
@@ -1488,7 +1201,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 80,
+    "width": 110,
     "height": 18,
     "left": 14,
     "top": 10.5
@@ -1503,16 +1216,8 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 62,
-    "height": 13,
+    "width": 80,
+    "height": 15,
     "left": 20,
     "top": 27.5
   },
@@ -1543,13 +1248,12 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "width": 120,
-    "height": 13,
+    "height": 15,
     "left": 106.5,
     "top": 21
   },
   "shopinfo_result_title": {
-    "opacity": 1,
-    "position": "absolute",
+
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(191, 151, 104, 1)",
     "fontSize": 10,
@@ -1557,45 +1261,18 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 42,
-    "height": 13,
-    "left": 0,
-    "top": 0
+    "width": 50,
+    "height": 15,
+
   },
   "shopinfo_tienich": {
     "opacity": 1,
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 289.5,
     "height": 68,
   },
   "shopinfo_tienich_room": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 116.5,
     "height": 15,
     "left": 173,
@@ -1611,30 +1288,14 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 90,
-    "height": 13,
+    "width": 110,
+    "height": 15,
     "left": 26.5,
     "top": 1
   },
   "shopinfo_tienich_room_pinclipartcommeetingClipartFree63947": {
     "opacity": 1,
     "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
     "width": 19,
     "height": 15,
     "left": 0,
@@ -1644,14 +1305,6 @@ const styles = StyleSheet.create({
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
     "width": 70.5,
     "height": 18,
     "left": 174,
@@ -1668,21 +1321,12 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "textAlign": "left",
     "width": 50,
-    "height": 13,
+    "height": 15,
     "left": 25.5,
     "top": 4
   },
   "shopinfo_tienich_projector_x2020624419991071872977076642162411729179112n": {
-    "opacity": 1,
-    "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
+
     "width": 18,
     "height": 18,
     "left": 0,
@@ -1692,14 +1336,7 @@ const styles = StyleSheet.create({
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
+
     "width": 103.5,
     "height": 25,
     "left": 8,
@@ -1715,22 +1352,12 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 75,
-    "height": 13,
+    "width": 90,
+    "height": 15,
     "left": 32.5,
     "top": 6
   },
   "shopinfo_tienich_ac_aaaa": {
-    "opacity": 1,
-    "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
     "width": 25,
     "height": 25,
     "left": 0,
@@ -1740,15 +1367,7 @@ const styles = StyleSheet.create({
     "opacity": 1,
     "position": "absolute",
     "backgroundColor": "transparent",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 86.5,
+    "width": 100,
     "height": 15,
     "left": 13,
     "top": 24
@@ -1763,16 +1382,8 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 58,
-    "height": 13,
+    "width": 80,
+    "height": 15,
     "left": 28.5,
     "top": 1
   },

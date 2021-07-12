@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     "textAlign": "left",
     "lineHeight": 12,
     "left": 15.09,
-    "top": 11.97
+    "top": 3.97
   },
   "commentshop_group45_rectangle1472c74ae538": {
     "position": "absolute",
@@ -257,7 +257,7 @@ const styles = StyleSheet.create({
     "textAlign": "left",
     "lineHeight": 24,
     "left": 15.09,
-    "top": 5.56
+    "top": 3.56
   },
   "commentshop_group46_rectangle1472": {
     "position": "absolute",
