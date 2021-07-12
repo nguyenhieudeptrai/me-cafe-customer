@@ -203,13 +203,8 @@ const styles = StyleSheet.create({
     "top": 9
   },
   "shopinfo_header": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
     "width": "100%",
-
-    "left": 0,
-    "top": 0
   },
   "shopinfo_header_bg": {
     "opacity": 1,
