@@ -242,7 +242,6 @@ const HomeTab = ({ navigation }) => {
                           </View>
                           <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
                           <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, }} />
-
                         </View>
                       </View>
                     </View>
@@ -427,7 +426,7 @@ const styles = StyleSheet.create({
     "shadowRadius": 6,
     "width": "100%",
     flexDirection: "row",
-    padding: 15
+    padding: 12
   },
   "quanGnBnb2eef024_group23_group105_i4": {
     "borderRadius": 4,
@@ -451,7 +450,7 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "marginTop": 2,
-    "marginBottom": -5,
+    "marginBottom": -8,
     "marginLeft": 5,
   },
   "quanGnBnb2eef024_group23_group105_x700m": {
@@ -545,7 +544,6 @@ const styles = StyleSheet.create({
   },
   "hotShop_group103_group102_group17_group42_group3850e2cc78": {
     "position": "absolute",
-
     "width": 12,
     "height": 13,
     "left": 16,
@@ -553,14 +551,8 @@ const styles = StyleSheet.create({
   },
   "hotShop_group103_group102_group17_group42_group3850e2cc78_star2e40c2f1": {
     "position": "absolute",
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
     "width": 12,
     "height": 13,
-
-
   },
   "hotShop_group103_group102_group17_group42_group391f531ae3": {
     "position": "absolute",
