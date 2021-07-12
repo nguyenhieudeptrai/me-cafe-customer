@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight } from 'react-native';
+import { StyleSheet, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight } from 'react-native';
 import { Image as ReactImage } from 'react-native';
 import Svg, { Defs, Pattern } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
+import { ActivityIndicator } from 'react-native';
+import { useState } from 'react';
+import { Button, Overlay, Text } from 'react-native-magnus';
+
 
 const data = [
   {
@@ -17,9 +21,24 @@ const data = [
     personOnTable: 4,
     status: "Sắp tới",// Đang tại quán
   },
-
 ]
-const BookingTab = () => {
+
+const dataCancel = [
+  {
+    name: "GIA ROOM COFFEE",
+  },
+  {
+    name: "GIA ROOM COFFEE",
+  },
+  {
+    name: "GIA ROOM COFFEE",
+  },
+]
+
+
+const BookingTab = ({ navigation }) => {
+  const [overlayVisible, setOverlayVisible] = useState(false);
+  const [dataFilter, setDataFilter] = useState([]);
 
   return (
     <View style={styles.booking}>
@@ -47,9 +66,31 @@ const BookingTab = () => {
               <Text style={styles.booking_item_quantity}>Loại bàn: {item.personOnTable} người</Text>
               <Text style={styles.booking_item_date}>Ngày đặt: {item.date}</Text>
               <Text style={styles.booking_item_time}>Thời gian: {item.fromTime} - {item.toTime}</Text>
-              <View style={styles.booking_cancelbtn}>
-                <Text style={styles.booking_cancelbtn_chnhSa}>Hủy đặt</Text>
-              </View>
+              <Button w="33%"
+                ml="65%"
+                mb={3}
+                h={40}
+                bg='#D4AE39'
+                onPress={() => {
+                  setOverlayVisible(true);
+                  setTimeout(() => {
+                    setOverlayVisible(false);
+                  }, 4000);
+                }}
+                block>Hủy đặt</Button>
+              <Overlay visible={overlayVisible} p="xl">
+                <ActivityIndicator />
+                <View>
+                  {dataFilter.map((item, index) => {
+                    console.log(index);
+                    return (
+                      <View key={index} style={{ borderRadius: 30, borderColor: "#000", borderWidth: 1, margin: 10 }}>
+                        <Text style={{ fontSize: 12 }}>{item.name}</Text>
+                      </View>
+                    )
+                  })}
+                </View>
+              </Overlay>
             </View>
 
           </View>
