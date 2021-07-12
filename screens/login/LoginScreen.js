@@ -10,7 +10,7 @@ import { Image as SvgImage } from 'react-native-svg';
 const LoginScreen = ({ navigation }) => {
 
   const onPressLogin = () => {
-    navigation.navigate("Home")
+    navigation.navigate('Home')
   }
   const onPressRegister = () => {
     navigation.navigate("Register")

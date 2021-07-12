@@ -160,7 +160,7 @@ const HomeTab = ({ navigation }) => {
             <ReactImage source={require('../../../assets/asset1.png')} style={styles.header_logo_asset1} />
           </View>
           <View style={styles.header_search}>
-            <TextInput style={{ flex: 1 }} placeholder="Tìm kiếm quán Cafe...." />
+            <TextInput style={{ flex: 1, "fontFamily": "Roboto", }} placeholder="Tìm kiếm quán Cafe...." />
             <Svg width="20" height="20" viewBox="0 0 15.224 15.03">
               <SvgLine x2="5" y2="5" transform="translate(10 11)" fill="none" stroke="#707070" strokeWidth="1.5" />
               <SvgCircle cx="6" cy="6" r="5.5" fill="none" stroke="#707070" />
@@ -266,12 +266,12 @@ const HomeTab = ({ navigation }) => {
                     <View style={{ flex: 1 }}>
                       <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
                       <Text style={styles.quanGnBnb2eef024_group23_group105_status}>{item.status}</Text>
-                      <View style={{ flexDirection: "row", alignItems: "center" , marginTop: 5}}>
+                      <View style={{ flexDirection: "row", alignItems: "center", marginTop: 4 }}>
                         <ReactImage source={require('../../../assets/location.png')} style={styles.item_icon_label} />
                         <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
                       </View>
                       {item.room != undefined &&
-                        <View style={{ flexDirection: "row", alignItems: "center" ,}}>
+                        <View style={{ flexDirection: "row", alignItems: "center", }}>
                           <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_icon_label} />
                           <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá phòng họp: {item.room.price}K/Giờ</Text>
                         </View>}
@@ -298,8 +298,10 @@ const HomeTab = ({ navigation }) => {
                           </View>
                         </View>
                       }
-                      <View style={{ position: "absolute", bottom: 0, right: 0, flexDirection: "row" }}>
-                        <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
+                      <View style={{ position: "absolute", bottom: 1, right: 0, flexDirection: "row" }}>
+                        <Text style={{
+                          flex: 1, textAlign: "right", "fontFamily": "Roboto", "fontSize": 11,
+                        }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
                       </View>
                     </View>
                   </View>
@@ -449,7 +451,7 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "marginTop": 0,
-    "marginLeft":5
+    "marginLeft": 5
   },
   "quanGnBnb2eef024_group23_group105_x700m": {
     "position": "absolute",
