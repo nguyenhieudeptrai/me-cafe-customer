@@ -6,7 +6,7 @@ import Svg, { Defs, Pattern } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
-import { Dropdown, Modal } from "react-native-magnus";
+import { Dropdown, Modal, Select } from "react-native-magnus";
 
 const ShopInfoScreen = ({ navigation }) => {
   const [tableSelected, setTableSelected] = useState(null);
@@ -28,22 +28,19 @@ const ShopInfoScreen = ({ navigation }) => {
 
     let fullTime = `${_hour}:${_min} ${beforeMidDate ? 'A.M' : 'P.M'}`
     return fullTime;
-
   }
 
   const loadTimeSearch = () => {
     let _arr = timeSearch.split(':');
     let _temp = from;
-    
+
     _temp.setHours(parseInt(_arr[0]));
     _temp.setMinutes(parseInt(_arr[1]));
 
     _temp = new Date(_temp);
-    
+
     setFrom(_temp);
   }
-
-  const [visible, setVisible] = useState(false);
 
   const onAddFrom = (isHour, num) => {
     let fromTmp = from;
@@ -55,6 +52,7 @@ const ShopInfoScreen = ({ navigation }) => {
   }
 
   const dropdownRef = React.createRef();
+  const selectRef = React.createRef();
 
   const [period, setPeroid] = useState('30 phút')
 
@@ -121,46 +119,56 @@ const ShopInfoScreen = ({ navigation }) => {
           </View>
           <View style={styles.shopinfo_timeslot_timet}>
             <Text style={styles.shopinfo_timeslot_timet_btULuc}>Bắt đầu lúc:</Text>
-            <Text style={styles.shopinfo_timeslot_timet_x0700Am} onPress={() => { loadTimeSearch(); setVisible(true) }}>{timeSearch}</Text>
-            <Modal isVisible={visible}>
-              <View style={styles.main_tCh3c0aa05f_group15_group7}>
-                <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0}>
-                  <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_rectangle14613f364951}></View>
-                  <TouchableOpacity onPress={() => onAddFrom(true, 1)} style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866}>
-                    <Svg style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866_path3616a19af3} preserveAspectRatio="none" viewBox="0 0 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 4.699999809265137 6.100000381469727 L 0 1.400000095367432 L 1.400000095367432 0 L 4.699999809265137 3.300000190734863 L 8 0 L 9.399999618530273 1.400000095367432 L 4.699999809265137 6.100000381469727 Z" /></Svg>
-                    <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866_rectangle1466c5ca2772}></View>
-                  </TouchableOpacity>
-                  <TouchableOpacity onPress={() => onAddFrom(true, -1)} style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e}>
-                    <Svg style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e_path36285acddc} preserveAspectRatio="none" viewBox="2 2 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 6.699999809265137 8.100000381469727 L 2 3.400000095367432 L 3.400000095367432 2 L 6.699999809265137 5.300000190734863 L 10 2 L 11.39999961853027 3.400000095367432 L 6.699999809265137 8.100000381469727 Z" /></Svg>
-                    <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e_rectangle1467420d5d2d}></View>
-                  </TouchableOpacity>
-                </View>
-                <Text style={styles.main_tCh3c0aa05f_group15_group7_x07}>{from.getHours() < 10 ? "0" + from.getHours() : from.getHours()}</Text>
-              </View>
-              <Text style={styles.main_tCh3c0aa05f_group15_x9f45184b}>:</Text>
-              <View style={styles.main_tCh3c0aa05f_group15_group6}>
-                <View style={styles.main_tCh3c0aa05f_group15_group6_group41f437081}>
-                  <View style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_rectangle1462849d287b}></View>
-                  <TouchableOpacity onPress={() => onAddFrom(false, 10)} style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_upArrowSmall718025b7}>
-                    <Svg style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_upArrowSmall718025b7_path368c6742fa} preserveAspectRatio="none" viewBox="0 0 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 4.699999809265137 6.100000381469727 L 0 1.400000095367432 L 1.400000095367432 0 L 4.699999809265137 3.300000190734863 L 8 0 L 9.399999618530273 1.400000095367432 L 4.699999809265137 6.100000381469727 Z" /></Svg>
-                    <View style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_upArrowSmall718025b7_rectangle1466f965c57f}></View>
-                  </TouchableOpacity>
-                  <TouchableOpacity onPress={() => onAddFrom(false, -10)} style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_downArrowSmall961a7bc5}>
-                    <Svg style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_downArrowSmall961a7bc5_path36169828bb} preserveAspectRatio="none" viewBox="2 2 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 6.699999809265137 8.100000381469727 L 2 3.400000095367432 L 3.400000095367432 2 L 6.699999809265137 5.300000190734863 L 10 2 L 11.39999961853027 3.400000095367432 L 6.699999809265137 8.100000381469727 Z" /></Svg>
-                    <View style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_downArrowSmall961a7bc5_rectangle14670b498141}></View>
-                  </TouchableOpacity>
-                </View>
-                <Text style={styles.main_tCh3c0aa05f_group15_group6_x00ba94441d}>{from.getMinutes() < 10 ? "0" + from.getMinutes() : from.getMinutes()}</Text>
-              </View>
-              <View style={styles.main_tCh3c0aa05f_group15_group5}>
-                <View style={styles.main_tCh3c0aa05f_group15_group5_rectangle14634dd2b9b8}></View>
-                <Text style={from.getHours() < 12 ? styles.main_tCh3c0aa05f_group15_group5_am70a769fb : styles.main_tCh3c0aa05f_group15_group5_pme55ffa0b}>AM</Text>
-                <Text style={from.getHours() >= 12 ? styles.main_tCh3c0aa05f_group15_group5_am70a769fb : styles.main_tCh3c0aa05f_group15_group5_pme55ffa0b}>PM</Text>
-              </View>
-              <Button title="OK" onPress={() => { setTimeSearch(getFullTime()); setVisible(false) }} ></Button>
-            </Modal>
+            <Text style={styles.shopinfo_timeslot_timet_x0700Am} onPress={() => { loadTimeSearch(); selectRef.current.open() }}>{timeSearch}</Text>
             <ReactImage source={require('./assets/backIcon2.png')} style={styles.shopinfo_timeslot_timet_backIcon2} />
           </View>
+
+          <Select
+            ref={selectRef}
+            onSelect={() => { setTimeSearch(getFullTime()) }}
+            multiple
+            data={[1]}
+            renderItem={(item, index) => (
+              <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+                <View style={styles.main_tCh3c0aa05f_group15_group7}>
+                  <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0}>
+                    <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_rectangle14613f364951}></View>
+                    <TouchableOpacity onPress={() => onAddFrom(true, 1)} style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866}>
+                      <Svg style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866_path3616a19af3} preserveAspectRatio="none" viewBox="0 0 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 4.699999809265137 6.100000381469727 L 0 1.400000095367432 L 1.400000095367432 0 L 4.699999809265137 3.300000190734863 L 8 0 L 9.399999618530273 1.400000095367432 L 4.699999809265137 6.100000381469727 Z" /></Svg>
+                      <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866_rectangle1466c5ca2772}></View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => onAddFrom(true, -1)} style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e}>
+                      <Svg style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e_path36285acddc} preserveAspectRatio="none" viewBox="2 2 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 6.699999809265137 8.100000381469727 L 2 3.400000095367432 L 3.400000095367432 2 L 6.699999809265137 5.300000190734863 L 10 2 L 11.39999961853027 3.400000095367432 L 6.699999809265137 8.100000381469727 Z" /></Svg>
+                      <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e_rectangle1467420d5d2d}></View>
+                    </TouchableOpacity>
+                  </View>
+                  <Text style={styles.main_tCh3c0aa05f_group15_group7_x07}>{from.getHours() < 10 ? "0" + from.getHours() : from.getHours()}</Text>
+                </View>
+                <Text style={styles.main_tCh3c0aa05f_group15_x9f45184b}>:</Text>
+                <View style={styles.main_tCh3c0aa05f_group15_group6}>
+                  <View style={styles.main_tCh3c0aa05f_group15_group6_group41f437081}>
+                    <View style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_rectangle1462849d287b}></View>
+                    <TouchableOpacity onPress={() => onAddFrom(false, 10)} style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_upArrowSmall718025b7}>
+                      <Svg style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_upArrowSmall718025b7_path368c6742fa} preserveAspectRatio="none" viewBox="0 0 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 4.699999809265137 6.100000381469727 L 0 1.400000095367432 L 1.400000095367432 0 L 4.699999809265137 3.300000190734863 L 8 0 L 9.399999618530273 1.400000095367432 L 4.699999809265137 6.100000381469727 Z" /></Svg>
+                      <View style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_upArrowSmall718025b7_rectangle1466f965c57f}></View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => onAddFrom(false, -10)} style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_downArrowSmall961a7bc5}>
+                      <Svg style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_downArrowSmall961a7bc5_path36169828bb} preserveAspectRatio="none" viewBox="2 2 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 6.699999809265137 8.100000381469727 L 2 3.400000095367432 L 3.400000095367432 2 L 6.699999809265137 5.300000190734863 L 10 2 L 11.39999961853027 3.400000095367432 L 6.699999809265137 8.100000381469727 Z" /></Svg>
+                      <View style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_downArrowSmall961a7bc5_rectangle14670b498141}></View>
+                    </TouchableOpacity>
+                  </View>
+                  <Text style={styles.main_tCh3c0aa05f_group15_group6_x00ba94441d}>{from.getMinutes() < 10 ? "0" + from.getMinutes() : from.getMinutes()}</Text>
+                </View>
+                <View style={styles.main_tCh3c0aa05f_group15_group5}>
+                  <View style={styles.main_tCh3c0aa05f_group15_group5_rectangle14634dd2b9b8}></View>
+                  <Text style={from.getHours() < 12 ? styles.main_tCh3c0aa05f_group15_group5_am70a769fb : styles.main_tCh3c0aa05f_group15_group5_pme55ffa0b}>AM</Text>
+                  <Text style={from.getHours() >= 12 ? styles.main_tCh3c0aa05f_group15_group5_am70a769fb : styles.main_tCh3c0aa05f_group15_group5_pme55ffa0b}>PM</Text>
+                </View>
+                {/* <Button title="OK" onPress={() => { setTimeSearch(getFullTime()); selectRef.current.close() }} ></Button> */}
+              </View>
+            )}
+          >
+          </Select>
           <View style={styles.shopinfo_timeslot_timen}>
             <Text style={styles.shopinfo_timeslot_timen_khong}>Khoảng:</Text>
             <Text style={styles.shopinfo_timeslot_timen_x1Gi} onPress={() => { dropdownRef.current.open() }}>{period}</Text>
@@ -1880,8 +1888,6 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "main_tCh3c0aa05f_group15_x9f45184b": {
-
-    "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
     "fontSize": 30,
@@ -1890,16 +1896,11 @@ const styles = StyleSheet.create({
     "fontFamily": "Roboto",
     "width": 8,
     "height": 37,
-    "left": 141,
-    "top": 56
+    marginLeft: 5
   },
   "main_tCh3c0aa05f_group15_group7": {
-
-    "position": "absolute",
     "width": 92,
     "height": 90,
-    "left": 38,
-    "top": 29
   },
   "main_tCh3c0aa05f_group15_group7_group31da10ff0": {
 
@@ -1929,7 +1930,7 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866": {
-    "transform":[{rotate:'180deg'}],
+    "transform": [{ rotate: '180deg' }],
     "position": "absolute",
     "width": 10,
     "height": 10,
@@ -1989,12 +1990,9 @@ const styles = StyleSheet.create({
     "top": 27
   },
   "main_tCh3c0aa05f_group15_group6": {
-
-    "position": "absolute",
     "width": 92,
     "height": 90,
-    "left": 162,
-    "top": 29
+    marginLeft: 5
   },
   "main_tCh3c0aa05f_group15_group6_group41f437081": {
 
@@ -2024,7 +2022,7 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "main_tCh3c0aa05f_group15_group6_group41f437081_upArrowSmall718025b7": {
-    "transform":[{rotate:'180deg'}],
+    "transform": [{ rotate: '180deg' }],
     "position": "absolute",
     "width": 10,
     "height": 10,
@@ -2084,14 +2082,11 @@ const styles = StyleSheet.create({
     "top": 27
   },
   "main_tCh3c0aa05f_group15_group5": {
-
-    "position": "absolute",
     "width": 58,
     "height": 90,
-    "left": 265,
-    "top": 29,
     alignItems: "center",
     justifyContent: "center",
+    marginLeft: 10,
   },
   "main_tCh3c0aa05f_group15_group5_rectangle14634dd2b9b8": {
 
