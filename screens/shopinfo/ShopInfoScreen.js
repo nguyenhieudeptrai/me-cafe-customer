@@ -136,15 +136,10 @@ const styles = StyleSheet.create({
     "opacity": 1,
     "backgroundColor": "transparent",
     "width": "100%",
-    "height": 776.89,
   },
   "shopinfo_group19_picture": {
-    "opacity": 1,
-    "position": "absolute",
     "width": "100%",
     "height": 222.1,
-    "left": 0,
-    "top": 0
   },
   "shopinfo_group19_bg2": {
     "opacity": 1,
@@ -160,13 +155,10 @@ const styles = StyleSheet.create({
     "top": 198.89
   },
   "shopinfo_group19_dangkyngayBtn": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "transparent",
     "width": 155.99,
     "height": 31,
     "alignSelf": 'center',
-    "top": 690
   },
   "shopinfo_group19_dangkyngayBtn_path643": {
     "opacity": 1,
