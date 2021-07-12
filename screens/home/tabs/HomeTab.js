@@ -171,11 +171,11 @@ const HomeTab = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         {isFilter &&
-          <View style={{ flexDirection: "row", width: "100%", paddingHorizontal: 10 }}>
+          <View style={{ flexDirection: "row", width: "90%", paddingHorizontal: 10 }}>
             {dataFilter.map((item, index) => {
               console.log(index);
               return (
-                <View key={index} style={{ borderRadius: 30, borderColor: "#000", padding: 5, borderWidth: 1, marginRight: 5 }}>
+                <View key={index} style={{ borderRadius: 30, borderColor: "#000", borderWidth: 1, margin:10}}>
                   <Text style={{ fontSize: 12 }}>{item.name}</Text>
                 </View>
               )
@@ -195,7 +195,7 @@ const HomeTab = ({ navigation }) => {
               ))}
             </Checkbox.Group>
             <View style={{ width: "100%" }}>
-              <TouchableOpacity onPress={onRemoveFilter} style={{ alignSelf: "flex-end", backgroundColor: "rgba(250, 175, 82, 1)", padding: 5 }}>
+              <TouchableOpacity onPress={onRemoveFilter} style={{ fontFamily:"Roboto",alignSelf: "flex-end", backgroundColor: "rgba(250, 175, 82, 1)", borderRadius: 20,padding: 9 , marginRight:10}}>
                 <Text>Bỏ lọc</Text>
               </TouchableOpacity>
             </View>
@@ -450,7 +450,7 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "marginTop": 2,
-    "marginBottom": -8,
+    "marginBottom": -7,
     "marginLeft": 5,
   },
   "quanGnBnb2eef024_group23_group105_x700m": {
@@ -462,7 +462,7 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "right": 10,
-    "top": 10
+    "top": 5
   },
   "quanGnBnb2eef024_group23_group105_bstoryCafe": {
     "color": "rgba(84, 71, 65, 1)",
@@ -470,7 +470,7 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    marginTop: 0
+    marginTop: 3
   },
   "hotShop": {
     "width": "90%",
@@ -689,17 +689,19 @@ const styles = StyleSheet.create({
   },
   filter: {
     position: "absolute",
+    "backgroundColor": "rgba(255, 255, 255, 1)",
     width: "100%",
-    height: "100%",
+    height: "18%",
     top: 0,
     zIndex: 1
   },
   filter_bg: {
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    "backgroundColor": "rgba(255, 255, 255, 0)",
     flex: 1,
   },
   filter_title: {
     "fontSize": 14,
+    "backgroundColor": "rgba(255, 255, 255, 0)",
     "fontWeight": "700",
     "fontFamily": "Roboto",
     "color": "rgba(84, 71, 65, 1)",

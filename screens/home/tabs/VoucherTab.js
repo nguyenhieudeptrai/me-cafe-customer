@@ -594,7 +594,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "top": 1,
+    "top": 4,
     "alignSelf": "center"
   },
   "voucher_list_item_info_head": {
@@ -616,9 +616,9 @@ const styles = StyleSheet.create({
   "voucher_list_item_info_title": {
     "color": "rgba(83, 71, 65, 1)",
     "fontSize": 20,
-    "fontWeight": "400",
+    "fontWeight": "500",
     "fontStyle": "normal",
-    "fontFamily": "Roboto"
+    "fontFamily": "Roboto Medium"
   },
   "voucher_list_item_info_end_date": {
     "position": "absolute",

@@ -31,7 +31,6 @@ const BookingTab = () => {
         <Text style={styles.booking_quaTrinhTN}>Quá trình đặt đơn</Text>
         <Picker style={styles.booking_select_box}>
           <Picker.Item label="Sắp tới" value="comming" />
-          <Picker.Item label="Đã hủy" value="cancel" />
 
         </Picker>
       </View>
