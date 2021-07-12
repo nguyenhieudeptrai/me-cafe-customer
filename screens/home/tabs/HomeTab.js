@@ -25,6 +25,7 @@ const data = [
     ac: true,
     wifi: true,
     projecter: true,
+    status: "Đang đóng cửa"
   },
   {
     id: "The Feine Cafe",
@@ -42,7 +43,8 @@ const data = [
   },
   {
     id: "Quán của Thời Thanh Xuân",
-    name: "The Feine Cafe",
+    name: "Quán của Thời Thanh Xuân",
+    status: "Đang đóng cửa",
     address: "43 Đồng Khởi, Quận 1",
     img: require('../../../assets/cafe4.jpg'),
     distance: "1.3km",
@@ -53,6 +55,7 @@ const data = [
     ac: true,
     wifi: true,
     projecter: true,
+
   },
   {
     id: "Cafe Cú trên cây Garden",
@@ -157,7 +160,7 @@ const HomeTab = ({ navigation }) => {
             <ReactImage source={require('../../../assets/asset1.png')} style={styles.header_logo_asset1} />
           </View>
           <View style={styles.header_search}>
-            <TextInput style={{ flex: 1 }} placeholder="Tìm kiếm quán Cafe...." />
+            <TextInput style={{ flex: 1, "fontFamily": "Roboto", }} placeholder="Tìm kiếm quán Cafe...." />
             <Svg width="20" height="20" viewBox="0 0 15.224 15.03">
               <SvgLine x2="5" y2="5" transform="translate(10 11)" fill="none" stroke="#707070" strokeWidth="1.5" />
               <SvgCircle cx="6" cy="6" r="5.5" fill="none" stroke="#707070" />
@@ -230,7 +233,7 @@ const HomeTab = ({ navigation }) => {
                         <ReactImage source={require('../../../assets/none-star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
                         <Text style={{ marginLeft: 7 }}>{item.rate}</Text>
                       </View>
-                      <View style={{ flexDirection: "row" }}>
+                      <View style={{ flexDirection: "row", marginTop: 6 }}>
                         <View style={{ marginLeft: 5, flexDirection: "row" }}>
                           <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, }} />
                           <View style={{ alignItems: "center" }}>
@@ -239,7 +242,6 @@ const HomeTab = ({ navigation }) => {
                           </View>
                           <ReactImage source={require('../../../assets/projectericon.png')} style={{ "width": 20, "height": 20, }} />
                           <ReactImage source={require('../../../assets/acicon.png')} style={{ "width": 27, "height": 26, }} />
-
                         </View>
                       </View>
                     </View>
@@ -254,7 +256,6 @@ const HomeTab = ({ navigation }) => {
                 <TouchableOpacity key={index} onPress={onItemPress} style={styles.quanGnBnb2eef024_group23}>
                   <View style={styles.quanGnBnb2eef024_group23_group105}>
                     <Text style={styles.quanGnBnb2eef024_group23_group105_x700m}>{item.distance}</Text>
-
                     <View style={styles.quanGnBnb2eef024_item_left}>
                       <ReactImage source={item.img} style={styles.quanGnBnb2eef024_group23_group105_i4} />
                       <Text style={{ marginTop: 7 }}>{item.rate} <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
@@ -263,21 +264,20 @@ const HomeTab = ({ navigation }) => {
 
                     <View style={{ flex: 1 }}>
                       <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
-                      <View style={{ flexDirection: "row", alignItems: "center" }}>
+                      {item.status && <Text style={styles.quanGnBnb2eef024_group23_group105_status}>{item.status}</Text>}
+                      <View style={{ flexDirection: "row", alignItems: "center", marginTop: 5 }}>
                         <ReactImage source={require('../../../assets/location.png')} style={styles.item_icon_label} />
                         <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
                       </View>
                       {item.room != undefined &&
                         <View style={{ flexDirection: "row", alignItems: "center" }}>
                           <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_icon_label} />
-
                           <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá phòng họp: {item.room.price}K/Giờ</Text>
-
                         </View>}
                       {item.utilities &&
                         <View style={{ flexDirection: "row" }}>
                           <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
-                          <View style={{ marginLeft: 5, flexDirection: "row" }}>
+                          <View style={{ marginLeft: 5, flexDirection: "row", marginTop: 5 }}>
                             {item.wifi &&
                               <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, marginRight: 5 }} />
                             }
@@ -297,8 +297,10 @@ const HomeTab = ({ navigation }) => {
                           </View>
                         </View>
                       }
-                      <View style={{ position: "absolute", bottom: 0, right: 0, flexDirection: "row" }}>
-                        <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
+                      <View style={{ position: "absolute", bottom: 1, right: 0, flexDirection: "row" }}>
+                        <Text style={{
+                          flex: 1, textAlign: "right", "fontFamily": "Roboto", "fontSize": 11,
+                        }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
                       </View>
                     </View>
                   </View>
@@ -311,14 +313,13 @@ const HomeTab = ({ navigation }) => {
                 <TouchableOpacity key={index} onPress={onItemPress} style={styles.quanGnBnb2eef024_group23}>
                   <View style={styles.quanGnBnb2eef024_group23_group105}>
                     <Text style={styles.quanGnBnb2eef024_group23_group105_x700m}>{item.distance}</Text>
-
                     <View style={styles.quanGnBnb2eef024_item_left}>
                       <ReactImage source={item.img} style={styles.quanGnBnb2eef024_group23_group105_i4} />
                       <Text style={{ marginTop: 7 }}>{item.rate} <ReactImage source={require('../../../assets/star.png')} style={styles.hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98} />
                       </Text>
                     </View>
 
-                    <View style={{ flex: 1, }}>
+                    <View style={{ flex: 1 }}>
                       <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
                       <View style={{ flexDirection: "row", alignItems: "center" }}>
                         <ReactImage source={require('../../../assets/location.png')} style={styles.item_icon_label} />
@@ -327,7 +328,6 @@ const HomeTab = ({ navigation }) => {
                       {item.room != undefined &&
                         <View style={{ flexDirection: "row", alignItems: "center" }}>
                           <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_icon_label} />
-
                           <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá phòng họp: {item.room.price}K/Giờ</Text>
 
                         </View>}
@@ -403,9 +403,8 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-
     "width": "100%",
-    paddingBottom: 5,
+    paddingBottom: 8,
     marginBottom: 10,
     borderBottomWidth: 1,
   },
@@ -427,7 +426,7 @@ const styles = StyleSheet.create({
     "shadowRadius": 6,
     "width": "100%",
     flexDirection: "row",
-    padding: 10
+    padding: 12
   },
   "quanGnBnb2eef024_group23_group105_i4": {
     "borderRadius": 4,
@@ -441,6 +440,18 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
+    "marginTop": 5,
+
+  },
+  "quanGnBnb2eef024_group23_group105_status": {
+    "color": "rgba(117, 0, 0, 1)",
+    "fontSize": 13,
+    "fontWeight": "400",
+    "fontStyle": "italic",
+    "fontFamily": "Roboto",
+    "marginTop": 2,
+    "marginBottom": -8,
+    "marginLeft": 5,
   },
   "quanGnBnb2eef024_group23_group105_x700m": {
     "position": "absolute",
@@ -451,7 +462,7 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "right": 10,
-    "top": 16
+    "top": 10
   },
   "quanGnBnb2eef024_group23_group105_bstoryCafe": {
     "color": "rgba(84, 71, 65, 1)",
@@ -459,6 +470,7 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
+    marginTop: 0
   },
   "hotShop": {
     "width": "90%",
@@ -505,8 +517,6 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "left": 93,
-    "top": 41
   },
 
   "Hotdeal": {
@@ -525,7 +535,8 @@ const styles = StyleSheet.create({
 
   "hotShop_group103_group102_group17_group42_group370f51e497": {
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
+    marginTop: 5
   },
   "hotShop_group103_group102_group17_group42_group370f51e497_star55a2af98": {
     "width": 12,
@@ -533,7 +544,6 @@ const styles = StyleSheet.create({
   },
   "hotShop_group103_group102_group17_group42_group3850e2cc78": {
     "position": "absolute",
-
     "width": 12,
     "height": 13,
     "left": 16,
@@ -541,14 +551,8 @@ const styles = StyleSheet.create({
   },
   "hotShop_group103_group102_group17_group42_group3850e2cc78_star2e40c2f1": {
     "position": "absolute",
-    "borderTopLeftRadius": 0,
-    "borderTopRightRadius": 0,
-    "borderBottomLeftRadius": 0,
-    "borderBottomRightRadius": 0,
     "width": 12,
     "height": 13,
-
-
   },
   "hotShop_group103_group102_group17_group42_group391f531ae3": {
     "position": "absolute",
