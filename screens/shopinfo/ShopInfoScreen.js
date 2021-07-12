@@ -6,7 +6,7 @@ import Svg, { Defs, Pattern } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
-import { Modal } from "react-native-magnus";
+import { Dropdown, Modal } from "react-native-magnus";
 
 const ShopInfoScreen = ({ navigation }) => {
   const [tableSelected, setTableSelected] = useState(null);
@@ -53,6 +53,10 @@ const ShopInfoScreen = ({ navigation }) => {
       fromTmp = new Date(fromTmp.setMinutes(fromTmp.getMinutes() + num));
     setFrom(fromTmp);
   }
+
+  const dropdownRef = React.createRef();
+
+  const [period, setPeroid] = useState('30 phút')
 
   const [from, setFrom] = useState(new Date());
 
@@ -159,13 +163,21 @@ const ShopInfoScreen = ({ navigation }) => {
           </View>
           <View style={styles.shopinfo_timeslot_timen}>
             <Text style={styles.shopinfo_timeslot_timen_khong}>Khoảng:</Text>
-            <Text style={styles.shopinfo_timeslot_timen_x1Gi}>1 giờ</Text>
+            <Text style={styles.shopinfo_timeslot_timen_x1Gi} onPress={() => { dropdownRef.current.open() }}>{period}</Text>
+            <Dropdown ref={dropdownRef}>
+              <Dropdown.Option onPress={() => { setPeroid('30 phút'); dropdownRef.current.close() }}>30 phút</Dropdown.Option>
+              <Dropdown.Option onPress={() => { setPeroid('45 phút'); dropdownRef.current.close() }}>45 phút</Dropdown.Option>
+              <Dropdown.Option onPress={() => { setPeroid('1 tiếng'); dropdownRef.current.close() }}>1 tiếng</Dropdown.Option>
+              <Dropdown.Option onPress={() => { setPeroid('1 tiếng rưỡi'); dropdownRef.current.close() }}>1 tiếng rưỡi</Dropdown.Option>
+              <Dropdown.Option onPress={() => { setPeroid('2 tiếng'); dropdownRef.current.close() }}>2 tiếng</Dropdown.Option>
+              <Dropdown.Option onPress={() => { setPeroid('2 tiếng rưỡi'); dropdownRef.current.close() }}>2 tiếng rưỡi</Dropdown.Option>
+            </Dropdown>
             <ReactImage source={require('./assets/backIcon27fde8a1b.png')} style={styles.shopinfo_timeslot_today_backIcon2f9ac0684} />
           </View>
-          <View style={styles.shopinfo_timeslot_btnsearch}>
+          {/* <View style={styles.shopinfo_timeslot_btnsearch}>
             <View style={styles.shopinfo_timeslot_btnsearch_rectangle1471}></View>
             <Text style={styles.shopinfo_timeslot_btnsearch_timKim}>Tìm kiếm</Text>
-          </View>
+          </View> */}
         </View>
         <View style={styles.shopinfo_result}>
           <Text style={styles.shopinfo_result_title}>KẾT QUẢ:</Text>
