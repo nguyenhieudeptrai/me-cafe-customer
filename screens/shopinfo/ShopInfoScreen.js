@@ -30,11 +30,6 @@ const ShopInfoScreen = ({ navigation }) => {
       <ScrollView>
         <View style={styles.shopinfo_group19}>
           <ReactImage source={require('./assets/picture.png')} style={styles.shopinfo_group19_picture} />
-          <View style={styles.shopinfo_group19_bg2}></View>
-          <TouchableOpacity onPress={onConfirmPress} style={styles.shopinfo_group19_dangkyngayBtn}>
-            <Svg style={styles.shopinfo_group19_dangkyngayBtn_path643} preserveAspectRatio="none" viewBox="0 0 155.9873046875 31" fill="rgba(212, 174, 57, 1)"><SvgPath d="M 1.908100247383118 0 L 154.0790863037109 0 C 155.1328887939453 0 155.9871826171875 1.15659761428833 155.9871826171875 2.583333253860474 L 155.9871826171875 28.41666603088379 C 155.9871826171875 29.84340286254883 155.1328887939453 31 154.0790863037109 31 L 1.908100247383118 31 C 0.8542854785919189 31 0 29.84340286254883 0 28.41666603088379 L 0 2.583333253860474 C 0 1.15659761428833 0.8542854785919189 0 1.908100247383118 0 Z" /></Svg>
-            <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}><Text style={{ "marginTop": -1.5, "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>ĐẶT CHỖ NGAY</Text></View>
-          </TouchableOpacity>
         </View>
 
         <View style={styles.shopinfo_info}>
@@ -77,28 +72,29 @@ const ShopInfoScreen = ({ navigation }) => {
           <Text style={styles.shopinfo_tienich_tinIch}>Tiện ích</Text>
         </View>
         <View style={styles.shopinfo_timeslot}>
+          <Text style={styles.shopinfo_timeslot_khungGiTrng}>Khung giờ trống</Text>
           <View style={styles.shopinfo_timeslot_today}>
+            <Text style={styles.shopinfo_timeslot_today_thiGian}>Thời gian:</Text>
             <Text style={styles.shopinfo_timeslot_today_homNay}>Hôm nay</Text>
             <ReactImage source={require('./assets/backIcon2f9ac0684.png')} style={styles.shopinfo_timeslot_today_backIcon2f9ac0684} />
-            <Text style={styles.shopinfo_timeslot_today_thiGian}>Thời gian:</Text>
-          </View>
-          <View style={styles.shopinfo_timeslot_timen}>
-            <Text style={styles.shopinfo_timeslot_timen_x1Gi}>1 giờ</Text>
-            <ReactImage source={require('./assets/backIcon27fde8a1b.png')} style={styles.shopinfo_timeslot_today_backIcon2f9ac0684} />
-            <Text style={styles.shopinfo_timeslot_timen_khong}>Khoảng:</Text>
           </View>
           <View style={styles.shopinfo_timeslot_timet}>
-            <ReactImage source={require('./assets/backIcon2.png')} style={styles.shopinfo_timeslot_timet_backIcon2} />
-            <Text style={styles.shopinfo_timeslot_timet_x0700Am}>07:00 AM</Text>
             <Text style={styles.shopinfo_timeslot_timet_btULuc}>Bắt đầu lúc:</Text>
+            <Text style={styles.shopinfo_timeslot_timet_x0700Am}>07:00 AM</Text>
+            <ReactImage source={require('./assets/backIcon2.png')} style={styles.shopinfo_timeslot_timet_backIcon2} />
           </View>
-          <Text style={styles.shopinfo_timeslot_khungGiTrng}>Khung giờ trống</Text>
+          <View style={styles.shopinfo_timeslot_timen}>
+            <Text style={styles.shopinfo_timeslot_timen_khong}>Khoảng:</Text>
+            <Text style={styles.shopinfo_timeslot_timen_x1Gi}>1 giờ</Text>
+            <ReactImage source={require('./assets/backIcon27fde8a1b.png')} style={styles.shopinfo_timeslot_today_backIcon2f9ac0684} />
+          </View>
           <View style={styles.shopinfo_timeslot_btnsearch}>
             <View style={styles.shopinfo_timeslot_btnsearch_rectangle1471}></View>
             <Text style={styles.shopinfo_timeslot_btnsearch_timKim}>Tìm kiếm</Text>
           </View>
         </View>
         <View style={styles.shopinfo_result}>
+          <Text style={styles.shopinfo_result_title}>KẾT QUẢ:</Text>
           <View style={styles.shopinfo_result_tableempty2}>
             <View style={styles.shopinfo_result_tableempty2_rectangle14922f124342}></View>
             <Text style={styles.shopinfo_result_tableempty2_ban}>BÀN</Text>
@@ -113,8 +109,12 @@ const ShopInfoScreen = ({ navigation }) => {
             <Svg style={styles.shopinfo_result_roombtn_line9} preserveAspectRatio="none" viewBox="-0.5 0 1 34" fill="transparent"><SvgPath d="M 0 0 L 0 34" /></Svg>
             <Text style={styles.shopinfo_result_roombtn_banTrngTLuc0800}>Bàn trống từ lúc 08:00</Text>
           </View>
-          <Text style={styles.shopinfo_result_title}>KẾT QUẢ:</Text>
         </View>
+
+        <TouchableOpacity onPress={onConfirmPress} style={styles.shopinfo_group19_dangkyngayBtn}>
+          <Svg style={styles.shopinfo_group19_dangkyngayBtn_path643} preserveAspectRatio="none" viewBox="0 0 155.9873046875 31" fill="rgba(212, 174, 57, 1)"><SvgPath d="M 1.908100247383118 0 L 154.0790863037109 0 C 155.1328887939453 0 155.9871826171875 1.15659761428833 155.9871826171875 2.583333253860474 L 155.9871826171875 28.41666603088379 C 155.9871826171875 29.84340286254883 155.1328887939453 31 154.0790863037109 31 L 1.908100247383118 31 C 0.8542854785919189 31 0 29.84340286254883 0 28.41666603088379 L 0 2.583333253860474 C 0 1.15659761428833 0.8542854785919189 0 1.908100247383118 0 Z" /></Svg>
+          <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}><Text style={{ "marginTop": -1.5, "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>ĐẶT CHỖ NGAY</Text></View>
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );
