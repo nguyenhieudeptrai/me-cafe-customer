@@ -14,8 +14,8 @@ const data = [
     date: "21/12/2021",
     fromTime: "07:00",
     toTime: "08:00",
-    personOnTable:4,
-    status:"Sắp tới",// Đang tại quán
+    personOnTable: 4,
+    status: "Sắp tới",// Đang tại quán
   },
 
 ]
@@ -31,6 +31,8 @@ const BookingTab = () => {
         <Text style={styles.booking_quaTrinhTN}>Quá trình đặt đơn</Text>
         <Picker style={styles.booking_select_box}>
           <Picker.Item label="Sắp tới" value="comming" />
+          <Picker.Item label="Đã hủy" value="cancel" />
+
         </Picker>
       </View>
 
@@ -46,7 +48,11 @@ const BookingTab = () => {
               <Text style={styles.booking_item_quantity}>Loại bàn: {item.personOnTable} người</Text>
               <Text style={styles.booking_item_date}>Ngày đặt: {item.date}</Text>
               <Text style={styles.booking_item_time}>Thời gian: {item.fromTime} - {item.toTime}</Text>
+              <View style={styles.booking_cancelbtn}>
+                <Text style={styles.booking_cancelbtn_chnhSa}>Hủy đặt</Text>
+              </View>
             </View>
+
           </View>
         )
         } />
@@ -94,7 +100,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "marginBottom":3,
+    "marginBottom": 3,
 
   },
   "booking_item_quantity": {
@@ -104,7 +110,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "marginBottom":3,
+    "marginBottom": 3,
   },
   "booking_item_time": {
     "fontSize": 12,
@@ -112,7 +118,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "marginBottom":3,
+    "marginBottom": 3,
 
   },
   "booking_item_image": {
@@ -129,16 +135,17 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "marginTop":1,
-    "marginBottom":3
+    "marginTop": 1,
+    "marginBottom": 3
   },
   "booking_quaTrinhTN": {
     "color": "rgba(112, 112, 112, 1)",
     "fontSize": 15,
     "fontWeight": "400",
+    "fontStyle": "normal",
     "fontFamily": "Roboto",
     "flex": 1,
-    "marginTop":6
+    "marginTop": 6
   },
   "header": {
     "width": "100%",
@@ -155,7 +162,6 @@ const styles = StyleSheet.create({
   },
   "header_title": {
     "position": "absolute",
-
     "color": "rgba(83, 71, 65, 1)",
     "fontSize": 15,
     "fontWeight": "700",
@@ -179,7 +185,7 @@ const styles = StyleSheet.create({
     "width": "30%",
     "height": 23,
     "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
+    "fontSize": 11,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
@@ -193,5 +199,41 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "italic",
     "fontFamily": "Roboto",
-  }
+  },
+  "booking_cancelbtn": {
+    "opacity": 1,
+    "position": "absolute",
+    "backgroundColor": "rgba(231, 139, 36, 1)",
+    "borderTopWidth": 1,
+    "borderTopColor": "rgba(231, 139, 36, 1)",
+    "borderRightWidth": 1,
+    "borderRightColor": "rgba(231, 139, 36, 1)",
+    "borderBottomWidth": 1,
+    "borderBottomColor": "rgba(231, 139, 36, 1)",
+    "borderLeftWidth": 1,
+    "borderLeftColor": "rgba(231, 139, 36, 1)",
+    "borderTopLeftRadius": 4,
+    "borderTopRightRadius": 4,
+    "borderBottomLeftRadius": 4,
+    "borderBottomRightRadius": 4,
+    "width": 70,
+    "height": 23,
+    "right": 5,
+    "top": 55
+  },
+
+  "booking_cancelbtn_chnhSa": {
+    "opacity": 1,
+    "position": "absolute",
+    "backgroundColor": "rgba(255, 255, 255, 0)",
+    "color": "rgba(9, 44, 76, 1)",
+    "fontSize": 13,
+    "fontWeight": "400",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "textAlign": "center",
+    "lineHeight": 17,
+    "alignSelf": 'center',
+    "top": 3
+  },
 });

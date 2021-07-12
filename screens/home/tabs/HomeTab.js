@@ -160,7 +160,7 @@ const HomeTab = ({ navigation }) => {
             <ReactImage source={require('../../../assets/asset1.png')} style={styles.header_logo_asset1} />
           </View>
           <View style={styles.header_search}>
-            <TextInput style={{ flex: 1 }} placeholder="Tìm kiếm quán Cafe...." />
+            <TextInput style={{ flex: 1, "fontFamily": "Roboto", }} placeholder="Tìm kiếm quán Cafe...." />
             <Svg width="20" height="20" viewBox="0 0 15.224 15.03">
               <SvgLine x2="5" y2="5" transform="translate(10 11)" fill="none" stroke="#707070" strokeWidth="1.5" />
               <SvgCircle cx="6" cy="6" r="5.5" fill="none" stroke="#707070" />
@@ -265,13 +265,18 @@ const HomeTab = ({ navigation }) => {
 
                     <View style={{ flex: 1 }}>
                       <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
+<<<<<<< HEAD
                       <Text style={styles.quanGnBnb2eef024_group23_group105_status}>{item.status}</Text>
+                      <View style={{ flexDirection: "row", alignItems: "center", marginTop: 4 }}>
+=======
+                      {item.status && <Text style={styles.quanGnBnb2eef024_group23_group105_status}>{item.status}</Text>}
                       <View style={{ flexDirection: "row", alignItems: "center" , marginTop: 5}}>
+>>>>>>> f608a4a7951cd0c41c53445ead7c5203c28dcc94
                         <ReactImage source={require('../../../assets/location.png')} style={styles.item_icon_label} />
                         <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
                       </View>
                       {item.room != undefined &&
-                        <View style={{ flexDirection: "row", alignItems: "center" ,}}>
+                        <View style={{ flexDirection: "row", alignItems: "center", }}>
                           <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_icon_label} />
                           <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá phòng họp: {item.room.price}K/Giờ</Text>
                         </View>}
@@ -298,8 +303,10 @@ const HomeTab = ({ navigation }) => {
                           </View>
                         </View>
                       }
-                      <View style={{ position: "absolute", bottom: 0, right: 0, flexDirection: "row" }}>
-                        <Text style={{ flex: 1, textAlign: "right" }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
+                      <View style={{ position: "absolute", bottom: 1, right: 0, flexDirection: "row" }}>
+                        <Text style={{
+                          flex: 1, textAlign: "right", "fontFamily": "Roboto", "fontSize": 11,
+                        }}>Đã có {item.bookingNum} lần đặt chỗ</Text>
                       </View>
                     </View>
                   </View>
@@ -440,7 +447,6 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "top": 40
   },
   "quanGnBnb2eef024_group23_group105_status": {
     "color": "rgba(117, 0, 0, 1)",
@@ -448,8 +454,14 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "italic",
     "fontFamily": "Roboto",
+<<<<<<< HEAD
     "marginTop": 0,
-    "marginLeft":5
+    "marginLeft": 5
+=======
+    "marginTop": -5,
+    "marginBottom": -5,
+    "marginLeft":5,
+>>>>>>> f608a4a7951cd0c41c53445ead7c5203c28dcc94
   },
   "quanGnBnb2eef024_group23_group105_x700m": {
     "position": "absolute",
@@ -460,7 +472,7 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "right": 10,
-    "top": 16
+    "top": 10
   },
   "quanGnBnb2eef024_group23_group105_bstoryCafe": {
     "color": "rgba(84, 71, 65, 1)",
@@ -468,6 +480,7 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
+    marginTop:-5
   },
   "hotShop": {
     "width": "90%",
@@ -514,8 +527,6 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "left": 93,
-    "top": 41
   },
 
   "Hotdeal": {
