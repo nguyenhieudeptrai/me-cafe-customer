@@ -265,13 +265,8 @@ const HomeTab = ({ navigation }) => {
 
                     <View style={{ flex: 1 }}>
                       <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
-<<<<<<< HEAD
-                      <Text style={styles.quanGnBnb2eef024_group23_group105_status}>{item.status}</Text>
-                      <View style={{ flexDirection: "row", alignItems: "center", marginTop: 4 }}>
-=======
                       {item.status && <Text style={styles.quanGnBnb2eef024_group23_group105_status}>{item.status}</Text>}
                       <View style={{ flexDirection: "row", alignItems: "center" , marginTop: 5}}>
->>>>>>> f608a4a7951cd0c41c53445ead7c5203c28dcc94
                         <ReactImage source={require('../../../assets/location.png')} style={styles.item_icon_label} />
                         <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
                       </View>
@@ -454,14 +449,9 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "italic",
     "fontFamily": "Roboto",
-<<<<<<< HEAD
-    "marginTop": 0,
-    "marginLeft": 5
-=======
     "marginTop": -5,
     "marginBottom": -5,
     "marginLeft":5,
->>>>>>> f608a4a7951cd0c41c53445ead7c5203c28dcc94
   },
   "quanGnBnb2eef024_group23_group105_x700m": {
     "position": "absolute",
