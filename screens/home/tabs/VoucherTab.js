@@ -59,7 +59,7 @@ const VoucherTab = () => {
       <View style={styles.header}>
         <Text style={styles.header_title}>THẺ THÀNH VIÊN / ƯU ĐÃI</Text>
       </View>
-      <ScrollView contentContainerStyle={{alignItems:"center"}}>
+      <ScrollView contentContainerStyle={{alignItems:"center", flex:1}}>
       <View style={styles.voucher_progress}>
         <View style={styles.voucher_rectangle1476}></View>
         <View style={styles.voucher_group118}>
