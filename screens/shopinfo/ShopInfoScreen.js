@@ -6,6 +6,8 @@ import Svg, { Defs, Pattern } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
+import { Dropdown } from "react-native-magnus";
+import { useState } from 'react';
 
 const ShopInfoScreen = ({ navigation }) => {
 
@@ -13,11 +15,13 @@ const ShopInfoScreen = ({ navigation }) => {
     navigation.navigate('DetailShop')
   }
 
+  const [timeSearch, setTimeSearch] = useState('7:00 A.M');
+
   const onReviewPress = () => {
     navigation.navigate('DetailShop')
   }
 
-
+  const dropdownRef = React.useRef();
 
   return (
     <View style={styles.shopinfo}>
@@ -89,7 +93,62 @@ const ShopInfoScreen = ({ navigation }) => {
           </View>
           <View style={styles.shopinfo_timeslot_timet}>
             <ReactImage source={require('./assets/backIcon2.png')} style={styles.shopinfo_timeslot_timet_backIcon2} />
-            <Text style={styles.shopinfo_timeslot_timet_x0700Am}>07:00 AM</Text>
+            <Text style={styles.shopinfo_timeslot_timet_x0700Am} onPress={() => dropdownRef.current.open()}>{timeSearch}</Text>
+            <Dropdown
+              ref={dropdownRef}
+              mt="md"
+              pb="2xl"
+              showSwipeIndicator={true}
+              roundedTop="xl">
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('7:00 AM')}>
+                7:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('8:00 AM')}>
+                8:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('9:00 AM')}>
+                9:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('10:00 AM')}>
+                10:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('11:00 AM')}>
+                11:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('12:00 AM')}>
+                12:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('13:00 AM')}>
+                13:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('14:00 AM')}>
+                14:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('15:00 AM')}>
+                15:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('16:00 AM')}>
+                16:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('17:00 AM')}>
+                17:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('18:00 AM')}>
+                18:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('19:00 AM')}>
+                19:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('20:00 AM')}>
+                20:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('21:00 AM')}>
+                21:00 AM
+              </Dropdown.Option>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('22:00 AM')}>
+                22:00 AM
+              </Dropdown.Option>
+            </Dropdown>
             <Text style={styles.shopinfo_timeslot_timet_btULuc}>Bắt đầu lúc:</Text>
           </View>
           <Text style={styles.shopinfo_timeslot_khungGiTrng}>Khung giờ trống</Text>
