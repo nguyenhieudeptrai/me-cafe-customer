@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import PropTypes from "prop-types";
 import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { Image as ReactImage } from 'react-native';
@@ -8,6 +8,7 @@ import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
 
 const ShopInfoScreen = ({ navigation }) => {
+  const [tableSelected, setTableSelected] = useState(null);
 
   const onConfirmPress = () => {
     navigation.navigate('DetailShop')
@@ -95,24 +96,25 @@ const ShopInfoScreen = ({ navigation }) => {
         </View>
         <View style={styles.shopinfo_result}>
           <Text style={styles.shopinfo_result_title}>KẾT QUẢ:</Text>
-          <View style={styles.shopinfo_result_tableempty2}>
+          <TouchableOpacity style={styles.shopinfo_result_tableempty2}>
             <View style={styles.shopinfo_result_tableempty2_rectangle14922f124342}></View>
             <Text style={styles.shopinfo_result_tableempty2_ban}>BÀN</Text>
             <Text style={styles.shopinfo_result_tableempty2_loi6Ch}>Loại: 6 chỗ</Text>
             <Text style={styles.shopinfo_result_tableempty2_banTrngTLuc0800169f5e91}>Bàn trống từ lúc 08:00</Text>
             <Svg style={styles.shopinfo_result_tableempty2_line8} preserveAspectRatio="none" viewBox="-0.5 0 1 34" fill="transparent"><SvgPath d="M 0 0 L 0 34" /></Svg>
-          </View>
-          <View style={styles.shopinfo_result_roombtn}>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.shopinfo_result_roombtn}>
             <View style={styles.shopinfo_result_roombtn_rectangle1492}></View>
             <Text style={styles.shopinfo_result_roombtn_phongHp}>PHÒNG HỌP</Text>
             <Text style={styles.shopinfo_result_roombtn_loi10Ngi}>Loại: 10 người</Text>
             <Svg style={styles.shopinfo_result_roombtn_line9} preserveAspectRatio="none" viewBox="-0.5 0 1 34" fill="transparent"><SvgPath d="M 0 0 L 0 34" /></Svg>
             <Text style={styles.shopinfo_result_roombtn_banTrngTLuc0800}>Bàn trống từ lúc 08:00</Text>
-          </View>
+          </TouchableOpacity>
         </View>
 
         <TouchableOpacity onPress={onConfirmPress} style={styles.shopinfo_group19_dangkyngayBtn}>
-          <Svg style={styles.shopinfo_group19_dangkyngayBtn_path643} preserveAspectRatio="none" viewBox="0 0 155.9873046875 31" fill="rgba(212, 174, 57, 1)"><SvgPath d="M 1.908100247383118 0 L 154.0790863037109 0 C 155.1328887939453 0 155.9871826171875 1.15659761428833 155.9871826171875 2.583333253860474 L 155.9871826171875 28.41666603088379 C 155.9871826171875 29.84340286254883 155.1328887939453 31 154.0790863037109 31 L 1.908100247383118 31 C 0.8542854785919189 31 0 29.84340286254883 0 28.41666603088379 L 0 2.583333253860474 C 0 1.15659761428833 0.8542854785919189 0 1.908100247383118 0 Z" /></Svg>
+          <Svg style={styles.shopinfo_group19_dangkyngayBtn_path643} preserveAspectRatio="none" viewBox="0 0 155.9873046875 31" fill={tableSelected==null?"#868686":"rgba(212, 174, 57, 1)"}>
+          <SvgPath d="M 1.908100247383118 0 L 154.0790863037109 0 C 155.1328887939453 0 155.9871826171875 1.15659761428833 155.9871826171875 2.583333253860474 L 155.9871826171875 28.41666603088379 C 155.9871826171875 29.84340286254883 155.1328887939453 31 154.0790863037109 31 L 1.908100247383118 31 C 0.8542854785919189 31 0 29.84340286254883 0 28.41666603088379 L 0 2.583333253860474 C 0 1.15659761428833 0.8542854785919189 0 1.908100247383118 0 Z" /></Svg>
           <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}><Text style={{ "marginTop": -1.5, "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>ĐẶT CHỖ NGAY</Text></View>
         </TouchableOpacity>
       </ScrollView>
