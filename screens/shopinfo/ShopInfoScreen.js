@@ -15,7 +15,7 @@ const ShopInfoScreen = ({ navigation }) => {
     navigation.navigate('DetailShop')
   }
 
-  const [timeSearch, setTimeSearch] = useState('7:00 A.M');
+  const [timeSearch, setTimeSearch] = useState('7:00');
 
   const onReviewPress = () => {
     navigation.navigate('DetailShop')
@@ -91,52 +91,52 @@ const ShopInfoScreen = ({ navigation }) => {
               pb="2xl"
               showSwipeIndicator={true}
               roundedTop="xl">
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('7:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('7:00')}>
                 7:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('8:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('8:00')}>
                 8:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('9:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('9:00')}>
                 9:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('10:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('10:00')}>
                 10:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('11:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('11:00')}>
                 11:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('12:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('12:00')}>
                 12:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('13:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('13:00')}>
                 13:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('14:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('14:00')}>
                 14:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('15:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('15:00')}>
                 15:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('16:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('16:00')}>
                 16:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('17:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('17:00')}>
                 17:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('18:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('18:00')}>
                 18:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('19:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('19:00')}>
                 19:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('20:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('20:00')}>
                 20:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('21:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('21:00')}>
                 21:00 AM
               </Dropdown.Option>
-              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('22:00 AM')}>
+              <Dropdown.Option py="md" px="xl" block onPress={() => setTimeSearch('22:00')}>
                 22:00 AM
               </Dropdown.Option>
             </Dropdown>
