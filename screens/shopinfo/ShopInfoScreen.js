@@ -1,12 +1,12 @@
 import React, { Component, useState } from 'react';
 import PropTypes from "prop-types";
-import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { Image as ReactImage } from 'react-native';
 import Svg, { Defs, Pattern } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
-import { Dropdown, Modal, Select } from "react-native-magnus";
+import { Dropdown, Button, Select } from "react-native-magnus";
 
 const ShopInfoScreen = ({ navigation }) => {
   const [tableSelected, setTableSelected] = useState(null);
@@ -128,6 +128,17 @@ const ShopInfoScreen = ({ navigation }) => {
             onSelect={() => { setTimeSearch(getFullTime()) }}
             multiple
             data={[1]}
+            footer={(
+              <Button
+                w="90%"
+                ml="5%"
+                mb={10}
+                h={40}
+                bg='#D4AE39'
+                onPress={() => { setTimeSearch(getFullTime()); selectRef.current.close() }} >
+                  Chấp nhận
+              </Button>
+            )}
             renderItem={(item, index) => (
               <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
                 <View style={styles.main_tCh3c0aa05f_group15_group7}>
@@ -164,7 +175,6 @@ const ShopInfoScreen = ({ navigation }) => {
                   <Text style={from.getHours() < 12 ? styles.main_tCh3c0aa05f_group15_group5_am70a769fb : styles.main_tCh3c0aa05f_group15_group5_pme55ffa0b}>AM</Text>
                   <Text style={from.getHours() >= 12 ? styles.main_tCh3c0aa05f_group15_group5_am70a769fb : styles.main_tCh3c0aa05f_group15_group5_pme55ffa0b}>PM</Text>
                 </View>
-                {/* <Button title="OK" onPress={() => { setTimeSearch(getFullTime()); selectRef.current.close() }} ></Button> */}
               </View>
             )}
           >
