@@ -22,22 +22,11 @@ const data = [
   },
 ]
 
-const dataCancel = [
-  {
-    name: "GIA ROOM COFFEE",
-  },
-  {
-    name: "GIA ROOM COFFEE",
-  },
-  {
-    name: "GIA ROOM COFFEE",
-  },
-]
 
-const reasonData = ["asdasd", "asda a dasd asd", "as fa fsgahagag", "khác"];
+const reasonData = ["Thay đổi lịch trình", "Quán đông", "Trùng lịch làm việc", "khác"];
 
 const BookingTab = ({ navigation }) => {
-  const [overlayVisible, setOverlayVisible] = useState(true);
+  const [overlayVisible, setOverlayVisible] = useState(false);
   const [dataFilter, setDataFilter] = useState([]);
   const [reasonSelected, setReasonSelected] = useState("");
 
@@ -98,12 +87,12 @@ const BookingTab = ({ navigation }) => {
                     )
                   })}
                 </View>
-                {reasonSelected === "khác" &&
+                {reasonSelected === "Khác" &&
                   <TextInput multiline={true} numberOfLines={5} style={{ padding: 10, textAlignVertical: "top", borderColor: "#000", borderWidth: 1, borderRadius: 10 }}
                     placeholder="Bạn có thể nhập một vài lý do khác...."
                   />
                 }
-                <Button w="100%" mt="md" onPress={() => { setOverlayVisible(false); setReasonSelected("") }}>
+                <Button bg='#D4AE39' w="100%" mt="md" onPress={() => { setOverlayVisible(false); setReasonSelected("") }}>
                   Xác nhận
                 </Button>
               </Overlay>
