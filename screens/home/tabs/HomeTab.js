@@ -265,8 +265,13 @@ const HomeTab = ({ navigation }) => {
 
                     <View style={{ flex: 1 }}>
                       <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
+<<<<<<< HEAD
                       <Text style={styles.quanGnBnb2eef024_group23_group105_status}>{item.status}</Text>
                       <View style={{ flexDirection: "row", alignItems: "center", marginTop: 4 }}>
+=======
+                      {item.status && <Text style={styles.quanGnBnb2eef024_group23_group105_status}>{item.status}</Text>}
+                      <View style={{ flexDirection: "row", alignItems: "center" , marginTop: 5}}>
+>>>>>>> f608a4a7951cd0c41c53445ead7c5203c28dcc94
                         <ReactImage source={require('../../../assets/location.png')} style={styles.item_icon_label} />
                         <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
                       </View>
@@ -442,7 +447,6 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "top": 40
   },
   "quanGnBnb2eef024_group23_group105_status": {
     "color": "rgba(117, 0, 0, 1)",
@@ -450,8 +454,14 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "italic",
     "fontFamily": "Roboto",
+<<<<<<< HEAD
     "marginTop": 0,
     "marginLeft": 5
+=======
+    "marginTop": -5,
+    "marginBottom": -5,
+    "marginLeft":5,
+>>>>>>> f608a4a7951cd0c41c53445ead7c5203c28dcc94
   },
   "quanGnBnb2eef024_group23_group105_x700m": {
     "position": "absolute",
@@ -462,7 +472,7 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "right": 10,
-    "top": 16
+    "top": 10
   },
   "quanGnBnb2eef024_group23_group105_bstoryCafe": {
     "color": "rgba(84, 71, 65, 1)",
@@ -470,6 +480,7 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
+    marginTop:-5
   },
   "hotShop": {
     "width": "90%",
@@ -516,8 +527,6 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "left": 93,
-    "top": 41
   },
 
   "Hotdeal": {
