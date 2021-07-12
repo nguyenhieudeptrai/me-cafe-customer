@@ -147,7 +147,7 @@ const ShopInfoScreen = ({ navigation }) => {
               </Button>
             )}
             renderItem={(item, index) => (
-              <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+              <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" , height:200}}>
                 <View style={styles.main_tCh3c0aa05f_group15_group7}>
                   <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0}>
                     <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_rectangle14613f364951}></View>

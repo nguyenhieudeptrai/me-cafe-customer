@@ -311,16 +311,12 @@ export default DetailShopScreen; const styles = StyleSheet.create({
     "top": 0
   },
   "main_tCh3c0aa05f_group15_group2_thiGian": {
-
     "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
     "fontSize": 13,
     "fontWeight": "700",
-
     "fontFamily": "Roboto",
-    "width": 55,
-    "height": 15,
     "left": 31,
     "top": 5
   },
@@ -333,8 +329,6 @@ export default DetailShopScreen; const styles = StyleSheet.create({
     "fontWeight": "700",
 
     "fontFamily": "Roboto",
-    "width": 8,
-    "height": 37,
     "left": 141,
     "top": 56
   },

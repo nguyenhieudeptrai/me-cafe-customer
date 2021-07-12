@@ -6,7 +6,6 @@ import Svg, { Defs, Pattern } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
 import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
-import { ActivityIndicator } from 'react-native';
 import { useState } from 'react';
 import { Button, Overlay, Text } from 'react-native-magnus';
 
@@ -35,10 +34,12 @@ const dataCancel = [
   },
 ]
 
+const reasonData = ["asdasd", "asda a dasd asd", "as fa fsgahagag", "khác"];
 
 const BookingTab = ({ navigation }) => {
-  const [overlayVisible, setOverlayVisible] = useState(false);
+  const [overlayVisible, setOverlayVisible] = useState(true);
   const [dataFilter, setDataFilter] = useState([]);
+  const [reasonSelected, setReasonSelected] = useState("");
 
   return (
     <View style={styles.booking}>
@@ -79,17 +80,31 @@ const BookingTab = ({ navigation }) => {
                 }}
                 block>Hủy đặt</Button>
               <Overlay visible={overlayVisible} p="xl">
-                <ActivityIndicator />
-                <View>
-                  {dataFilter.map((item, index) => {
+                <Text style={{fontSize:18, fontWeight:"700", marginBottom:10}}>Bạn vui lòng chọn lý do bạn hủy</Text>
+                <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+                  {reasonData.map((item, index) => {
                     console.log(index);
                     return (
-                      <View key={index} style={{ borderRadius: 30, borderColor: "#000", borderWidth: 1, margin: 10 }}>
-                        <Text style={{ fontSize: 12 }}>{item.name}</Text>
-                      </View>
+                      <Button key={index}
+                        bg={reasonSelected === item ? "#000" : "#FFF"}
+                        borderColor={reasonSelected === item ? "#FFF" : "#000"}
+                        color={reasonSelected === item ? "#FFF" : "#000"}
+                        rounded={25} mr="sm" mb="sm" py="sm" borderWidth={1}
+                        onPress={() => setReasonSelected(item)}
+                      >
+                        {item}
+                      </Button>
                     )
                   })}
                 </View>
+                {reasonSelected === "khác" &&
+                  <TextInput multiline={true} numberOfLines={5} style={{ padding: 10, textAlignVertical: "top", borderColor: "#000", borderWidth: 1, borderRadius: 10 }}
+                    placeholder="Bạn có thể nhập một vài lý do khác...."
+                  />
+                }
+                <Button w="100%" mt="md" onPress={() => { setOverlayVisible(false); setReasonSelected("") }}>
+                  Xác nhận
+                </Button>
               </Overlay>
             </View>
 
