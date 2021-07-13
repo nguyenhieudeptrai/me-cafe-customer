@@ -148,6 +148,7 @@ const HomeTab = ({ navigation }) => {
   const onRemoveFilter = () => {
     hasFilter(false);
     setOpenFilter(false);
+    setDataFilter([]);
   }
 
   return (
@@ -175,7 +176,7 @@ const HomeTab = ({ navigation }) => {
             {dataFilter.map((item, index) => {
               console.log(index);
               return (
-                <View key={index} style={{ borderRadius: 30, borderColor: "#000", borderWidth: 1, margin:10}}>
+                <View key={index} style={{ borderRadius: 30, borderColor: "#000", borderWidth: 1, marginRight: 5, padding: 5 }}>
                   <Text style={{ fontSize: 12 }}>{item.name}</Text>
                 </View>
               )
@@ -186,21 +187,21 @@ const HomeTab = ({ navigation }) => {
       <View style={{ flex: 1 }}>
         {openFilter &&
           <View style={styles.filter}>
-            <View><Text style={styles.filter_title}>Loại quán</Text></View>
-            <Checkbox.Group>
-              {checkboxData.map(item => (
-                <View>
-                  <Checkbox onChecked={(check) => onFilter(item, check)} activeColor="#544741" value={item.value} style={styles.filter_item} suffix={<Text style={styles.filter_label}>{item.name}</Text>} />
-                </View>
-              ))}
-            </Checkbox.Group>
-            <View style={{ width: "100%" }}>
-              <TouchableOpacity onPress={onRemoveFilter} style={{ fontFamily:"Roboto",alignSelf: "flex-end", backgroundColor: "rgba(250, 175, 82, 1)", borderRadius: 20,padding: 9 , marginRight:10}}>
-                <Text>Bỏ lọc</Text>
+            <View style={{ backgroundColor: "#FFF", padding: 10 }}>
+              <Text style={styles.filter_title}>Loại quán</Text>
+              <Checkbox.Group>
+                {checkboxData.map(item => (
+                  <View>
+                    <Checkbox checked={dataFilter.indexOf(item) > -1} onChecked={(check) => onFilter(item, check)} activeColor="#544741" value={item.value} style={styles.filter_item} suffix={<Text style={styles.filter_label}>{item.name}</Text>} />
+                  </View>
+                ))}
+              </Checkbox.Group>
+              <TouchableOpacity onPress={onRemoveFilter} style={{ fontFamily: "Roboto", alignSelf: "flex-end", backgroundColor: "rgba(250, 175, 82, 1)", borderRadius: 10, paddingVertical: 5, paddingHorizontal: 30, marginRight: 10 }}>
+                <Text style={{ color: "#FFF" }}>Bỏ lọc</Text>
               </TouchableOpacity>
+
             </View>
             <TouchableOpacity style={styles.filter_bg} onPress={() => setOpenFilter(false)} />
-
           </View>
         }
         <ScrollView contentContainerStyle={{ alignItems: "center" }}>
@@ -689,23 +690,22 @@ const styles = StyleSheet.create({
   },
   filter: {
     position: "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 1)",
     width: "100%",
-    height: "18%",
+    height: "100%",
     top: 0,
     zIndex: 1
   },
   filter_bg: {
-    "backgroundColor": "rgba(255, 255, 255, 0)",
+    "backgroundColor": "rgba(0,0,0,0.3)",
     flex: 1,
   },
   filter_title: {
-    "fontSize": 14,
+    "fontSize": 18,
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "fontWeight": "700",
     "fontFamily": "Roboto",
     "color": "rgba(84, 71, 65, 1)",
-    marginBottom: 5
+    marginBottom: 10,
   },
   filter_item: {
     marginLeft: 10,

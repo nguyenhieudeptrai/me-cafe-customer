@@ -87,7 +87,7 @@ const BookingTab = ({ navigation }) => {
                     )
                   })}
                 </View>
-                {reasonSelected === "Khác" &&
+                {reasonSelected === "khác" &&
                   <TextInput multiline={true} numberOfLines={5} style={{ padding: 10, textAlignVertical: "top", borderColor: "#000", borderWidth: 1, borderRadius: 10 }}
                     placeholder="Bạn có thể nhập một vài lý do khác...."
                   />

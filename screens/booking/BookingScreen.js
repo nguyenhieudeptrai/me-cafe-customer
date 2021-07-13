@@ -166,7 +166,7 @@ const BookingScreen = ({ navigation }) => {
       <TouchableOpacity onPress={() => { if (selectItem != null) setViewComplete(true) }} style={selectItem == null ? styles.shopinfo_group19_dangkyngayBtn_n : styles.shopinfo_group19_dangkyngayBtn}>
         <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}>
           <Text style={{ "marginTop": -1.5, "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>
-            BẮT ĐẦU CHỖ NGAY
+            ĐẶT NGAY
           </Text>
         </View>
       </TouchableOpacity>
@@ -232,7 +232,12 @@ const BookingScreen = ({ navigation }) => {
         <Dropdown.Option onPress={() => { setPeroid('2 tiếng rưỡi'); dropdownRef.current.close() }}>2 tiếng rưỡi</Dropdown.Option>
       </Dropdown>
       <Overlay visible={viewComplete} p="xl">
-        <NotificationCompletedPopUp close={() => { navigation.goBack(); }} />
+        <NotificationCompletedPopUp close={() => {
+          navigation.reset({
+            index: 0,
+            routes: [{ name: 'Home' }],
+        });
+        }} />
       </Overlay>
     </View>
   );
