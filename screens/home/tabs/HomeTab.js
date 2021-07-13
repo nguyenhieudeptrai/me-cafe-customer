@@ -265,7 +265,7 @@ const HomeTab = ({ navigation }) => {
                     <View style={{ flex: 1 }}>
                       <Text style={styles.quanGnBnb2eef024_group23_group105_bstoryCafe}>{item.name}</Text>
                       {item.status && <Text style={styles.quanGnBnb2eef024_group23_group105_status}>{item.status}</Text>}
-                      <View style={{ flexDirection: "row", alignItems: "center", marginTop: 5 }}>
+                      <View style={{ flexDirection: "row", alignItems: "center", marginTop: 0 }}>
                         <ReactImage source={require('../../../assets/location.png')} style={styles.item_icon_label} />
                         <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
                       </View>
@@ -277,7 +277,7 @@ const HomeTab = ({ navigation }) => {
                       {item.utilities &&
                         <View style={{ flexDirection: "row" }}>
                           <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
-                          <View style={{ marginLeft: 5, flexDirection: "row", marginTop: 5 }}>
+                          <View style={{ marginLeft: 5, flexDirection: "row", marginTop: 0 }}>
                             {item.wifi &&
                               <ReactImage source={require('../../../assets/wifiicon.png')} style={{ "width": 17, "height": 17, marginRight: 5 }} />
                             }
@@ -449,8 +449,8 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "italic",
     "fontFamily": "Roboto",
-    "marginTop": 2,
-    "marginBottom": -7,
+    "marginTop": 0,
+    "marginBottom": 0,
     "marginLeft": 5,
   },
   "quanGnBnb2eef024_group23_group105_x700m": {
@@ -462,7 +462,7 @@ const styles = StyleSheet.create({
     "fontStyle": "italic",
     "fontFamily": "Roboto",
     "right": 10,
-    "top": 5
+    "top": 10
   },
   "quanGnBnb2eef024_group23_group105_bstoryCafe": {
     "color": "rgba(84, 71, 65, 1)",
@@ -470,7 +470,7 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    marginTop: 3
+    marginTop: 0
   },
   "hotShop": {
     "width": "90%",
@@ -721,7 +721,8 @@ const styles = StyleSheet.create({
     "height": 100,
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: 10
+    marginTop: 5,
+    marginBottom: 15
   },
   quanGnBnb2eef024_item_left_numstar: {
 

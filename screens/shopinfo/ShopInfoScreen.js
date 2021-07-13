@@ -15,6 +15,7 @@ import { Dropdown, Button, Select } from "react-native-magnus";
 
 const ShopInfoScreen = ({ navigation }) => {
   const [tableSelected, setTableSelected] = useState(null);
+  const [viewMenu, setViewMenu] = useState(false);
 
 
 
@@ -22,19 +23,14 @@ const ShopInfoScreen = ({ navigation }) => {
     navigation.navigate('Booking')
   }
 
-  const dropdownRef = React.createRef();
-  const selectRef = React.createRef();
 
-  const [period, setPeroid] = useState('30 phút')
-
-  const [from, setFrom] = useState(new Date());
 
   return (
     <View style={styles.shopinfo}>
       <View style={styles.shopinfo_header}>
         <Text style={styles.shopinfo_header_thongTinQuan}>THÔNG TIN QUÁN</Text>
         <TouchableOpacity onPress={() => navigation.goBack()} style={{ position: "absolute", top: 50, left: 15 }}>
-          <ReactImage source={require('./assets/backicon.png')} style={styles.shopinfo_header_backicon} />
+          <ReactImage source={require('../../assets/backicon.png')} style={styles.shopinfo_header_backicon} />
         </TouchableOpacity>
       </View>
       <ScrollView>
@@ -60,44 +56,45 @@ const ShopInfoScreen = ({ navigation }) => {
           <Text style={styles.shopinfo_info_inThoi033456789}>Điện thoại: 033456789</Text>
           <Text lineBreakMode="head" style={styles.shopinfo_info_inThoi033456789_drs}>
             🌟Về thiết kế của 𝗚𝗶𝗮 𝗥𝗼𝗼𝗺, quán có 2 tầng, và lấy tông trắng kem làm chủ đạo nhìn khá nịn mắt, ở tầng một chỗ ngồi hơi hạn chế vì chiếc quầy order đã chiếm gần hết diện tích, mình thấy góc ngồi ngay cửa sổ trước hiên nhà ở đây khá lý tưởng cho bạn nào thích thả dáng check-in. Lên đến tầng 2 thì không gian thoáng và rộng hơn, với phong cách thiết kế tối giản cộng với ánh sáng tự nhiên cũng khá đầy đủ nhờ có giếng trời đã tạo được cảm giác khá thoải mái cho mình khi ngồi ở đây. Sẽ bắt gặp được kha khá các góc nhỏ trong quán được decor xinh xắn. List nhạc lúc mình đến quán đa số là nhạc Hàn Quốc nghe cũng vui tai. Quán nằm trong hẻm nhỏ nên cũng khá yên tĩnh, phù hợp cho bạn nào thích đọc sách hoặc tìm một chỗ tán gẫu với bạn bè.</Text>
-          <View style={styles.shopinfo_info_menubt}>
+          <TouchableOpacity onPress={() => setViewMenu(true)} style={styles.shopinfo_info_menubt}>
             <Text style={styles.shopinfo_info_menubt_menuQuan}>Menu quán</Text>
-          </View>
+          </TouchableOpacity>
         </View>
+
+
         <View style={styles.shopinfo_tienich}>
           <Text style={styles.shopinfo_tienich_tinIch}>Tiện ích</Text>
           <View style={{ flexDirection: "row", paddingLeft: 10, paddingTop: 10 }}>
             <View style={styles.shopinfo_tienich_room}>
               <Text style={styles.shopinfo_tienich_room_phongHp10Ngi}>Phòng họp 10 người</Text>
-              <ReactImage source={require('./assets/pinclipartcommeetingClipartFree63947.png')} style={styles.shopinfo_tienich_room_pinclipartcommeetingClipartFree63947} />
+              <ReactImage source={require('../../assets/pinclipartcommeetingClipartFree63947.png')} style={styles.shopinfo_tienich_room_pinclipartcommeetingClipartFree63947} />
             </View>
             <View style={styles.shopinfo_tienich_projector}>
               <Text style={styles.shopinfo_tienich_room_phongHp10Ngi}>Máy chiếu</Text>
-              <ReactImage source={require('./assets/x2020624419991071872977076642162411729179112n.png')} style={styles.shopinfo_tienich_projector_x2020624419991071872977076642162411729179112n} />
+              <ReactImage source={require('../../assets/x2020624419991071872977076642162411729179112n.png')} style={styles.shopinfo_tienich_projector_x2020624419991071872977076642162411729179112n} />
             </View>
           </View>
           <View style={{ flexDirection: "row", paddingLeft: 10, paddingLeft: 10, paddingTop: 10 }}>
             <View style={styles.shopinfo_tienich_ac}>
               <Text style={styles.shopinfo_tienich_room_phongHp10Ngi}>Phòng máy lạnh</Text>
-              <ReactImage source={require('./assets/aaaa.png')} style={styles.shopinfo_tienich_ac_aaaa} />
+              <ReactImage source={require('../../assets/aaaa.png')} style={styles.shopinfo_tienich_ac_aaaa} />
             </View>
             <View style={styles.shopinfo_tienich_wifi}>
               <Text style={styles.shopinfo_tienich_room_phongHp10Ngi}>Wifi miễn phí</Text>
-              <ReactImage source={require('./assets/image4.png')} style={styles.shopinfo_tienich_wifi_image4} />
+              <ReactImage source={require('../../assets/image4.png')} style={styles.shopinfo_tienich_wifi_image4} />
             </View>
           </View>
+
+          <Text style={{ marginTop: 10, color: "rgba(194, 151, 106, 0.9803921568627451)" }}>Giá cho phòng họp: 30k/giờ</Text>
         </View>
 
 
 
-
-
-
-        <View style={{marginHorizontal:10, marginVertical:10, backgroundColor:"#FFF", padding:10}}>
+        <View style={{ marginHorizontal: 10, marginVertical: 10, backgroundColor: "#FFF", padding: 10 }}>
           <Text style={styles.commentshop_anhGiaTxt_anhGiaKhachHang}>Đánh giá khách hàng</Text>
           <View style={styles.commentshop_group45}>
-            <View style={{justifyContent:"center", alignItems:"center"}}>
-              <ReactImage source={require('../../assets/rectangle1472.png')} style={styles.commentshop_group46_rectangle1472} />
+            <View style={{ justifyContent: "center", alignItems: "center" }}>
+              <ReactImage source={require('../../assets/rectangle1472.png')} style={styles.commentshop_group45_rectangle1472c74ae538} />
               <View style={styles.commentshop_group45_group36}>
                 <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
                 <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
@@ -112,8 +109,8 @@ const ShopInfoScreen = ({ navigation }) => {
             </View>
           </View>
           <View style={styles.commentshop_group45}>
-            <View style={{justifyContent:"center", alignItems:"center"}}>
-              <ReactImage source={require('../../assets/rectangle1472.png')} style={styles.commentshop_group46_rectangle1472} />
+            <View style={{ justifyContent: "center", alignItems: "center" }}>
+              <ReactImage source={require('../../assets/rectangle1472.png')} style={styles.commentshop_group45_rectangle1472c74ae538} />
               <View style={styles.commentshop_group45_group36}>
                 <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
                 <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
@@ -132,6 +129,32 @@ const ShopInfoScreen = ({ navigation }) => {
       <TouchableOpacity onPress={onPressContinuous} style={styles.shopinfo_group19_dangkyngayBtn}>
         <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}><Text style={{ "marginTop": -1.5, "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>BẮT ĐẦU CHỖ NGAY</Text></View>
       </TouchableOpacity>
+
+      <Overlay visible={viewMenu} p="sm">
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <TouchableOpacity onPress={() => setViewMenu(false)} style={{
+            "width": 40,
+            "height": 40,
+            justifyContent: "center",
+            alignItems: "center",
+            // borderWidth: 1,
+          }}>
+            <Svg style={{
+              "transform": [{ rotate: '180deg' }],
+              "width": 16,
+              "height": 16,
+            }}
+              preserveAspectRatio="none" viewBox="0 0 16 16" fill="rgba(83, 71, 65, 1)">
+              <SvgPath d="M 8 0 L 6.545454978942871 1.454545497894287 L 12.05194854736328 6.961039066314697 L 0 6.961039066314697 L 0 9.038961410522461 L 12.05194854736328 9.038961410522461 L 6.545454978942871 14.54545497894287 L 8 16 L 16 8 L 8 0 Z" />
+            </Svg>
+          </TouchableOpacity>
+          <Text style={{ flex: 1, fontWeight: "700", fontSize: 18, textAlign: "center" }}>Menu</Text>
+          <View style={{ "width": 40, "height": 40, }} />
+        </View>
+        <View style={{ marginTop: 15, width: "100%" }}>
+          <ReactImage source={require('../../assets/menu.jpg')} style={styles.shopinfo_group19_picture_popup} />
+        </View>
+      </Overlay>
     </View>
   );
 }
@@ -149,9 +172,17 @@ const styles = StyleSheet.create({
   },
   "shopinfo_group19_picture": {
     "borderRadius": 5,
-    "width": 350,
-    "height": 270,
-    marginRight: 10
+    padding: 0,
+    width:600, 
+    height:300
+  },
+  "shopinfo_group19_picture_popup": {
+    "borderRadius": 5,
+    width: "100%",
+    height: undefined,
+    padding: 0,
+    aspectRatio: 1,
+    resizeMode: 'contain',
   },
   "shopinfo_group19_bg2": {
     "opacity": 1,
@@ -538,402 +569,10 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
   },
-  "shopinfo_timeslot": {
-    "opacity": 1,
-    "backgroundColor": "transparent",
-    "width": "100%",
-    "height": 84.27,
-  },
-  "shopinfo_timeslot_today": {
-
-    "backgroundColor": "transparent",
-    "width": 116.44,
-    "height": 13.58,
-    "left": 28.5,
-    "top": 34.46
-  },
-  "shopinfo_timeslot_today_homNay": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
-    "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 60,
-    "height": 15,
-    "left": 54.52,
-    "top": 0
-  },
-  "shopinfo_timeslot_today_backIcon2f9ac0684": {
-
-    "width": 13,
-    "height": 13,
-    "left": 103.44,
-    "top": 0.45,
-    "transform": [{ rotate: '-90deg' }],
-  },
-  "shopinfo_timeslot_today_thiGian": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
-    "fontWeight": "700",
-    "fontStyle": "italic",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 50,
-    "height": 15,
-    "left": 0,
-    "top": 0.58
-  },
-  "shopinfo_timeslot_timen": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-
-    "width": 104.78,
-    "height": 13.61,
-    "left": 165,
-    "top": 66.75
-  },
-  "shopinfo_timeslot_timen_x1Gi": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
-    "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 25,
-    "height": 15,
-    "alignSelf": 'center',
-
-  },
-  "shopinfo_timeslot_timen_backIcon27fde8a1b": {
-    "opacity": 1,
-    "position": "absolute",
-    "width": 13,
-    "height": 13,
-    "left": 91.78,
-    "top": 0.57
-  },
-  "shopinfo_timeslot_timen_khong": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
-    "fontWeight": "700",
-    "fontStyle": "italic",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 50,
-    "height": 15,
-    "left": 0,
-    "top": 0
-  },
-  "shopinfo_timeslot_timet": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "width": 127.94,
-    "height": 13,
-    "left": 19,
-    "top": 67.77
-  },
-  "shopinfo_timeslot_timet_backIcon2": {
-    "opacity": 1,
-    "position": "absolute",
-    "width": 13,
-    "height": 13,
-    "left": 114.94,
-    "top": 0,
-    "transform": [{ rotate: '-90deg' }],
-  },
-  "shopinfo_timeslot_timet_x0700Am": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
-    "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 60,
-    "height": 13,
-    "left": 64.02,
-    "top": 0
-  },
-  "shopinfo_timeslot_timet_btULuc": {
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
-    "fontWeight": "700",
-    "fontStyle": "italic",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 70,
-    "height": 15,
-
-  },
-  "shopinfo_timeslot_khungGiTrng": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 13,
-    "fontWeight": "500",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 110,
-    "height": 20,
-
-  },
-  "shopinfo_timeslot_btnsearch": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "width": 68.4,
-    "height": 22,
-    "right": 50,
-    "top": 62.27
-  },
-  "shopinfo_timeslot_btnsearch_rectangle1471": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(191, 151, 104, 1)",
-    "borderTopLeftRadius": 11,
-    "borderTopRightRadius": 11,
-    "borderBottomLeftRadius": 11,
-    "borderBottomRightRadius": 11,
-    "width": 68.4,
-    "height": 22,
-    "alignSelf": 'center',
-    "top": 0
-  },
-  "shopinfo_timeslot_btnsearch_timKim": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(255, 255, 255, 1)",
-    "fontSize": 10,
-    "fontWeight": "500",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 60,
-    "height": 15,
-    "left": 15,
-    "top": 4
-  },
-  "shopinfo_result": {
-    "opacity": 1,
-    "backgroundColor": "transparent",
-    "width": "100%",
-    "height": 139,
-  },
-  "shopinfo_result_tableempty2": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "width": 287,
-    "height": 53,
-    "top": 23
-  },
-  "shopinfo_result_tableempty2_rectangle14922f124342": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 1)",
-    "borderTopWidth": 1,
-    "borderTopColor": "rgba(191, 151, 104, 1)",
-    "borderRightWidth": 1,
-    "borderRightColor": "rgba(191, 151, 104, 1)",
-    "borderBottomWidth": 1,
-    "borderBottomColor": "rgba(191, 151, 104, 1)",
-    "borderLeftWidth": 1,
-    "borderLeftColor": "rgba(191, 151, 104, 1)",
-    "borderTopLeftRadius": 9,
-    "borderTopRightRadius": 9,
-    "borderBottomLeftRadius": 9,
-    "borderBottomRightRadius": 9,
-    "width": 287,
-    "height": 53,
-    "left": 0,
-    "top": 0
-  },
-  "shopinfo_result_tableempty2_ban": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 13,
-    "fontWeight": "500",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 30,
-    "height": 18,
-    "left": 37.34,
-    "top": 12
-  },
-  "shopinfo_result_tableempty2_loi6Ch": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
-    "fontWeight": "400",
-    "fontStyle": "italic",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 60,
-    "height": 13,
-    "left": 26.83,
-    "top": 28.64
-  },
-  "shopinfo_result_tableempty2_banTrngTLuc0800169f5e91": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
-    "fontWeight": "500",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 120,
-    "height": 15,
-    "left": 106.5,
-    "top": 22.14
-  },
-  "shopinfo_result_tableempty2_line8": {
-    "opacity": 1,
-    "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 1,
-    "height": 34,
-    "left": 95,
-    "top": 9.5
-  },
-  "shopinfo_result_roombtn": {
-
-    "backgroundColor": "transparent",
-    "width": 288,
-    "height": 53,
-    "top": 86,
-  },
-  "shopinfo_result_roombtn_rectangle1492": {
-
-    "backgroundColor": "rgba(255, 255, 255, 1)",
-    "borderTopWidth": 1,
-    "borderTopColor": "rgba(191, 151, 104, 1)",
-    "borderRightWidth": 1,
-    "borderRightColor": "rgba(191, 151, 104, 1)",
-    "borderBottomWidth": 1,
-    "borderBottomColor": "rgba(191, 151, 104, 1)",
-    "borderLeftWidth": 1,
-    "borderLeftColor": "rgba(191, 151, 104, 1)",
-    "borderTopLeftRadius": 9,
-    "borderTopRightRadius": 9,
-    "borderBottomLeftRadius": 9,
-    "borderBottomRightRadius": 9,
-    "width": 288,
-    "height": 53,
-    "left": 0,
-    "top": 0
-  },
-  "shopinfo_result_roombtn_phongHp": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 13,
-    "fontWeight": "500",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 110,
-    "height": 18,
-    "left": 14,
-    "top": 10.5
-  },
-  "shopinfo_result_roombtn_loi10Ngi": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
-    "fontWeight": "400",
-    "fontStyle": "italic",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 80,
-    "height": 15,
-    "left": 20,
-    "top": 27.5
-  },
-  "shopinfo_result_roombtn_line9": {
-    "opacity": 1,
-    "position": "absolute",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": 0,
-    "marginLeft": 0,
-    "paddingTop": 0,
-    "paddingRight": 0,
-    "paddingBottom": 0,
-    "paddingLeft": 0,
-    "width": 1,
-    "height": 34,
-    "left": 97,
-    "top": 10.5
-  },
-  "shopinfo_result_roombtn_banTrngTLuc0800": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
-    "fontWeight": "500",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 120,
-    "height": 15,
-    "left": 106.5,
-    "top": 21
-  },
-  "shopinfo_result_title": {
-
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(191, 151, 104, 1)",
-    "fontSize": 10,
-    "fontWeight": "400",
-    "fontStyle": "italic",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 50,
-    "height": 15,
-
-  },
   "shopinfo_tienich": {
-    "width": "100%",
-    marginLeft: 10
+    marginHorizontal: 10,
+    backgroundColor: "#FFF",
+    padding: 10
   },
   "shopinfo_tienich_room": {
     "height": 15,
@@ -1377,11 +1016,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   "commentshop_group45_messagec41c5359": {
-    paddingLeft:"5%",
-    paddingVertical:5,
-    flex:1,
-    marginLeft:5,
-    justifyContent:"center"
+    paddingLeft: "5%",
+    flex: 1,
+    marginLeft: 5,
+    justifyContent: "center",
   },
   "commentshop_group45_messagec41c5359_path1127b8c95f5": {
     "position": "absolute",
@@ -1396,22 +1034,17 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    width:"90%"
+    width: "90%",
+    zIndex: 1
   },
   "commentshop_group45_rectangle1472c74ae538": {
-    "position": "absolute",
-    "borderTopLeftRadius": 15,
-    "borderTopRightRadius": 15,
-    "borderBottomLeftRadius": 15,
-    "borderBottomRightRadius": 15,
-    "width": 24,
-    "height": 25,
-    "left": 3.03,
-    "top": 0
+    "borderRadius": 15,
+    "width": 40,
+    "height": 40,
   },
   "commentshop_group45_group36": {
     flexDirection: "row",
-    flex:1
+    flex: 1
   },
   "commentshop_group45_group36_path1574cb28200": {
     "width": 10,
