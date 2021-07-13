@@ -18,44 +18,8 @@ const ShopInfoScreen = ({ navigation }) => {
 
 
 
-  const onConfirmPress = () => {
-    navigation.navigate('DetailShop')
-  }
-
-  const [timeSearch, setTimeSearch] = useState('7:00');
-
-  const onReviewPress = () => {
-    navigation.navigate('DetailShop')
-  }
-
-  const getFullTime = () => {
-    let _hour = from.getHours() < 10 ? `0${from.getHours()}` : `${from.getHours()}`
-    let _min = from.getMinutes() < 10 ? `0${from.getMinutes()}` : `${from.getMinutes()}`
-    let beforeMidDate = from.getHours() >= 12;
-
-    let fullTime = `${_hour}:${_min} ${beforeMidDate ? 'A.M' : 'P.M'}`
-    return fullTime;
-  }
-
-  const loadTimeSearch = () => {
-    let _arr = timeSearch.split(':');
-    let _temp = from;
-
-    _temp.setHours(parseInt(_arr[0]));
-    _temp.setMinutes(parseInt(_arr[1]));
-
-    _temp = new Date(_temp);
-
-    setFrom(_temp);
-  }
-
-  const onAddFrom = (isHour, num) => {
-    let fromTmp = from;
-    if (isHour)
-      fromTmp = new Date(fromTmp.setHours(fromTmp.getHours() + num));
-    else
-      fromTmp = new Date(fromTmp.setMinutes(fromTmp.getMinutes() + num));
-    setFrom(fromTmp);
+  const onPressContinuous = () => {
+    navigation.navigate('Booking')
   }
 
   const dropdownRef = React.createRef();
@@ -68,166 +32,94 @@ const ShopInfoScreen = ({ navigation }) => {
   return (
     <View style={styles.shopinfo}>
       <View style={styles.shopinfo_header}>
-        <Svg style={styles.shopinfo_header_bg} preserveAspectRatio="none" viewBox="0 0 393 75.1141357421875" fill="rgba(240, 211, 122, 1)"><SvgPath d="M 0 0 L 393 0 L 393 75.1141357421875 L 0 75.1141357421875 L 0 0 Z" /></Svg>
         <Text style={styles.shopinfo_header_thongTinQuan}>THÔNG TIN QUÁN</Text>
-        <TouchableOpacity onPress={() => navigation.goBack()}><ReactImage source={require('./assets/backicon.png')} style={styles.shopinfo_header_backicon} />
+        <TouchableOpacity onPress={() => navigation.goBack()} style={{ position: "absolute", top: 50, left: 15 }}>
+          <ReactImage source={require('./assets/backicon.png')} style={styles.shopinfo_header_backicon} />
         </TouchableOpacity>
       </View>
       <ScrollView>
-        <View style={styles.shopinfo_group19}>
-          <ReactImage source={require('./assets/picture.png')} style={styles.shopinfo_group19_picture} />
-        </View>
+
+        <ScrollView horizontal={true}>
+          <ReactImage source={require('../../assets/x2.png')} style={styles.shopinfo_group19_picture} />
+          <ReactImage source={require('../../assets/x2.png')} style={styles.shopinfo_group19_picture} />
+          <ReactImage source={require('../../assets/x2.png')} style={styles.shopinfo_group19_picture} />
+        </ScrollView>
 
         <View style={styles.shopinfo_info}>
           <Text style={styles.shopinfo_info_giaRoomCoffee}>GIA ROOM COFFEE</Text>
-          <Text style={styles.shopinfo_info_x101OanThImQunPhuNhunTphcm}>10/1 Đoàn Thị Điểm, Quận Phú Nhuận, TP.HCM</Text>
-          <Text style={styles.shopinfo_info_giMCa07h0021h00Th2ChNht}>Giờ mở cửa: 07h00 - 21h00 (Thứ 2 - Chủ nhật)</Text>
+          <View style={styles.shopinfo_info_start}>
+            <Svg style={styles.shopinfo_info_start_path157} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(255, 220, 156, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
+            <Svg style={styles.shopinfo_info_start_path157} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(255, 220, 155, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
+            <Svg style={styles.shopinfo_info_start_path157} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(255, 220, 155, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
+            <Svg style={styles.shopinfo_info_start_path157} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(255, 220, 156, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
+            <Svg style={styles.shopinfo_info_start_path157} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(176, 177, 181, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
+            <Text style={styles.shopinfo_info_start_x45}> 4.5</Text>
+          </View>
+          <Text style={styles.shopinfo_info_inThoi033456789}>10/1 Đoàn Thị Điểm, Quận Phú Nhuận, TP.HCM</Text>
+          <Text style={styles.shopinfo_info_inThoi033456789}>Giờ mở cửa: 07h00 - 21h00 (Thứ 2 - Chủ nhật)</Text>
           <Text style={styles.shopinfo_info_inThoi033456789}>Điện thoại: 033456789</Text>
+          <Text lineBreakMode="head" style={styles.shopinfo_info_inThoi033456789_drs}>
+            🌟Về thiết kế của 𝗚𝗶𝗮 𝗥𝗼𝗼𝗺, quán có 2 tầng, và lấy tông trắng kem làm chủ đạo nhìn khá nịn mắt, ở tầng một chỗ ngồi hơi hạn chế vì chiếc quầy order đã chiếm gần hết diện tích, mình thấy góc ngồi ngay cửa sổ trước hiên nhà ở đây khá lý tưởng cho bạn nào thích thả dáng check-in. Lên đến tầng 2 thì không gian thoáng và rộng hơn, với phong cách thiết kế tối giản cộng với ánh sáng tự nhiên cũng khá đầy đủ nhờ có giếng trời đã tạo được cảm giác khá thoải mái cho mình khi ngồi ở đây. Sẽ bắt gặp được kha khá các góc nhỏ trong quán được decor xinh xắn. List nhạc lúc mình đến quán đa số là nhạc Hàn Quốc nghe cũng vui tai. Quán nằm trong hẻm nhỏ nên cũng khá yên tĩnh, phù hợp cho bạn nào thích đọc sách hoặc tìm một chỗ tán gẫu với bạn bè.</Text>
           <View style={styles.shopinfo_info_menubt}>
             <Text style={styles.shopinfo_info_menubt_menuQuan}>Menu quán</Text>
           </View>
-          <View style={styles.shopinfo_info_reviewbtn}>
-            <Text style={styles.shopinfo_info_reviewbtn_xemAnhGia}>Xem đánh giá</Text>
-          </View>
-          <View style={styles.shopinfo_info_start}>
-            <Svg style={styles.shopinfo_info_start_path157} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(255, 220, 156, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
-            <Svg style={styles.shopinfo_info_start_path158} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(255, 220, 155, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
-            <Svg style={styles.shopinfo_info_start_path159} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(255, 220, 155, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
-            <Svg style={styles.shopinfo_info_start_path160} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(255, 220, 156, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
-            <Svg style={styles.shopinfo_info_start_path161} preserveAspectRatio="none" viewBox="0 0 12 11.4000244140625" fill="rgba(176, 177, 181, 1)"><SvgPath d="M 6 0 L 7.875 3.75 L 12 4.350000381469727 L 9 7.274999618530273 L 9.674999237060547 11.39999961853027 L 6 9.450000762939453 L 2.324999809265137 11.39999961853027 L 3 7.274999618530273 L 0 4.350000381469727 L 4.125 3.75 L 6 0 Z" /></Svg>
-            <Text style={styles.shopinfo_info_start_x45}> 4.5</Text>
-          </View>
         </View>
         <View style={styles.shopinfo_tienich}>
-          <View style={styles.shopinfo_tienich_room}>
-            <Text style={styles.shopinfo_tienich_room_phongHp10Ngi}>Phòng họp 10 người</Text>
-            <ReactImage source={require('./assets/pinclipartcommeetingClipartFree63947.png')} style={styles.shopinfo_tienich_room_pinclipartcommeetingClipartFree63947} />
-          </View>
-          <View style={styles.shopinfo_tienich_projector}>
-            <Text style={styles.shopinfo_tienich_projector_mayChiu}>Máy chiếu</Text>
-            <ReactImage source={require('./assets/x2020624419991071872977076642162411729179112n.png')} style={styles.shopinfo_tienich_projector_x2020624419991071872977076642162411729179112n} />
-          </View>
-          <View style={styles.shopinfo_tienich_ac}>
-            <Text style={styles.shopinfo_tienich_ac_phongMayLnh}>Phòng máy lạnh</Text>
-            <ReactImage source={require('./assets/aaaa.png')} style={styles.shopinfo_tienich_ac_aaaa} />
-          </View>
-          <View style={styles.shopinfo_tienich_wifi}>
-            <Text style={styles.shopinfo_tienich_wifi_wifiMinPhi}>Wifi miễn phí</Text>
-            <ReactImage source={require('./assets/image4.png')} style={styles.shopinfo_tienich_wifi_image4} />
-          </View>
           <Text style={styles.shopinfo_tienich_tinIch}>Tiện ích</Text>
-        </View>
-        <View style={styles.shopinfo_timeslot}>
-          <Text style={styles.shopinfo_timeslot_khungGiTrng}>Khung giờ trống</Text>
-          <View style={styles.shopinfo_timeslot_today}>
-            <Text style={styles.shopinfo_timeslot_today_thiGian}>Thời gian:</Text>
-            <Text style={styles.shopinfo_timeslot_today_homNay}>Hôm nay</Text>
-            <ReactImage source={require('./assets/backIcon2f9ac0684.png')} style={styles.shopinfo_timeslot_today_backIcon2f9ac0684} />
+          <View style={{ flexDirection: "row", paddingLeft: 10, paddingTop: 10 }}>
+            <View style={styles.shopinfo_tienich_room}>
+              <Text style={styles.shopinfo_tienich_room_phongHp10Ngi}>Phòng họp 10 người</Text>
+              <ReactImage source={require('./assets/pinclipartcommeetingClipartFree63947.png')} style={styles.shopinfo_tienich_room_pinclipartcommeetingClipartFree63947} />
+            </View>
+            <View style={styles.shopinfo_tienich_projector}>
+              <Text style={styles.shopinfo_tienich_room_phongHp10Ngi}>Máy chiếu</Text>
+              <ReactImage source={require('./assets/x2020624419991071872977076642162411729179112n.png')} style={styles.shopinfo_tienich_projector_x2020624419991071872977076642162411729179112n} />
+            </View>
           </View>
-          <View style={styles.shopinfo_timeslot_timet}>
-            <Text style={styles.shopinfo_timeslot_timet_btULuc}>Bắt đầu lúc:</Text>
-            <Text style={styles.shopinfo_timeslot_timet_x0700Am} onPress={() => { loadTimeSearch(); selectRef.current.open() }}>{timeSearch}</Text>
-            <ReactImage source={require('./assets/backIcon2.png')} style={styles.shopinfo_timeslot_timet_backIcon2} />
+          <View style={{ flexDirection: "row", paddingLeft: 10, paddingLeft: 10, paddingTop: 10 }}>
+            <View style={styles.shopinfo_tienich_ac}>
+              <Text style={styles.shopinfo_tienich_room_phongHp10Ngi}>Phòng máy lạnh</Text>
+              <ReactImage source={require('./assets/aaaa.png')} style={styles.shopinfo_tienich_ac_aaaa} />
+            </View>
+            <View style={styles.shopinfo_tienich_wifi}>
+              <Text style={styles.shopinfo_tienich_room_phongHp10Ngi}>Wifi miễn phí</Text>
+              <ReactImage source={require('./assets/image4.png')} style={styles.shopinfo_tienich_wifi_image4} />
+            </View>
           </View>
-
-          <Select
-            ref={selectRef}
-            onSelect={() => { setTimeSearch(getFullTime()) }}
-            multiple
-            data={[1]}
-            footer={(
-              <Button
-                w="90%"
-                ml="5%"
-                mb={10}
-                h={40}
-                bg='#D4AE39'
-                onPress={() => { setTimeSearch(getFullTime()); selectRef.current.close() }} >
-                  XÁC NHẬN
-              </Button>
-            )}
-            renderItem={(item, index) => (
-              <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" , height:200}}>
-                <View style={styles.main_tCh3c0aa05f_group15_group7}>
-                  <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0}>
-                    <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_rectangle14613f364951}></View>
-                    <TouchableOpacity onPress={() => onAddFrom(true, 1)} style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866}>
-                      <Svg style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866_path3616a19af3} preserveAspectRatio="none" viewBox="0 0 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 4.699999809265137 6.100000381469727 L 0 1.400000095367432 L 1.400000095367432 0 L 4.699999809265137 3.300000190734863 L 8 0 L 9.399999618530273 1.400000095367432 L 4.699999809265137 6.100000381469727 Z" /></Svg>
-                      <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866_rectangle1466c5ca2772}></View>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => onAddFrom(true, -1)} style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e}>
-                      <Svg style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e_path36285acddc} preserveAspectRatio="none" viewBox="2 2 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 6.699999809265137 8.100000381469727 L 2 3.400000095367432 L 3.400000095367432 2 L 6.699999809265137 5.300000190734863 L 10 2 L 11.39999961853027 3.400000095367432 L 6.699999809265137 8.100000381469727 Z" /></Svg>
-                      <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e_rectangle1467420d5d2d}></View>
-                    </TouchableOpacity>
-                  </View>
-                  <Text style={styles.main_tCh3c0aa05f_group15_group7_x07}>{from.getHours() < 10 ? "0" + from.getHours() : from.getHours()}</Text>
-                </View>
-                <Text style={styles.main_tCh3c0aa05f_group15_x9f45184b}>:</Text>
-                <View style={styles.main_tCh3c0aa05f_group15_group6}>
-                  <View style={styles.main_tCh3c0aa05f_group15_group6_group41f437081}>
-                    <View style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_rectangle1462849d287b}></View>
-                    <TouchableOpacity onPress={() => onAddFrom(false, 10)} style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_upArrowSmall718025b7}>
-                      <Svg style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_upArrowSmall718025b7_path368c6742fa} preserveAspectRatio="none" viewBox="0 0 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 4.699999809265137 6.100000381469727 L 0 1.400000095367432 L 1.400000095367432 0 L 4.699999809265137 3.300000190734863 L 8 0 L 9.399999618530273 1.400000095367432 L 4.699999809265137 6.100000381469727 Z" /></Svg>
-                      <View style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_upArrowSmall718025b7_rectangle1466f965c57f}></View>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => onAddFrom(false, -10)} style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_downArrowSmall961a7bc5}>
-                      <Svg style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_downArrowSmall961a7bc5_path36169828bb} preserveAspectRatio="none" viewBox="2 2 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 6.699999809265137 8.100000381469727 L 2 3.400000095367432 L 3.400000095367432 2 L 6.699999809265137 5.300000190734863 L 10 2 L 11.39999961853027 3.400000095367432 L 6.699999809265137 8.100000381469727 Z" /></Svg>
-                      <View style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_downArrowSmall961a7bc5_rectangle14670b498141}></View>
-                    </TouchableOpacity>
-                  </View>
-                  <Text style={styles.main_tCh3c0aa05f_group15_group6_x00ba94441d}>{from.getMinutes() < 10 ? "0" + from.getMinutes() : from.getMinutes()}</Text>
-                </View>
-                <View style={styles.main_tCh3c0aa05f_group15_group5}>
-                  <View style={styles.main_tCh3c0aa05f_group15_group5_rectangle14634dd2b9b8}></View>
-                  <Text style={from.getHours() < 12 ? styles.main_tCh3c0aa05f_group15_group5_am70a769fb : styles.main_tCh3c0aa05f_group15_group5_pme55ffa0b}>AM</Text>
-                  <Text style={from.getHours() >= 12 ? styles.main_tCh3c0aa05f_group15_group5_am70a769fb : styles.main_tCh3c0aa05f_group15_group5_pme55ffa0b}>PM</Text>
-                </View>
-              </View>
-            )}
-          >
-          </Select>
-          <View style={styles.shopinfo_timeslot_timen}>
-            <Text style={styles.shopinfo_timeslot_timen_khong}>Khoảng:</Text>
-            <Text style={styles.shopinfo_timeslot_timen_x1Gi} onPress={() => { dropdownRef.current.open() }}>{period}</Text>
-            <Dropdown ref={dropdownRef}>
-              <Dropdown.Option onPress={() => { setPeroid('30 phút'); dropdownRef.current.close() }}>30 phút</Dropdown.Option>
-              <Dropdown.Option onPress={() => { setPeroid('45 phút'); dropdownRef.current.close() }}>45 phút</Dropdown.Option>
-              <Dropdown.Option onPress={() => { setPeroid('1 tiếng'); dropdownRef.current.close() }}>1 tiếng</Dropdown.Option>
-              <Dropdown.Option onPress={() => { setPeroid('1 tiếng rưỡi'); dropdownRef.current.close() }}>1 tiếng rưỡi</Dropdown.Option>
-              <Dropdown.Option onPress={() => { setPeroid('2 tiếng'); dropdownRef.current.close() }}>2 tiếng</Dropdown.Option>
-              <Dropdown.Option onPress={() => { setPeroid('2 tiếng rưỡi'); dropdownRef.current.close() }}>2 tiếng rưỡi</Dropdown.Option>
-            </Dropdown>
-            <ReactImage source={require('./assets/backIcon27fde8a1b.png')} style={styles.shopinfo_timeslot_today_backIcon2f9ac0684} />
-          </View>
-          {/* <View style={styles.shopinfo_timeslot_btnsearch}>
-            <View style={styles.shopinfo_timeslot_btnsearch_rectangle1471}></View>
-            <Text style={styles.shopinfo_timeslot_btnsearch_timKim}>Tìm kiếm</Text>
-          </View> */}
         </View>
-        <View style={styles.shopinfo_result}>
-          <Text style={styles.shopinfo_result_title}>KẾT QUẢ:</Text>
-          <TouchableOpacity style={styles.shopinfo_result_tableempty2}>
-            <View style={styles.shopinfo_result_tableempty2_rectangle14922f124342}></View>
-            <Text style={styles.shopinfo_result_tableempty2_ban}>BÀN</Text>
-            <Text style={styles.shopinfo_result_tableempty2_loi6Ch}>Loại: 6 chỗ</Text>
-            <Text style={styles.shopinfo_result_tableempty2_banTrngTLuc0800169f5e91}>Bàn trống từ lúc 08:00</Text>
-            <Svg style={styles.shopinfo_result_tableempty2_line8} preserveAspectRatio="none" viewBox="-0.5 0 1 34" fill="transparent"><SvgPath d="M 0 0 L 0 34" /></Svg>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.shopinfo_result_roombtn}>
-            <View style={styles.shopinfo_result_roombtn_rectangle1492}></View>
-            <Text style={styles.shopinfo_result_roombtn_phongHp}>PHÒNG HỌP</Text>
-            <Text style={styles.shopinfo_result_roombtn_loi10Ngi}>Loại: 10 người</Text>
-            <Svg style={styles.shopinfo_result_roombtn_line9} preserveAspectRatio="none" viewBox="-0.5 0 1 34" fill="transparent"><SvgPath d="M 0 0 L 0 34" /></Svg>
-            <Text style={styles.shopinfo_result_roombtn_banTrngTLuc0800}>Bàn trống từ lúc 08:00</Text>
-          </TouchableOpacity>
+       <Text style={styles.commentshop_anhGiaTxt_anhGiaKhachHang}>Đánh giá khách hàng</Text>
+      <View style={styles.commentshop_group45}>
+        <View style={styles.commentshop_group45_messagec41c5359}>
+          <Svg style={styles.commentshop_group45_messagec41c5359_path1127b8c95f5} preserveAspectRatio="none" viewBox="0 -2 261.189697265625 32.46502685546875" fill="rgba(254, 205, 151, 1)"><SvgPath d="M 9.584942817687988 30.46502685546875 L 261.189697265625 30.46502685546875 L 261.189697265625 -2 L 9.584942817687988 -2 L 9.584942817687988 9.594653129577637 L 0 14.23251247406006 L 9.584942817687988 18.8703727722168 L 9.584942817687988 30.46502685546875 Z" /></Svg>
+          <Text style={styles.commentshop_group45_messagec41c5359_ngDngTinLiKhiCBookTrcChKhiIOng}>Ứng dụng tiện lợi khi được book trước chỗ khi đi đông</Text>
         </View>
-
-        <TouchableOpacity onPress={onConfirmPress} style={styles.shopinfo_group19_dangkyngayBtn}>
-          <Svg style={styles.shopinfo_group19_dangkyngayBtn_path643} preserveAspectRatio="none" viewBox="0 0 155.9873046875 31" fill={tableSelected == null ? "#868686" : "rgba(212, 174, 57, 1)"}>
-            <SvgPath d="M 1.908100247383118 0 L 154.0790863037109 0 C 155.1328887939453 0 155.9871826171875 1.15659761428833 155.9871826171875 2.583333253860474 L 155.9871826171875 28.41666603088379 C 155.9871826171875 29.84340286254883 155.1328887939453 31 154.0790863037109 31 L 1.908100247383118 31 C 0.8542854785919189 31 0 29.84340286254883 0 28.41666603088379 L 0 2.583333253860474 C 0 1.15659761428833 0.8542854785919189 0 1.908100247383118 0 Z" /></Svg>
-          <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}><Text style={{ "marginTop": -1.5, "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>ĐẶT CHỖ NGAY</Text></View>
-        </TouchableOpacity>
+        <ReactImage source={require('../../assets/rectangle1472.png')} style={styles.commentshop_group46_rectangle1472} />
+        <View style={styles.commentshop_group45_group36}>
+          <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+          <Svg style={styles.commentshop_group45_group36_path15845c728c9} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+          <Svg style={styles.commentshop_group45_group36_path159fc09b523} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+          <Svg style={styles.commentshop_group45_group36_path16065ae2b0e} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(176, 177, 181, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+          <Svg style={styles.commentshop_group45_group36_path16149021f86} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(176, 177, 181, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+        </View>
+      </View>
+      <View style={styles.commentshop_group46}>
+        <View style={styles.commentshop_group46_message}>
+          <Svg style={styles.commentshop_group46_message_path112} preserveAspectRatio="none" viewBox="0 -2 261.189697265625 31.12445068359375" fill="rgba(254, 205, 151, 1)"><SvgPath d="M 9.584942817687988 29.12445068359375 L 261.189697265625 29.12445068359375 L 261.189697265625 -2 L 9.584942817687988 -2 L 9.584942817687988 9.115875244140625 L 0 13.56222534179688 L 9.584942817687988 18.00857543945313 L 9.584942817687988 29.12445068359375 Z" /></Svg>
+          <Text style={styles.commentshop_group46_message_quanPNhanVienNhitTinh}>Quán đẹp, nhân viên nhiệt tình</Text>
+        </View>
+        <ReactImage source={require('../../assets/rectangle1472.png')} style={styles.commentshop_group46_rectangle1472} />
+        <View style={styles.commentshop_group46_group44}>
+          <Svg style={styles.commentshop_group46_group44_path157} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+          <Svg style={styles.commentshop_group46_group44_path158} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+          <Svg style={styles.commentshop_group46_group44_path159} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+          <Svg style={styles.commentshop_group46_group44_path160} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+          <Svg style={styles.commentshop_group46_group44_path161} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+        </View>
+      </View> 
       </ScrollView>
+      <TouchableOpacity onPress={onPressContinuous} style={styles.shopinfo_group19_dangkyngayBtn}>
+        <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}><Text style={{ "marginTop": -1.5, "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>BẮT ĐẦU CHỖ NGAY</Text></View>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -236,12 +128,7 @@ export default ShopInfoScreen;
 
 const styles = StyleSheet.create({
   "shopinfo": {
-
-    "backgroundColor": "rgba(255, 255, 255, 1)",
-    "width": "100%",
-    "height": 851,
-    "alignSelf": 'center',
-    "top": 0
+    flex: 1
   },
   "shopinfo_group19": {
     "opacity": 1,
@@ -249,8 +136,10 @@ const styles = StyleSheet.create({
     "width": "100%",
   },
   "shopinfo_group19_picture": {
-    "width": "100%",
-    "height": 222.1,
+    "borderRadius": 5,
+    "width": 350,
+    "height": 270,
+    marginRight: 10
   },
   "shopinfo_group19_bg2": {
     "opacity": 1,
@@ -266,10 +155,13 @@ const styles = StyleSheet.create({
     "top": 198.89
   },
   "shopinfo_group19_dangkyngayBtn": {
-    "backgroundColor": "transparent",
-    "width": 155.99,
-    "height": 31,
+    "width": "95%",
     "alignSelf": 'center',
+    backgroundColor: "rgba(212, 174, 57, 1)",
+    alignItems: "center",
+    borderRadius: 5,
+    paddingVertical: 15,
+    marginBottom: 10,
   },
   "shopinfo_group19_dangkyngayBtn_path643": {
 
@@ -279,24 +171,17 @@ const styles = StyleSheet.create({
 
   },
   "shopinfo_group19_dangkyngayBtn_tChNgay": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 255, 255, 1)",
     "fontSize": 15,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "lineHeight": 13.5,
-    "width": 106,
-    "height": 20,
-    "left": 25.71,
-    "top": 9
   },
   "shopinfo_header": {
-    "backgroundColor": "transparent",
     "width": "100%",
+    paddingBottom: 10,
+    backgroundColor: "rgba(240, 211, 122, 1)",
   },
   "shopinfo_header_bg": {
     "opacity": 1,
@@ -307,28 +192,17 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "shopinfo_header_thongTinQuan": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 15,
+    "fontSize": 18,
     "fontWeight": "700",
-    "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "center",
-    "width": 170,
-    "height": 20,
-    "alignSelf": 'center',
-    "top": 37
+    alignSelf: "center",
+    marginTop: 50
   },
   "shopinfo_header_backicon": {
-    "opacity": 1,
-    "position": "absolute",
-
     "width": 20,
     "height": 20,
-    "left": 13,
-    "top": 37
   },
   "shopinfo_menu": {
 
@@ -586,228 +460,71 @@ const styles = StyleSheet.create({
     "top": 36
   },
   "shopinfo_info": {
-    "opacity": 1,
-    "backgroundColor": "transparent",
-    "width": "100%",
-    "height": 119.36,
+    "backgroundColor": "#FFF",
+    margin: 10,
+    padding: 10
   },
   "shopinfo_info_giaRoomCoffee": {
-
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 14,
+    "fontSize": 22,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    "width": 200,
-    "height": 19,
-  },
-  "shopinfo_info_x101OanThImQunPhuNhunTphcm": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 9,
-    "fontWeight": "400",
-    "fontStyle": "italic",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 200,
-    "height": 13,
-    "left": 17.5,
-    "top": 32
-  },
-  "shopinfo_info_giMCa07h0021h00Th2ChNht": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 9,
-    "fontWeight": "400",
-    "fontStyle": "italic",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 210,
-    "height": 13,
-    "left": 17.5,
-    "top": 54
   },
   "shopinfo_info_inThoi033456789": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 9,
+    "fontSize": 16,
     "fontWeight": "400",
     "fontStyle": "italic",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 100,
-    "height": 13,
-    "left": 17.5,
-    "top": 76
+    marginVertical: 5,
+  },
+  "shopinfo_info_inThoi033456789_drs": {
+    "color": "rgba(83, 71, 65, 1)",
+    "fontSize": 16,
+    "fontWeight": "400",
+    "fontFamily": "Roboto",
+    marginVertical: 5,
   },
   "shopinfo_info_menubt": {
-    "opacity": 1,
-    "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 1)",
-    "borderTopWidth": 1,
-    "borderTopColor": "rgba(191, 151, 104, 1)",
-    "borderRightWidth": 1,
-    "borderRightColor": "rgba(191, 151, 104, 1)",
-    "borderBottomWidth": 1,
-    "borderBottomColor": "rgba(191, 151, 104, 1)",
-    "borderLeftWidth": 1,
-    "borderLeftColor": "rgba(191, 151, 104, 1)",
-    "borderTopLeftRadius": 11,
-    "borderTopRightRadius": 11,
-    "borderBottomLeftRadius": 11,
-    "borderBottomRightRadius": 11,
-    "width": 88.02,
-    "height": 22,
-    "right": 150,
-    "top": 97.36
+    "borderWidth": 1,
+    "borderColor": "rgba(191, 151, 104, 1)",
+    "borderRadius": 11,
+    padding: 10,
   },
   "shopinfo_info_menubt_rectangle1471df089f47": {
-
-
     "width": 88.02,
     "height": 22,
     "left": 0,
     "top": 0
   },
   "shopinfo_info_menubt_menuQuan": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
+    "fontSize": 14,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 70,
-    "height": 15,
-    "alignSelf": 'center'
+    textAlign: "center"
   },
-  "shopinfo_info_reviewbtn": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "backgroundColor": "rgba(255, 255, 255, 1)",
-    "borderTopWidth": 1,
-    "borderTopColor": "rgba(191, 151, 104, 1)",
-    "borderRightWidth": 1,
-    "borderRightColor": "rgba(191, 151, 104, 1)",
-    "borderBottomWidth": 1,
-    "borderBottomColor": "rgba(191, 151, 104, 1)",
-    "borderLeftWidth": 1,
-    "borderLeftColor": "rgba(191, 151, 104, 1)",
-    "borderTopLeftRadius": 11,
-    "borderTopRightRadius": 11,
-    "borderBottomLeftRadius": 11,
-    "borderBottomRightRadius": 11,
-    "width": 88.02,
-    "height": 22,
-    "right": 50,
-    "top": 97.36
-  },
-  "shopinfo_info_reviewbtn_rectangle1471fc49ee5c": {
 
-    "backgroundColor": "rgba(255, 255, 255, 1)",
-    "borderTopWidth": 1,
-    "borderTopColor": "rgba(191, 151, 104, 1)",
-    "borderRightWidth": 1,
-    "borderRightColor": "rgba(191, 151, 104, 1)",
-    "borderBottomWidth": 1,
-    "borderBottomColor": "rgba(191, 151, 104, 1)",
-    "borderLeftWidth": 1,
-    "borderLeftColor": "rgba(191, 151, 104, 1)",
-    "borderTopLeftRadius": 11,
-    "borderTopRightRadius": 11,
-    "borderBottomLeftRadius": 11,
-    "borderBottomRightRadius": 11,
-    "width": 88.02,
-    "height": 22,
-  },
-  "shopinfo_info_reviewbtn_xemAnhGia": {
-
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
-    "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 75,
-    "height": 15,
-    "alignSelf": 'center'
-  },
   "shopinfo_info_start": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-
-    "width": 91.31,
-    "height": 13.33,
-    "left": 15.69,
-    "top": 102.67
+    "width": "100%",
+    flexDirection: "row",
   },
   "shopinfo_info_start_path157": {
 
-    "width": 12,
-    "height": 11.4,
+    "width": 20,
+    "height": 20,
 
-  },
-  "shopinfo_info_start_path158": {
-    "opacity": 1,
-    "position": "absolute",
-
-    "width": 12,
-    "height": 11.4,
-    "left": 14.96,
-    "top": 0
-  },
-  "shopinfo_info_start_path159": {
-    "opacity": 1,
-    "position": "absolute",
-
-    "width": 12,
-    "height": 11.4,
-    "left": 29.91,
-    "top": 0
-  },
-  "shopinfo_info_start_path160": {
-    "opacity": 1,
-    "position": "absolute",
-    "width": 12,
-    "height": 11.4,
-    "left": 44.87,
-    "top": 0
-  },
-  "shopinfo_info_start_path161": {
-    "opacity": 1,
-    "position": "absolute",
-    "width": 12,
-    "height": 11.4,
-    "left": 59.83,
-    "top": 0
   },
   "shopinfo_info_start_x45": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
+    "fontSize": 18,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 20,
-    "height": 13,
-    "left": 75.31,
-    "top": 0.33
   },
   "shopinfo_timeslot": {
     "opacity": 1,
@@ -1203,31 +920,21 @@ const styles = StyleSheet.create({
 
   },
   "shopinfo_tienich": {
-    "opacity": 1,
-    "backgroundColor": "transparent",
-    "width": 289.5,
-    "height": 68,
+    "width": "100%",
+    marginLeft: 10
   },
   "shopinfo_tienich_room": {
-    "backgroundColor": "transparent",
-    "width": 116.5,
     "height": 15,
-    "left": 173,
-    "top": 48
+    flex: 1,
   },
   "shopinfo_tienich_room_phongHp10Ngi": {
-    "opacity": 1,
     "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
+    "fontSize": 14,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 110,
-    "height": 15,
-    "left": 26.5,
+    "left": 30,
     "top": 1
   },
   "shopinfo_tienich_room_pinclipartcommeetingClipartFree63947": {
@@ -1239,28 +946,8 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "shopinfo_tienich_projector": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "width": 70.5,
     "height": 18,
-    "left": 174,
-    "top": 21
-  },
-  "shopinfo_tienich_projector_mayChiu": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
-    "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 50,
-    "height": 15,
-    "left": 25.5,
-    "top": 4
+    flex: 1,
   },
   "shopinfo_tienich_projector_x2020624419991071872977076642162411729179112n": {
 
@@ -1270,29 +957,8 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "shopinfo_tienich_ac": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-
-    "width": 103.5,
+    flex: 1,
     "height": 25,
-    "left": 8,
-    "top": 43
-  },
-  "shopinfo_tienich_ac_phongMayLnh": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
-    "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 90,
-    "height": 15,
-    "left": 32.5,
-    "top": 6
   },
   "shopinfo_tienich_ac_aaaa": {
     "width": 25,
@@ -1301,28 +967,8 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "shopinfo_tienich_wifi": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "width": 100,
+    flex: 1,
     "height": 15,
-    "left": 13,
-    "top": 24
-  },
-  "shopinfo_tienich_wifi_wifiMinPhi": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 10,
-    "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 80,
-    "height": 15,
-    "left": 28.5,
-    "top": 1
   },
   "shopinfo_tienich_wifi_image4": {
     "opacity": 1,
@@ -1333,19 +979,11 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "shopinfo_tienich_tinIch": {
-    "opacity": 1,
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 13,
-    "fontWeight": "500",
+    "fontSize": 18,
+    "fontWeight": "800",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "width": 50,
-    "height": 18,
-    "left": 0,
-    "top": 0
   },
   "main_tCh3c0aa05f_group15_group7_x07": {
 
@@ -1673,5 +1311,246 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
 
     "fontFamily": "Roboto",
+  },
+
+
+
+
+  "commentshop_anhGiaTxt_anhGiaKhachHang": {
+    "position": "absolute",
+    "backgroundColor": "rgba(255, 255, 255, 0)",
+    "color": "rgba(83, 71, 65, 1)",
+    "fontSize": 15,
+    "fontWeight": "700",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "textAlign": "left",
+    "left": 40,
+    "top": 0
+  },
+  "commentshop_x3": {
+    "width": 300,
+    "height": 200,
+    alignSelf: "center",
+    marginBottom: 20
+  },
+  "commentshop_pagination": {
+    "backgroundColor": "transparent",
+    "width": 54,
+    "height": 6,
+    "left": 170,
+    "top": 457
+  },
+  "commentshop_pagination_ellipse8": {
+    "width": 6,
+    "height": 6,
+    "left": 0,
+    "top": 0
+  },
+  "commentshop_pagination_ellipse9": {
+    "width": 6,
+    "height": 6,
+    "left": 16,
+    "top": 0
+  },
+  "commentshop_pagination_ellipse10": {
+    "width": 6,
+    "height": 6,
+    "left": 32,
+    "top": 0
+  },
+  "commentshop_pagination_ellipse11": {
+    "width": 6,
+    "height": 6,
+    "left": 48,
+    "top": 0
+  },
+  "commentshop_group45": {
+    "width": 298.89,
+    "height": 32.47,
+    alignSelf: "center",
+    marginTop: 15,
+  },
+  "commentshop_group45_messagec41c5359": {
+
+    "position": "absolute",
+    "backgroundColor": "transparent",
+    "width": 261.19,
+    "height": 32.47,
+    "left": 35,
+    "top": 0
+  },
+  "commentshop_group45_messagec41c5359_path1127b8c95f5": {
+    "position": "absolute",
+    "width": 261.19,
+    "height": 32.47,
+    "left": 0,
+    "top": 0
+  },
+  "commentshop_group45_messagec41c5359_ngDngTinLiKhiCBookTrcChKhiIOng": {
+
+    "position": "absolute",
+    "backgroundColor": "rgba(255, 255, 255, 0)",
+    "color": "rgba(0, 0, 0, 1)",
+    "fontSize": 10,
+    "fontWeight": "400",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "textAlign": "left",
+    "lineHeight": 12,
+    "left": 15.09,
+    "top": 3.97
+  },
+  "commentshop_group45_rectangle1472c74ae538": {
+    "position": "absolute",
+    "borderTopLeftRadius": 15,
+    "borderTopRightRadius": 15,
+    "borderBottomLeftRadius": 15,
+    "borderBottomRightRadius": 15,
+    "width": 24,
+    "height": 25,
+    "left": 3.03,
+    "top": 0
+  },
+  "commentshop_group45_group36": {
+
+    "position": "absolute",
+    "backgroundColor": "transparent",
+    "width": 30.05,
+    "height": 4.51,
+    "left": 5,
+    "top": 27.64
+  },
+  "commentshop_group45_group36_path1574cb28200": {
+
+    "position": "absolute",
+    "width": 4.74,
+    "height": 4.51,
+    "left": 0,
+    "top": 0
+  },
+  "commentshop_group45_group36_path15845c728c9": {
+
+    "position": "absolute",
+    "width": 4.74,
+    "height": 4.51,
+    "left": 6.33,
+    "top": 0
+  },
+  "commentshop_group45_group36_path159fc09b523": {
+    "position": "absolute",
+    "width": 4.74,
+    "height": 4.51,
+    "left": 12.65,
+    "top": 0
+  },
+  "commentshop_group45_group36_path16065ae2b0e": {
+    "position": "absolute",
+    "width": 4.74,
+    "height": 4.51,
+    "left": 18.98,
+    "top": 0
+  },
+  "commentshop_group45_group36_path16149021f86": {
+
+    "position": "absolute",
+    "width": 4.74,
+    "height": 4.51,
+    "left": 25.31,
+    "top": 0
+  },
+  "commentshop_group46": {
+    "width": 299.89,
+    "height": 31.12,
+    alignSelf: "center",
+    marginTop: 15,
+  },
+  "commentshop_group46_message": {
+
+    "position": "absolute",
+    "width": 261.19,
+    "height": 31.12,
+    "left": 35,
+    "top": 0
+  },
+  "commentshop_group46_message_path112": {
+
+    "position": "absolute",
+    "width": 261.19,
+    "height": 31.12,
+    "left": 0,
+    "top": 0
+  },
+  "commentshop_group46_message_quanPNhanVienNhitTinh": {
+
+    "position": "absolute",
+    "backgroundColor": "rgba(255, 255, 255, 0)",
+    "color": "rgba(0, 0, 0, 1)",
+    "fontSize": 10,
+    "fontWeight": "400",
+    "fontStyle": "normal",
+    "fontFamily": "Roboto",
+    "textAlign": "left",
+    "lineHeight": 24,
+    "left": 15.09,
+    "top": 3.56
+  },
+  "commentshop_group46_rectangle1472": {
+    "position": "absolute",
+    "borderTopLeftRadius": 15,
+    "borderTopRightRadius": 15,
+    "borderBottomLeftRadius": 15,
+    "borderBottomRightRadius": 15,
+    "width": 24,
+    "height": 24,
+    "left": 7,
+    "top": 0.12
+  },
+  "commentshop_group46_group44": {
+
+    "position": "absolute",
+    "backgroundColor": "transparent",
+    "width": 30.05,
+    "height": 4.51,
+    "left": 5,
+    "top": 26.62
+  },
+  "commentshop_group46_group44_path157": {
+
+    "position": "absolute",
+    "width": 4.74,
+    "height": 4.51,
+    "left": 0,
+    "top": 0
+  },
+  "commentshop_group46_group44_path158": {
+
+    "position": "absolute",
+    "width": 4.74,
+    "height": 4.51,
+    "left": 6.33,
+    "top": 0
+  },
+  "commentshop_group46_group44_path159": {
+
+    "position": "absolute",
+    "width": 4.74,
+    "height": 4.51,
+    "left": 12.65,
+    "top": 0
+  },
+  "commentshop_group46_group44_path160": {
+    "position": "absolute",
+    "width": 4.74,
+    "height": 4.51,
+    "left": 18.98,
+    "top": 0
+  },
+  "commentshop_group46_group44_path161": {
+    "position": "absolute",
+    "width": 4.74,
+    "height": 4.51,
+    "left": 25.31,
+    "top": 0
   },
 });

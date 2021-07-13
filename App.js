@@ -10,6 +10,7 @@ import LoginScreen from "./screens/login/LoginScreen";
 import RegisterScreen from "./screens/register/RegisterScreen";
 import ConfirmRegisterScreen from "./screens/confirmregister/ConfirmRegisterScreen";
 import ShopInfoScreen from "./screens/shopinfo/ShopInfoScreen";
+import Booking from "./screens/booking/DetailShopScreen";
 
 const Stack = createStackNavigator();
 
@@ -17,13 +18,14 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="ShopInfo">
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="DetailShop" component={DetailShopScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
         <Stack.Screen name="ConfirmRegister" component={ConfirmRegisterScreen} options={{ headerShown: false }} />
         <Stack.Screen name="ShopInfo" component={ShopInfoScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Booking" component={Booking} options={{ headerShown: false }} />
 
       </Stack.Navigator>
     </NavigationContainer>
