@@ -87,35 +87,47 @@ const ShopInfoScreen = ({ navigation }) => {
             </View>
           </View>
         </View>
-       <Text style={styles.commentshop_anhGiaTxt_anhGiaKhachHang}>Đánh giá khách hàng</Text>
-      <View style={styles.commentshop_group45}>
-        <View style={styles.commentshop_group45_messagec41c5359}>
-          <Svg style={styles.commentshop_group45_messagec41c5359_path1127b8c95f5} preserveAspectRatio="none" viewBox="0 -2 261.189697265625 32.46502685546875" fill="rgba(254, 205, 151, 1)"><SvgPath d="M 9.584942817687988 30.46502685546875 L 261.189697265625 30.46502685546875 L 261.189697265625 -2 L 9.584942817687988 -2 L 9.584942817687988 9.594653129577637 L 0 14.23251247406006 L 9.584942817687988 18.8703727722168 L 9.584942817687988 30.46502685546875 Z" /></Svg>
-          <Text style={styles.commentshop_group45_messagec41c5359_ngDngTinLiKhiCBookTrcChKhiIOng}>Ứng dụng tiện lợi khi được book trước chỗ khi đi đông</Text>
+
+
+
+
+
+
+        <View style={{marginHorizontal:10, marginVertical:10, backgroundColor:"#FFF", padding:10}}>
+          <Text style={styles.commentshop_anhGiaTxt_anhGiaKhachHang}>Đánh giá khách hàng</Text>
+          <View style={styles.commentshop_group45}>
+            <View style={{justifyContent:"center", alignItems:"center"}}>
+              <ReactImage source={require('../../assets/rectangle1472.png')} style={styles.commentshop_group46_rectangle1472} />
+              <View style={styles.commentshop_group45_group36}>
+                <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+                <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+                <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+                <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(176, 177, 181, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+                <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(176, 177, 181, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+              </View>
+            </View>
+            <View style={styles.commentshop_group45_messagec41c5359}>
+              <Svg style={styles.commentshop_group45_messagec41c5359_path1127b8c95f5} preserveAspectRatio="none" viewBox="0 -2 261.189697265625 32.46502685546875" fill="rgba(254, 205, 151, 1)"><SvgPath d="M 9.584942817687988 30.46502685546875 L 261.189697265625 30.46502685546875 L 261.189697265625 -2 L 9.584942817687988 -2 L 9.584942817687988 9.594653129577637 L 0 14.23251247406006 L 9.584942817687988 18.8703727722168 L 9.584942817687988 30.46502685546875 Z" /></Svg>
+              <Text style={styles.commentshop_group45_messagec41c5359_ngDngTinLiKhiCBookTrcChKhiIOng}>Ứng dụng tiện lợi khi được book trước chỗ khi đi đông</Text>
+            </View>
+          </View>
+          <View style={styles.commentshop_group45}>
+            <View style={{justifyContent:"center", alignItems:"center"}}>
+              <ReactImage source={require('../../assets/rectangle1472.png')} style={styles.commentshop_group46_rectangle1472} />
+              <View style={styles.commentshop_group45_group36}>
+                <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+                <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+                <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+                <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(176, 177, 181, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+                <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(176, 177, 181, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
+              </View>
+            </View>
+            <View style={styles.commentshop_group45_messagec41c5359}>
+              <Svg style={styles.commentshop_group45_messagec41c5359_path1127b8c95f5} preserveAspectRatio="none" viewBox="0 -2 261.189697265625 32.46502685546875" fill="rgba(254, 205, 151, 1)"><SvgPath d="M 9.584942817687988 30.46502685546875 L 261.189697265625 30.46502685546875 L 261.189697265625 -2 L 9.584942817687988 -2 L 9.584942817687988 9.594653129577637 L 0 14.23251247406006 L 9.584942817687988 18.8703727722168 L 9.584942817687988 30.46502685546875 Z" /></Svg>
+              <Text style={styles.commentshop_group45_messagec41c5359_ngDngTinLiKhiCBookTrcChKhiIOng}>Quán đẹp, nhân viên nhiệt tình</Text>
+            </View>
+          </View>
         </View>
-        <ReactImage source={require('../../assets/rectangle1472.png')} style={styles.commentshop_group46_rectangle1472} />
-        <View style={styles.commentshop_group45_group36}>
-          <Svg style={styles.commentshop_group45_group36_path1574cb28200} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
-          <Svg style={styles.commentshop_group45_group36_path15845c728c9} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
-          <Svg style={styles.commentshop_group45_group36_path159fc09b523} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
-          <Svg style={styles.commentshop_group45_group36_path16065ae2b0e} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(176, 177, 181, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
-          <Svg style={styles.commentshop_group45_group36_path16149021f86} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(176, 177, 181, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
-        </View>
-      </View>
-      <View style={styles.commentshop_group46}>
-        <View style={styles.commentshop_group46_message}>
-          <Svg style={styles.commentshop_group46_message_path112} preserveAspectRatio="none" viewBox="0 -2 261.189697265625 31.12445068359375" fill="rgba(254, 205, 151, 1)"><SvgPath d="M 9.584942817687988 29.12445068359375 L 261.189697265625 29.12445068359375 L 261.189697265625 -2 L 9.584942817687988 -2 L 9.584942817687988 9.115875244140625 L 0 13.56222534179688 L 9.584942817687988 18.00857543945313 L 9.584942817687988 29.12445068359375 Z" /></Svg>
-          <Text style={styles.commentshop_group46_message_quanPNhanVienNhitTinh}>Quán đẹp, nhân viên nhiệt tình</Text>
-        </View>
-        <ReactImage source={require('../../assets/rectangle1472.png')} style={styles.commentshop_group46_rectangle1472} />
-        <View style={styles.commentshop_group46_group44}>
-          <Svg style={styles.commentshop_group46_group44_path157} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
-          <Svg style={styles.commentshop_group46_group44_path158} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
-          <Svg style={styles.commentshop_group46_group44_path159} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
-          <Svg style={styles.commentshop_group46_group44_path160} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
-          <Svg style={styles.commentshop_group46_group44_path161} preserveAspectRatio="none" viewBox="0 0 4.744873046875 4.507568359375" fill="rgba(246, 87, 0, 1)"><SvgPath d="M 2.37239146232605 0 L 3.113763809204102 1.482744693756104 L 4.7447829246521 1.71998405456543 L 3.558587312698364 2.876524686813354 L 3.825480937957764 4.507543563842773 L 2.37239146232605 3.736516952514648 L 0.9193016290664673 4.507543563842773 L 1.186195731163025 2.876524686813354 L 0 1.71998405456543 L 1.631019115447998 1.482744693756104 L 2.37239146232605 0 Z" /></Svg>
-        </View>
-      </View> 
       </ScrollView>
       <TouchableOpacity onPress={onPressContinuous} style={styles.shopinfo_group19_dangkyngayBtn}>
         <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}><Text style={{ "marginTop": -1.5, "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>BẮT ĐẦU CHỖ NGAY</Text></View>
@@ -980,8 +992,8 @@ const styles = StyleSheet.create({
   },
   "shopinfo_tienich_tinIch": {
     "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 18,
-    "fontWeight": "800",
+    "fontSize": 19,
+    "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
   },
@@ -1317,16 +1329,11 @@ const styles = StyleSheet.create({
 
 
   "commentshop_anhGiaTxt_anhGiaKhachHang": {
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(83, 71, 65, 1)",
-    "fontSize": 15,
+    "fontSize": 19,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "left": 40,
-    "top": 0
   },
   "commentshop_x3": {
     "width": 300,
@@ -1366,40 +1373,30 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "commentshop_group45": {
-    "width": 298.89,
-    "height": 32.47,
-    alignSelf: "center",
     marginTop: 15,
+    flexDirection: "row",
   },
   "commentshop_group45_messagec41c5359": {
-
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "width": 261.19,
-    "height": 32.47,
-    "left": 35,
-    "top": 0
+    paddingLeft:"5%",
+    paddingVertical:5,
+    flex:1,
+    marginLeft:5,
+    justifyContent:"center"
   },
   "commentshop_group45_messagec41c5359_path1127b8c95f5": {
     "position": "absolute",
-    "width": 261.19,
-    "height": 32.47,
+    "width": "100%",
+    "height": "100%",
     "left": 0,
     "top": 0
   },
   "commentshop_group45_messagec41c5359_ngDngTinLiKhiCBookTrcChKhiIOng": {
-
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(0, 0, 0, 1)",
-    "fontSize": 10,
+    "fontSize": 14,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "lineHeight": 12,
-    "left": 15.09,
-    "top": 3.97
+    width:"90%"
   },
   "commentshop_group45_rectangle1472c74ae538": {
     "position": "absolute",
@@ -1413,21 +1410,12 @@ const styles = StyleSheet.create({
     "top": 0
   },
   "commentshop_group45_group36": {
-
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "width": 30.05,
-    "height": 4.51,
-    "left": 5,
-    "top": 27.64
+    flexDirection: "row",
+    flex:1
   },
   "commentshop_group45_group36_path1574cb28200": {
-
-    "position": "absolute",
-    "width": 4.74,
-    "height": 4.51,
-    "left": 0,
-    "top": 0
+    "width": 10,
+    "height": 10,
   },
   "commentshop_group45_group36_path15845c728c9": {
 
@@ -1453,100 +1441,6 @@ const styles = StyleSheet.create({
   },
   "commentshop_group45_group36_path16149021f86": {
 
-    "position": "absolute",
-    "width": 4.74,
-    "height": 4.51,
-    "left": 25.31,
-    "top": 0
-  },
-  "commentshop_group46": {
-    "width": 299.89,
-    "height": 31.12,
-    alignSelf: "center",
-    marginTop: 15,
-  },
-  "commentshop_group46_message": {
-
-    "position": "absolute",
-    "width": 261.19,
-    "height": 31.12,
-    "left": 35,
-    "top": 0
-  },
-  "commentshop_group46_message_path112": {
-
-    "position": "absolute",
-    "width": 261.19,
-    "height": 31.12,
-    "left": 0,
-    "top": 0
-  },
-  "commentshop_group46_message_quanPNhanVienNhitTinh": {
-
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
-    "color": "rgba(0, 0, 0, 1)",
-    "fontSize": 10,
-    "fontWeight": "400",
-    "fontStyle": "normal",
-    "fontFamily": "Roboto",
-    "textAlign": "left",
-    "lineHeight": 24,
-    "left": 15.09,
-    "top": 3.56
-  },
-  "commentshop_group46_rectangle1472": {
-    "position": "absolute",
-    "borderTopLeftRadius": 15,
-    "borderTopRightRadius": 15,
-    "borderBottomLeftRadius": 15,
-    "borderBottomRightRadius": 15,
-    "width": 24,
-    "height": 24,
-    "left": 7,
-    "top": 0.12
-  },
-  "commentshop_group46_group44": {
-
-    "position": "absolute",
-    "backgroundColor": "transparent",
-    "width": 30.05,
-    "height": 4.51,
-    "left": 5,
-    "top": 26.62
-  },
-  "commentshop_group46_group44_path157": {
-
-    "position": "absolute",
-    "width": 4.74,
-    "height": 4.51,
-    "left": 0,
-    "top": 0
-  },
-  "commentshop_group46_group44_path158": {
-
-    "position": "absolute",
-    "width": 4.74,
-    "height": 4.51,
-    "left": 6.33,
-    "top": 0
-  },
-  "commentshop_group46_group44_path159": {
-
-    "position": "absolute",
-    "width": 4.74,
-    "height": 4.51,
-    "left": 12.65,
-    "top": 0
-  },
-  "commentshop_group46_group44_path160": {
-    "position": "absolute",
-    "width": 4.74,
-    "height": 4.51,
-    "left": 18.98,
-    "top": 0
-  },
-  "commentshop_group46_group44_path161": {
     "position": "absolute",
     "width": 4.74,
     "height": 4.51,
