@@ -1,4 +1,4 @@
-import React, { Component,useState } from 'react';
+import React, { Component, useState } from 'react';
 import PropTypes from "prop-types";
 import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { Image as ReactImage } from 'react-native';
@@ -52,96 +52,96 @@ const nameUser = "Nguyễn Hiếu Đẹp Trai";
 
 const VoucherTab = () => {
 
-  const [viewQrCode, setViewQrCode]=useState(false);
+  const [viewQrCode, setViewQrCode] = useState(false);
 
   return (
     <View style={styles.voucher}>
       <View style={styles.header}>
         <Text style={styles.header_title}>THẺ THÀNH VIÊN / ƯU ĐÃI</Text>
       </View>
-      <ScrollView contentContainerStyle={{alignItems:"center", flex:1}}>
-      <View style={styles.voucher_progress}>
-        <View style={styles.voucher_rectangle1476}></View>
-        <View style={styles.voucher_group118}>
-          <ReactImage source={require('../../../assets/logoPng.png')} style={styles.voucher_group118_logoPng} />
-          <ReactImage source={require('../../../assets/asset1.png')} style={styles.voucher_group118_asset1} />
-        </View>
-        <View style={styles.voucher_user_name}>
-          <Text style={{ "color": "rgba(255, 255, 255, 1)", "fontSize": 25, "fontWeight": "700", "fontFamily": "Roboto", }}>
-            {nameUser}
-          </Text>
-        </View>
-        <View style={styles.voucher_user_rank}>
-          <Text style={{ "color": "rgba(255, 255, 255, 1)", "fontSize": 16, "fontWeight": "400", "fontFamily": "Roboto", }}>
-            Hạng Đồng
+      <ScrollView contentContainerStyle={{ alignItems: "left", flex: 1, height:"98%", marginLeft:5 }}>
+        <View style={styles.voucher_progress}>
+          <View style={styles.voucher_rectangle1476}></View>
+          <View style={styles.voucher_group118}>
+            <ReactImage source={require('../../../assets/logoPng.png')} style={styles.voucher_group118_logoPng} />
+            <ReactImage source={require('../../../assets/asset1.png')} style={styles.voucher_group118_asset1} />
+          </View>
+          <View style={styles.voucher_user_name}>
+            <Text style={{ "color": "rgba(255, 255, 255, 1)", "fontSize": 25, "fontWeight": "700", "fontFamily": "Roboto", }}>
+              {nameUser}
             </Text>
-        </View>
-        <Text style={styles.voucher_x30Im}>30 điểm</Text>
-        <View style={styles.voucher_group119}>
-          <View style={styles.voucher_group119_scroll}>
-            <View style={styles.voucher_group119_scroll_rectangle555}></View>
-            <View style={styles.voucher_group119_scroll_rectangle556}></View>
-            <Svg style={styles.voucher_group119_scroll_ellipse155} preserveAspectRatio="none" viewBox="0 0 2 2" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 1 0 C 1.552284717559814 0 2 0.4477152824401855 2 1 C 2 1.552284717559814 1.552284717559814 2 1 2 C 0.4477152824401855 2 0 1.552284717559814 0 1 C 0 0.4477152824401855 0.4477152824401855 0 1 0 Z" /></Svg>
-            <Svg style={styles.voucher_group119_scroll_ellipse236} preserveAspectRatio="none" viewBox="0 0 2 2" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 1 0 C 1.552284717559814 0 2 0.4477152824401855 2 1 C 2 1.552284717559814 1.552284717559814 2 1 2 C 0.4477152824401855 2 0 1.552284717559814 0 1 C 0 0.4477152824401855 0.4477152824401855 0 1 0 Z" /></Svg>
-            <ReactImage source={require('../../../assets/bean.png')} style={styles.voucher_group119_bean} />
           </View>
-          <Text style={styles.voucher_group119_ng}>Đồng</Text>
-          <Text style={styles.voucher_group119_kimCng}>Kim cương</Text>
-          <Text style={styles.voucher_group119_vang}>Vàng</Text>
-        </View>
-        <Text style={styles.voucher_progress_title}>Mỗi giao dịch đặt chỗ trên app thành công bạn sẽ được tặng điểm thưởng.
-        Bạn có thể dùng điểm đổi lấy rất nhiều ưu đãi hấp dẫn.
-Điểm không có giá trị quy đổi thành tiền mặt.</Text>
-        <View style={styles.voucher_group121}>
-          <View style={styles.voucher_group121_rectangle1478}></View>
-          <View style={styles.voucher_group121_rectangle1479}></View>
-          <Svg style={styles.voucher_group121_ellipse237} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse238} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse239} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse240} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse241} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse242} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse243} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse244} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse245} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse246} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse247} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse248} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse249} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse250} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse251} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse252} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse253} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-          <Svg style={styles.voucher_group121_ellipse254} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
-        </View>
-      </View>
-      <Text style={styles.voucher_uAiDanhChoBn}>Ưu đãi dành cho bạn</Text>
-
-      <FlatList style={{ width: "90%" }} data={data} renderItem={({ item, index }) => (
-        <TouchableOpacity key={index} onPress={()=>setViewQrCode(true)} style={styles.voucher_list_item}>
-          <View style={styles.voucher_list_item_group127_group125906bcef6_rectangle14806a0ef2a7}>
-            <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7}>
-              <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e}>
-                <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff}>
-                  <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle148165d1791b}></View>
-                  <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle1482af7a277f}></View>
-                  <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle14839c367ca7}></View>
-                </View>
-                <Text style={styles.voucher_list_item_info_type}>{item.type}</Text>
-              </View>
-              <Text style={styles.voucher_list_item_info_head}>{item.head}</Text>
+          <View style={styles.voucher_user_rank}>
+            <Text style={{ "color": "rgba(255, 255, 255, 1)", "fontSize": 16, "fontWeight": "400", "fontFamily": "Roboto", }}>
+              Hạng Đồng
+            </Text>
+          </View>
+          <Text style={styles.voucher_x30Im}>30 điểm</Text>
+          <View style={styles.voucher_group119}>
+            <View style={styles.voucher_group119_scroll}>
+              <View style={styles.voucher_group119_scroll_rectangle555}></View>
+              <View style={styles.voucher_group119_scroll_rectangle556}></View>
+              <Svg style={styles.voucher_group119_scroll_ellipse155} preserveAspectRatio="none" viewBox="0 0 2 2" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 1 0 C 1.552284717559814 0 2 0.4477152824401855 2 1 C 2 1.552284717559814 1.552284717559814 2 1 2 C 0.4477152824401855 2 0 1.552284717559814 0 1 C 0 0.4477152824401855 0.4477152824401855 0 1 0 Z" /></Svg>
+              <Svg style={styles.voucher_group119_scroll_ellipse236} preserveAspectRatio="none" viewBox="0 0 2 2" fill="rgba(255, 255, 255, 1)"><SvgPath d="M 1 0 C 1.552284717559814 0 2 0.4477152824401855 2 1 C 2 1.552284717559814 1.552284717559814 2 1 2 C 0.4477152824401855 2 0 1.552284717559814 0 1 C 0 0.4477152824401855 0.4477152824401855 0 1 0 Z" /></Svg>
+              <ReactImage source={require('../../../assets/bean.png')} style={styles.voucher_group119_bean} />
             </View>
+            <Text style={styles.voucher_group119_ng}>Đồng</Text>
+            <Text style={styles.voucher_group119_kimCng}>Kim cương</Text>
+            <Text style={styles.voucher_group119_vang}>Vàng</Text>
           </View>
-          <View style={styles.voucher_list_item_info}>
-            <Text style={styles.voucher_list_item_info_title}>{item.title}</Text>
-            <Text style={styles.voucher_list_item_info_description}>{item.description}</Text>
-            <Text style={styles.voucher_list_item_info_end_date}>Hết hạn: {item.endDate}</Text>
+          <Text style={styles.voucher_progress_title}>Mỗi giao dịch đặt chỗ trên app thành công bạn sẽ được tặng điểm thưởng.
+            Bạn có thể dùng điểm đổi lấy rất nhiều ưu đãi hấp dẫn.
+            Điểm không có giá trị quy đổi thành tiền mặt.</Text>
+          <View style={styles.voucher_group121}>
+            <View style={styles.voucher_group121_rectangle1478}></View>
+            <View style={styles.voucher_group121_rectangle1479}></View>
+            <Svg style={styles.voucher_group121_ellipse237} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse238} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse239} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse240} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse241} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse242} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse243} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse244} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse245} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse246} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse247} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse248} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse249} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse250} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse251} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse252} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse253} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
+            <Svg style={styles.voucher_group121_ellipse254} preserveAspectRatio="none" viewBox="0 0 3 3" fill="rgba(219, 219, 219, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
           </View>
-        </TouchableOpacity>
-      )} />
+        </View>
+        <Text style={styles.voucher_uAiDanhChoBn}>Ưu đãi dành cho bạn</Text>
+
+        <FlatList style={{ width: "97%" }} data={data} renderItem={({ item, index }) => (
+          <TouchableOpacity key={index} onPress={() => setViewQrCode(true)} style={styles.voucher_list_item}>
+            <View style={styles.voucher_list_item_group127_group125906bcef6_rectangle14806a0ef2a7}>
+              <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7}>
+                <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e}>
+                  <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff}>
+                    <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle148165d1791b}></View>
+                    <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle1482af7a277f}></View>
+                    <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle14839c367ca7}></View>
+                  </View>
+                  <Text style={styles.voucher_list_item_info_type}>{item.type}</Text>
+                </View>
+                <Text style={styles.voucher_list_item_info_head}>{item.head}</Text>
+              </View>
+            </View>
+            <View style={styles.voucher_list_item_info}>
+              <Text style={styles.voucher_list_item_info_title}>{item.title}</Text>
+              <Text style={styles.voucher_list_item_info_description}>{item.description}</Text>
+              <Text style={styles.voucher_list_item_info_end_date}>Hết hạn: {item.endDate}</Text>
+            </View>
+          </TouchableOpacity>
+        )} />
       </ScrollView>
       <Overlay visible={viewQrCode} p="xl">
-        <QRCodeVoucherPopUp close={()=>setViewQrCode(false)}/>
+        <QRCodeVoucherPopUp close={() => setViewQrCode(false)} />
       </Overlay>
     </View>
   );
@@ -153,10 +153,10 @@ const styles = StyleSheet.create({
   "voucher": {
     "backgroundColor": "rgba(219, 219, 219, 1)",
     flex: 1,
-    alignItems: "center",
+    "width": "100%"
   },
   "voucher_progress": {
-    "width": "80%",
+    "width": "98%",
     marginTop: 12,
     marginBottom: 10,
     paddingBottom: 10,
@@ -235,7 +235,7 @@ const styles = StyleSheet.create({
     "width": 95,
     "height": 67,
     "alignSelf": 'center',
-    "marginTop":10
+    "marginTop": 10
   },
   "voucher_group118_logoPng": {
     "position": "absolute",
