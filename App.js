@@ -14,7 +14,7 @@ import BookingScreen from "./screens/booking/BookingScreen";
 
 const Stack = createStackNavigator();
 
-// LogBox.ignoreAllLogs();
+LogBox.ignoreAllLogs();
 export default function App() {
   return (
     <NavigationContainer>

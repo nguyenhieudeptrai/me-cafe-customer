@@ -271,12 +271,12 @@ const HomeTab = ({ navigation }) => {
                         <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
                       </View>
                       {item.room != undefined &&
-                        <View style={{ flexDirection: "row", alignItems: "center" }}>
+                        <View style={{ flexDirection: "row", alignItems: "center",marginTop:3 }}>
                           <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_icon_label} />
                           <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá phòng họp: {item.room.price}K/Giờ</Text>
                         </View>}
                       {item.utilities &&
-                        <View style={{ flexDirection: "row" }}>
+                        <View style={{ flexDirection: "row",marginTop:3 }}>
                           <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
                           <View style={{ marginLeft: 5, flexDirection: "row", marginTop: 0 }}>
                             {item.wifi &&
@@ -441,8 +441,6 @@ const styles = StyleSheet.create({
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "marginTop": 5,
-
   },
   "quanGnBnb2eef024_group23_group105_status": {
     "color": "rgba(117, 0, 0, 1)",
