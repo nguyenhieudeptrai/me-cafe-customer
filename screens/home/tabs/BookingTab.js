@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import { StyleSheet, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight } from 'react-native';
+import { StyleSheet, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { Image as ReactImage } from 'react-native';
 import Svg, { Defs, Pattern } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
@@ -12,6 +12,7 @@ import { Button, Overlay, Text } from 'react-native-magnus';
 
 const data = [
   {
+    id: "1",
     image: require('../../../assets/picture.png'),
     name: "GIA ROOM COFFEE",
     date: "21/12/2021",
@@ -20,6 +21,16 @@ const data = [
     personOnTable: 4,
     status: "Sắp tới",// Đang tại quán
   },
+  {
+    id: "2",
+    image: require('../../../assets/i1.png'),
+    name: "Mây Coffee",
+    date: "21/12/2021",
+    fromTime: "09:00",
+    toTime: "09:30",
+    personOnTable: 2,
+    status: "Đang tại quán",// Đang tại quán
+  },
 ]
 
 
@@ -27,8 +38,10 @@ const reasonData = ["Thay đổi lịch trình", "Quán đông", "Trùng lịch 
 
 const BookingTab = ({ navigation }) => {
   const [overlayVisible, setOverlayVisible] = useState(false);
+  const [overlayVisibleComment, setOverlayVisibleComment] = useState(true);
   const [dataFilter, setDataFilter] = useState([]);
   const [reasonSelected, setReasonSelected] = useState("");
+  const [numStar, setNumStar] = useState(0);
 
   return (
     <View style={styles.booking}>
@@ -62,45 +75,85 @@ const BookingTab = ({ navigation }) => {
                 h={40}
                 bg='#D4AE39'
                 onPress={() => {
-                  setOverlayVisible(true);
-                  setTimeout(() => {
-                    setOverlayVisible(false);
-                  }, 4000);
+                  if (item.status === "Sắp tới") {
+                    setOverlayVisible(true);
+                    setTimeout(() => {
+                      setOverlayVisible(false);
+                    }, 4000);
+                  } else {
+                    setOverlayVisibleComment(true);
+                  }
                 }}
-                block>Hủy đặt</Button>
-              <Overlay visible={overlayVisible} p="xl">
-                <Text style={{fontSize:18
-                  , fontWeight:"700", marginBottom:10}}>Bạn vui lòng chọn lý do bạn hủy</Text>
-                <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
-                  {reasonData.map((item, index) => {
-                    console.log(index);
-                    return (
-                      <Button key={index}
-                        bg={reasonSelected === item ? "#000" : "#FFF"}
-                        borderColor={reasonSelected === item ? "#FFF" : "#000"}
-                        color={reasonSelected === item ? "#FFF" : "#000"}
-                        rounded={25} mr="sm" mb="sm" py="sm" borderWidth={1}
-                        onPress={() => setReasonSelected(item)}
-                      >
-                        {item}
-                      </Button>
-                    )
-                  })}
-                </View>
-                {reasonSelected === "khác" &&
-                  <TextInput multiline={true} numberOfLines={5} style={{ padding: 10, textAlignVertical: "top", borderColor: "#000", borderWidth: 1, borderRadius: 10 }}
-                    placeholder="Bạn có thể nhập một vài lý do khác...."
-                  />
-                }
-                <Button bg='#D4AE39' w="100%" mt="md" onPress={() => { setOverlayVisible(false); setReasonSelected("") }}>
-                  Xác nhận
-                </Button>
-              </Overlay>
+                block>{item.status === "Sắp tới" ? "Hủy đặt" : "Đánh giá"}</Button>
+
             </View>
 
           </View>
         )
         } />
+      <Overlay visible={overlayVisible} p="xl">
+        <Text style={{
+          fontSize: 18
+          , fontWeight: "700", marginBottom: 10
+        }}>Bạn vui lòng chọn lý do bạn hủy</Text>
+        <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+          {reasonData.map((item, index) => {
+            console.log(index);
+            return (
+              <Button key={index}
+                bg={reasonSelected === item ? "#000" : "#FFF"}
+                borderColor={reasonSelected === item ? "#FFF" : "#000"}
+                color={reasonSelected === item ? "#FFF" : "#000"}
+                rounded={25} mr="sm" mb="sm" py="sm" borderWidth={1}
+                onPress={() => setReasonSelected(item)}
+              >
+                {item}
+              </Button>
+            )
+          })}
+        </View>
+        {reasonSelected === "khác" &&
+          <TextInput multiline={true} numberOfLines={5} style={{ padding: 10, textAlignVertical: "top", borderColor: "#000", borderWidth: 1, borderRadius: 10 }}
+            placeholder="Bạn có thể nhập một vài lý do khác...."
+          />
+        }
+        <Button bg='#D4AE39' w="100%" mt="md" onPress={() => { setOverlayVisible(false); setReasonSelected("") }}>
+          Xác nhận
+        </Button>
+      </Overlay>
+      <Overlay visible={overlayVisibleComment} p="xl">
+        <Text style={{ fontWeight: "700", fontSize: 20, alignSelf: "center", marginBottom: 10 }}>Đánh giá của hàng</Text>
+        <View style={{ flexDirection: "row", justifyContent: "center" }}>
+          <TouchableOpacity onPress={() => setNumStar(1)} style={{ marginHorizontal: 5, marginVertical: 10 }}>
+            <ReactImage style={{ width: 30, height: 30 }} source={numStar >= 1 ? require("../../../assets/star.png") : require("../../../assets/none-star.png")} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setNumStar(2)} style={{ marginHorizontal: 5, marginVertical: 10 }}>
+            <ReactImage style={{ width: 30, height: 30 }} source={numStar >= 2 ? require("../../../assets/star.png") : require("../../../assets/none-star.png")} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setNumStar(3)} style={{ marginHorizontal: 5, marginVertical: 10 }}>
+            <ReactImage style={{ width: 30, height: 30 }} source={numStar >= 3 ? require("../../../assets/star.png") : require("../../../assets/none-star.png")} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setNumStar(4)} style={{ marginHorizontal: 5, marginVertical: 10 }}>
+            <ReactImage style={{ width: 30, height: 30 }} source={numStar >= 4 ? require("../../../assets/star.png") : require("../../../assets/none-star.png")} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setNumStar(5)} style={{ marginHorizontal: 5, marginVertical: 10 }}>
+            <ReactImage style={{ width: 30, height: 30 }} source={numStar >= 5 ? require("../../../assets/star.png") : require("../../../assets/none-star.png")} />
+          </TouchableOpacity>
+        </View>
+        <TextInput multiline={true} numberOfLines={5} style={{ padding: 10, textAlignVertical: "top", borderColor: "#000", borderWidth: 1, borderRadius: 5 }}
+          placeholder="Bạn có thể chia sẻ ý kiến của mình về của hàng...."
+        />
+        <Button w="100%"
+          mt={10}
+          h={40}
+          bg='#D4AE39'
+          onPress={() => {
+            setOverlayVisibleComment(false);
+            setNumStar(0);
+          }}
+          block>Đánh giá</Button>
+      </Overlay>
+
     </View>
   );
 }
@@ -125,9 +178,9 @@ const styles = StyleSheet.create({
     },
     "shadowRadius": 6,
     "width": "auto",
-    marginHorizontal: 5,
     padding: 12,
-    flexDirection: "row"
+    flexDirection: "row",
+    marginVertical: 5,
   },
   "booking_list": {
     flex: 1,
