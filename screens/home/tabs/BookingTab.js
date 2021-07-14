@@ -38,7 +38,7 @@ const reasonData = ["Thay đổi lịch trình", "Quán đông", "Trùng lịch 
 
 const BookingTab = ({ navigation }) => {
   const [overlayVisible, setOverlayVisible] = useState(false);
-  const [overlayVisibleComment, setOverlayVisibleComment] = useState(true);
+  const [overlayVisibleComment, setOverlayVisibleComment] = useState(false);
   const [dataFilter, setDataFilter] = useState([]);
   const [reasonSelected, setReasonSelected] = useState("");
   const [numStar, setNumStar] = useState(0);
@@ -121,7 +121,13 @@ const BookingTab = ({ navigation }) => {
           Xác nhận
         </Button>
       </Overlay>
-      <Overlay visible={overlayVisibleComment} p="xl">
+      <Overlay visible={overlayVisibleComment} p="xl" >
+        <TouchableOpacity onPress={() => {
+          setOverlayVisibleComment(false);
+          setNumStar(0);
+        }} style={{ position: "absolute", top: 27, left: 20 }}>
+          <ReactImage source={require('../../../assets/backicon.png')} style={{ width: 20, height: 20 }} />
+        </TouchableOpacity>
         <Text style={{ fontWeight: "700", fontSize: 20, alignSelf: "center", marginBottom: 10 }}>Đánh giá của hàng</Text>
         <View style={{ flexDirection: "row", justifyContent: "center" }}>
           <TouchableOpacity onPress={() => setNumStar(1)} style={{ marginHorizontal: 5, marginVertical: 10 }}>
@@ -247,7 +253,7 @@ const styles = StyleSheet.create({
   },
   "header": {
     "width": "100%",
-    "height": 70,
+    "height": 90,
     "alignItems": "center",
     "backgroundColor": "rgba(240, 211, 122, 1)",
     "shadowColor": "rgb(0,  0,  0)",
@@ -265,7 +271,7 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "top": 37
+    "top": 50
   },
 
   "booking_select": {
