@@ -21,7 +21,7 @@ const HomeScreen = () => {
 
   return (
     <View style={{backgroundColor:"rgba(220, 220, 220, 1)",flex:1}}>
-    <Tab.Navigator initialRouteName="Đặt chỗ" tabBar={(props) => {
+    <Tab.Navigator initialRouteName="Trang chủ" tabBar={(props) => {
       const { state, descriptors, navigation } = props;
       return (
         <View style={styles.menu}>
