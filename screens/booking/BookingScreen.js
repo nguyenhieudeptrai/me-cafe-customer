@@ -9,6 +9,7 @@ import { Text as SvgText } from 'react-native-svg';
 import { Image as SvgImage } from 'react-native-svg';
 import { useState } from 'react';
 import NotificationCompletedPopUp from './NotificationCompletedPopUp';
+import moment from 'moment';
 
 const data = {
   table: [
@@ -27,18 +28,41 @@ const data = {
   ],
 
 }
-
+const dataResults = [
+  {
+    id: 1,
+    isRoom: false,
+    quantity: 6,
+    startTime: "08:00",
+  },
+  {
+    id: 2,
+    isRoom: true,
+    quantity: 10,
+    startTime: "09:00",
+  },
+  {
+    id: 3,
+    isRoom: false,
+    quantity: 6,
+    startTime: "08:00",
+  }
+]
 const BookingScreen = ({ navigation }) => {
   const [from, setFrom] = useState(new Date());
   const [viewComplete, setViewComplete] = useState(false);
+  const [viewTimeSelect, setViewTimeSelect] = useState(true);
   const [timeSearch, setTimeSearch] = useState('07:00');
-  const [period, setPeroid] = useState('30 phút');
-  const [showResult, setShowResult] = useState(false);
-  const [selectItem, setSelectItem] = useState(null);
+  const [daySearch, setDaySearch] = useState(moment(new Date()).format("L") + ' (Hôm nay)');
+  const [period, setPeroid] = useState(['30 phút', 30]);
+  const [showResult, setShowResult] = useState(true);
+  const [selectItem, setSelectItem] = useState(0);
+  const [timeSelect, setTimeSelect] = useState(0);
 
 
   const dropdownRef = React.createRef();
   const selectRef = React.createRef();
+  const dropdownRefDate = React.createRef();
 
 
   const getFullTime = () => {
@@ -91,9 +115,9 @@ const BookingScreen = ({ navigation }) => {
           <Text style={styles.shopinfo_timeslot_khungGiTrng}>Tìm khung giờ trống</Text>
           <View style={{ flexDirection: "row", marginVertical: 15 }}>
             <View style={styles.shopinfo_timeslot_today}>
-              <Text style={styles.shopinfo_timeslot_today_thiGian}>Thời gian:</Text>
+              <Text style={styles.shopinfo_timeslot_today_thiGian}>Ngày bạn muốn đặt:</Text>
               <View style={{ flexDirection: "row", flex: 1, alignItems: "center", borderColor: "rgba(191, 151, 104, 1)", borderBottomWidth: 2, marginLeft: 10 }}>
-                <Text style={styles.shopinfo_timeslot_today_homNay}>Hôm nay</Text>
+                <Text style={styles.shopinfo_timeslot_today_homNay} onPress={() => { dropdownRefDate.current.open() }}>{daySearch}</Text>
                 <ReactImage source={require('../../assets/backIcon2.png')} style={styles.shopinfo_timeslot_today_backIcon2f9ac0684} />
               </View>
             </View>
@@ -102,17 +126,23 @@ const BookingScreen = ({ navigation }) => {
           <View style={{ flexDirection: "row", marginVertical: 15 }}>
 
             <View style={styles.shopinfo_timeslot_today}>
-              <Text style={styles.shopinfo_timeslot_today_thiGian}>Bắt đầu:</Text>
+              <Text style={styles.shopinfo_timeslot_today_thiGian}>Bạn muốn ngồi từ:</Text>
               <View style={{ flexDirection: "row", flex: 1, alignItems: "center", borderColor: "rgba(191, 151, 104, 1)", borderBottomWidth: 2, marginLeft: 10 }}>
                 <Text style={styles.shopinfo_timeslot_today_homNay} onPress={() => { loadTimeSearch(); selectRef.current.open() }}>{timeSearch}</Text>
                 <ReactImage source={require('../../assets/backIcon2.png')} style={styles.shopinfo_timeslot_today_backIcon2f9ac0684} />
               </View>
             </View>
+          </View>
+
+          <View style={{ flexDirection: "row", marginVertical: 15 }}>
+
             <View style={styles.shopinfo_timeslot_today}>
-              <Text style={styles.shopinfo_timeslot_today_thiGian}>Khoảng:</Text>
+              <Text style={styles.shopinfo_timeslot_today_thiGian}>Thời gian bạn ngồi:</Text>
               <View style={{ flexDirection: "row", flex: 1, alignItems: "center", borderColor: "rgba(191, 151, 104, 1)", borderBottomWidth: 2, marginLeft: 10 }}>
 
-                <Text style={styles.shopinfo_timeslot_today_homNay} onPress={() => { dropdownRef.current.open() }}>{period}</Text>
+                <Text style={styles.shopinfo_timeslot_today_homNay} onPress={() => { dropdownRef.current.open() }}>
+                  {period[0]}
+                </Text>
 
                 <ReactImage source={require('../../assets/backIcon2.png')} style={styles.shopinfo_timeslot_today_backIcon2f9ac0684} />
               </View>
@@ -126,35 +156,28 @@ const BookingScreen = ({ navigation }) => {
           <View style={styles.shopinfo_result}>
             <Text style={styles.shopinfo_result_title}>KẾT QUẢ:</Text>
             <FlatList
-              data={[
-                {
-                  id: 1,
-                  isRoom: false,
-                  quantity: 6,
-                  startTime: "08:00",
-                },
-                {
-                  id: 2,
-                  isRoom: true,
-                  quantity: 10,
-                  startTime: "09:00",
-                },
-                {
-                  id: 3,
-                  isRoom: false,
-                  quantity: 6,
-                  startTime: "08:00",
-                }
-              ]}
+              data={dataResults}
               renderItem={({ item, index }) => (
-                <TouchableOpacity key={index} style={selectItem == item.id ? styles.shopinfo_result_tableempty2_s : styles.shopinfo_result_tableempty2}
-                  onPress={() => { setSelectItem(item.id) }}
+                <TouchableOpacity key={index} style={selectItem == index ?
+                  styles.shopinfo_result_tableempty2_s :
+                  styles.shopinfo_result_tableempty2}
+                  onPress={() => { setSelectItem(index); setViewTimeSelect(true); }}
                 >
-                  <View style={{ flex: 2, paddingHorizontal: 15, borderColor: "rgba(191, 151, 104, 1)", borderRightWidth: 2 }}>
+                  <View style={{ flex: 2, paddingHorizontal: 10, borderColor: "rgba(191, 151, 104, 1)", borderRightWidth: 2 }}>
                     <Text style={styles.shopinfo_result_tableempty2_ban}>{item.isRoom ? "PHÒNG HỌP" : "BÀN"}</Text>
                     <Text style={styles.shopinfo_result_tableempty2_loi6Ch}>Loại: {item.quantity} {item.isRoom ? "người" : "chỗ"}</Text>
                   </View>
-                  <Text style={styles.shopinfo_result_tableempty2_banTrngTLuc0800169f5e91}>{item.isRoom ? "Phòng" : "Bàn"} trống từ lúc {item.startTime}</Text>
+                  <View style={{ flexDirection: "row", flexWrap: "wrap", flex: 4, paddingLeft: 10 }}>
+                    {[0, 1, 2, 3, 4].map(val => {
+                      let timeFrom = moment(new Date()).hour(7).minute(0).add(val, "h");
+                      let timeTo = moment(new Date()).hour(7).minute(0).add(val, "h").add(period[1], "m");
+                      return (
+                        <Text key={val} style={styles.shopinfo_result_tableempty2_banTrngTLuc0800169f5e91}>
+                          {timeFrom.format("LT")} - {timeTo.format("LT")}
+                        </Text>)
+                    })}
+
+                  </View>
                 </TouchableOpacity>
               )} />
           </View>
@@ -163,13 +186,6 @@ const BookingScreen = ({ navigation }) => {
       </ScrollView>
 
 
-      <TouchableOpacity onPress={() => { if (selectItem != null) setViewComplete(true) }} style={selectItem == null ? styles.shopinfo_group19_dangkyngayBtn_n : styles.shopinfo_group19_dangkyngayBtn}>
-        <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}>
-          <Text style={{ "marginTop": -1.5, "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>
-            ĐẶT NGAY
-          </Text>
-        </View>
-      </TouchableOpacity>
       <Select
         ref={selectRef}
         onSelect={() => { setTimeSearch(getFullTime()) }}
@@ -224,20 +240,97 @@ const BookingScreen = ({ navigation }) => {
       >
       </Select>
       <Dropdown ref={dropdownRef}>
-        <Dropdown.Option onPress={() => { setPeroid('30 phút'); dropdownRef.current.close() }}>30 phút</Dropdown.Option>
-        <Dropdown.Option onPress={() => { setPeroid('45 phút'); dropdownRef.current.close() }}>45 phút</Dropdown.Option>
-        <Dropdown.Option onPress={() => { setPeroid('1 tiếng'); dropdownRef.current.close() }}>1 tiếng</Dropdown.Option>
-        <Dropdown.Option onPress={() => { setPeroid('1 tiếng rưỡi'); dropdownRef.current.close() }}>1 tiếng rưỡi</Dropdown.Option>
-        <Dropdown.Option onPress={() => { setPeroid('2 tiếng'); dropdownRef.current.close() }}>2 tiếng</Dropdown.Option>
-        <Dropdown.Option onPress={() => { setPeroid('2 tiếng rưỡi'); dropdownRef.current.close() }}>2 tiếng rưỡi</Dropdown.Option>
+        <Dropdown.Option onPress={() => { setPeroid(['30 phút', 30]); dropdownRef.current.close() }}>30 phút</Dropdown.Option>
+        <Dropdown.Option onPress={() => { setPeroid(['45 phút', 45]); dropdownRef.current.close() }}>45 phút</Dropdown.Option>
+        <Dropdown.Option onPress={() => { setPeroid(['1 tiếng', 60]); dropdownRef.current.close() }}>1 tiếng</Dropdown.Option>
+        <Dropdown.Option onPress={() => { setPeroid(['1 tiếng rưỡi', 90]); dropdownRef.current.close() }}>1 tiếng rưỡi</Dropdown.Option>
+        <Dropdown.Option onPress={() => { setPeroid(['2 tiếng', 120]); dropdownRef.current.close() }}>2 tiếng</Dropdown.Option>
+        <Dropdown.Option onPress={() => { setPeroid(['2 tiếng rưỡi', 150]); dropdownRef.current.close() }}>2 tiếng rưỡi</Dropdown.Option>
+      </Dropdown>
+      <Dropdown ref={dropdownRefDate}>
+        {[0, 1, 2, 3, 4, 5, 6].map(val => {
+          let date = moment(new Date()).add(val, "day");
+          let today = (date.get("day") == (new Date().getDay()) ? "(Hôm nay)" : "")
+            + (date.get("day") == (new Date().getDay() + 1) ? "(Ngày mai)" : "");
+          let strDate = date.format("L") + " " + today;
+          return (<Dropdown.Option key={strDate} onPress={() => {
+            setDaySearch(strDate)
+          }}>
+            {strDate}
+          </Dropdown.Option>)
+        })}
       </Dropdown>
       <Overlay visible={viewComplete} p="xl">
         <NotificationCompletedPopUp close={() => {
           navigation.reset({
             index: 0,
             routes: [{ name: 'Home' }],
-        });
+          });
         }} />
+      </Overlay>
+      <Overlay visible={viewTimeSelect} p={"sm"}>
+        <View style={{ marginTop: 10, paddingHorizontal: 5 }}>
+          <Text style={{
+            "color": "rgba(83, 71, 65, 1)",
+            "fontSize": 20,
+            "fontWeight": "bold",
+            "fontFamily": "Roboto",
+            textAlign: "center"
+          }}>{dataResults[selectItem]?.isRoom ? "PHÒNG HỌP" : "BÀN"} </Text>
+          <Text style={styles.shopinfo_result_tableempty2_loi6Ch}>Loại: {dataResults[selectItem]?.quantity} {dataResults[selectItem]?.isRoom ? "người" : "chỗ"}</Text>
+
+          <View style={{ borderTopWidth: 2, borderColor: "rgba(191, 151, 104, 1)", marginTop: 5, paddingTop: 5 }}>
+            <Text style={{ fontSize: 15 }}>Bạn có thể chọn khoảng thời gian:</Text>
+            {[0, 1, 2, 3, 4].map((val, index) => {
+              let timeFrom = moment(new Date()).hour(7).minute(0).add(val, "h");
+              let timeTo = moment(new Date()).hour(7).minute(0).add(val, "h").add(period[1], "m");
+
+              return (
+                <TouchableOpacity onPress={() => { setTimeSelect(index) }}>
+                  <Text key={val} style={{
+                    "color": "rgba(83, 71, 65, 1)",
+                    "fontSize": 16,
+                    textAlign: "center",
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    borderColor: "rgba(191, 151, 104, 1)",
+                    padding: 5,
+                    margin: 3,
+                    "backgroundColor": timeSelect == index ? "#FBDBB5" : "#FFF"
+                  }}>
+                    {timeFrom.format("LT")} - {timeTo.format("LT")}
+                  </Text>
+                </TouchableOpacity>)
+            })}
+          </View>
+        </View>
+        <View style={{ flexDirection: "row", marginTop: 10 }}>
+          <TouchableOpacity onPress={() => {
+            if (timeSelect > 0) {
+              setViewComplete(true);
+              setTimeSelect(-1);
+              setViewTimeSelect(false);
+            }
+          }}
+            style={styles.shopinfo_group19_dangkyngayBtn}>
+            <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}>
+              <Text style={{ "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center" }}>
+                ĐẶT NGAY
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            setViewTimeSelect(false);
+            setTimeSelect(-1);
+          }}
+            style={styles.shopinfo_group19_dangkyngayBtn_n}>
+            <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}>
+              <Text style={{ "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center" }}>
+                HỦY
+              </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       </Overlay>
     </View>
   );
@@ -443,8 +536,12 @@ export default BookingScreen; const styles = StyleSheet.create({
     "fontSize": 16,
     "fontWeight": "500",
     "fontFamily": "Roboto",
-    flex: 3,
-    paddingHorizontal: 15
+    textAlign: "center",
+    borderWidth: 1,
+    borderRadius: 10,
+    borderColor: "rgba(191, 151, 104, 1)",
+    padding: 5,
+    margin: 3
   },
   "shopinfo_result_title": {
     "color": "rgba(191, 151, 104, 1)",
@@ -454,22 +551,20 @@ export default BookingScreen; const styles = StyleSheet.create({
 
   },
   "shopinfo_group19_dangkyngayBtn_n": {
-    "width": "95%",
     "alignSelf": 'center',
     backgroundColor: "#A1A1A1",
     alignItems: "center",
     borderRadius: 5,
     paddingVertical: 15,
-    marginBottom: 10,
+    flex: 1,
   },
   "shopinfo_group19_dangkyngayBtn": {
-    "width": "95%",
     "alignSelf": 'center',
     backgroundColor: "rgba(212, 174, 57, 1)",
     alignItems: "center",
     borderRadius: 5,
     paddingVertical: 15,
-    marginBottom: 10,
+    flex: 1,
   },
   "shopinfo_group19_dangkyngayBtn_path643": {
 
