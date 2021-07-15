@@ -30,12 +30,6 @@ const data = {
 }
 const dataResults = [
   {
-    id: 1,
-    isRoom: false,
-    quantity: 6,
-    startTime: "08:00",
-  },
-  {
     id: 2,
     isRoom: true,
     quantity: 10,
@@ -44,54 +38,39 @@ const dataResults = [
   {
     id: 3,
     isRoom: false,
+    quantity: 4,
+    startTime: "08:00",
+  },
+  {
+    id: 1,
+    isRoom: false,
     quantity: 6,
     startTime: "08:00",
-  }
+  },
 ]
 const BookingScreen = ({ navigation }) => {
-  const [from, setFrom] = useState(new Date());
+  const [from, setFrom] = useState(moment(new Date()));
   const [viewComplete, setViewComplete] = useState(false);
-  const [viewTimeSelect, setViewTimeSelect] = useState(true);
-  const [timeSearch, setTimeSearch] = useState('07:00');
+  const [viewTimeSelect, setViewTimeSelect] = useState(false);
+  const [timeSearch, setTimeSearch] = useState(moment(new Date()).minutes(Math.round((new Date().getMinutes() / 10)) * 10));
   const [daySearch, setDaySearch] = useState(moment(new Date()).format("L") + ' (Hôm nay)');
   const [period, setPeroid] = useState(['30 phút', 30]);
-  const [showResult, setShowResult] = useState(true);
-  const [selectItem, setSelectItem] = useState(0);
-  const [timeSelect, setTimeSelect] = useState(0);
+  const [showResult, setShowResult] = useState(false);
+  const [selectItem, setSelectItem] = useState(-1);
+  const [timeSelect, setTimeSelect] = useState(-1);
 
 
   const dropdownRef = React.createRef();
   const selectRef = React.createRef();
   const dropdownRefDate = React.createRef();
 
-
-  const getFullTime = () => {
-    let _hour = from.getHours() < 10 ? `0${from.getHours()}` : `${from.getHours()}`
-    let _min = from.getMinutes() < 10 ? `0${from.getMinutes()}` : `${from.getMinutes()}`
-
-    let fullTime = `${_hour}:${_min}`
-    return fullTime;
-  }
-
-  const loadTimeSearch = () => {
-    let _arr = timeSearch.split(':');
-    let _temp = from;
-
-    _temp.setHours(parseInt(_arr[0]));
-    _temp.setMinutes(parseInt(_arr[1]));
-
-    _temp = new Date(_temp);
-
-    setFrom(_temp);
-  }
-
-  const onAddFrom = (isHour, num) => {
+  const onAddTime = (isHour, num) => {
     let fromTmp = from;
     if (isHour)
-      fromTmp = new Date(fromTmp.setHours(fromTmp.getHours() + num));
+      fromTmp = fromTmp.add(num, "hour");
     else
-      fromTmp = new Date(fromTmp.setMinutes(fromTmp.getMinutes() + num));
-    setFrom(fromTmp);
+      fromTmp = fromTmp.add(num, "minutes");
+    setFrom(moment(fromTmp));
   }
 
   return (
@@ -128,7 +107,7 @@ const BookingScreen = ({ navigation }) => {
             <View style={styles.shopinfo_timeslot_today}>
               <Text style={styles.shopinfo_timeslot_today_thiGian}>Bạn muốn ngồi từ:</Text>
               <View style={{ flexDirection: "row", flex: 1, alignItems: "center", borderColor: "rgba(191, 151, 104, 1)", borderBottomWidth: 2, marginLeft: 10 }}>
-                <Text style={styles.shopinfo_timeslot_today_homNay} onPress={() => { loadTimeSearch(); selectRef.current.open() }}>{timeSearch}</Text>
+                <Text style={styles.shopinfo_timeslot_today_homNay} onPress={() => { selectRef.current.open() }}>{timeSearch.format("LT")}</Text>
                 <ReactImage source={require('../../assets/backIcon2.png')} style={styles.shopinfo_timeslot_today_backIcon2f9ac0684} />
               </View>
             </View>
@@ -148,7 +127,7 @@ const BookingScreen = ({ navigation }) => {
               </View>
             </View>
           </View>
-          <TouchableOpacity onPress={() => setShowResult(true)} style={styles.shopinfo_timeslot_btnsearch}>
+          <TouchableOpacity onPress={() => { setShowResult(true); setTimeSelect(-2); }} style={styles.shopinfo_timeslot_btnsearch}>
             <Text style={styles.shopinfo_timeslot_btnsearch_timKim}>Tìm kiếm</Text>
           </TouchableOpacity>
         </View>
@@ -169,8 +148,11 @@ const BookingScreen = ({ navigation }) => {
                   </View>
                   <View style={{ flexDirection: "row", flexWrap: "wrap", flex: 4, paddingLeft: 10 }}>
                     {[0, 1, 2, 3, 4].map(val => {
-                      let timeFrom = moment(new Date()).hour(7).minute(0).add(val, "h");
-                      let timeTo = moment(new Date()).hour(7).minute(0).add(val, "h").add(period[1], "m");
+                      let timeFrom = moment(timeSearch).add(val, "h");
+                      let timeTo = moment(timeSearch).add(val, "h").add(period[1], "minutes");
+                      if (timeTo.hours() >= 21) {
+                        return null;
+                      }
                       return (
                         <Text key={val} style={styles.shopinfo_result_tableempty2_banTrngTLuc0800169f5e91}>
                           {timeFrom.format("LT")} - {timeTo.format("LT")}
@@ -188,7 +170,7 @@ const BookingScreen = ({ navigation }) => {
 
       <Select
         ref={selectRef}
-        onSelect={() => { setTimeSearch(getFullTime()) }}
+        onSelect={() => { }}
         multiple
         roundedTop="xl"
         data={[{}]}
@@ -199,7 +181,7 @@ const BookingScreen = ({ navigation }) => {
             mb={10}
             h={40}
             bg='#D4AE39'
-            onPress={() => { setTimeSearch(getFullTime()); selectRef.current.close() }} >
+            onPress={() => { setTimeSearch(moment(from)); selectRef.current.close() }} >
             XÁC NHẬN
           </Button>
         )}
@@ -208,32 +190,32 @@ const BookingScreen = ({ navigation }) => {
             <View style={styles.main_tCh3c0aa05f_group15_group7}>
               <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0}>
                 <View style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_rectangle14613f364951}></View>
-                <TouchableOpacity onPress={() => onAddFrom(true, -1)} style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866}>
+                <TouchableOpacity onPress={() => onAddTime(true, -1)} style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866}>
                   <Svg style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866_path3616a19af3} preserveAspectRatio="none" viewBox="0 0 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 4.699999809265137 6.100000381469727 L 0 1.400000095367432 L 1.400000095367432 0 L 4.699999809265137 3.300000190734863 L 8 0 L 9.399999618530273 1.400000095367432 L 4.699999809265137 6.100000381469727 Z" /></Svg>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => onAddFrom(true, 1)} style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e}>
+                <TouchableOpacity onPress={() => onAddTime(true, 1)} style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e}>
                   <Svg style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e_path36285acddc} preserveAspectRatio="none" viewBox="2 2 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 6.699999809265137 8.100000381469727 L 2 3.400000095367432 L 3.400000095367432 2 L 6.699999809265137 5.300000190734863 L 10 2 L 11.39999961853027 3.400000095367432 L 6.699999809265137 8.100000381469727 Z" /></Svg>
                 </TouchableOpacity>
               </View>
-              <Text style={styles.main_tCh3c0aa05f_group15_group7_x07}>{from.getHours() < 10 ? "0" + from.getHours() : from.getHours()}</Text>
+              <Text style={styles.main_tCh3c0aa05f_group15_group7_x07}>{from.format("h")}</Text>
             </View>
             <Text style={styles.main_tCh3c0aa05f_group15_x9f45184b}>:</Text>
             <View style={styles.main_tCh3c0aa05f_group15_group6}>
               <View style={styles.main_tCh3c0aa05f_group15_group6_group41f437081}>
                 <View style={styles.main_tCh3c0aa05f_group15_group6_group41f437081_rectangle1462849d287b}></View>
-                <TouchableOpacity onPress={() => onAddFrom(false, -10)} style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866}>
+                <TouchableOpacity onPress={() => onAddTime(false, -10)} style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866}>
                   <Svg style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_upArrowSmallaeee9866_path3616a19af3} preserveAspectRatio="none" viewBox="0 0 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 4.699999809265137 6.100000381469727 L 0 1.400000095367432 L 1.400000095367432 0 L 4.699999809265137 3.300000190734863 L 8 0 L 9.399999618530273 1.400000095367432 L 4.699999809265137 6.100000381469727 Z" /></Svg>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => onAddFrom(false, 10)} style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e}>
+                <TouchableOpacity onPress={() => onAddTime(false, 10)} style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e}>
                   <Svg style={styles.main_tCh3c0aa05f_group15_group7_group31da10ff0_downArrowSmall6076289e_path36285acddc} preserveAspectRatio="none" viewBox="2 2 9.4000244140625 6.0999755859375" fill="rgba(191, 151, 104, 1)"><SvgPath d="M 6.699999809265137 8.100000381469727 L 2 3.400000095367432 L 3.400000095367432 2 L 6.699999809265137 5.300000190734863 L 10 2 L 11.39999961853027 3.400000095367432 L 6.699999809265137 8.100000381469727 Z" /></Svg>
                 </TouchableOpacity>
               </View>
-              <Text style={styles.main_tCh3c0aa05f_group15_group7_x07}>{from.getMinutes() < 10 ? "0" + from.getMinutes() : from.getMinutes()}</Text>
+              <Text style={styles.main_tCh3c0aa05f_group15_group7_x07}>{from.format("mm")}</Text>
             </View>
             <View style={styles.main_tCh3c0aa05f_group15_group5}>
               <View style={styles.main_tCh3c0aa05f_group15_group5_rectangle14634dd2b9b8}></View>
-              <Text style={from.getHours() < 12 ? styles.main_tCh3c0aa05f_group15_group5_am70a769fb : styles.main_tCh3c0aa05f_group15_group5_pme55ffa0b}>AM</Text>
-              <Text style={from.getHours() >= 12 ? styles.main_tCh3c0aa05f_group15_group5_am70a769fb : styles.main_tCh3c0aa05f_group15_group5_pme55ffa0b}>PM</Text>
+              <Text style={from.hour() < 12 ? styles.main_tCh3c0aa05f_group15_group5_am70a769fb : styles.main_tCh3c0aa05f_group15_group5_pme55ffa0b}>AM</Text>
+              <Text style={from.hour() >= 12 ? styles.main_tCh3c0aa05f_group15_group5_am70a769fb : styles.main_tCh3c0aa05f_group15_group5_pme55ffa0b}>PM</Text>
             </View>
           </View>
         )}
@@ -282,12 +264,14 @@ const BookingScreen = ({ navigation }) => {
           <View style={{ borderTopWidth: 2, borderColor: "rgba(191, 151, 104, 1)", marginTop: 5, paddingTop: 5 }}>
             <Text style={{ fontSize: 15 }}>Bạn có thể chọn khoảng thời gian:</Text>
             {[0, 1, 2, 3, 4].map((val, index) => {
-              let timeFrom = moment(new Date()).hour(7).minute(0).add(val, "h");
-              let timeTo = moment(new Date()).hour(7).minute(0).add(val, "h").add(period[1], "m");
-
+              let timeFrom = moment(timeSearch).add(val, "h");
+              let timeTo = moment(timeSearch).add(val, "h").add(period[1], "m");
+              if (timeTo.hours() >= 21) {
+                return null;
+              }
               return (
-                <TouchableOpacity onPress={() => { setTimeSelect(index) }}>
-                  <Text key={val} style={{
+                <TouchableOpacity key={val} onPress={() => { setTimeSelect(index) }}>
+                  <Text style={{
                     "color": "rgba(83, 71, 65, 1)",
                     "fontSize": 16,
                     textAlign: "center",
@@ -304,11 +288,10 @@ const BookingScreen = ({ navigation }) => {
             })}
           </View>
         </View>
-        <View style={{ flexDirection: "row", marginTop: 10 }}>
+        <View style={{ flexDirection: "row", marginTop: 10, }}>
           <TouchableOpacity onPress={() => {
-            if (timeSelect > 0) {
+            if (timeSelect > -1) {
               setViewComplete(true);
-              setTimeSelect(-1);
               setViewTimeSelect(false);
             }
           }}
@@ -336,7 +319,9 @@ const BookingScreen = ({ navigation }) => {
   );
 }
 
-export default BookingScreen; const styles = StyleSheet.create({
+export default BookingScreen;
+
+const styles = StyleSheet.create({
   "main": {
     flex: 1
   },
@@ -555,7 +540,9 @@ export default BookingScreen; const styles = StyleSheet.create({
     backgroundColor: "#A1A1A1",
     alignItems: "center",
     borderRadius: 5,
-    paddingVertical: 15,
+    paddingVertical: 10,
+    marginLeft: "5%",
+    marginRight: "10%",
     flex: 1,
   },
   "shopinfo_group19_dangkyngayBtn": {
@@ -563,7 +550,9 @@ export default BookingScreen; const styles = StyleSheet.create({
     backgroundColor: "rgba(212, 174, 57, 1)",
     alignItems: "center",
     borderRadius: 5,
-    paddingVertical: 15,
+    paddingVertical: 10,
+    marginRight: "5%",
+    marginLeft: "10%",
     flex: 1,
   },
   "shopinfo_group19_dangkyngayBtn_path643": {
