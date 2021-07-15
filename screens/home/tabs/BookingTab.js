@@ -98,7 +98,6 @@ const BookingTab = ({ navigation }) => {
         }}>Bạn vui lòng chọn lý do bạn hủy</Text>
         <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
           {reasonData.map((item, index) => {
-            console.log(index);
             return (
               <Button key={index}
                 bg={reasonSelected === item ? "#000" : "#FFF"}

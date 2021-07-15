@@ -132,14 +132,12 @@ const HomeTab = ({ navigation }) => {
   const onFilter = (item, checked) => {
     let index = dataFilter.indexOf(item);
     let newArr = dataFilter;
-    console.log("find:", index, checked, item)
     if (index > -1) {
       newArr.splice(index, 1);
     }
     if (checked) {
       newArr.push(item);
     }
-    console.log("new arr", dataFilter, newArr)
     setDataFilter([...newArr]);
     hasFilter(true);
   }
@@ -271,12 +269,12 @@ const HomeTab = ({ navigation }) => {
                         <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>{item.address}</Text>
                       </View>
                       {item.room != undefined &&
-                        <View style={{ flexDirection: "row", alignItems: "center",marginTop:3 }}>
+                        <View style={{ flexDirection: "row", alignItems: "center", marginTop: 3 }}>
                           <ReactImage source={require('../../../assets/priceicon.png')} style={styles.item_icon_label} />
                           <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Giá phòng họp: {item.room.price}K/Giờ</Text>
                         </View>}
                       {item.utilities &&
-                        <View style={{ flexDirection: "row",marginTop:3 }}>
+                        <View style={{ flexDirection: "row", marginTop: 3 }}>
                           <Text style={styles.quanGnBnb2eef024_group23_group105_x57eTuXngPhng7Qun3}>Tiện ích</Text>
                           <View style={{ marginLeft: 5, flexDirection: "row", marginTop: 0 }}>
                             {item.wifi &&
