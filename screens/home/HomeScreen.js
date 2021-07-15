@@ -17,80 +17,80 @@ import SettingTab from './tabs/SettingTab';
 const Tab = createBottomTabNavigator();
 
 
-const HomeScreen = () => {
-
+const HomeScreen = ({ navigation, route }) => {
+  const initialRoute  = route?.params?.initialRoute;
   return (
-    <View style={{backgroundColor:"rgba(220, 220, 220, 1)",flex:1}}>
-    <Tab.Navigator initialRouteName="Trang chủ" tabBar={(props) => {
-      const { state, descriptors, navigation } = props;
-      return (
-        <View style={styles.menu}>
-          {state.routes.map((route, index) => {
-            const label = route.name;
+    <View style={{ backgroundColor: "rgba(220, 220, 220, 1)", flex: 1 }}>
+      <Tab.Navigator initialRouteName={initialRoute == null ? "Trang chủ" : initialRoute} tabBar={(props) => {
+        const { state, descriptors, navigation } = props;
+        return (
+          <View style={styles.menu}>
+            {state.routes.map((route, index) => {
+              const label = route.name;
 
-            const { options } = descriptors[route.key];
-            const img = options.img;
-            const isFocused = state.index === index;
-            const onPress = () => {
-              const event = navigation.emit({
-                type: 'tabPress',
-                target: route.key,
-              });
+              const { options } = descriptors[route.key];
+              const img = options.img;
+              const isFocused = state.index === index;
+              const onPress = () => {
+                const event = navigation.emit({
+                  type: 'tabPress',
+                  target: route.key,
+                });
 
-              if (!isFocused && !event.defaultPrevented) {
-                navigation.navigate(route.name);
-              }
-            };
-            return (
-              <TouchableOpacity 
-                key={index}
-                accessibilityRole="button"
-                accessibilityStates={isFocused ? ['selected'] : []}
-                accessibilityLabel={options.tabBarAccessibilityLabel}
-                testID={options.tabBarTestID}
-                onPress={onPress}
-                style={{ flex: 1, alignItems: "center" }}
-              >
+                if (!isFocused && !event.defaultPrevented) {
+                  navigation.navigate(route.name);
+                }
+              };
+              return (
+                <TouchableOpacity
+                  key={index}
+                  accessibilityRole="button"
+                  accessibilityStates={isFocused ? ['selected'] : []}
+                  accessibilityLabel={options.tabBarAccessibilityLabel}
+                  testID={options.tabBarTestID}
+                  onPress={onPress}
+                  style={{ flex: 1, alignItems: "center" }}
+                >
 
-                <View style={styles.menu_item}>
-                  <ReactImage source={img} style={styles.menu_item_icon} />
-                  <Text style={styles.menu_item_title}>{label}</Text>
-                </View>
+                  <View style={styles.menu_item}>
+                    <ReactImage source={img} style={styles.menu_item_icon} />
+                    <Text style={styles.menu_item_title}>{label}</Text>
+                  </View>
 
-              </TouchableOpacity>
-            )
+                </TouchableOpacity>
+              )
 
 
-          })}
-        </View>
-      )
+            })}
+          </View>
+        )
 
-    }}>
-      <Tab.Screen
-        name="Trang chủ"
-        options={{
-          img: require('../../assets/tabHome.png')
-        }}
-        component={HomeTab} />
-      <Tab.Screen
-        name="Đặt chỗ"
-        options={{
-          img: require('../../assets/booking.png')
-        }}
-        component={BookingTab} />
-      <Tab.Screen
-        name="Tích điểm"
-        options={{
-          img: require('../../assets/tab3.png')
-        }}
-        component={VoucherScreen} />
-      <Tab.Screen
-        name="Cài đặt"
-        options={{
-          img: require('../../assets/setting2.png')
-        }}
-        component={SettingTab} />
-    </Tab.Navigator>
+      }}>
+        <Tab.Screen
+          name="Trang chủ"
+          options={{
+            img: require('../../assets/tabHome.png')
+          }}
+          component={HomeTab} />
+        <Tab.Screen
+          name="Đặt chỗ"
+          options={{
+            img: require('../../assets/booking.png')
+          }}
+          component={BookingTab} />
+        <Tab.Screen
+          name="Tích điểm"
+          options={{
+            img: require('../../assets/tab3.png')
+          }}
+          component={VoucherScreen} />
+        <Tab.Screen
+          name="Cài đặt"
+          options={{
+            img: require('../../assets/setting2.png')
+          }}
+          component={SettingTab} />
+      </Tab.Navigator>
     </View>
   );
 }
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop:10
+    paddingTop: 10
   },
   "menu_group57": {
     "position": "absolute",

@@ -137,7 +137,7 @@ const BookingScreen = ({ navigation }) => {
             <FlatList
               data={dataResults}
               renderItem={({ item, index }) => (
-                <TouchableOpacity key={index} style={selectItem == index ?
+                <TouchableOpacity key={index+""} style={selectItem == index ?
                   styles.shopinfo_result_tableempty2_s :
                   styles.shopinfo_result_tableempty2}
                   onPress={() => { setSelectItem(index); setViewTimeSelect(true); }}
@@ -246,7 +246,7 @@ const BookingScreen = ({ navigation }) => {
         <NotificationCompletedPopUp close={() => {
           navigation.reset({
             index: 0,
-            routes: [{ name: 'Home' }],
+            routes: [{ name: 'Home', params:{initialRoute:"Đặt chỗ"} }],
           });
         }} />
       </Overlay>
