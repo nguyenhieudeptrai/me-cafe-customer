@@ -16,7 +16,7 @@ import "moment/locale/vi";
 
 const Stack = createStackNavigator();
 moment.locale("vi");
-LogBox.ignoreAllLogs();
+// LogBox.ignoreAllLogs();
 
 export default function App() {
   return (

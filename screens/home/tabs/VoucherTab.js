@@ -59,7 +59,7 @@ const VoucherTab = () => {
       <View style={styles.header}>
         <Text style={styles.header_title}>THẺ THÀNH VIÊN / ƯU ĐÃI</Text>
       </View>
-      <ScrollView contentContainerStyle={{ alignItems: "left", flex: 1, height:"98%", marginLeft:5 }}>
+      <ScrollView contentContainerStyle={{ alignItems: "flex-start", flex: 1, marginHorizontal: 15 }}>
         <View style={styles.voucher_progress}>
           <View style={styles.voucher_rectangle1476}></View>
           <View style={styles.voucher_group118}>
@@ -117,7 +117,7 @@ const VoucherTab = () => {
         </View>
         <Text style={styles.voucher_uAiDanhChoBn}>Ưu đãi dành cho bạn</Text>
 
-        <FlatList style={{ width: "97%" }} data={data} renderItem={({ item, index }) => (
+        <FlatList style={{ width: "100%" }} data={data} renderItem={({ item, index }) => (
           <TouchableOpacity key={index} onPress={() => setViewQrCode(true)} style={styles.voucher_list_item}>
             <View style={styles.voucher_list_item_group127_group125906bcef6_rectangle14806a0ef2a7}>
               <View style={styles.voucher_list_item_group127_group125906bcef6_group124378320a7}>
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     "width": "100%"
   },
   "voucher_progress": {
-    "width": "98%",
+    "width": "90%",
     marginTop: 12,
     marginBottom: 10,
     paddingBottom: 10,
@@ -169,6 +169,7 @@ const styles = StyleSheet.create({
       "height": 3
     },
     "shadowRadius": 6,
+    alignSelf: "center"
   },
   "voucher_line5": {
     "position": "absolute",
@@ -183,7 +184,7 @@ const styles = StyleSheet.create({
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    marginBottom: 10
+    marginBottom: 10,
   },
   "header": {
     "width": "100%",
@@ -541,17 +542,15 @@ const styles = StyleSheet.create({
   },
   "voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e": {
     "position": "absolute",
-    "width": 75,
-    "height": 15,
     "left": 0,
-    "top": 0
+    "top": 0,
+    justifyContent: "center",
+    alignItems: "center"
   },
   "voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff": {
-    "position": "absolute",
+
     "width": 75,
     "height": 15,
-    "left": 0,
-    "top": 4
   },
   "voucher_list_item_group127_group125906bcef6_group124378320a7_group123558bc14e_group122408a60ff_rectangle148165d1791b": {
     "position": "absolute",
@@ -586,16 +585,12 @@ const styles = StyleSheet.create({
     "top": 4
   },
   "voucher_list_item_info_type": {
-    "position": "absolute",
-    "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(255, 255, 255, 1)",
     "fontSize": 14,
     "fontWeight": "700",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
-    "textAlign": "left",
-    "top": 4,
-    "alignSelf": "center"
+    position: "absolute"
   },
   "voucher_list_item_info_head": {
     "position": "absolute",
@@ -618,7 +613,7 @@ const styles = StyleSheet.create({
     "fontSize": 20,
     "fontWeight": "500",
     "fontStyle": "normal",
-    "fontFamily": "Roboto Medium"
+    "fontFamily": "Roboto"
   },
   "voucher_list_item_info_end_date": {
     "position": "absolute",
