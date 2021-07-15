@@ -116,9 +116,14 @@ const BookingTab = ({ navigation }) => {
             placeholder="Bạn có thể nhập một vài lý do khác...."
           />
         }
-        <Button bg='#D4AE39' w="100%" mt="md" onPress={() => { setOverlayVisible(false); setReasonSelected("") }}>
-          Xác nhận
-        </Button>
+        <View style={{ flexDirection: "row" }}>
+          <Button bg='#D4AE39' flex={1} mt="md" onPress={() => { setOverlayVisible(false); setReasonSelected("") }}>
+            Xác nhận
+          </Button>
+          <Button bg='#A1A1A1' flex={1} mt="md" onPress={() => { setOverlayVisible(false); setReasonSelected("") }}>
+            Hủy
+          </Button>
+        </View>
       </Overlay>
       <Overlay visible={overlayVisibleComment} p="xl" >
         <TouchableOpacity onPress={() => {

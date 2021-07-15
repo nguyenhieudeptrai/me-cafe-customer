@@ -16,11 +16,12 @@ import "moment/locale/vi";
 
 const Stack = createStackNavigator();
 moment.locale("vi");
-// LogBox.ignoreAllLogs();
+LogBox.ignoreAllLogs();
+
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Booking">
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="DetailShop" component={DetailShopScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />

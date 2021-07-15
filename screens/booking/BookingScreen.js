@@ -49,10 +49,10 @@ const dataResults = [
   },
 ]
 const BookingScreen = ({ navigation }) => {
-  const [from, setFrom] = useState(moment(new Date()));
+  const [from, setFrom] = useState(moment(new Date()).minutes(Math.round((new Date().getMinutes() / 10)) * 10));
+  const [timeSearch, setTimeSearch] = useState(moment(new Date()).minutes(Math.round((new Date().getMinutes() / 10)) * 10));
   const [viewComplete, setViewComplete] = useState(false);
   const [viewTimeSelect, setViewTimeSelect] = useState(false);
-  const [timeSearch, setTimeSearch] = useState(moment(new Date()).minutes(Math.round((new Date().getMinutes() / 10)) * 10));
   const [daySearch, setDaySearch] = useState(moment(new Date()).format("L") + ' (Hôm nay)');
   const [period, setPeroid] = useState(['30 phút', 30]);
   const [showResult, setShowResult] = useState(false);

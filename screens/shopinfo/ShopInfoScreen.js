@@ -12,7 +12,6 @@ import { Image as SvgImage } from 'react-native-svg';
 import { Dropdown, Button, Select } from "react-native-magnus";
 
 
-
 const ShopInfoScreen = ({ navigation }) => {
   const [tableSelected, setTableSelected] = useState(null);
   const [viewMenu, setViewMenu] = useState(false);
@@ -127,7 +126,11 @@ const ShopInfoScreen = ({ navigation }) => {
         </View>
       </ScrollView>
       <TouchableOpacity onPress={onPressContinuous} style={styles.shopinfo_group19_dangkyngayBtn}>
-        <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}><Text style={{ "marginTop": -1.5, "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center", "lineHeight": 16.5 }}>BẮT ĐẦU CHỖ NGAY</Text></View>
+        <View style={styles.shopinfo_group19_dangkyngayBtn_tChNgay}>
+          <Text style={{  "color": "rgba(255, 255, 255, 1)", "fontSize": 15, "fontWeight": "700", "fontStyle": "normal", "fontFamily": "Roboto", "textAlign": "center" }}>
+            BẮT ĐẦU ĐẶT CHỖ NGAY
+            </Text>
+            </View>
       </TouchableOpacity>
 
       <Overlay visible={viewMenu} p="sm">
